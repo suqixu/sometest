@@ -2051,10 +2051,8 @@
                     setTimeout(() => {
                         if (currentQuestionIndex < currentQuestions.length - 1) {
                             nextQuestion();
-                        } else {
-                            // 如果是最后一题，自动交卷
-                            submitExam();
                         }
+                        // 如果是最后一题，不自动跳转，用户可以手动交卷
                     }, 1000);
                 }
             } else {
