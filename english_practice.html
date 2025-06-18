@@ -114,6 +114,7 @@
             background: #fafafa;
             border: 1px solid #e8e8e8;
             border-radius: 6px;
+            flex-wrap: nowrap;
         }
 
         .control-row:last-child {
@@ -130,6 +131,7 @@
             min-width: 70px;
             font-size: 0.9rem;
             white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .control-row select, .control-row input, .control-row button {
@@ -147,10 +149,10 @@
 
         .control-row input[type="checkbox"] {
             appearance: none;
-            width: 18px;
-            height: 18px;
+            width: 14px;
+            height: 14px;
             border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 2px;
             background: white;
             cursor: pointer;
             position: relative;
@@ -158,7 +160,7 @@
             margin: 0;
             flex-shrink: 0;
         }
-
+        
         .control-row input[type="checkbox"]:hover {
             border-color: #007aff;
         }
@@ -171,18 +173,18 @@
         .control-row input[type="checkbox"]:checked::after {
             content: '';
             position: absolute;
-            left: 5px;
-            top: 2px;
-            width: 6px;
-            height: 10px;
+            left: 3px;
+            top: 1px;
+            width: 4px;
+            height: 6px;
             border: solid white;
-            border-width: 0 2px 2px 0;
+            border-width: 0 1px 1px 0;
             transform: rotate(45deg);
         }
 
         .control-row input[type="checkbox"]:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(0, 122, 255, 0.1);
+            box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
         }
 
         .control-row .wrong-questions-info {
@@ -196,13 +198,14 @@
             background: #28a745 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 600 !important;
             transition: all 0.2s ease !important;
             min-width: 80px !important;
+            white-space: nowrap !important;
         }
 
         .start-btn:hover {
@@ -213,7 +216,7 @@
             background: #007aff !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
@@ -221,6 +224,7 @@
             margin-left: 10px !important;
             min-width: 80px !important;
             display: inline-block !important;
+            white-space: nowrap !important;
         }
 
         .reset-btn:hover {
@@ -231,13 +235,14 @@
             background: #007aff !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             transition: all 0.2s ease !important;
             margin-left: 8px !important;
             min-width: 80px !important;
+            white-space: nowrap !important;
         }
         
         #prevBtn:hover, #nextBtn:hover {
@@ -248,13 +253,14 @@
             background: #dc3545 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             transition: all 0.3s ease !important;
             margin-left: 10px !important;
             min-width: 80px !important;
+            white-space: nowrap !important;
         }
         
         #wrongQuestionsBtn:hover {
@@ -462,6 +468,52 @@
             background: #0056cc !important;
         }
 
+        /* 新增：题目统计信息样式 */
+        .question-stats {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-left: 12px;
+        }
+
+        .question-stats .current-total {
+            font-weight: 600;
+            color: #007aff;
+        }
+
+        .question-stats .correct-count {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        .question-stats .incorrect-count {
+            color: #dc3545;
+            font-weight: 500;
+        }
+
+        /* 修改：题目卡片头部布局 */
+        .question-header {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .question-header-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .question-header-right {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 12px;
@@ -487,27 +539,49 @@
             }
             
             .control-row {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 8px;
-                padding: 12px;
+                flex-direction: row;
+                align-items: center;
+                gap: 6px;
+                padding: 8px;
+                flex-wrap: nowrap;
             }
             
             .control-row label {
                 min-width: auto;
-                margin-bottom: 4px;
-                font-size: 0.85rem;
+                margin-bottom: 0;
+                font-size: 0.75rem;
+                flex-shrink: 0;
+                white-space: nowrap;
             }
             
             .control-row select, .control-row input {
-                width: 100%;
-                padding: 10px 12px;
-                font-size: 1rem;
+                width: auto;
+                flex: 1;
+                padding: 6px 8px;
+                font-size: 0.8rem;
+                min-width: 0;
+            }
+            
+            .control-row input[type="checkbox"] {
+                appearance: none;
+                width: 16px;
+                height: 16px;
+                border: 1px solid #ddd;
+                border-radius: 3px;
+                background: white;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.2s ease;
+                margin: 0;
+                flex-shrink: 0;
             }
             
             .control-row .wrong-questions-info {
-                font-size: 0.75rem;
-                text-align: center;
+                font-size: 0.7rem;
+                color: #666;
+                margin: 0;
+                white-space: nowrap;
+                flex-shrink: 0;
             }
             
             .start-btn {
@@ -574,22 +648,35 @@
             }
             
             /* 按钮组优化 */
-            .question-card > div:first-child {
+            .question-header {
                 flex-direction: column;
                 gap: 8px;
                 align-items: stretch;
             }
             
-            .question-card > div:first-child > div:last-child {
+            .question-header-left {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            
+            .question-stats {
+                margin-left: 0;
+                font-size: 0.85rem;
+            }
+            
+            .question-header-right {
                 display: flex;
                 gap: 8px;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             
-            .question-card > div:first-child > div:last-child button {
+            .question-header-right button {
                 flex: 1;
                 padding: 8px 12px;
                 font-size: 0.85rem;
+                min-width: auto;
             }
             
             /* 错题集和结果界面优化 */
@@ -651,7 +738,7 @@
             background: #28a745 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
@@ -659,6 +746,7 @@
             display: flex !important;
             align-items: center !important;
             gap: 5px !important;
+            white-space: nowrap !important;
         }
         
         .toggle-answer-btn:hover {
@@ -686,12 +774,13 @@
             background: #28a745 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             transition: all 0.2s ease !important;
             min-width: 80px !important;
+            white-space: nowrap !important;
         }
         
         .show-answer-btn:hover {
@@ -703,17 +792,42 @@
             background: #ff6b35 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 500 !important;
             transition: all 0.2s ease !important;
             min-width: 80px !important;
+            white-space: nowrap !important;
         }
         
         .submit-btn:hover {
             background: #e55a2b !important;
+        }
+        
+        /* 设置按钮样式 */
+        .settings-btn {
+            background: #6c757d !important;
+            color: white !important;
+            border: none !important;
+            padding: 6px 12px !important;
+            border-radius: 4px !important;
+            cursor: pointer !important;
+            font-size: 0.85rem !important;
+            font-weight: 500 !important;
+            transition: all 0.2s ease !important;
+            min-width: 80px !important;
+            white-space: nowrap !important;
+        }
+        
+        .settings-btn:hover {
+            background: #5a6268 !important;
+        }
+        
+        /* 通用按钮文字不换行样式 */
+        button {
+            white-space: nowrap !important;
         }
         
         /* 结果展示界面样式 */
@@ -820,13 +934,14 @@
             background: #dc3545 !important;
             color: white !important;
             border: none !important;
-            padding: 8px 16px !important;
+            padding: 6px 12px !important;
             border-radius: 4px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 500 !important;
             transition: all 0.2s ease !important;
             margin-top: 8px !important;
+            white-space: nowrap !important;
         }
         
         .add-to-wrong-btn:hover {
@@ -842,7 +957,7 @@
         @media (max-width: 768px) {
             /* 确保按钮有足够的触摸区域 */
             button {
-                min-height: 44px;
+                min-height: 36px;
                 touch-action: manipulation;
             }
             
@@ -883,6 +998,21 @@
             /* 优化长按菜单 */
             .question-content, .answer-input {
                 -webkit-touch-callout: default;
+            }
+            
+            /* 错题集按钮组优化 */
+            #wrongQuestionsScreen > div:first-child > div:last-child {
+                flex-direction: column;
+                gap: 8px;
+                align-items: stretch;
+            }
+            
+            #wrongQuestionsScreen > div:first-child > div:last-child button {
+                flex: 1;
+                padding: 6px 12px;
+                font-size: 0.9rem;
+                min-height: 36px;
+                white-space: nowrap;
             }
         }
 
@@ -971,9 +1101,6 @@
             <div class="control-row">
                 <label>题目数量:</label>
                 <input type="number" id="questionCount" value="10" min="1" max="50">
-            </div>
-            
-            <div class="control-row">
                 <label for="randomQuestions">随机出题：</label>
                 <input type="checkbox" id="randomQuestions">
                 <span class="wrong-questions-info">不勾选则按顺序出题</span>
@@ -993,37 +1120,23 @@
             </div>
 
             <div id="practiceScreen" class="hidden">
-                <div class="stats">
-                    <div class="stat-item">
-                        <div class="stat-number" id="currentQuestion">1</div>
-                        <div class="stat-label">当前题目</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="totalQuestions">10</div>
-                        <div class="stat-label">总题目</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="correctCount">0</div>
-                        <div class="stat-label">正确</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" id="incorrectCount">0</div>
-                        <div class="stat-label">错误</div>
-                    </div>
-                    <button id="submitBtn" class="submit-btn" style="display: none; margin-left: auto;">交卷</button>
-                </div>
-
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
 
                 <div id="questionCard" class="question-card">
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <div class="question-type" id="questionType">单词拼写</div>
-                        <div style="display: flex; gap: 10px; align-items: center;">
-                            <button id="prevBtn" class="hidden">上一题</button>
-                            <button id="nextBtn" class="hidden">下一题</button>
-                            <button id="showAnswerBtn" class="show-answer-btn" style="display: none;">显示答案</button>
+                    <div class="question-header">
+                        <div class="question-header-left">
+                            <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; white-space: nowrap;">
+                                <div class="question-type" id="questionType">单词拼写</div>
+                                <button id="settingsBtn" class="settings-btn" style="display: none;">设置</button>
+                                <button id="submitBtn" class="submit-btn" style="display: none;">交卷</button>
+                            </div>
+                            <div class="question-stats">
+                                <span class="current-total">[<span id="currentQuestion">1</span>/<span id="totalQuestions">10</span>]</span>
+                                <span class="correct-count">正确: <span id="correctCount">0</span></span>
+                                <span class="incorrect-count">错误: <span id="incorrectCount">0</span></span>
+                            </div>
                         </div>
                     </div>
                     <div class="question-content" id="questionContent">题目内容将在这里显示</div>
@@ -1032,9 +1145,12 @@
                     </div>
                     <div id="answerInputContainer"></div>
                     <div id="feedback" class="feedback hidden"></div>
-                    <div id="addToWrongQuestions" class="hidden" style="margin-top: 10px;">
-                        <button id="addWrongBtn" style="background: #007aff; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">加入错题集</button>
+                    <div style="display: flex; gap: 8px; margin-top: 12px; justify-content: center; align-items: center; flex-wrap: nowrap;">
+                        <button id="prevBtn" class="hidden">上一题</button>
+                        <button id="nextBtn" class="hidden">下一题</button>
+                        <button id="showAnswerBtn" class="show-answer-btn" style="display: none;">答案</button>
                     </div>
+                    <div id="feedback" class="feedback hidden" style="margin-top: 8px; text-align: center;"></div>
                 </div>
             </div>
 
@@ -1043,6 +1159,8 @@
                     <h3 style="margin: 0; color: #333;">错题集</h3>
                     <div style="display: flex; gap: 10px;">
                         <button id="toggleAllAnswersBtn" style="background: #28a745; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">展开所有答案</button>
+                        <button id="deleteAllWrongBtn" style="background: #dc3545; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">删除所有错题</button>
+                        <button id="wrongSettingsBtn" style="background: #6c757d; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">设置</button>
                     </div>
                 </div>
                 <div id="wrongQuestionsList">
@@ -1306,10 +1424,59 @@
             }
         }
 
+        // 自动将错题加入错题集
+        function autoAddToWrongQuestions() {
+            const currentQuestion = currentQuestions[currentQuestionIndex];
+            if (!currentQuestion) return;
+
+            // 检查是否已经存在
+            const exists = wrongQuestions.some(q => 
+                q.type === currentQuestion.type && 
+                q.content.original === currentQuestion.content.original
+            );
+
+            if (!exists) {
+                wrongQuestions.push({
+                    ...currentQuestion,
+                    addedTime: new Date().toISOString(),
+                    userAnswer: document.getElementById('answerInput').value.trim()
+                });
+                saveWrongQuestions();
+                // 更新练习类型选项
+                renderPracticeTypeOptions();
+                // 更新错题集标签
+                updateWrongQuestionsLabel();
+                console.log('错题已自动加入错题集');
+            }
+        }
+
+        // 交卷时自动将错题加入错题集
+        function autoAddWrongQuestionToCollection(question, userAnswer) {
+            // 检查是否已经存在
+            const exists = wrongQuestions.some(q => 
+                q.type === question.type && 
+                q.content.original === question.content.original
+            );
+
+            if (!exists) {
+                wrongQuestions.push({
+                    ...question,
+                    addedTime: new Date().toISOString(),
+                    userAnswer: userAnswer
+                });
+                saveWrongQuestions();
+                // 更新练习类型选项
+                renderPracticeTypeOptions();
+                // 更新错题集标签
+                updateWrongQuestionsLabel();
+                console.log('交卷错题已自动加入错题集');
+            }
+        }
+
         function removeFromWrongQuestions(index) {
             wrongQuestions.splice(index, 1);
             saveWrongQuestions();
-            renderWrongQuestions();
+            renderWrongQuestions(); // 重新渲染以更新按钮状态
             // 更新练习类型选项
             renderPracticeTypeOptions();
             // 更新错题集标签
@@ -1318,11 +1485,21 @@
 
         function renderWrongQuestions() {
             const container = document.getElementById('wrongQuestionsList');
+            const toggleAllAnswersBtn = document.getElementById('toggleAllAnswersBtn');
+            const deleteAllWrongBtn = document.getElementById('deleteAllWrongBtn');
+            
             if (!container) return;
 
             if (wrongQuestions.length === 0) {
                 container.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">暂无错题</p>';
+                // 隐藏按钮
+                if (toggleAllAnswersBtn) toggleAllAnswersBtn.style.display = 'none';
+                if (deleteAllWrongBtn) deleteAllWrongBtn.style.display = 'none';
                 return;
+            } else {
+                // 显示按钮
+                if (toggleAllAnswersBtn) toggleAllAnswersBtn.style.display = 'inline-block';
+                if (deleteAllWrongBtn) deleteAllWrongBtn.style.display = 'inline-block';
             }
 
             let html = '';
@@ -1418,6 +1595,8 @@
             document.getElementById('welcomeScreen').classList.add('hidden');
             document.getElementById('practiceScreen').classList.add('hidden');
             document.getElementById('wrongQuestionsScreen').classList.remove('hidden');
+            // 隐藏控制面板
+            document.querySelector('.controls').classList.add('hidden');
             renderWrongQuestions();
         }
 
@@ -1433,6 +1612,8 @@
                 document.getElementById('welcomeScreen').classList.remove('hidden');
                 document.getElementById('practiceScreen').classList.add('hidden');
                 document.getElementById('wrongQuestionsScreen').classList.add('hidden');
+                // 显示控制面板
+                document.querySelector('.controls').classList.remove('hidden');
             }
         }
 
@@ -1530,14 +1711,18 @@
                 } else if (e.target.id === 'showAnswerBtn') {
                     console.log('显示答案按钮被点击');
                     showAnswer();
-                } else if (e.target.id === 'addWrongBtn') {
-                    addToWrongQuestions();
                 } else if (e.target.id === 'toggleAllAnswersBtn') {
                     toggleAllAnswers();
+                } else if (e.target.id === 'deleteAllWrongBtn') {
+                    deleteAllWrongQuestions();
+                } else if (e.target.id === 'wrongSettingsBtn') {
+                    showSettings();
                 } else if (e.target.id === 'submitBtn') {
                     submitExam();
                 } else if (e.target.id === 'backToStartBtn') {
                     backToStart();
+                } else if (e.target.id === 'settingsBtn') {
+                    showSettings();
                 } else if (e.target.classList.contains('expand-answer-btn')) {
                     toggleAnswer(e.target);
                 } else if (e.target.classList.contains('remove-wrong-question')) {
@@ -1656,6 +1841,8 @@
             document.getElementById('practiceScreen').classList.remove('hidden');
             document.getElementById('wrongQuestionsScreen').classList.add('hidden');
             document.getElementById('resultScreen').classList.add('hidden');
+            // 隐藏控制面板
+            document.querySelector('.controls').classList.add('hidden');
             // 保持开始练习按钮可见，任何时候都可以重新开始练习
 
             updateStats();
@@ -1679,17 +1866,32 @@
             const progress = ((currentQuestionIndex + 1) / currentQuestions.length) * 100;
             document.getElementById('progressFill').style.width = progress + '%';
             
-            // 控制按钮显示状态
+            // 控制按钮显示状态 - 始终显示，但根据位置设置禁用状态
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.classList.remove('hidden');
+            nextBtn.classList.remove('hidden');
+            
+            // 设置按钮禁用状态
             if (currentQuestionIndex === 0) {
-                document.getElementById('prevBtn').classList.add('hidden');
+                prevBtn.disabled = true;
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
             } else {
-                document.getElementById('prevBtn').classList.remove('hidden');
+                prevBtn.disabled = false;
+                prevBtn.style.opacity = '1';
+                prevBtn.style.cursor = 'pointer';
             }
             
             if (currentQuestionIndex === currentQuestions.length - 1) {
-                document.getElementById('nextBtn').classList.add('hidden');
+                nextBtn.disabled = true;
+                nextBtn.style.opacity = '0.5';
+                nextBtn.style.cursor = 'not-allowed';
             } else {
-                document.getElementById('nextBtn').classList.remove('hidden');
+                nextBtn.disabled = false;
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
             }
             
             // 显示题目类型
@@ -1796,7 +1998,6 @@
             // 清空输入框和反馈
             answerInput.value = '';
             document.getElementById('feedback').classList.add('hidden');
-            document.getElementById('addToWrongQuestions').classList.add('hidden');
             
             // 加载已保存的答案
             if (userAnswers[currentQuestionIndex]) {
@@ -1806,7 +2007,7 @@
             // 显示显示答案按钮
             const showAnswerBtn = document.getElementById('showAnswerBtn');
             showAnswerBtn.style.display = 'block';
-            showAnswerBtn.textContent = '显示答案';
+            showAnswerBtn.textContent = '答案';
             
             // 显示交卷按钮（当有多个题目时）
             const submitBtn = document.getElementById('submitBtn');
@@ -1815,6 +2016,9 @@
             } else {
                 submitBtn.style.display = 'none';
             }
+            
+            // 显示设置按钮
+            document.getElementById('settingsBtn').style.display = 'block';
             
             // 绑定回车或Ctrl+Enter事件
             if (question.type === 'sentence_translation' || question.type === 'paragraph_translation') {
@@ -1961,7 +2165,6 @@
                 
                 feedback.className = 'feedback correct';
                 feedback.textContent = '✅ 回答正确！';
-                document.getElementById('addToWrongQuestions').classList.add('hidden');
             } else {
                 // 如果之前是正确状态，需要减少正确数
                 if (previousStatus === true) {
@@ -2011,7 +2214,8 @@
                     feedback.innerHTML = `❌ 回答错误。<br>正确答案：<span style="color:#007aff;font-weight:bold;">${correctAnswer}</span><br><br><strong>解析：</strong><br>${analysis}`;
                 }
                 
-                document.getElementById('addToWrongQuestions').classList.remove('hidden');
+                // 自动将错题加入错题集
+                autoAddToWrongQuestions();
             }
 
             feedback.classList.remove('hidden');
@@ -2020,7 +2224,7 @@
             // 更新显示答案按钮的文本
             const showAnswerBtn = document.getElementById('showAnswerBtn');
             if (showAnswerBtn) {
-                showAnswerBtn.textContent = '隐藏答案';
+                showAnswerBtn.textContent = '隐藏';
             }
 
             // 根据当前题目位置显示上一题和下一题按钮
@@ -2084,7 +2288,7 @@
             if (isAnswerVisible) {
                 // 如果答案已显示，则隐藏答案
                 feedback.classList.add('hidden');
-                showAnswerBtn.textContent = '显示答案';
+                showAnswerBtn.textContent = '答案';
                 return;
             }
             
@@ -2185,7 +2389,7 @@
             feedback.classList.remove('hidden');
             
             // 更新按钮文本
-            showAnswerBtn.textContent = '隐藏答案';
+            showAnswerBtn.textContent = '隐藏';
         }
 
         function prevQuestion() {
@@ -2254,6 +2458,9 @@
             document.getElementById('wrongQuestionsScreen').classList.add('hidden');
             document.getElementById('resultScreen').classList.add('hidden');
             
+            // 显示控制面板
+            document.querySelector('.controls').classList.remove('hidden');
+            
             // 重置按钮状态
             document.getElementById('startBtn').classList.remove('hidden');
             document.getElementById('wrongQuestionsBtn').classList.add('hidden');
@@ -2304,6 +2511,11 @@
                     isCorrect: isCorrect,
                     correctAnswers: question.answers
                 });
+                
+                // 如果答案错误，自动加入错题集
+                if (!isCorrect) {
+                    autoAddWrongQuestionToCollection(question, userAnswer);
+                }
             }
             
             // 计算总分
@@ -2450,7 +2662,6 @@
                                 <strong>正确答案：</strong> ${result.correctAnswers.join(', ')}
                             </div>
                         </div>
-                        ${!isCorrect ? `<button class="add-to-wrong-btn" onclick="addResultToWrongQuestions(${index})">加入错题集</button>` : ''}
                     </div>
                 `;
             });
@@ -2499,6 +2710,9 @@
             document.getElementById('practiceScreen').classList.add('hidden');
             document.getElementById('wrongQuestionsScreen').classList.add('hidden');
             document.getElementById('resultScreen').classList.add('hidden');
+            
+            // 显示控制面板
+            document.querySelector('.controls').classList.remove('hidden');
         }
 
         function resetButtonStates() {
@@ -2554,6 +2768,38 @@
             
             // 更新一键按钮文本
             toggleAllBtn.textContent = isAllExpanded ? '展开所有答案' : '收起所有答案';
+        }
+
+        // 显示设置界面
+        function showSettings() {
+            // 显示控制面板
+            document.querySelector('.controls').classList.remove('hidden');
+            // 隐藏练习界面
+            document.getElementById('practiceScreen').classList.add('hidden');
+            // 隐藏其他界面
+            document.getElementById('welcomeScreen').classList.add('hidden');
+            document.getElementById('wrongQuestionsScreen').classList.add('hidden');
+            document.getElementById('resultScreen').classList.add('hidden');
+        }
+
+        // 删除所有错题
+        function deleteAllWrongQuestions() {
+            if (wrongQuestions.length === 0) {
+                alert('错题集已经是空的！');
+                return;
+            }
+            
+            const confirmDelete = confirm(`确定要删除所有 ${wrongQuestions.length} 道错题吗？\n\n此操作不可撤销！`);
+            if (confirmDelete) {
+                wrongQuestions.length = 0; // 清空数组
+                saveWrongQuestions();
+                renderWrongQuestions(); // 重新渲染以更新按钮状态
+                // 更新练习类型选项
+                renderPracticeTypeOptions();
+                // 更新错题集标签
+                updateWrongQuestionsLabel();
+                alert('所有错题已删除！');
+            }
         }
     </script>
 </body>
