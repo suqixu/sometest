@@ -1070,7 +1070,7 @@
         <div class="controls">
             <div class="control-row">
                 <label id="practiceTypeLabel">题型选择:</label>
-                <select id="practiceType">
+                <select id="practiceType" style="min-width: 120px;">
                     <option value="all">全部类型</option>
                     <option value="spelling">单词拼写</option>
                     <option value="phrase_translation">短语翻译</option>
@@ -1078,9 +1078,8 @@
                     <option value="paragraph_translation">段落翻译</option>
                     <option value="multiple_choice">选择填空</option>
                 </select>
-                <label for="wrongQuestionsOnly">错题集练习：</label>
+                <label for="wrongQuestionsOnly">仅练习错题</label>
                 <input type="checkbox" id="wrongQuestionsOnly">
-                <span class="wrong-questions-info">选中后只从错题集中出题</span>
             </div>
             
             <div class="control-row">
@@ -1103,7 +1102,6 @@
                 <input type="number" id="questionCount" value="10" min="1" max="50">
                 <label for="randomQuestions">随机出题：</label>
                 <input type="checkbox" id="randomQuestions">
-                <span class="wrong-questions-info">不勾选则按顺序出题</span>
             </div>
             
             <div class="control-row">
@@ -1325,7 +1323,7 @@
                 wrongQuestionsLabel.textContent = `错题集练习（${wrongQuestionsCount}题）：`;
                 practiceTypeLabel.textContent = '错题类型:';
             } else {
-                wrongQuestionsLabel.textContent = '错题集练习：';
+                wrongQuestionsLabel.textContent = '仅练习错题：';
                 practiceTypeLabel.textContent = '题型选择:';
             }
         }
