@@ -1869,6 +1869,16 @@
                         }, 100);
                     });
                 });
+                
+                // 恢复用户之前的选择状态
+                if (userAnswers[currentQuestionIndex]) {
+                    const savedAnswer = userAnswers[currentQuestionIndex];
+                    optionButtons.forEach(button => {
+                        if (button.dataset.value.toLowerCase() === savedAnswer.toLowerCase()) {
+                            button.classList.add('selected');
+                        }
+                    });
+                }
             } else {
                 // 隐藏选择题选项，显示文本输入框
                 choiceOptions.classList.add('hidden');
@@ -2025,7 +2035,7 @@
                     } else if (optionValue.toLowerCase() === userAnswer.toLowerCase() && !isCorrect) {
                         button.classList.add('incorrect');
                     }
-                    button.classList.remove('selected');
+                    // 保留用户的选择状态，不清除selected类
                 });
             }
 
@@ -2230,7 +2240,7 @@
                         if (index === correctIndex) {
                             button.classList.add('correct');
                         }
-                        button.classList.remove('selected');
+                        // 保留用户的选择状态，不清除selected类
                     });
                 } else {
                     answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
@@ -2377,6 +2387,12 @@
         function submitExam() {
             // 保存当前题目的答案
             saveCurrentAnswer();
+            
+            // 清理选择题选项的选中状态
+            const optionButtons = document.querySelectorAll('.choice-option');
+            optionButtons.forEach(button => {
+                button.classList.remove('selected');
+            });
             
             // 检查是否所有题目都已作答
             const unansweredCount = userAnswers.filter(answer => !answer).length;
