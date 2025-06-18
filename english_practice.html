@@ -187,13 +187,29 @@
             box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
         }
 
-        /* 移动端checkbox缩放 */
+        /* 移动端checkbox缩放和间距调整 */
         @media (max-width: 600px) {
-            input[type="checkbox"] {
-                transform: scale(0.7);
-                margin: 0 4px 0 0;
+            .control-row input[type="checkbox"] {
+                transform: scale(0.6) !important;
+                margin: 0 !important;
                 vertical-align: middle;
             }
+            
+            .control-row label[for="wrongQuestionsOnly"],
+            .control-row label[for="randomQuestions"] {
+                margin: 0 !important;
+                padding-right: 2px !important;
+            }
+            
+            .control-row {
+                gap: 2px !important;
+            }
+        }
+
+        /* 调整checkbox与label的间距 */
+        .control-row label[for="wrongQuestionsOnly"],
+        .control-row label[for="randomQuestions"] {
+            margin-right: 0;
         }
 
         .control-row .wrong-questions-info {
@@ -1078,21 +1094,19 @@
 
         <div class="controls">
             <div class="control-row">
-                <label id="practiceTypeLabel">题型选择:</label>
+                <label id="practiceTypeLabel">题型选择</label>
                 <select id="practiceType" style="width: 140px;">
                     <option value="all">全部类型</option>
                     <option value="spelling">单词拼写</option>
                     <option value="phrase_translation">短语翻译</option>
+                    <option value="multiple_choice">选择填空</option>
                     <option value="sentence_translation">句子翻译</option>
                     <option value="paragraph_translation">段落翻译</option>
-                    <option value="multiple_choice">选择填空</option>
                 </select>
-                <label for="wrongQuestionsOnly">仅错题</label>
-                <input type="checkbox" id="wrongQuestionsOnly">
             </div>
             
             <div class="control-row">
-                <label>单元选择:</label>
+                <label>单元选择</label>
                 <select id="unitSelect" style="width: 140px;">
                     <option value="all">全部单元</option>
                     <option value="Unit1">Unit 1</option>
@@ -1107,9 +1121,14 @@
             </div>
             
             <div class="control-row">
-                <label>题目数量:</label>
+                <label>题目数量</label>
                 <input type="number" id="questionCount" value="10" min="1" max="50">
-                <label for="randomQuestions">随机出题：</label>
+            </div>
+            
+            <div class="control-row">
+                <label for="wrongQuestionsOnly">仅错题</label>
+                <input type="checkbox" id="wrongQuestionsOnly">
+                <label for="randomQuestions">随机出题</label>
                 <input type="checkbox" id="randomQuestions">
             </div>
             
@@ -1329,11 +1348,13 @@
             }
             
             if (checkbox.checked) {
-                wrongQuestionsLabel.textContent = `错题（${wrongQuestionsCount}）：`;
-                practiceTypeLabel.textContent = '错题类型:';
+                // 选择仅错题时，重新渲染题型选择下拉框以显示错题类型个数
+                renderPracticeTypeOptions();
+                practiceTypeLabel.textContent = '错题类型';
             } else {
-                wrongQuestionsLabel.textContent = '仅错题：';
-                practiceTypeLabel.textContent = '题型选择:';
+                // 不选择仅错题时，重新渲染题型选择下拉框以显示所有题型个数
+                renderPracticeTypeOptions();
+                practiceTypeLabel.textContent = '题型选择';
             }
         }
 
@@ -1664,196 +1685,43 @@
                 'paragraph_translation': '段落翻译',
                 'multiple_choice': '选择填空'
             };
-            const counts = getTypeCounts();
+            
             const select = document.getElementById('practiceType');
             if (!select) return;
             select.innerHTML = '';
-            // 全部类型
-            const allCount = allData && allData.data ? allData.data.length : 0;
-            select.innerHTML += `<option value="all">全部类型（${allCount}）</option>`;
-            // 其他类型
-            ['spelling','phrase_translation','sentence_translation','paragraph_translation','multiple_choice'].forEach(type => {
-                select.innerHTML += `<option value="${type}">${typeMap[type]}（${counts[type]||0}）</option>`;
-            });
-        }
-
-        // 页面加载时获取数据
-        window.addEventListener('load', function() {
-            // 加载本地数据
-            loadData();
-            // 加载错题集
-            loadWrongQuestions();
-            // 添加事件监听器
-            setupEventListeners();
-            // 渲染练习类型选项
-            renderPracticeTypeOptions();
-            // 初始化错题集标签
-            updateWrongQuestionsLabel();
-        });
-
-        function setupEventListeners() {
-            // 为控制面板中的开始练习按钮添加事件监听器
-            const startBtn = document.getElementById('startBtn');
-            if (startBtn) {
-                startBtn.addEventListener('click', startPractice);
-                console.log('控制面板开始练习按钮事件监听器已添加');
-            }
             
-            // 错题集复选框事件监听器
-            const wrongQuestionsCheckbox = document.getElementById('wrongQuestionsOnly');
-            if (wrongQuestionsCheckbox) {
-                wrongQuestionsCheckbox.addEventListener('change', function() {
-                    updateWrongQuestionsLabel();
-                });
-            }
-            
-            // 使用事件委托处理动态按钮
-            document.addEventListener('click', function(e) {
-                if (e.target.id === 'wrongQuestionsBtn') {
-                    showWrongQuestions();
-                } else if (e.target.id === 'nextBtn') {
-                    nextQuestion();
-                } else if (e.target.id === 'prevBtn') {
-                    prevQuestion();
-                } else if (e.target.id === 'showAnswerBtn') {
-                    console.log('显示答案按钮被点击');
-                    showAnswer();
-                } else if (e.target.id === 'toggleAllAnswersBtn') {
-                    toggleAllAnswers();
-                } else if (e.target.id === 'deleteAllWrongBtn') {
-                    deleteAllWrongQuestions();
-                } else if (e.target.id === 'wrongSettingsBtn') {
-                    showSettings();
-                } else if (e.target.id === 'submitBtn') {
-                    submitExam();
-                } else if (e.target.id === 'backToStartBtn') {
-                    backToStart();
-                } else if (e.target.id === 'settingsBtn') {
-                    showSettings();
-                } else if (e.target.classList.contains('expand-answer-btn')) {
-                    toggleAnswer(e.target);
-                } else if (e.target.classList.contains('remove-wrong-question')) {
-                    removeWrongQuestion(e.target.dataset.index);
-                }
-            });
-            
-            // 回车键提交答案
-            const answerInput = document.getElementById('answerInput');
-            if (answerInput) {
-                answerInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        showAnswer();
-                    }
-                });
-            }
-        }
-
-        function startPractice() {
-            console.log('开始练习按钮被点击');
-            
-            const practiceType = document.getElementById('practiceType').value;
-            const unitSelect = document.getElementById('unitSelect').value;
-            const questionCount = parseInt(document.getElementById('questionCount').value);
             const wrongQuestionsOnly = document.getElementById('wrongQuestionsOnly').checked;
-            const randomQuestions = document.getElementById('randomQuestions').checked;
-
-            console.log('选择的练习类型:', practiceType);
-            console.log('选择的单元:', unitSelect);
-            console.log('题目数量:', questionCount);
-            console.log('错题集练习:', wrongQuestionsOnly);
-            console.log('随机出题:', randomQuestions);
-
-            if (!allData) {
-                alert('数据还未加载完成，请稍后再试');
-                return;
-            }
-
-            // 筛选题目
-            let filteredData = allData.data;
             
             if (wrongQuestionsOnly) {
-                // 从错题集中筛选题目
+                // 选择仅错题时，显示错题类型的个数
                 const wrongQuestions = getWrongQuestions();
-                if (wrongQuestions.length === 0) {
-                    alert('错题集为空，请先做练习并添加错题到错题集');
-                    return;
-                }
-                // 根据错题ID从原始数据中找到对应的题目
-                filteredData = allData.data.filter(item => 
-                    wrongQuestions.some(wrong => wrong.id === item.id)
-                );
-            }
-            
-            // 根据练习类型筛选
-            if (practiceType === 'multiple_choice') {
-                // 从现有数据中筛选选择题题目
-                filteredData = filteredData.filter(item => item.type === 'multiple_choice');
-            } else if (practiceType !== 'all') {
-                filteredData = filteredData.filter(item => item.type === practiceType);
-            }
-            
-            if (unitSelect !== 'all') {
-                filteredData = filteredData.filter(item => {
-                    // 对于选择题，检查source字段是否包含单元信息
-                    if (item.type === 'multiple_choice') {
-                        // 处理Unit8和Unit 8的格式差异
-                        const unitWithSpace = unitSelect.replace(/([A-Za-z]+)(\d+)/, '$1 $2');
-                        return item.source && (item.source.includes(unitSelect) || item.source.includes(unitWithSpace));
+                const wrongTypeCounts = {};
+                
+                // 统计错题中各类型的数量
+                wrongQuestions.forEach(q => {
+                    wrongTypeCounts[q.type] = (wrongTypeCounts[q.type] || 0) + 1;
+                });
+                
+                // 全部错题
+                select.innerHTML += `<option value="all">全部错题（${wrongQuestions.length}）</option>`;
+                
+                // 各类型错题
+                ['spelling','phrase_translation','multiple_choice','sentence_translation','paragraph_translation'].forEach(type => {
+                    const count = wrongTypeCounts[type] || 0;
+                    if (count > 0) { // 只显示有错题的题型
+                        select.innerHTML += `<option value="${type}">${typeMap[type]}（${count}）</option>`;
                     }
-                    // 对于其他题型，检查tags字段
-                    return item.tags && item.tags.some(tag => tag === unitSelect);
+                });
+            } else {
+                // 不选择仅错题时，显示所有题目的个数
+                const counts = getTypeCounts();
+                const allCount = allData && allData.data ? allData.data.length : 0;
+                select.innerHTML += `<option value="all">全部类型（${allCount}）</option>`;
+                
+                ['spelling','phrase_translation','multiple_choice','sentence_translation','paragraph_translation'].forEach(type => {
+                    select.innerHTML += `<option value="${type}">${typeMap[type]}（${counts[type]||0}）</option>`;
                 });
             }
-
-            if (filteredData.length === 0) {
-                if (wrongQuestionsOnly) {
-                    alert('错题集中没有符合条件的题目，请调整筛选条件或先添加错题到错题集');
-                } else if (practiceType === 'multiple_choice' && unitSelect !== 'all') {
-                    alert('抱歉，当前只有 Unit 8 有选择填空题数据。请选择 Unit 8 或选择"全部单元"来练习选择填空题。');
-                } else {
-                    alert('没有找到符合条件的题目，请调整筛选条件');
-                }
-                return;
-            }
-
-            // 根据随机出题设置选择题目
-            if (randomQuestions) {
-                // 随机选择题目
-                currentQuestions = getRandomQuestions(filteredData, Math.min(questionCount, filteredData.length));
-            } else {
-                // 按原始顺序选择题目
-                currentQuestions = filteredData.slice(0, Math.min(questionCount, filteredData.length));
-            }
-            
-            // 如果实际题目数量少于用户设置的数量，显示提示
-            if (currentQuestions.length < questionCount) {
-                alert(`根据您的筛选条件，只找到了 ${currentQuestions.length} 道题目，少于您设置的 ${questionCount} 道题目。`);
-            }
-            
-            currentQuestionIndex = 0;
-            correctCount = 0;
-            incorrectCount = 0;
-
-            // 初始化题目状态数组
-            questionStatus = new Array(currentQuestions.length).fill(null);
-
-            // 初始化用户答案数组
-            initializeUserAnswers();
-            
-            // 重置交卷相关变量
-            questionResults = [];
-
-            // 更新UI
-            document.getElementById('welcomeScreen').classList.add('hidden');
-            document.getElementById('practiceScreen').classList.remove('hidden');
-            document.getElementById('wrongQuestionsScreen').classList.add('hidden');
-            document.getElementById('resultScreen').classList.add('hidden');
-            // 隐藏控制面板
-            document.querySelector('.controls').classList.add('hidden');
-            // 保持开始练习按钮可见，任何时候都可以重新开始练习
-
-            updateStats();
-            showQuestion();
         }
 
         function getRandomQuestions(data, count) {
@@ -1974,7 +1842,12 @@
                 
                 if (options.length > 0) {
                     options.forEach((option, index) => {
-                        optionsHtml += `<button class="choice-option" data-index="${index}" data-value="${option}">${String.fromCharCode(65 + index)}. ${option}</button>`;
+                        // 获取中文翻译
+                        let translatedOption = '';
+                        if (question.content.options_translated && question.content.options_translated[index]) {
+                            translatedOption = ` (${question.content.options_translated[index]})`;
+                        }
+                        optionsHtml += `<button class="choice-option" data-index="${index}" data-value="${option}">${String.fromCharCode(65 + index)}. ${option}${translatedOption}</button>`;
                     });
                 }
                 choiceOptions.innerHTML = optionsHtml;
@@ -2016,9 +1889,9 @@
             showAnswerBtn.style.display = 'block';
             showAnswerBtn.textContent = '答案';
             
-            // 显示交卷按钮（当有多个题目时）
+            // 显示交卷按钮（当有题目时）
             const submitBtn = document.getElementById('submitBtn');
-            if (currentQuestions.length > 1) {
+            if (currentQuestions.length > 0) {
                 submitBtn.style.display = 'block';
             } else {
                 submitBtn.style.display = 'none';
@@ -2172,6 +2045,18 @@
                 
                 feedback.className = 'feedback correct';
                 feedback.textContent = '✅ 回答正确！';
+                
+                // 选择题答对后，延迟1秒自动切换到下一题
+                if (question.type === 'multiple_choice') {
+                    setTimeout(() => {
+                        if (currentQuestionIndex < currentQuestions.length - 1) {
+                            nextQuestion();
+                        } else {
+                            // 如果是最后一题，自动交卷
+                            submitExam();
+                        }
+                    }, 1000);
+                }
             } else {
                 // 如果之前是正确状态，需要减少正确数
                 if (previousStatus === true) {
@@ -2807,6 +2692,185 @@
                 updateWrongQuestionsLabel();
                 alert('所有错题已删除！');
             }
+        }
+
+        // 页面加载时获取数据
+        window.addEventListener('load', function() {
+            // 加载本地数据
+            loadData();
+            // 加载错题集
+            loadWrongQuestions();
+            // 添加事件监听器
+            setupEventListeners();
+            // 渲染练习类型选项
+            renderPracticeTypeOptions();
+            // 初始化错题集标签
+            updateWrongQuestionsLabel();
+        });
+
+        function setupEventListeners() {
+            // 为控制面板中的开始练习按钮添加事件监听器
+            const startBtn = document.getElementById('startBtn');
+            if (startBtn) {
+                startBtn.addEventListener('click', startPractice);
+                console.log('控制面板开始练习按钮事件监听器已添加');
+            }
+            
+            // 错题集复选框事件监听器
+            const wrongQuestionsCheckbox = document.getElementById('wrongQuestionsOnly');
+            if (wrongQuestionsCheckbox) {
+                wrongQuestionsCheckbox.addEventListener('change', function() {
+                    updateWrongQuestionsLabel();
+                });
+            }
+            
+            // 使用事件委托处理动态按钮
+            document.addEventListener('click', function(e) {
+                if (e.target.id === 'wrongQuestionsBtn') {
+                    showWrongQuestions();
+                } else if (e.target.id === 'nextBtn') {
+                    nextQuestion();
+                } else if (e.target.id === 'prevBtn') {
+                    prevQuestion();
+                } else if (e.target.id === 'showAnswerBtn') {
+                    console.log('显示答案按钮被点击');
+                    showAnswer();
+                } else if (e.target.id === 'toggleAllAnswersBtn') {
+                    toggleAllAnswers();
+                } else if (e.target.id === 'deleteAllWrongBtn') {
+                    deleteAllWrongQuestions();
+                } else if (e.target.id === 'wrongSettingsBtn') {
+                    showSettings();
+                } else if (e.target.id === 'submitBtn') {
+                    submitExam();
+                } else if (e.target.id === 'backToStartBtn') {
+                    backToStart();
+                } else if (e.target.id === 'settingsBtn') {
+                    showSettings();
+                } else if (e.target.classList.contains('expand-answer-btn')) {
+                    toggleAnswer(e.target);
+                } else if (e.target.classList.contains('remove-wrong-question')) {
+                    removeWrongQuestion(e.target.dataset.index);
+                }
+            });
+            
+            // 回车键提交答案
+            const answerInput = document.getElementById('answerInput');
+            if (answerInput) {
+                answerInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        showAnswer();
+                    }
+                });
+            }
+        }
+
+        function startPractice() {
+            console.log('开始练习按钮被点击');
+            
+            const practiceType = document.getElementById('practiceType').value;
+            const unitSelect = document.getElementById('unitSelect').value;
+            const questionCount = parseInt(document.getElementById('questionCount').value);
+            const wrongQuestionsOnly = document.getElementById('wrongQuestionsOnly').checked;
+            const randomQuestions = document.getElementById('randomQuestions').checked;
+
+            console.log('选择的练习类型:', practiceType);
+            console.log('选择的单元:', unitSelect);
+            console.log('题目数量:', questionCount);
+            console.log('错题集练习:', wrongQuestionsOnly);
+            console.log('随机出题:', randomQuestions);
+
+            if (!allData) {
+                alert('数据还未加载完成，请稍后再试');
+                return;
+            }
+
+            // 筛选题目
+            let filteredData = allData.data;
+            
+            if (wrongQuestionsOnly) {
+                // 从错题集中筛选题目
+                const wrongQuestions = getWrongQuestions();
+                if (wrongQuestions.length === 0) {
+                    alert('错题集为空，请先做练习并添加错题到错题集');
+                    return;
+                }
+                // 根据错题ID从原始数据中找到对应的题目
+                filteredData = allData.data.filter(item => 
+                    wrongQuestions.some(wrong => wrong.id === item.id)
+                );
+            }
+            
+            // 根据练习类型筛选
+            if (practiceType === 'multiple_choice') {
+                // 从现有数据中筛选选择题题目
+                filteredData = filteredData.filter(item => item.type === 'multiple_choice');
+            } else if (practiceType !== 'all') {
+                filteredData = filteredData.filter(item => item.type === practiceType);
+            }
+            
+            if (unitSelect !== 'all') {
+                filteredData = filteredData.filter(item => {
+                    // 对于选择题，检查source字段是否包含单元信息
+                    if (item.type === 'multiple_choice') {
+                        // 处理Unit8和Unit 8的格式差异
+                        const unitWithSpace = unitSelect.replace(/([A-Za-z]+)(\d+)/, '$1 $2');
+                        return item.source && (item.source.includes(unitSelect) || item.source.includes(unitWithSpace));
+                    }
+                    // 对于其他题型，检查tags字段
+                    return item.tags && item.tags.some(tag => tag === unitSelect);
+                });
+            }
+
+            if (filteredData.length === 0) {
+                if (wrongQuestionsOnly) {
+                    alert('错题集中没有符合条件的题目，请调整筛选条件或先添加错题到错题集');
+                } else if (practiceType === 'multiple_choice' && unitSelect !== 'all') {
+                    alert('抱歉，当前只有 Unit 8 有选择填空题数据。请选择 Unit 8 或选择"全部单元"来练习选择填空题。');
+                } else {
+                    alert('没有找到符合条件的题目，请调整筛选条件');
+                }
+                return;
+            }
+
+            // 根据随机出题设置选择题目
+            if (randomQuestions) {
+                // 随机选择题目
+                currentQuestions = getRandomQuestions(filteredData, Math.min(questionCount, filteredData.length));
+            } else {
+                // 按原始顺序选择题目
+                currentQuestions = filteredData.slice(0, Math.min(questionCount, filteredData.length));
+            }
+            
+            // 如果实际题目数量少于用户设置的数量，显示提示
+            if (currentQuestions.length < questionCount) {
+                alert(`根据您的筛选条件，只找到了 ${currentQuestions.length} 道题目，少于您设置的 ${questionCount} 道题目。`);
+            }
+            
+            currentQuestionIndex = 0;
+            correctCount = 0;
+            incorrectCount = 0;
+
+            // 初始化题目状态数组
+            questionStatus = new Array(currentQuestions.length).fill(null);
+
+            // 初始化用户答案数组
+            initializeUserAnswers();
+            
+            // 重置交卷相关变量
+            questionResults = [];
+
+            // 更新UI
+            document.getElementById('welcomeScreen').classList.add('hidden');
+            document.getElementById('practiceScreen').classList.remove('hidden');
+            document.getElementById('wrongQuestionsScreen').classList.add('hidden');
+            document.getElementById('resultScreen').classList.add('hidden');
+            // 隐藏控制面板
+            document.querySelector('.controls').classList.add('hidden');
+            // 保持开始练习按钮可见，任何时候都可以重新开始练习
+
+            updateStats();
+            showQuestion();
         }
     </script>
 </body>
