@@ -1087,7 +1087,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎓 英语练习平台</h1>
+            <h1>🎓 英语练习平台(4段)</h1>
             <p>提升你的英语词汇、翻译和语法技能</p>
         </div>
 
@@ -1108,14 +1108,14 @@
                 <label>单元选择</label>
                 <select id="unitSelect" style="width: 140px;">
                     <option value="all">全部单元</option>
-                    <option value="Unit1">Unit 1</option>
-                    <option value="Unit2">Unit 2</option>
-                    <option value="Unit3">Unit 3</option>
-                    <option value="Unit4">Unit 4</option>
-                    <option value="Unit5">Unit 5</option>
-                    <option value="Unit6">Unit 6</option>
-                    <option value="Unit7">Unit 7</option>
-                    <option value="Unit8">Unit 8</option>
+                    <option value="Unit 9">Unit 9 (Book 1)</option>
+                    <option value="Unit 10">Unit 10 (Book 1)</option>
+                    <option value="Unit 1">Unit 1 (Book 2)</option>
+                    <option value="Unit 2">Unit 2 (Book 2)</option>
+                    <option value="Unit 3">Unit 3 (Book 2)</option>
+                    <option value="Unit 4">Unit 4 (Book 2)</option>
+                    <option value="Unit 5">Unit 5 (Book 2)</option>
+                    <option value="Unit 6">Unit 6 (Book 2)</option>
                 </select>
             </div>
             
@@ -1227,7 +1227,7 @@
         async function loadData() {
             try {
                 console.log('开始加载数据...');
-                const response = await fetch('all.json');
+                const response = await fetch('en4.json');
                 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -1253,9 +1253,9 @@
                     // 提供用户友好的错误信息
                     const errorMessage = `
 数据加载失败！可能的原因：
-1. 请确保 all.json 文件与 english_practice.html 在同一目录下
+1. 请确保 en4.json 文件与 english_practice.html 在同一目录下
 2. 请使用本地服务器运行（如 Live Server）
-3. 或者直接在浏览器中打开 all.json 文件检查内容
+3. 或者直接在浏览器中打开 en4.json 文件检查内容
 
 错误详情：${error.message}
                     `;
@@ -1268,7 +1268,7 @@
         function loadDataWithXHR() {
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', 'all.json', true);
+                xhr.open('GET', 'en4.json', true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
@@ -2825,11 +2825,11 @@
             if (unitSelect !== 'all') {
                 filteredData = filteredData.filter(item => {
                     // 对于选择题，检查source字段是否包含单元信息
-                    if (item.type === 'multiple_choice') {
+                    //if (item.type === 'multiple_choice') {
                         // 处理Unit8和Unit 8的格式差异
-                        const unitWithSpace = unitSelect.replace(/([A-Za-z]+)(\d+)/, '$1 $2');
-                        return item.source && (item.source.includes(unitSelect) || item.source.includes(unitWithSpace));
-                    }
+                      //  const unitWithSpace = unitSelect.replace(/([A-Za-z]+)(\d+)/, '$1 $2');
+                       // return item.source && (item.source.includes(unitSelect) || item.source.includes(unitWithSpace));
+                    //}
                     // 对于其他题型，检查tags字段
                     return item.tags && item.tags.some(tag => tag === unitSelect);
                 });
@@ -2838,8 +2838,8 @@
             if (filteredData.length === 0) {
                 if (wrongQuestionsOnly) {
                     alert('错题集中没有符合条件的题目，请调整筛选条件或先添加错题到错题集');
-                } else if (practiceType === 'multiple_choice' && unitSelect !== 'all') {
-                    alert('抱歉，当前只有 Unit 8 有选择填空题数据。请选择 Unit 8 或选择"全部单元"来练习选择填空题。');
+                //} else if (practiceType === 'multiple_choice') {
+                //    alert('抱歉，当前只有 Unit 8 有选择填空题数据。请选择 Unit 8 或选择"全部单元"来练习选择填空题。');
                 } else {
                     alert('没有找到符合条件的题目，请调整筛选条件');
                 }

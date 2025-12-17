@@ -1,0 +1,5903 @@
+{
+  "data": [
+    {
+      "type": "spelling",
+      "content": {
+        "original": "大气；空气"
+      },
+      "answers": [
+        "atmosphere"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "结论"
+      },
+      "answers": [
+        "conclusion"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "会议"
+      },
+      "answers": [
+        "conference"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "致命的"
+      },
+      "answers": [
+        "deadly"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "散发，射出"
+      },
+      "answers": [
+        "emit"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "危险"
+      },
+      "answers": [
+        "hazard"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "幽默的"
+      },
+      "answers": [
+        "humorous"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "污染"
+      },
+      "answers": [
+        "pollute"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "（停顿后）继续前进"
+      },
+      "answers": [
+        "proceed"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "信号；暗号"
+      },
+      "answers": [
+        "signal"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "活下来；幸存"
+      },
+      "answers": [
+        "survive"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "技术"
+      },
+      "answers": [
+        "technology"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "(be) known as"
+      },
+      "answers": [
+        "以…闻名，通常名叫"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "name after"
+      },
+      "answers": [
+        "以…名字命名"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "base on/upon"
+      },
+      "answers": [
+        "以…为基础，把…基于"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "as far as … be concerned"
+      },
+      "answers": [
+        "就…而言"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "stick up"
+      },
+      "answers": [
+        "直立；向上突出"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "set back"
+      },
+      "answers": [
+        "耽搁；阻碍"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "工厂和汽车发出的一氧化碳一类气体严重污染了大气。"
+      },
+      "answers": [
+        "Gases such as carbon monoxide, emitted by factories and automobiles, have seriously polluted the atmosphere."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "那位工业管理工程师的来信说明，他对该项计划是否可行有怀疑。"
+      },
+      "answers": [
+        "The industrial engineer’s letter indicates that he doubts the feasibility of the plan."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "美国许多父母在孩子出生之前就为他们的教育留出一笔专款。"
+      },
+      "answers": [
+        "Many parents in the United States set aside a fund for their children’s education before they are born."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "几天前，有三位医生和两名护士组成的医疗队出发到山区去了。"
+      },
+      "answers": [
+        "The medical team, composed of three doctors and two nurses, set off for the mountain(ous) area a few days ago."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "这个村庄是以矗立在它前面的那座高山命名的。"
+      },
+      "answers": [
+        "The village is named after the high mountain that stands in front of it."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "南方和北方之间于一八六一年爆发的那场战争在历史上称为“美国内  战”。"
+      },
+      "answers": [
+        "The war that broke out between the North and the South in 1861 is known in history as the American Civil War."
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "There was great excitement on the planet of Venus this week. For the first time Venusian scientists managed to land a satellite on the planet Earth, and it has been sending back signals as well as photographs ever since. The satellite was directed into an area known as Manhattan (named after the great Venusian astronomer Prof. Manhattan, who first discovered it with his telescope 20,000 light years ago). Because of excellent weather conditions and extremely strong signals, Venusian scientists were able to get valuable information as to the feasibility of a manned flying saucer landing on earth. A press conference was held at the Venus Institute of Technology."
+      },
+      "answers": [
+        "本周金星上群情激动异常。金星上的科学家首次把一颗卫星成功地送上了地球，此后卫星便不断地发回信号和照片。卫星对准发射的地区叫曼哈顿（是以金星上伟大的天文学家曼哈顿教授命名的，在两万光年之前该教授用望远镜首次发现了这个地区）。由于天气条件极为有利，信号极为清晰，金星科学家们从而获得了有关载人飞碟能否在地球上着陆的宝贵资料。于是，有关方面在金星理工学院举行了一次记者招待会。"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "旗，旗帜"
+      },
+      "answers": [
+        "banner"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "咀嚼；咬"
+      },
+      "answers": [
+        "chew"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "惊叫，叫喊说"
+      },
+      "answers": [
+        "exclaim"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "遮盖；掩盖"
+      },
+      "answers": [
+        "mask"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "神秘的"
+      },
+      "answers": [
+        "mysterious"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "退缩；退却，撤退"
+      },
+      "answers": [
+        "retreat"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "某个时候"
+      },
+      "answers": [
+        "sometime"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "使震惊；使目瞪口呆"
+      },
+      "answers": [
+        "stun"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "潮汐"
+      },
+      "answers": [
+        "tide"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "消失"
+      },
+      "answers": [
+        "vanish"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "dream of"
+      },
+      "answers": [
+        "向往，渴望"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "pull into"
+      },
+      "answers": [
+        "（车等）驶入；到达"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "come through"
+      },
+      "answers": [
+        "如所预料地到来；胜利"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "take back"
+      },
+      "answers": [
+        "允许…回来，接受"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "be caught up in"
+      },
+      "answers": [
+        "对…入迷"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "take over"
+      },
+      "answers": [
+        "占用；接管"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "make one’s way"
+      },
+      "answers": [
+        "去，前往"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "教授走进教室时，我们正兴致勃勃地讨论中东的形势。"
+      },
+      "answers": [
+        "We were caught up in a discussion about the situation in the Middle East when the professor walked into the classroom."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "午夜后某个时候，敌人被迫撤退了。"
+      },
+      "answers": [
+        "Sometime after midnight, the enemy was / were forced to retreat."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "就是在那间斗室里，他们勤奋地工作着，憧憬着美好的未来。"
+      },
+      "answers": [
+        "It was in that small room that they worked diligently and dreamed of better days to come."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "老太太听到铃响，便从椅子上站起来，向门口走去。"
+      },
+      "answers": [
+        "When she heard the bell ringing, the old lady rose from her chair and made her way to the door."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "经过一天的战斗，我们的士兵占领了敌人的一些重要阵地。"
+      },
+      "answers": [
+        "After a day’s fight, our soldiers succeeded in taking over some important enemy positions."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "我上汽车不久就注意到一个外貌很怪的男人。他穿着一件不合身的上衣，一动不动地坐在位子上。"
+      },
+      "answers": [
+        "Soon after I boarded the bus, I noticed a strange-looking man.  He wore an ill-fitting coat, and sat rooted in his seat."
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "Then Brunswick was 10 miles, and then five. Then, suddenly, all of the young people were up out of their seats, screaming and shouting and crying, doing small dances of joy. All except Vingo. Vingo sat there stunned, looking at the oak tree. It was covered with yellow handkerchiefs -- 20 of them, 30 of them, maybe hundreds, a tree that stood like a banner of welcome billowing in the wind. As the young people shouted, the old con slowly rose from his seat and made his way to the front of the bus to go home."
+      },
+      "answers": [
+        "离布伦斯威克只有十英里了，只有五英里了。突然，所有年轻人都从座位上站了起来，尖叫着，呼喊着，大声嚷嚷着，跳起了欢乐的舞蹈。只有文戈除外。文戈坐在那儿望着橡树惊呆了。树上挂满了黄手绢 —— 二十条，三十条，或许有几百条，一棵树立在那儿就像欢迎的旗帜在迎风招展。在年轻人的欢呼声中，这位前犯人慢吞吞地从座位上站起来，向车子前面走去，准备回家。"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "争论；辩论"
+      },
+      "answers": [
+        "argument"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "不铺地毯的；赤裸的；光秃的"
+      },
+      "answers": [
+        "bare"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "收缩"
+      },
+      "answers": [
+        "contract"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "爬行"
+      },
+      "answers": [
+        "crawl"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "出现"
+      },
+      "answers": [
+        "emerge"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "微弱的；不明显的"
+      },
+      "answers": [
+        "faint"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "热烈的；激烈的"
+      },
+      "answers": [
+        "heated"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "雕像"
+      },
+      "answers": [
+        "image"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "冲动"
+      },
+      "answers": [
+        "impulse"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "可能的"
+      },
+      "answers": [
+        "likely"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "打手势"
+      },
+      "answers": [
+        "motion"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "反应"
+      },
+      "answers": [
+        "reaction"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "不久；马上"
+      },
+      "answers": [
+        "shortly"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "track down"
+      },
+      "answers": [
+        "追捕到；追查到"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "be seated"
+      },
+      "answers": [
+        "坐着；坐下"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "spring up"
+      },
+      "answers": [
+        "突然开始；迅速生长"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "at the sight of"
+      },
+      "answers": [
+        "一看见"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "feel like"
+      },
+      "answers": [
+        "想要"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "come to"
+      },
+      "answers": [
+        "苏醒"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "make for"
+      },
+      "answers": [
+        "走向"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "她砰地关上门，一声不吭地走了，他们间那场争执就此结束。"
+      },
+      "answers": [
+        "Their argument ended when she slammed the door and left without a word."
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "出席晚宴的客人对那个美国人威严的语气感到有点意外。"
+      },
+      "answers": [
+        "The guests at the dinner party were slightly surprised at the commanding tone of the American."
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "约翰尼已长大成熟，不再害怕独自呆在家里了。"
+      },
+      "answers": [
+        "Johnny has outgrown the fear of staying at home alone."
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "南希虽然很想参加辩论，但腼腆得不敢开口。"
+      },
+      "answers": [
+        "While she felt like joining in the argument, Nancy was too shy to open her mouth."
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "你觉得什么时候最有可能在家里找到他？"
+      },
+      "answers": [
+        "What do you think is the likeliest time to find him at home?"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "The American does not join in the argument but watches the other guests.  As he looks, he sees a strange expression come over the face of the hostess.  She is staring straight ahead, her muscles contracting slightly.  She motions to the native boy standing behind her chair and whispers something to him.  The boy’s eyes widen: he quickly leaves the room. Of the guests, none except the American notices this or sees the boy place a bowl of milk on the veranda just outside the open doors. The American comes to with a start.  In India, milk in a bowl means only one thing --- bait for a snake.  He realizes there must be a cobra in the room."
+      },
+      "answers": [
+        "那个美国人没有参加这场争论，他只是注视着在座的其他客人。在他这样观察时，他发现女主人的脸上显出一种奇异的表情。她两眼盯着正前方，脸部肌肉在微微抽搐。她向站在座椅后面的印度男仆做了个手势，对他耳语了几句。男仆两眼睁得大大的，迅速地离开了餐室。在座的客人中除了那位美国人以外谁也没有注意到这一幕，也没有看到那个男仆把一碗牛奶放在仅靠门边的走廊上。那个美国人突然醒悟过来。在印度，碗中的牛奶只有一个意思 — 引蛇的诱饵。他意识到餐室里一定有条眼镜蛇。"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "任命"
+      },
+      "answers": [
+        "appoint"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "冲突"
+      },
+      "answers": [
+        "conflict"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "保护；保存"
+      },
+      "answers": [
+        "conservation"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "宪法；章程"
+      },
+      "answers": [
+        "constitution"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "创造"
+      },
+      "answers": [
+        "create"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "宣言"
+      },
+      "answers": [
+        "declaration"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "犹豫，迟疑不决"
+      },
+      "answers": [
+        "hesitate"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "地位低下的"
+      },
+      "answers": [
+        "humble"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "独立"
+      },
+      "answers": [
+        "independence"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "影响"
+      },
+      "answers": [
+        "influence"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "获得"
+      },
+      "answers": [
+        "obtain"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "拒绝"
+      },
+      "answers": [
+        "reject"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "较好的；优的"
+      },
+      "answers": [
+        "superior"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "威胁"
+      },
+      "answers": [
+        "threaten"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "go out of one’s way (to do sth.)"
+      },
+      "answers": [
+        "特地"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "act on"
+      },
+      "answers": [
+        "按照…行事"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "leave behind"
+      },
+      "answers": [
+        "丢弃；留下，忘带"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in existence"
+      },
+      "answers": [
+        "存在"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "above all"
+      },
+      "answers": [
+        "首先，尤其是"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "会上有人建议任命一个十一人委员会来制定新章程。"
+      },
+      "answers": [
+        "It was suggested at the meeting that a committee of eleven be appointed to make a new constitution."
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "这些青年科学家通过现场观察，获得了研究工作所需的第一手资料。"
+      },
+      "answers": [
+        "By making on-the-spot observations, the young scientists obtained first-hand information they needed in their research work."
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "亨利创作的艺术品在许多方面比他兄弟的要好。"
+      },
+      "answers": [
+        "Henry’s works of art are superior in many respects to those of his brother’s."
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "我们产品质量的稳步提高在很大程度上是由于设备有所改进。"
+      },
+      "answers": [
+        "The steady rise in the quality of our products owes much to the improvement of our equipment."
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "如果让我来决定我们是要一个没有自行车的城市呢，还是要一个没有汽车的城市，我会毫不犹豫地选择后者。"
+      },
+      "answers": [
+        "Were it left to me to decide whether we should have a city without bikes or one without cars, I should not hesitate a moment to prefer the latter."
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "Jefferson’s courage and idealism were based on knowledge.  He probably knew more than any other man of his age.  He was an expert in agriculture, archeology, and medicine.  He practiced crop rotation and soil conservation a century before these became standard practice, and he invented a plow superior to any other in existence.  He influenced architecture throughout America, and he was constantly producing devices for making the tasks of ordinary life easier to perform. Of all Jefferson’s many talents, one is central.  He was above all a good and tireless writer.  His complete works, now being published for the first time, will fill more than fifty volumes.  His talent as an author was soon discovered and when the time came to write the Declaration of Independence at Philadelphia in 1776, the task of writing it was his.  Millions have thrilled to his words: “We hold these truths to be self-evident, that all men are created equal …”"
+      },
+      "answers": [
+        "杰斐逊的勇气和理想主义是以知识为基础的。他懂得的东西也许比同时代的任何人都要多。在农业、考古学、和医学方面他都是专家。在人们普遍采用农作物轮作和土壤保持的做法以前一个世纪，他就这样做了。他还发明了一种比当时任何一种都好的耕犁。他影响了整个美国的建筑业，他还不断地制造出各种器械装置，使日常生活中需要做的许多工作变得更加容易。在杰斐逊的众多才能中，有一种是最主要的：他首先是一位优秀的、不知疲倦的作家。目前正在第一次出版的他的全集将超过五十卷。他作为一个作家的才能很快便被发现了，所以，当1776年在费城要撰写《独立宣言》的时刻来到时，这一任务便落到了他的肩上。数以百万计的人们读到他写的下列词句都激动不已：“我们认为这些真理是不言而喻的：一切人生来就是平等的……”"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "为…做广告"
+      },
+      "answers": [
+        "advertise"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "申请"
+      },
+      "answers": [
+        "apply"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "组成，构成"
+      },
+      "answers": [
+        "constitute"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "使沮丧"
+      },
+      "answers": [
+        "depress"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "面试；接见；会见"
+      },
+      "answers": [
+        "interview"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "闲暇；悠闲"
+      },
+      "answers": [
+        "leisure"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "明显地，显然"
+      },
+      "answers": [
+        "obviously"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "期望中的事；展望；前景"
+      },
+      "answers": [
+        "prospect"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "抗议；反对"
+      },
+      "answers": [
+        "protest"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "微小的；苗条的"
+      },
+      "answers": [
+        "slim"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "n 郊区"
+      },
+      "answers": [
+        "suburb"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "最后的；终极的；最终的"
+      },
+      "answers": [
+        "ultimate"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "必不可少的；极其重要的"
+      },
+      "answers": [
+        "vital"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "be short of"
+      },
+      "answers": [
+        "缺少"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "smell of"
+      },
+      "answers": [
+        "有…的气味"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "judging by"
+      },
+      "answers": [
+        "从…判断"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "attach importance to"
+      },
+      "answers": [
+        "重视"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in common"
+      },
+      "answers": [
+        "共有的，共同的"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "consist of"
+      },
+      "answers": [
+        "由…组成"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in turn"
+      },
+      "answers": [
+        "轮流"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "她在当地一家银行找到一份当出纳员的工作，但不久因不称职而被解雇了。"
+      },
+      "answers": [
+        "She got a post as a cashier at a local bank.  But she was soon fired because she proved (to be) incompetent."
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "很明显是他的年轻助手在经营这家书店。"
+      },
+      "answers": [
+        "It is obviously / clearly his young assistant who is running the bookstore."
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "比尔已向哈佛大学申请助教职位，但他得到它的可能性很小。"
+      },
+      "answers": [
+        "Bill has applied to Harvard University for a teaching assistantship, but his chances of getting it are slim."
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "这个房间有股霉味，一定是好久没住人了。"
+      },
+      "answers": [
+        "The room smells of stale air.  It must have been vacant for a long time."
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "就业余爱好而言，珍妮和她妹妹几乎没有什么共同之处。"
+      },
+      "answers": [
+        "As far as hobbies are concerned, Jane and her sister have little in common."
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "While I was waiting to enter university, I saw advertised in a local newspaper a teaching post at a school in a suburb of London about ten miles from where I lived.  Being very short of money and wanting to do something useful, I applied, fearing as I did so, that without a degree and with no experience in teaching my chances of getting the job were slim. However, three days later a letter arrived, asking me to go to Croydon for an interview.  It proved an awkward journey: a train to Croydon station; a ten-minute bus ride and then a walk of at least a quarter of a mile.  As a result I arrived on a hot June morning too depressed to feel nervous."
+      },
+      "answers": [
+        "在我等着进大学期间，我在一份地方报纸上看到一则广告，说是在离我住处大约十英里的伦敦某郊区，有所学校要招聘一名教师。我因为手头很拮据，同时也想干点有用的事，于是便提出了申请，但是提出申请的同时我也担心，自己一无学位，二无教学经验，得到这份工作的可能性是微乎其微的。然而，三天之后，却来了一封信，叫我到克罗伊顿去面试。这一路去那儿原来还真麻烦：先乘火车到克罗伊顿车站，再乘十分钟的公共汽车，然后还要步行至少四分之一英里。结果，我在六月一个炎热的上午到了那儿，因为心情非常沮丧，竟不感到紧张了。"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "野心；抱负"
+      },
+      "answers": [
+        "ambition"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "（处理问题的）方式，方法"
+      },
+      "answers": [
+        "approach"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "把…弄糊涂；使迷惑"
+      },
+      "answers": [
+        "bewilder"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "通信"
+      },
+      "answers": [
+        "correspond"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "好奇心"
+      },
+      "answers": [
+        "curiosity"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "展示"
+      },
+      "answers": [
+        "display"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "专门地；排除其他地"
+      },
+      "answers": [
+        "exclusively"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "使沮丧；挫败"
+      },
+      "answers": [
+        "frustrate"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "有免疫力的；不受影响的"
+      },
+      "answers": [
+        "immune"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "给…深刻的印象"
+      },
+      "answers": [
+        "impress"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "谦虚的"
+      },
+      "answers": [
+        "modest"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "个性"
+      },
+      "answers": [
+        "personality"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "原理；原则"
+      },
+      "answers": [
+        "principle"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "off balance"
+      },
+      "answers": [
+        "失去平衡的"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "come to terms with"
+      },
+      "answers": [
+        "与…达成协议"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "a series of"
+      },
+      "answers": [
+        "一系列；一连串"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "take apart"
+      },
+      "answers": [
+        "拆开"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "work out"
+      },
+      "answers": [
+        "解决；算出；想出"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "single out"
+      },
+      "answers": [
+        "选出；挑出"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "那小女孩跑得太快，身体一下失去平衡，跌倒了。"
+      },
+      "answers": [
+        "The little girl ran so fast that she was thrown off balance and fell over / down."
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "我被他们互相矛盾的意见搞糊涂了，不知如何去做才是。"
+      },
+      "answers": [
+        "I was so bewildered by their conflicting advice that I did not know how to act / what to do."
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "体育代表团团长在少先队员向他献上一束鲜花时愉快地笑了。"
+      },
+      "answers": [
+        "The head of the sports delegation beamed with delight when a young pioneer presented him with a bunch of flowers."
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "这学期我们都学习得不错，我真不明白为什么我们的英语老师单单表扬了班长一个人。"
+      },
+      "answers": [
+        "I really don’t see why our English teacher should single out our monitor for praise since we have all done quite well this term."
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "我相信比较高级的动物是由比较低级的动物进化而来的这一学说。"
+      },
+      "answers": [
+        "I believe in the theory that the higher animals developed from the lower ones."
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "As a boy and then as an adult, I never lost my wonder at the personality that was Einstein. He was the only person I knew who had come to terms with himself and the world around him. He knew what he wanted and he wanted only this: to understand within his limits as a human being the nature of the universe and the logic and simplicity in its functioning. He knew there were answers beyond his intellectual reach. But this did not frustrate him. He was content to go as far as he could. In the 23 years of our friendship, I never saw him show jealousy, vanity, bitterness, anger, resentment, or personal ambition. He seemed immune to these emotions. He was beyond any pretension. Although he corresponded with many of the world’s most important people, his stationery carried only a watermark --- W --- for Woolworth’s."
+      },
+      "answers": [
+        "作为一个孩子，以后又作为一个成年人，我一直催爱因斯坦的个性惊叹不已。他是我所认识的人中唯一能跟自己及周围世界达成妥协的人。他知道自己想要什么，而他想要的只是：在他作为一个人的能力范围之内理解宇宙的性质以及宇宙运行的逻辑和单纯。他知道有许多问题的答案超出了他智力所及的范围。但这并不使他感到灰心丧气。只要在能力许可的范围内取得最大的成功他就心满意足了。在我们二十三年的友谊中，我从未见他表现出嫉妒、虚荣、痛苦、愤怒、怨恨或个人野心。他好像对这些感情具有免疫能力似的。他毫无矫饰之心，虚荣之道。虽然他与世界上的许多要人通信，他用的却是有W水印字母的信笺，水印字母W——五分钱商店伍尔沃思的缩写。"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "选择"
+      },
+      "answers": [
+        "alternative"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "倒塌；崩溃；彻底失败"
+      },
+      "answers": [
+        "collapse"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "竞争；对抗"
+      },
+      "answers": [
+        "compete"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "吃，喝，消费；耗尽"
+      },
+      "answers": [
+        "consume"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "（使） 转变；（使）变成0 ·"
+      },
+      "answers": [
+        "convert"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "必不可少的；非常重要的"
+      },
+      "answers": [
+        "essential"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "估计；估算"
+      },
+      "answers": [
+        "estimate"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "视角；观点"
+      },
+      "answers": [
+        "perspective"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "压力；精神负担"
+      },
+      "answers": [
+        "pressure"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "溅落；拍打"
+      },
+      "answers": [
+        "splash"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "机构，组织；结构"
+      },
+      "answers": [
+        "structure"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "透明的"
+      },
+      "answers": [
+        "transparent"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "分布广的；流传广的"
+      },
+      "answers": [
+        "widespread"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "do (sb) harm"
+      },
+      "answers": [
+        "对（某人）造成损害（或伤害）"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "serve as"
+      },
+      "answers": [
+        "起…的作用；被用作"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in all likelihood"
+      },
+      "answers": [
+        "十之八九；极有可能"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "come about"
+      },
+      "answers": [
+        "发生"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "to make matters worse"
+      },
+      "answers": [
+        "使情况（更糟糕的是）"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "烧煤的时候，不仅消耗房子里面的氧气，而且还散发出有毒的气体。"
+      },
+      "answers": [
+        "The burning of coal not only consumes the oxygen in the house but also gives out poisonous gases."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "显然，找到替代能源对我们经济的稳定发展是至关重要的。"
+      },
+      "answers": [
+        "Apparently, finding alternative energy sources is essential to the steady development of our economy."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "如果地球上的温度继续年复一年地上升，极地的冰帽将会开始融化，沿海城市中一半的建筑物很可能会消失在劈啪飞溅的海浪下面。"
+      },
+      "answers": [
+        "If the temperature on the Earth continues to go up from year to year, the polar ice caps will begin to melt and, in all likelihood, half of the buildings in coastal cities will disappear beneath splashing sea waves."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "因为这些生物很小并且常常躲在叶子茂密的植物下面，肉眼并不都可以看见。"
+      },
+      "answers": [
+        "Because these creatures are small and tend to hide beneath leafy plants, they are not always visible to the naked eye."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "由于受到原子辐射，他最终在工作时倒下了。"
+      },
+      "answers": [
+        "As a result of exposure to atomic radiation, he finally collapsed at work."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "有明显的证据表明工作上的重压与身体的某些毛病有联系。"
+      },
+      "answers": [
+        "There is distinct evidence of the connection between heavy pressure of work and some disorders of the body."
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "The sea level is rising very slowly from year to year. In all likelihood, it will continue to rise and do so at a greater rate in the course of the next hundred years. Where there are low-lying coastal areas (where a large fraction of the world’s population lives) the water will advance steadily, forcing people to retreat inland. Eventually the sea will reach two hundred feet above its present level, and will be splashing against the windows along the twentieth floors of Manhattan’s skyscrapers. Florida will disappear beneath the waves, as will much of the British Isles, the crowded Nile valley, and the low-lying areas of China, India, and Russia. Not only will many cities be drowned, but much of the most productive farming areas of the world will be lost. As the food supply drops, starvation will be widespread and the structure of society may collapse under the pressure."
+      },
+      "answers": [
+        "年复一年，海平面正在慢慢上升。它很可能继续上升，而在今后数百年间，会以更快的速度上升。在那些低洼的沿海地区（在这些地区居住着世界上很大一部分人口），海水会稳步向前推进，迫使人们向内陆退居。最后，海水将会高出目前海平面两百英尺，一阵阵海浪将会拍打曼哈顿摩天大楼二十层楼的窗户。佛罗里达将会沉没在海浪之下，英伦三岛的大部分，人口稠密的尼罗河流域，还有中国、印度河俄罗斯的低洼地区也都将遭到同样的命运。不仅许多城市将被淹没，而且世界上大部分盛产粮食的地区也将会失去。由于食品供应下降，到处都会出现饥荒，在这种压力下，社会结构有可能崩溃。"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "预期"
+      },
+      "answers": [
+        "anticipate"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "复合的"
+      },
+      "answers": [
+        "compound"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "得出结论"
+      },
+      "answers": [
+        "conclude"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "自信的"
+      },
+      "answers": [
+        "confident"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "紧急情况；急诊"
+      },
+      "answers": [
+        "emergency"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "遭到；意外地遇见"
+      },
+      "answers": [
+        "encounter"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "放松"
+      },
+      "answers": [
+        "relax"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "解决"
+      },
+      "answers": [
+        "resolve"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "责任，责任心"
+      },
+      "answers": [
+        "responsibility"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "单独的；唯一的"
+      },
+      "answers": [
+        "sole"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "外科；外科手术"
+      },
+      "answers": [
+        "surgery"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "spelling",
+      "content": {
+        "original": "流汗"
+      },
+      "answers": [
+        "sweat"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "draw to a close"
+      },
+      "answers": [
+        "结束"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "live with"
+      },
+      "answers": [
+        "学会适应；容忍"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "dwell on"
+      },
+      "answers": [
+        "老是想着；详述；强调"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in practice"
+      },
+      "answers": [
+        "（医师、律师等）在开业中；在实践中"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "butterflies in the stomach"
+      },
+      "answers": [
+        "忐忑不安"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in advance"
+      },
+      "answers": [
+        "预先，事前"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "at one time or another"
+      },
+      "answers": [
+        "在不同的场合（或时期）"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "只要你不断努力，你迟早会解决这个难题的。"
+      },
+      "answers": [
+        "If / As long as you keep (on) trying, you will be able to resolve this difficult problem sooner or later."
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "吉姆的朋友说，他们那个城市的噪音污染十分严重，但是他们只好忍着。"
+      },
+      "answers": [
+        "Jim’s friends said that the noise pollution in their city was terrible, but they had to live with it."
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "汤姆起初认为，凭他的知识、技术和经验，一定能够找到一份称心如意的工作。"
+      },
+      "answers": [
+        "At first Tom thought that with his knowledge, skill and experience he was bound to find a satisfactory job."
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "迪克认为，如果他拆不开那台机器，那么很可能厂里别的工人也拆不开。"
+      },
+      "answers": [
+        "Dick though that if he wasn’t able to take the machine apart, chances were that no other worker in the plant could, either."
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "你是否认为公共汽车司机应对乘客的安全负完全的责任？"
+      },
+      "answers": [
+        "Do you think bus drivers should take full responsibility for the passengers’ safety?"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "你不必再去多想判断上的那些失误了。重要的是尽量避免再犯。"
+      },
+      "answers": [
+        "You needn’t dwell on your mistakes in judgment any more.  What’s important is to try your best to avoid repeating them."
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "paragraph_translation",
+      "content": {
+        "original": "Now in the last month of my residency, sleeping was no longer a problem. There were still situations in which I couldn’t be certain my decision had been the right one; but I had learned to accept this as a constant problem for a surgeon, one that could never be completely resolved -- and I could live with it. So, once I had made a considered decision, I no longer dwelt on it. Reviewing it wasn’t going to help and I knew that with my knowledge and experience, any decision I’d made was bound to be a sound one. It was a nice feeling."
+      },
+      "answers": [
+        "然而，在我做住院医生的最后一个月，睡眠已不再是个问题了。在有些情况下我仍然不能确定自己的决定是否正确，但我已学会把这看作一个外科医生经常会遇到的问题，一个永远也不能完全解决的问题——我已能适应它了。所以，我一旦经过深思熟虑作出某个决定，就不再去多想它了。多想也不会有什么帮助，而且我知道，凭我的知识和经验，我作出的任何决定肯定都是稳妥的。这是一种令人愉快的感觉。"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He got gradually ________ in the case, though he didn't intend to originally.",
+        "options": [
+          "connected",
+          "related",
+          "interfered",
+          "involved"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He suddenly called my name on the street, but I could not ________ where I had met him before.",
+        "options": [
+          "remind",
+          "recall",
+          "record",
+          "reclaim"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "We are going to be very busy. There is a large ________ of work for us to do.",
+        "options": [
+          "amount",
+          "number",
+          "lot",
+          "deal"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The insurance company will pay for the furniture ________ by fire.",
+        "options": [
+          "stolen",
+          "lost",
+          "damaged",
+          "diminished"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The ________ of his laboratory took time and money.",
+        "options": [
+          "endurance",
+          "equipment",
+          "efficiency",
+          "essence"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A new telescope that may reveal the new ________ has been set up.",
+        "options": [
+          "universe",
+          "sky",
+          "orbit",
+          "space"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "--- Will you go to the movies with us tonight? --- I'm sorry, I have not made up my ________ yet.",
+        "options": [
+          "heart",
+          "brain",
+          "head",
+          "mind"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I put the medicine bottle on the high shelf in order to ________ children ________ reaching it.",
+        "options": [
+          "prevent … from",
+          "stop … from",
+          "forbid … to",
+          "prohibit … to"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It was his pride that ________ in his failure in the final exam.",
+        "options": [
+          "led",
+          "resulted",
+          "caused",
+          "gave"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "His political ideas were too ________ to get support from ordinary people.",
+        "options": [
+          "competent",
+          "complex",
+          "complimentary",
+          "confident"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Scientists have done ________ research to reveal the effects of cigarette smoking.",
+        "options": [
+          "much",
+          "many",
+          "numerous",
+          "few"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Did you attend the party which ________ place in our department yesterday?",
+        "options": [
+          "was taken",
+          "gave",
+          "took",
+          "was given"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "This district has enormous ________ for economic development, but a great deal of money is needed.",
+        "options": [
+          "possibility",
+          "process",
+          "sensibility",
+          "potential"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Although he has given us ________ information on that matter, we still can't come to a conclusion.",
+        "options": [
+          "many",
+          "an",
+          "much",
+          "little"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I don't know why, but he has actually given us no ________ to our proposal.",
+        "options": [
+          "reflection",
+          "reaction",
+          "relation",
+          "action"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Considerable excitement was ________ on the planet of Venus this week.",
+        "options": [
+          "involved",
+          "aroused",
+          "arranged",
+          "exposed"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "They were working at the technical ________ of a supersonic aircraft during my first visit.",
+        "options": [
+          "observation",
+          "motivation",
+          "performance",
+          "feasibility"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "As we passed through the town, two policemen ________ us to stop.",
+        "options": [
+          "signed",
+          "sighed",
+          "signaled",
+          "sighted"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A planet's ________ is the layer of air or other gases around it.",
+        "options": [
+          "environment",
+          "atmosphere",
+          "surrounding",
+          "circumstance"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The patients go out of their wards for some fresh ________ every afternoon.",
+        "options": [
+          "air",
+          "gas",
+          "carbon",
+          "moisture"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The chemistry teacher asked the pupils what water was ________ of.",
+        "options": [
+          "consisted",
+          "combined",
+          "converted",
+          "composed"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The plane crashed into the sea but over half of the passengers ________.",
+        "options": [
+          "lived",
+          "survived",
+          "consolidated",
+          "contracted"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "________, the book was published as a series of magazine articles.",
+        "options": [
+          "Originally",
+          "Briefly",
+          "Publicly",
+          "Occasionally"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He saved the child at the ________ of his life.",
+        "options": [
+          "danger",
+          "risk",
+          "hazard",
+          "loss"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The helicopter hovered ________ the spot where the lost man had been last seen.",
+        "options": [
+          "under",
+          "on",
+          "in",
+          "over"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 9"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He must be very nervous when speaking. Did you ________ that his hand was shaking.",
+        "options": [
+          "mind",
+          "attention",
+          "watch",
+          "notice"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I remember that I ________ the Party before my graduation from the university.",
+        "options": [
+          "took",
+          "joined",
+          "attended",
+          "occupied"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Mary doesn’t want to go into the sea. She would rather lie on the ________.",
+        "options": [
+          "beach",
+          "coast",
+          "bank",
+          "shore"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He was such a ________ young man that many girls liked him.",
+        "options": [
+          "pretty",
+          "beautiful",
+          "handsome",
+          "lovely"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Peter has two brothers. One of them is a teacher, ________ is a driver.",
+        "options": [
+          "another",
+          "the other",
+          "other",
+          "each other"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Not until late at night did the boat ________ into the harbor.",
+        "options": [
+          "drive",
+          "drag",
+          "pull",
+          "enter"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Stunned by what had happened, the old man stood ________ to the spot.",
+        "options": [
+          "rooting",
+          "to root",
+          "root",
+          "rooted"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I can’t tell how old he is, for the sad and complex expression on his face ________ his age.",
+        "options": [
+          "masks",
+          "reveals",
+          "shows",
+          "prevents"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "As soon as he succeeded in stealing, the thief ran into the crowd and ________ from sight.",
+        "options": [
+          "departed",
+          "vanished",
+          "appeared",
+          "contracted"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "As it ________ the midnight, the whole city was sunk in the quiet sleep.",
+        "options": [
+          "replaced",
+          "approached",
+          "snapped",
+          "scraped"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The government has ________ from its hard-line position.",
+        "options": [
+          "retreated",
+          "relayed",
+          "retired",
+          "reclaimed"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "When I entered the room, he ________ to welcome me.",
+        "options": [
+          "raised",
+          "aroused",
+          "rose",
+          "arose"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It was quite ________ for her to deal with so much troublesome work all by herself.",
+        "options": [
+          "nothing",
+          "anything",
+          "a thing",
+          "something"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Sir, here is the menu. Would you like to ________ your meal now?",
+        "options": [
+          "have",
+          "eat",
+          "order",
+          "book"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Since nearly all the employees objected to his order, the manager had to ________ it back.",
+        "options": [
+          "get",
+          "take",
+          "fetch",
+          "come"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The work will be finished ________, but I don't know when.",
+        "options": [
+          "some time",
+          "sometime",
+          "some times",
+          "sometimes"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I often dream of the time ________ my work will be finished.",
+        "options": [
+          "where",
+          "about",
+          "from",
+          "when"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The old farmer ________ his dusty hat and goes out as usual.",
+        "options": [
+          "puts up",
+          "put away",
+          "puts on",
+          "put in"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The stars are ________ brightly. Let's go out and enjoy the night.",
+        "options": [
+          "spoiling",
+          "shining",
+          "strolling",
+          "lighting"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Wash your hands before you ________ my books, please.",
+        "options": [
+          "handle",
+          "steer",
+          "stretch",
+          "hover"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The Government will tighten its ________ over economic growth.",
+        "options": [
+          "channel",
+          "chart",
+          "challenge",
+          "control"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He was ________ by the unfairness of their judgment.",
+        "options": [
+          "satisfied",
+          "stunned",
+          "rejected",
+          "sweated"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I was ________ in conversation with a friend when someone knocked at the door.",
+        "options": [
+          "caught up",
+          "found out",
+          "turned out",
+          "put up"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Feeling a bit unwell, the pilot told his co-pilot to take ________ the controls.",
+        "options": [
+          "on",
+          "over",
+          "in",
+          "off"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "My parents really ________ for me when I needed help.",
+        "options": [
+          "came up",
+          "came upon",
+          "came down",
+          "came through"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 10"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "After the meeting, the people participating in it had a ________ discussion on the report.",
+        "options": [
+          "heat",
+          "heated",
+          "heating",
+          "heater"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The liberation of the whole nation, in 1949, was a great change ________.",
+        "options": [
+          "in nature",
+          "by nature",
+          "of nature",
+          "against nature"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The hill is ________ of trees.",
+        "options": [
+          "empty",
+          "rude",
+          "hollow",
+          "bare"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "From this date, a new ________ in the history of mankind takes its beginning.",
+        "options": [
+          "area",
+          "period",
+          "era",
+          "ages"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Do what you are told and don’t argue ________ me.",
+        "options": [
+          "for",
+          "with",
+          "about",
+          "from"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The ________ country for the next Olympic Games is Japan.",
+        "options": [
+          "host",
+          "guest",
+          "designer",
+          "master"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A club is a place to make frequent ________ with friends.",
+        "options": [
+          "contrast",
+          "contract",
+          "contact",
+          "content"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In a case of murder, the police question everyone who might have a ________.",
+        "options": [
+          "relation",
+          "impulse",
+          "incentive",
+          "motive"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Man is controlled by his ________ as well as by reason.",
+        "options": [
+          "instincts",
+          "distinct",
+          "institution",
+          "impulse"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The house has a ________ over the sea.",
+        "options": [
+          "image",
+          "sight",
+          "view",
+          "outlook"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He still has great talent, but he has lost ________ in himself.",
+        "options": [
+          "faint",
+          "failure",
+          "interest",
+          "faith"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "We learn to ________ before we learn to walk.",
+        "options": [
+          "run",
+          "crawl",
+          "shout",
+          "jump"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "When I turned to the person ________ next to me, I recognized that he was my schoolmate.",
+        "options": [
+          "seating",
+          "sit",
+          "seated",
+          "sat"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "My mouth waters at the ________ of those peaches.",
+        "options": [
+          "sight",
+          "look",
+          "picture",
+          "view"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The room ________ when she walks in.",
+        "options": [
+          "lights",
+          "lights up",
+          "comes to light",
+          "sets light to"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "All citizens should help the police in ________ the criminals.",
+        "options": [
+          "taking down",
+          "putting down",
+          "looking down",
+          "tracking down"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Darwin is a British naturalist who had ________ great contribution.",
+        "options": [
+          "made",
+          "done",
+          "given",
+          "found"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "What really ________ is whether you have really realized your mistakes.",
+        "options": [
+          "accounts",
+          "counts",
+          "assumes",
+          "contracts"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "All I can remember when I ________ is my mother’s anxious face.",
+        "options": [
+          "came about",
+          "came up",
+          "came to",
+          "came on"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "At the first light of dawn the warships ________ the open sea.",
+        "options": [
+          "longed for",
+          "felt like",
+          "made out",
+          "made for"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The people of Africa have successfully fought ________ colonial rule.",
+        "options": [
+          "for",
+          "with",
+          "against",
+          "without"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The candlelight at our dinner table was ________, but very romantic.",
+        "options": [
+          "little",
+          "small",
+          "slim",
+          "faint"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Several days passed before they came up with a satisfactory solution ________ the problem.",
+        "options": [
+          "to",
+          "for",
+          "with",
+          "at"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The American does not ________ the argument but watches the other guests.",
+        "options": [
+          "take part",
+          "join in",
+          "attend to",
+          "run into"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Mrs. David wrote the article soon after she returned ________.",
+        "options": [
+          "to abroad",
+          "in abroad",
+          "from abroad",
+          "at abroad"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 1"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "There are in China over fifty nationalities (民族) ________ the Hans.",
+        "options": [
+          "except",
+          "except for",
+          "beside",
+          "besides"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The windows were never opened ________ air the room for a few minutes in the morning.",
+        "options": [
+          "except for",
+          "except to",
+          "except in",
+          "except with"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Mrs. Brown asked me to go to her daughter’s concert and I ________ her invitation.",
+        "options": [
+          "accepted",
+          "received",
+          "offered",
+          "gave"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The telephone, which was ________ by Bell in 1876, was a great improvement on the telegraph.",
+        "options": [
+          "discovered",
+          "found",
+          "invented",
+          "made"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In spite of the hard winter, the roses in our garden are still ________.",
+        "options": [
+          "alive",
+          "alike",
+          "astir",
+          "awake"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The values of American teenagers often differ ________ those of their parents.",
+        "options": [
+          "with",
+          "from",
+          "between",
+          "for"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Manufacturing companies spend millions of pounds trying to convince customers that their products are superior ________ those of other companies.",
+        "options": [
+          "than",
+          "with",
+          "to",
+          "from"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I applied for a job as a computer programmer in a local company, but was ________.",
+        "options": [
+          "offered",
+          "given",
+          "agreed",
+          "rejected"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It was through his uncle’s influence that Philip ________ his position with the biggest oil company.",
+        "options": [
+          "appointed",
+          "obtained",
+          "resented",
+          "threatened"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The two criminals lived in never-ending fear of ________.",
+        "options": [
+          "being discovering",
+          "been discovered",
+          "being discovered",
+          "been discovering"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A man of humble ________, Lincoln eventually became President of the United States through his own efforts.",
+        "options": [
+          "origin",
+          "source",
+          "home",
+          "family"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Many species of animals which once lived on earth are no longer ________.",
+        "options": [
+          "in vain",
+          "in advance",
+          "in addition",
+          "in existence"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "________ the advice of his doctor, Mr. Park had his eye operated on right after he retired last week.",
+        "options": [
+          "Acting on",
+          "Depending on",
+          "Relying on",
+          "Taking on"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Noticing that my daughter was very shy, our hostess ________ to make her feel at home.",
+        "options": [
+          "snapped her fingers",
+          "went out of her way",
+          "was round the corner",
+          "came down in the world"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I don’t really want to make any ________ on the decisions they made.",
+        "options": [
+          "appointments",
+          "compliments",
+          "judgments",
+          "conclusions"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Many authors use ________ names when they publish their books.",
+        "options": [
+          "fake",
+          "favorite",
+          "flaw",
+          "false"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Many Americans choose to travel by car ________ by any means of transportation.",
+        "options": [
+          "other than",
+          "rather than",
+          "better than",
+          "more than"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "This program aims to make the country ________ in oil and other resources.",
+        "options": [
+          "self-conscious",
+          "self-respecting",
+          "self-sufficient",
+          "self-educated"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "His last year’s trousers are now outgrown and need ________ a little.",
+        "options": [
+          "lengthening",
+          "to lengthen",
+          "being lengthened",
+          "to be lengthening"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The death of Mr. Black ________ the final breaking up of the family.",
+        "options": [
+          "organized",
+          "involved",
+          "occupied",
+          "hastened"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A ________ youth was taken into custody for drug use.",
+        "options": [
+          "17-year-old",
+          "17-years-old",
+          "17-years-olds",
+          "17-year-olds"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Although ________ in years, Thomas Edison remained as active and creative as many young people.",
+        "options": [
+          "previous",
+          "advanced",
+          "fragile",
+          "strong"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Jim, a heartless fellow, was heard ________ at his mother in the dead of night.",
+        "options": [
+          "to shout",
+          "shouted",
+          "shouting",
+          "shout"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It took him a long time to ________ the skills he needed to become a professional artist.",
+        "options": [
+          "enquire",
+          "inquire",
+          "require",
+          "acquire"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Every time they have an argument, his wife ________ to leave him.",
+        "options": [
+          "agrees",
+          "threatens",
+          "refuses",
+          "proceeds"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 2"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "They enrolled all the school-age children though they were ________ teachers. (D)",
+        "options": [
+          "abundant of",
+          "composed of",
+          "in search of",
+          "short of"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The United States of America ________ fifty states. (B)",
+        "options": [
+          "is consisted of",
+          "consists of",
+          "consists in",
+          "is consisted in"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "________ what he said, it is very unlikely that he’ll support your application. (A)",
+        "options": [
+          "Considering",
+          "Consider",
+          "Considered",
+          "To consider"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Though you will face many difficulties, your final success is certain if you ________ working hard. (C)",
+        "options": [
+          "insist on",
+          "insist in",
+          "persist in",
+          "persist on"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The developing countries in Asia, Africa and Latin America ________ the third world. (A)",
+        "options": [
+          "constitute",
+          "divide",
+          "involve",
+          "institute"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The chances of survival for lung cancer patients are often very ________. (B)",
+        "options": [
+          "few",
+          "slim",
+          "little",
+          "slender"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The young man in the story said he didn’t like the ________ of teaching in the school that was actually run by a woman. (C)",
+        "options": [
+          "position",
+          "process",
+          "prospect",
+          "profession"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It was a long drive to get to the beach and we three took the wheel ________. (D)",
+        "options": [
+          "with turn",
+          "for turn",
+          "from turn",
+          "in turn"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "All the local farmers protested________ the building of a new airport on their rich farmland. (B)",
+        "options": [
+          "for",
+          "against",
+          "to",
+          "with"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The ________ typist had to retype the letter three times. (D)",
+        "options": [
+          "inefficient",
+          "ineffective",
+          "insensitive",
+          "incompetent"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "How one ________ himself at an interview will often decide whether or not he will be given a job. (A)",
+        "options": [
+          "presents",
+          "defends",
+          "guards",
+          "performs"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The boy’s teachers looked upon his worsening performance with ________. (C)",
+        "options": [
+          "delight",
+          "pleasure",
+          "disapproval",
+          "unhappiness"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "This job requires a university degree ________ at least five years’ experience of teaching. (A)",
+        "options": [
+          "plus",
+          "minus",
+          "divided",
+          "times"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In today’s job market, importance is ________ to practical experience as well as formal education. (B)",
+        "options": [
+          "operated",
+          "attached",
+          "considered",
+          "projected"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "If only I could ________ those tactless words of mine! (C)",
+        "options": [
+          "unpack",
+          "unlock",
+          "unsay",
+          "undo"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "When I entered the room, I noticed a surprised look ________come over her face. (D)",
+        "options": [
+          "come into",
+          "come upon",
+          "come through",
+          "come over"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Nearly half of the ________ audience had left the meeting before the ________ address. (C)",
+        "options": [
+          "boring … closed",
+          "bored … closed",
+          "bored … closing",
+          "boring … closing"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The film, though ________, is not likely to engage the attention of a ________ audience. (B)",
+        "options": [
+          "amusing … thought",
+          "amusing … thinking",
+          "amused … thought",
+          "amused … thinking"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "When we say that everyone is equal before the law, we mean that the law ________ to everyone. (A)",
+        "options": [
+          "applies",
+          "uses",
+          "utilizes",
+          "employs"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It’s a common practice nowadays to go for an interview before a college graduate gets a job. (D)",
+        "options": [
+          "portion",
+          "position",
+          "process",
+          "practice"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He was ________ because he had not passed his examinations. (A)",
+        "options": [
+          "depressed",
+          "pleased",
+          "heartened",
+          "spoiled"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Let me help you ________ the buttons on that jacket. (B)",
+        "options": [
+          "undressed",
+          "undo",
+          "uncovered",
+          "unfolded"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He was extremely attractive, ________ the newspaper photograph. (C)",
+        "options": [
+          "looking from",
+          "acting on",
+          "judging by",
+          "making for"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Though they are twins, they have few interests ________ common. (D)",
+        "options": [
+          "with",
+          "from",
+          "on",
+          "in"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The ages of the students in my class ________ from seventeen to twenty. (A)",
+        "options": [
+          "range",
+          "change",
+          "divide",
+          "grow"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 3"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Henry is very talkative, while his twin brother is a man of ________ words.",
+        "options": [
+          "little",
+          "a few",
+          "a little",
+          "few"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "A little more care ________ such an accident.",
+        "options": [
+          "would prevent",
+          "would have prevented",
+          "prevented",
+          "had prevented"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "David was ________ the few who really understood the new theory.",
+        "options": [
+          "among",
+          "between",
+          "over",
+          "under"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "If that is the case, there is no ________ in arguing further.",
+        "options": [
+          "meaning",
+          "words",
+          "point",
+          "significance"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "While my family have caught the flu, I seem to be ________ it.",
+        "options": [
+          "immune to",
+          "capable of",
+          "anxious about",
+          "sorry for"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Now that your children have arrived ________, you can set your mind at ease.",
+        "options": [
+          "safely and soundly",
+          "safe and sound",
+          "safely and sound",
+          "safe and soundly"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The exact cause of this disease is a puzzle ________ we have yet to find an answer.",
+        "options": [
+          "from which",
+          "to that",
+          "to which",
+          "from that"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "George himself believed in freedom, ________ he would rather die than live without it.",
+        "options": [
+          "so much that",
+          "too much so that",
+          "very much so that",
+          "so much so that"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Columbus’ discovery of America in 1492 has made his name a ________.",
+        "options": [
+          "family word",
+          "household word",
+          "family name",
+          "household name"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Many educators are giving up traditional methods of teaching ________ more modern approaches.",
+        "options": [
+          "in favor of",
+          "in search of",
+          "in front of",
+          "in spite of"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Bob’s effort to raise money for the hungry people of Africa brought him worldwide ________.",
+        "options": [
+          "jewel",
+          "ease",
+          "ambition",
+          "fame"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I consider it proper to leave it to the committee to ________ the details of the plan.",
+        "options": [
+          "work with",
+          "work off",
+          "work out",
+          "work away"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Philip is good at writing. Last week his composition was once again ________ for praise.",
+        "options": [
+          "singled out",
+          "written off",
+          "taken down",
+          "taken apart"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Childhood experiences have a strong influence ________ forming personality.",
+        "options": [
+          "in",
+          "at",
+          "with",
+          "on"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He was a modest person ________ his great success.",
+        "options": [
+          "in case of",
+          "in spite of",
+          "by means of",
+          "because of"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Our chief engineer has the ability to work out simple, effective ________ to practical problems.",
+        "options": [
+          "answers",
+          "methods",
+          "solutions",
+          "techniques"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "________ population most American cities are not as large as Chinese cities like Shanghai and Beijing.",
+        "options": [
+          "In terms of",
+          "In the course of",
+          "In addition to",
+          "In contrast with"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The doctor advised Mike to stay in hospital until he was fully ________.",
+        "options": [
+          "uncovered",
+          "recovered",
+          "covered",
+          "discovered"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Be modest, ________ you will lag behind.",
+        "options": [
+          "then",
+          "thus",
+          "otherwise",
+          "besides"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Father ________ to the son that the basic skill in riding a bicycle is to keep balance.",
+        "options": [
+          "made out",
+          "found out",
+          "picked out",
+          "pointed out"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I tried to ________ my new boss with my diligence but in vain.",
+        "options": [
+          "affect",
+          "impress",
+          "influence",
+          "relate"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In his ________ to escape, the prisoner was frustrated by a watchful guard.",
+        "options": [
+          "endeavor s",
+          "experiences",
+          "attempts",
+          "experiments"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Marry and Peter ________ for many years before they met.",
+        "options": [
+          "corresponded",
+          "communicated",
+          "complained",
+          "concentrated"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "I don’t like English. I do it ________ because I have to learn something to work with in the future.",
+        "options": [
+          "simple",
+          "simplify",
+          "similar",
+          "simply"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "About the recent affair, the minister gave a highly ________ remark.",
+        "options": [
+          "personal",
+          "person",
+          "personnel",
+          "personality"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 4"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Make sure you ________ the same story when you’re questioned a second time.",
+        "options": [
+          "follow up",
+          "draw on",
+          "stick to",
+          "make up"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He is very thin and sick. ________, he eats very little every day.",
+        "options": [
+          "To make matters worse",
+          "To be honest",
+          "To tell you the truth",
+          "To be frank"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "At present nuclear power ________ only a small fraction of the energy we consume.",
+        "options": [
+          "serves as",
+          "comes about",
+          "pulls out",
+          "makes up"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "If you shop around, you can probably buy the same product elsewhere ________ a fraction of those prices.",
+        "options": [
+          "in",
+          "for",
+          "by",
+          "at"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "If you bring children to the wildlife garden, remember that many plants are poisonous and can ________ to their health.",
+        "options": [
+          "do harm",
+          "put harm",
+          "make harm",
+          "have harm"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In brainstorming, you liberate your mind, allowing ________ for any and every idea that comes up to its surface.",
+        "options": [
+          "a room",
+          "room",
+          "rooms",
+          "rooming"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It is five o’clock in the morning, but the sun has already crept ________ the horizon.",
+        "options": [
+          "on",
+          "under",
+          "over",
+          "beneath"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He drew out a ________ plastic bag and held it up to the light to show me the golden fishes inside.",
+        "options": [
+          "transport",
+          "transit",
+          "transmit",
+          "transparent"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "There are not yet any visible signs to indicate that creative thinking can be ________ by computers.",
+        "options": [
+          "placed",
+          "replaced",
+          "positioned",
+          "reported"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The house is built of red brick but its ________ walls are all painted white.",
+        "options": [
+          "exterior",
+          "inferior",
+          "superior",
+          "interior"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Many a player who had been highly thought of ______ disappeared from the tennis scene.",
+        "options": [
+          "has",
+          "have",
+          "had",
+          "are"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The author tells us in very ________ language how global warming came about.",
+        "options": [
+          "easy",
+          "popular",
+          "simple",
+          "modern"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "This course offered by the professor has ________ a bridge between the two cultures.",
+        "options": [
+          "served as",
+          "regarded as",
+          "considered",
+          "thought as"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Fossil fuels, in all ________, will be used up in a few hundred years.",
+        "options": [
+          "likeness",
+          "likelihood",
+          "likely",
+          "liking"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Active co-operation to ________ common problems is essential to environmental security for every country.",
+        "options": [
+          "splash",
+          "operate",
+          "combat",
+          "convert"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Singapore was then a ________ city-state of more than two million inhabitants.",
+        "options": [
+          "everlasting",
+          "far-reaching",
+          "fast-moving",
+          "fast-growing"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Despite the ________ words with which the Bill was presented to Parliament it is a complete sham (骗局).",
+        "options": [
+          "outstanding",
+          "high-sounding",
+          "ill-fitting",
+          "good-looking"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In our country, universities demand good results and ________ jobs need degrees.",
+        "options": [
+          "far-fetched",
+          "well-designed",
+          "well-paid",
+          "widespread"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "When the meeting began, the Party secretary spoke ________.",
+        "options": [
+          "At first",
+          "Firstly",
+          "First of all",
+          "First"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It is estimated that by 2020 the concentration will be nearly twice ________ it is now.",
+        "options": [
+          "what",
+          "that",
+          "as",
+          "which"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He’s either a hero or a villain, ________ your point of view.",
+        "options": [
+          "acting on",
+          "insisting on",
+          "keeping on",
+          "depending on"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Can you tell the ________ between poisonous mushrooms and edible varieties?",
+        "options": [
+          "similarity",
+          "relationship",
+          "difference",
+          "progress"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Because I live in a ________ village, I regard my car as an essential.",
+        "options": [
+          "nearby",
+          "remote",
+          "local",
+          "great"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The defeated army had to ________ hastily from the field of battle.",
+        "options": [
+          "retreat",
+          "respond",
+          "remove",
+          "retire"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He traveled a great deal ________ most of his friends.",
+        "options": [
+          "as were",
+          "as was",
+          "as did",
+          "did as"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 5"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "You must ________ the fact that you are no longer as strong as you were. A) live for B) live through C) live with D) live on",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "We never ________ when we meet with difficulties in our work. A) lose heart B) lose our heart C) lose our hearts D) lose hearts",
+        "options": []
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "________, her only purpose in saying all that is to help you help yourself. A) To believe it or not to B) Believe it or not C) To believe it or not D) Believe it or not to",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The strike organizers anticipated strong opposition from the management to the workers’ ________ for a pay raise. A) inquest B) inquiry C) instruction D) request",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Before taking time to consider it, the president ________ our proposal for several months. A) sat on B) sat out C) sat through D) sat up",
+        "options": []
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The doctor decided to open up Tom’s stomach to ________ the tumor. A) kill B) remove C) cut D) move",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The restless young patient relaxed after being told there was ________ with him. A) nothing wrong seriously B) seriously nothing wrong C) nothing seriously wrong D) seriously wrong nothing",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It is advisable to place important telephone numbers next to the phone in case of an (a) ________. A) urgency B) extremity C) pressure D) emergency",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "From what I heard I concluded Miss Nobel must be very popular ________ her pupils. A) by B) at C) with D) for",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The doctor who ________ the surgery gave Bob an 85 percent chance of full recovery by September. A) managed B) made C) produced D) performed",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "We should make our reservations as far ________ as possible to get the flight we want. A) in advance B) in time C) on line D) on board",
+        "options": []
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "In theory, this sounds like a good idea; however, I doubt that it will work ________. A) in fact B) in practice C) in turn D) in principle",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "It is certain that with determination and hard work you will succeed ________. A) eventually B) lastly C) exclusively D) obviously",
+        "options": []
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The young businessman thought ________ of himself because he had achieved great success at such an early age. A) high B) highly C) great D) greatly",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "While George hadn’t much experience in business, he ________ it with confidence. A) went for B) came about C) went at D) came under",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Bill was doing a lot of physical exercise to build up his_______. A) mind B) force C) spirit D) strength",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "--Brad was Jane’s brother! --_______he reminded me so much of Jane! A) No doubt B) Above all C)) No wonder D) Of course",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "How to ________ the contradictions correctly among the people is the key to develop steadily. A) deal B) handle C) hang D) combat",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "He ________ to work hard until the final examination. A) detested B) thought C) considered D) resolved",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "She became a ________ customer of the bookshop. A) continuous B) constant C) content D) consent",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Chinese arts have won the _______ of a lot of people outside China. A) enjoyment B) appreciation C) entertainment D) reputation",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The head office of the bank is in Beijing but it has ________ all over the country. A) branches B) businesses C) companies D) organizations",
+        "options": []
+      },
+      "answers": [
+        "A"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "This ________ was highly appreciated by the patient for his successful operation. A) doctor B) physician C) surgeon D) dentist",
+        "options": []
+      },
+      "answers": [
+        "C"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "The peace negotiations were successfully ________. A) condemned B) concluded C) conducted D) confessed",
+        "options": []
+      },
+      "answers": [
+        "B"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "Your frank ________ of his attempts annoyed him. A) critic B) conclusions C) comments D) criticism",
+        "options": []
+      },
+      "answers": [
+        "D"
+      ],
+      "tags": [
+        "Unit 6"
+      ]
+    }
+  ]
+}
