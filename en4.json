@@ -4101,12 +4101,12 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "His last year’s trousers are now outgrown and need ________ a little.",
+        "question": "His last year’s trousers are now ________ and need lengthening a little.",
         "options": [
-          "lengthening",
-          "to lengthen",
-          "being lengthened",
-          "to be lengthening"
+          "outgrown",
+          "worn out",
+          "outdated",
+          "out of fashion"
         ]
       },
       "answers": [
