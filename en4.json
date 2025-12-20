@@ -5577,8 +5577,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "You must ________ the fact that you are no longer as strong as you were. A) live for B) live through C) live with D) live on",
-        "options": []
+        "question": "You must ________ the fact that you are no longer as strong as you were.",
+        "options": [
+          "live for",
+          "live through",
+          "live with",
+          "live on"
+        ]
       },
       "answers": [
         "C"
@@ -5590,8 +5595,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "We never ________ when we meet with difficulties in our work. A) lose heart B) lose our heart C) lose our hearts D) lose hearts",
-        "options": []
+        "question": "We never ________ when we meet with difficulties in our work.",
+        "options": [
+          "lose heart",
+          "lose our heart",
+          "lose our hearts",
+          "lose hearts"
+        ]
       },
       "answers": [
         "A"
@@ -5603,8 +5613,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "________, her only purpose in saying all that is to help you help yourself. A) To believe it or not to B) Believe it or not C) To believe it or not D) Believe it or not to",
-        "options": []
+        "question": "________, her only purpose in saying all that is to help you help yourself.",
+        "options": [
+          "To believe it or not to",
+          "Believe it or not",
+          "To believe it or not",
+          "Believe it or not to"
+        ]
       },
       "answers": [
         "B"
@@ -5616,8 +5631,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The strike organizers anticipated strong opposition from the management to the workers’ ________ for a pay raise. A) inquest B) inquiry C) instruction D) request",
-        "options": []
+        "question": "The strike organizers anticipated strong opposition from the management to the workers’ ________ for a pay raise.",
+        "options": [
+          "inquest",
+          "inquiry",
+          "instruction",
+          "request"
+        ]
       },
       "answers": [
         "D"
@@ -5629,8 +5649,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "Before taking time to consider it, the president ________ our proposal for several months. A) sat on B) sat out C) sat through D) sat up",
-        "options": []
+        "question": "Before taking time to consider it, the president ________ our proposal for several months.",
+        "options": [
+          "sat on",
+          "sat out",
+          "sat through",
+          "sat up"
+        ]
       },
       "answers": [
         "A"
@@ -5642,8 +5667,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The doctor decided to open up Tom’s stomach to ________ the tumor. A) kill B) remove C) cut D) move",
-        "options": []
+        "question": "The doctor decided to open up Tom’s stomach to ________ the tumor.",
+        "options": [
+          "kill",
+          "remove",
+          "cut",
+          "move"
+        ]
       },
       "answers": [
         "B"
@@ -5655,8 +5685,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The restless young patient relaxed after being told there was ________ with him. A) nothing wrong seriously B) seriously nothing wrong C) nothing seriously wrong D) seriously wrong nothing",
-        "options": []
+        "question": "The restless young patient relaxed after being told there was ________ with him.",
+        "options": [
+          "nothing wrong seriously",
+          "seriously nothing wrong",
+          "nothing seriously wrong",
+          "seriously wrong nothing"
+        ]
       },
       "answers": [
         "C"
@@ -5668,8 +5703,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "It is advisable to place important telephone numbers next to the phone in case of an (a) ________. A) urgency B) extremity C) pressure D) emergency",
-        "options": []
+        "question": "It is advisable to place important telephone numbers next to the phone in case of an (a) ________.",
+        "options": [
+          "urgency",
+          "extremity",
+          "pressure",
+          "emergency"
+        ]
       },
       "answers": [
         "D"
@@ -5681,8 +5721,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "From what I heard I concluded Miss Nobel must be very popular ________ her pupils. A) by B) at C) with D) for",
-        "options": []
+        "question": "From what I heard I concluded Miss Nobel must be very popular ________ her pupils.",
+        "options": [
+          "by",
+          "at",
+          "with",
+          "for"
+        ]
       },
       "answers": [
         "C"
@@ -5694,8 +5739,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The doctor who ________ the surgery gave Bob an 85 percent chance of full recovery by September. A) managed B) made C) produced D) performed",
-        "options": []
+        "question": "The doctor who ________ the surgery gave Bob an 85 percent chance of full recovery by September.",
+        "options": [
+          "managed",
+          "made",
+          "produced",
+          "performed"
+        ]
       },
       "answers": [
         "D"
@@ -5707,8 +5757,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "We should make our reservations as far ________ as possible to get the flight we want. A) in advance B) in time C) on line D) on board",
-        "options": []
+        "question": "We should make our reservations as far ________ as possible to get the flight we want.",
+        "options": [
+          "in advance",
+          "in time",
+          "on line",
+          "on board"
+        ]
       },
       "answers": [
         "A"
@@ -5720,8 +5775,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "In theory, this sounds like a good idea; however, I doubt that it will work ________. A) in fact B) in practice C) in turn D) in principle",
-        "options": []
+        "question": "In theory, this sounds like a good idea; however, I doubt that it will work ________.",
+        "options": [
+          "in fact",
+          "in practice",
+          "in turn",
+          "in principle"
+        ]
       },
       "answers": [
         "B"
@@ -5733,8 +5793,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "It is certain that with determination and hard work you will succeed ________. A) eventually B) lastly C) exclusively D) obviously",
-        "options": []
+        "question": "It is certain that with determination and hard work you will succeed ________.",
+        "options": [
+          "eventually",
+          "lastly",
+          "exclusively",
+          "obviously"
+        ]
       },
       "answers": [
         "A"
@@ -5746,8 +5811,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The young businessman thought ________ of himself because he had achieved great success at such an early age. A) high B) highly C) great D) greatly",
-        "options": []
+        "question": "The young businessman thought ________ of himself because he had achieved great success at such an early age.",
+        "options": [
+          "high",
+          "highly",
+          "great",
+          "greatly"
+        ]
       },
       "answers": [
         "B"
@@ -5759,8 +5829,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "While George hadn’t much experience in business, he ________ it with confidence. A) went for B) came about C) went at D) came under",
-        "options": []
+        "question": "While George hadn’t much experience in business, he ________ it with confidence.",
+        "options": [
+          "went for",
+          "came about",
+          "went at",
+          "came under"
+        ]
       },
       "answers": [
         "C"
@@ -5772,8 +5847,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "Bill was doing a lot of physical exercise to build up his_______. A) mind B) force C) spirit D) strength",
-        "options": []
+        "question": "Bill was doing a lot of physical exercise to build up his_______.",
+        "options": [
+          "mind",
+          "force",
+          "spirit",
+          "strength"
+        ]
       },
       "answers": [
         "D"
@@ -5785,8 +5865,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "--Brad was Jane’s brother! --_______he reminded me so much of Jane! A) No doubt B) Above all C)) No wonder D) Of course",
-        "options": []
+        "question": "--Brad was Jane’s brother! --_______he reminded me so much of Jane!",
+        "options": [
+          "No doubt",
+          "Above all",
+          ") No wonder",
+          "Of course"
+        ]
       },
       "answers": [
         "C"
@@ -5798,8 +5883,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "How to ________ the contradictions correctly among the people is the key to develop steadily. A) deal B) handle C) hang D) combat",
-        "options": []
+        "question": "How to ________ the contradictions correctly among the people is the key to develop steadily.",
+        "options": [
+          "deal",
+          "handle",
+          "hang",
+          "combat"
+        ]
       },
       "answers": [
         "B"
@@ -5811,8 +5901,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "He ________ to work hard until the final examination. A) detested B) thought C) considered D) resolved",
-        "options": []
+        "question": "He ________ to work hard until the final examination.",
+        "options": [
+          "detested",
+          "thought",
+          "considered",
+          "resolved"
+        ]
       },
       "answers": [
         "D"
@@ -5824,8 +5919,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "She became a ________ customer of the bookshop. A) continuous B) constant C) content D) consent",
-        "options": []
+        "question": "She became a ________ customer of the bookshop.",
+        "options": [
+          "continuous",
+          "constant",
+          "content",
+          "consent"
+        ]
       },
       "answers": [
         "B"
@@ -5837,8 +5937,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "Chinese arts have won the _______ of a lot of people outside China. A) enjoyment B) appreciation C) entertainment D) reputation",
-        "options": []
+        "question": "Chinese arts have won the _______ of a lot of people outside China.",
+        "options": [
+          "enjoyment",
+          "appreciation",
+          "entertainment",
+          "reputation"
+        ]
       },
       "answers": [
         "B"
@@ -5850,8 +5955,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The head office of the bank is in Beijing but it has ________ all over the country. A) branches B) businesses C) companies D) organizations",
-        "options": []
+        "question": "The head office of the bank is in Beijing but it has ________ all over the country.",
+        "options": [
+          "branches",
+          "businesses",
+          "companies",
+          "organizations"
+        ]
       },
       "answers": [
         "A"
@@ -5863,8 +5973,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "This ________ was highly appreciated by the patient for his successful operation. A) doctor B) physician C) surgeon D) dentist",
-        "options": []
+        "question": "This ________ was highly appreciated by the patient for his successful operation.",
+        "options": [
+          "doctor",
+          "physician",
+          "surgeon",
+          "dentist"
+        ]
       },
       "answers": [
         "C"
@@ -5876,8 +5991,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "The peace negotiations were successfully ________. A) condemned B) concluded C) conducted D) confessed",
-        "options": []
+        "question": "The peace negotiations were successfully ________.",
+        "options": [
+          "condemned",
+          "concluded",
+          "conducted",
+          "confessed"
+        ]
       },
       "answers": [
         "B"
@@ -5889,8 +6009,13 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "Your frank ________ of his attempts annoyed him. A) critic B) conclusions C) comments D) criticism",
-        "options": []
+        "question": "Your frank ________ of his attempts annoyed him.",
+        "options": [
+          "critic",
+          "conclusions",
+          "comments",
+          "criticism"
+        ]
       },
       "answers": [
         "D"
