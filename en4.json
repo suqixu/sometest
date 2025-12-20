@@ -5047,12 +5047,17 @@
     {
       "type": "multiple_choice",
       "content": {
+<<<<<<< HEAD
         "question": "His last year's trousers are now ________ and need lengthening a little.",
+=======
+        "question": "His last year’s trousers are now ________ and need lengthening a little.",
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         "options": [
           "outgrown",
           "worn out",
           "outdated",
           "out of fashion"
+<<<<<<< HEAD
         ],
         "translated": "他去年的裤子现在________了，需要加长一点。",
         "options_translated": [
@@ -5060,6 +5065,8 @@
           "穿破了",
           "过时的",
           "不流行的"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7185,6 +7192,7 @@
           "live through",
           "live with",
           "live on"
+<<<<<<< HEAD
         ],
         "translated": "你必须________你不再像以前那样强壮的事实。",
         "options_translated": [
@@ -7192,6 +7200,8 @@
           "度过",
           "接受",
           "以...为生"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7211,6 +7221,7 @@
           "lose our heart",
           "lose our hearts",
           "lose hearts"
+<<<<<<< HEAD
         ],
         "translated": "当我们在工作中遇到困难时，我们从不________。",
         "options_translated": [
@@ -7218,6 +7229,8 @@
           "失去我们的心（错误）",
           "失去我们的心（错误）",
           "失去心（错误）"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7237,6 +7250,7 @@
           "Believe it or not",
           "To believe it or not",
           "Believe it or not to"
+<<<<<<< HEAD
         ],
         "translated": "________，她说这一切的唯一目的是帮助你自助。",
         "options_translated": [
@@ -7244,6 +7258,8 @@
           "信不信由你（固定短语）",
           "相信它或不相信（错误）",
           "相信它或不相信（错误）"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7257,12 +7273,17 @@
     {
       "type": "multiple_choice",
       "content": {
+<<<<<<< HEAD
         "question": "The strike organizers anticipated strong opposition from the management to the workers' ________ for a pay raise.",
+=======
+        "question": "The strike organizers anticipated strong opposition from the management to the workers’ ________ for a pay raise.",
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         "options": [
           "inquest",
           "inquiry",
           "instruction",
           "request"
+<<<<<<< HEAD
         ],
         "translated": "罢工组织者预计管理层会强烈反对工人们加薪的________。",
         "options_translated": [
@@ -7270,6 +7291,8 @@
           "询问",
           "指示",
           "请求"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7289,6 +7312,7 @@
           "sat out",
           "sat through",
           "sat up"
+<<<<<<< HEAD
         ],
         "translated": "在花时间考虑之前，总统________我们的提案好几个月了。",
         "options_translated": [
@@ -7296,6 +7320,8 @@
           "坐在外面",
           "坐完",
           "坐起来"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7309,12 +7335,17 @@
     {
       "type": "multiple_choice",
       "content": {
+<<<<<<< HEAD
         "question": "The doctor decided to open up Tom's stomach to ________ the tumor.",
+=======
+        "question": "The doctor decided to open up Tom’s stomach to ________ the tumor.",
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         "options": [
           "kill",
           "remove",
           "cut",
           "move"
+<<<<<<< HEAD
         ],
         "translated": "医生决定打开汤姆的胃来________肿瘤。",
         "options_translated": [
@@ -7322,6 +7353,8 @@
           "移除",
           "切割",
           "移动"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7341,6 +7374,7 @@
           "seriously nothing wrong",
           "nothing seriously wrong",
           "seriously wrong nothing"
+<<<<<<< HEAD
         ],
         "translated": "不安的年轻病人在被告知他________后放松了。",
         "options_translated": [
@@ -7348,6 +7382,8 @@
           "严重没什么错误（错误）",
           "没什么严重错误（正确）",
           "严重错误没什么（错误）"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7367,6 +7403,7 @@
           "extremity",
           "pressure",
           "emergency"
+<<<<<<< HEAD
         ],
         "translated": "建议在电话旁边放置重要电话号码，以防________。",
         "options_translated": [
@@ -7374,6 +7411,8 @@
           "极端",
           "压力",
           "紧急情况"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7393,6 +7432,7 @@
           "at",
           "with",
           "for"
+<<<<<<< HEAD
         ],
         "translated": "从我所听到的，我得出结论，诺贝尔小姐一定很受她的学生________欢迎。",
         "options_translated": [
@@ -7400,6 +7440,8 @@
           "在",
           "与",
           "为"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7419,6 +7461,7 @@
           "made",
           "produced",
           "performed"
+<<<<<<< HEAD
         ],
         "translated": "________手术的医生告诉鲍勃，到9月份他完全康复的可能性是85%。",
         "options_translated": [
@@ -7426,6 +7469,8 @@
           "做",
           "生产",
           "执行"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7445,6 +7490,7 @@
           "in time",
           "on line",
           "on board"
+<<<<<<< HEAD
         ],
         "translated": "我们应该尽可能________预订，以获得我们想要的航班。",
         "options_translated": [
@@ -7452,6 +7498,8 @@
           "及时",
           "在线",
           "在船上"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7471,6 +7519,7 @@
           "in practice",
           "in turn",
           "in principle"
+<<<<<<< HEAD
         ],
         "translated": "理论上，这听起来是个好主意；然而，我怀疑它在________中是否有效。",
         "options_translated": [
@@ -7478,6 +7527,8 @@
           "实践中",
           "轮流",
           "原则上"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7497,6 +7548,7 @@
           "lastly",
           "exclusively",
           "obviously"
+<<<<<<< HEAD
         ],
         "translated": "可以肯定的是，有了决心和努力，你________会成功。",
         "options_translated": [
@@ -7504,6 +7556,8 @@
           "最后",
           "专门地",
           "显然"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7523,6 +7577,7 @@
           "highly",
           "great",
           "greatly"
+<<<<<<< HEAD
         ],
         "translated": "这位年轻商人对自己________评价，因为他在如此年轻的时候就取得了巨大成功。",
         "options_translated": [
@@ -7530,6 +7585,8 @@
           "高度地（副词）",
           "伟大的（形容词）",
           "大大地（副词）"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7543,12 +7600,17 @@
     {
       "type": "multiple_choice",
       "content": {
+<<<<<<< HEAD
         "question": "While George hadn't much experience in business, he ________ it with confidence.",
+=======
+        "question": "While George hadn’t much experience in business, he ________ it with confidence.",
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         "options": [
           "went for",
           "came about",
           "went at",
           "came under"
+<<<<<<< HEAD
         ],
         "translated": "虽然乔治在商业方面没有太多经验，但他________它时充满信心。",
         "options_translated": [
@@ -7556,6 +7618,8 @@
           "发生",
           "着手做",
           "受到"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7575,6 +7639,7 @@
           "force",
           "spirit",
           "strength"
+<<<<<<< HEAD
         ],
         "translated": "比尔做了很多体育锻炼来增强他的________。",
         "options_translated": [
@@ -7582,6 +7647,8 @@
           "力量",
           "精神",
           "体力"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7595,12 +7662,17 @@
     {
       "type": "multiple_choice",
       "content": {
+<<<<<<< HEAD
         "question": "--Brad was Jane's brother! --_______he reminded me so much of Jane!",
+=======
+        "question": "--Brad was Jane’s brother! --_______he reminded me so much of Jane!",
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         "options": [
           "No doubt",
           "Above all",
           ") No wonder",
           "Of course"
+<<<<<<< HEAD
         ],
         "translated": "--布拉德是简的兄弟！--________他让我想起了简！",
         "options_translated": [
@@ -7608,6 +7680,8 @@
           "最重要的是",
           "难怪",
           "当然"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7627,6 +7701,7 @@
           "handle",
           "hang",
           "combat"
+<<<<<<< HEAD
         ],
         "translated": "如何正确________人民之间的矛盾是稳步发展的关键。",
         "options_translated": [
@@ -7634,6 +7709,8 @@
           "处理",
           "悬挂",
           "对抗"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7653,6 +7730,7 @@
           "thought",
           "considered",
           "resolved"
+<<<<<<< HEAD
         ],
         "translated": "他________努力学习直到期末考试。",
         "options_translated": [
@@ -7660,6 +7738,8 @@
           "想",
           "考虑",
           "决心"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7679,6 +7759,7 @@
           "constant",
           "content",
           "consent"
+<<<<<<< HEAD
         ],
         "translated": "她成了这家书店的________顾客。",
         "options_translated": [
@@ -7686,6 +7767,8 @@
           "经常的",
           "内容",
           "同意"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7705,6 +7788,7 @@
           "appreciation",
           "entertainment",
           "reputation"
+<<<<<<< HEAD
         ],
         "translated": "中国艺术赢得了中国境外许多人的________。",
         "options_translated": [
@@ -7712,6 +7796,8 @@
           "欣赏",
           "娱乐",
           "声誉"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7731,6 +7817,7 @@
           "businesses",
           "companies",
           "organizations"
+<<<<<<< HEAD
         ],
         "translated": "银行的总部在北京，但它在全国各地都有________。",
         "options_translated": [
@@ -7738,6 +7825,8 @@
           "企业",
           "公司",
           "组织"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7757,6 +7846,7 @@
           "physician",
           "surgeon",
           "dentist"
+<<<<<<< HEAD
         ],
         "translated": "这位________因其成功的手术而受到病人的高度赞赏。",
         "options_translated": [
@@ -7764,6 +7854,8 @@
           "内科医生",
           "外科医生",
           "牙医"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7783,6 +7875,7 @@
           "concluded",
           "conducted",
           "confessed"
+<<<<<<< HEAD
         ],
         "translated": "和平谈判成功________了。",
         "options_translated": [
@@ -7790,6 +7883,8 @@
           "结束",
           "进行",
           "承认"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
@@ -7809,6 +7904,7 @@
           "conclusions",
           "comments",
           "criticism"
+<<<<<<< HEAD
         ],
         "translated": "你对他尝试的坦率________让他很恼火。",
         "options_translated": [
@@ -7816,6 +7912,8 @@
           "结论",
           "评论",
           "批评"
+=======
+>>>>>>> 3ed971b9c0bfc6a5dfb0c84acf74b66a68c4acf4
         ]
       },
       "answers": [
