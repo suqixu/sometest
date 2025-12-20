@@ -2785,14 +2785,14 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "--- Will you go to the movies with us tonight? --- I'm sorry, I have not made up my ________ yet.",
+        "question": "--- Will you go to the movies with us tonight? <br/>--- I'm sorry, I have not made up my ________ yet.",
         "options": [
           "heart",
           "brain",
           "head",
           "mind"
         ],
-        "translated": "--- 今晚你愿意和我们一起去看电影吗？--- 对不起，我还没有拿定________。",
+        "translated": "--- 今晚你愿意和我们一起去看电影吗？<br/>--- 对不起，我还没有拿定________。",
         "options_translated": [
           "心",
           "大脑",
