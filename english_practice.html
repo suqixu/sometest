@@ -2808,9 +2808,12 @@
                     alert('错题集为空，请先做练习并添加错题到错题集');
                     return;
                 }
-                // 根据错题ID从原始数据中找到对应的题目
+                // 根据错题的类型和内容从原始数据中找到对应的题目
                 filteredData = allData.data.filter(item => 
-                    wrongQuestions.some(wrong => wrong.id === item.id)
+                    wrongQuestions.some(wrong => 
+                        wrong.type === item.type && 
+                        wrong.content.original === item.content.original
+                    )
                 );
             }
             
