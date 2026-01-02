@@ -2256,6 +2256,25 @@
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
             } else if (question.type === 'multiple_choice') {
+                // 显示题目翻译（如果存在）
+                const questionTranslation = document.getElementById('questionTranslation');
+                if (questionTranslation && questionTranslation.style.display === 'none') {
+                    questionTranslation.style.display = 'block';
+                }
+                
+                // 显示所有选项的翻译（如果存在）
+                const optionButtons = document.querySelectorAll('.choice-option');
+                optionButtons.forEach(btn => {
+                    const translated = btn.dataset.translated;
+                    if (translated) {
+                        // 检查是否已经添加了翻译
+                        const currentText = btn.textContent;
+                        if (!currentText.includes(`(${translated})`)) {
+                            btn.textContent = `${currentText} (${translated})`;
+                        }
+                    }
+                });
+                
                 // 对于选择题，显示选项字母和单词
                 let correctIndex = -1;
                 let options = [];
@@ -2288,7 +2307,6 @@
                     answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${correctLetter}. ${correctContent}</span>`;
                     
                     // 更新选项显示状态
-                    const optionButtons = document.querySelectorAll('.choice-option');
                     optionButtons.forEach((button, index) => {
                         if (index === correctIndex) {
                             button.classList.add('correct');
