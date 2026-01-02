@@ -1799,12 +1799,8 @@
                     questionText = question.content;
                 }
                 
-                // 如果有中文翻译，也显示出来
-                if (question.content.translated) {
-                    content = `<strong>${questionText}</strong><br><em style="color: #666; font-size: 0.9rem;">${question.content.translated}</em>`;
-                } else {
-                    content = `<strong>${questionText}</strong>`;
-                }
+                // 初始不显示翻译，翻译将在点击选项时显示
+                content = `<strong>${questionText}</strong><span id="questionTranslation" style="display: none;"><br><em style="color: #666; font-size: 0.9rem;">${question.content.translated || ''}</em></span>`;
             }
             document.getElementById('questionContent').innerHTML = content;
             
@@ -1841,12 +1837,13 @@
                 
                 if (options.length > 0) {
                     options.forEach((option, index) => {
-                        // 获取中文翻译
+                        // 获取中文翻译，但不直接显示，而是保存到data属性中
                         let translatedOption = '';
                         if (question.content.options_translated && question.content.options_translated[index]) {
-                            translatedOption = ` (${question.content.options_translated[index]})`;
+                            translatedOption = question.content.options_translated[index];
                         }
-                        optionsHtml += `<button class="choice-option" data-index="${index}" data-value="${option}">${String.fromCharCode(65 + index)}. ${option}${translatedOption}</button>`;
+                        // 初始不显示翻译，翻译将在点击时显示
+                        optionsHtml += `<button class="choice-option" data-index="${index}" data-value="${option}" data-translated="${translatedOption || ''}">${String.fromCharCode(65 + index)}. ${option}</button>`;
                     });
                 }
                 choiceOptions.innerHTML = optionsHtml;
@@ -1862,6 +1859,24 @@
                         // 设置答案
                         document.getElementById('answerInput').value = this.dataset.value;
                         
+                        // 显示题目翻译（如果存在）
+                        const questionTranslation = document.getElementById('questionTranslation');
+                        if (questionTranslation && questionTranslation.style.display === 'none') {
+                            questionTranslation.style.display = 'block';
+                        }
+                        
+                        // 显示所有选项的翻译（如果存在）
+                        optionButtons.forEach(btn => {
+                            const translated = btn.dataset.translated;
+                            if (translated) {
+                                // 检查是否已经添加了翻译
+                                const currentText = btn.textContent;
+                                if (!currentText.includes(`(${translated})`)) {
+                                    btn.textContent = `${currentText} (${translated})`;
+                                }
+                            }
+                        });
+                        
                         // 自动检查答案
                         setTimeout(() => {
                             checkAnswer();
@@ -1872,11 +1887,33 @@
                 // 恢复用户之前的选择状态
                 if (userAnswers[currentQuestionIndex]) {
                     const savedAnswer = userAnswers[currentQuestionIndex];
+                    let hasSelected = false;
                     optionButtons.forEach(button => {
                         if (button.dataset.value.toLowerCase() === savedAnswer.toLowerCase()) {
                             button.classList.add('selected');
+                            hasSelected = true;
                         }
                     });
+                    
+                    // 如果之前已经选择过选项，显示翻译
+                    if (hasSelected) {
+                        // 显示题目翻译（如果存在）
+                        const questionTranslation = document.getElementById('questionTranslation');
+                        if (questionTranslation) {
+                            questionTranslation.style.display = 'block';
+                        }
+                        
+                        // 显示所有选项的翻译（如果存在）
+                        optionButtons.forEach(btn => {
+                            const translated = btn.dataset.translated;
+                            if (translated) {
+                                const currentText = btn.textContent;
+                                if (!currentText.includes(`(${translated})`)) {
+                                    btn.textContent = `${currentText} (${translated})`;
+                                }
+                            }
+                        });
+                    }
                 }
             } else {
                 // 隐藏选择题选项，显示文本输入框
