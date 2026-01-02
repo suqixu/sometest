@@ -5723,7 +5723,7 @@
     {
       "type": "multiple_choice",
       "content": {
-        "question": "It's a common practice nowadays to go for an interview before a college graduate gets a job.",
+        "question": "It's a common _________ nowadays to go for an interview before a college graduate gets a job.",
         "options": [
           "portion",
           "position",
