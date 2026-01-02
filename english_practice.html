@@ -1428,10 +1428,12 @@
             const currentQuestion = currentQuestions[currentQuestionIndex];
             if (!currentQuestion) return;
 
+            const currentId = getQuestionIdentifier(currentQuestion);
+
             // 检查是否已经存在
             const exists = wrongQuestions.some(q => 
                 q.type === currentQuestion.type && 
-                q.content.original === currentQuestion.content.original
+                getQuestionIdentifier(q) === currentId
             );
 
             if (!exists) {
@@ -1451,15 +1453,28 @@
             }
         }
 
+        // 获取题目的唯一标识（用于匹配题目）
+        function getQuestionIdentifier(question) {
+            if (question.type === 'multiple_choice') {
+                // 选择题使用 question 字段
+                return question.content.question || question.content.original || '';
+            } else {
+                // 其他题型使用 original 字段
+                return question.content.original || '';
+            }
+        }
+
         // 自动将错题加入错题集
         function autoAddToWrongQuestions() {
             const currentQuestion = currentQuestions[currentQuestionIndex];
             if (!currentQuestion) return;
 
+            const currentId = getQuestionIdentifier(currentQuestion);
+            
             // 检查是否已经存在
             const exists = wrongQuestions.some(q => 
                 q.type === currentQuestion.type && 
-                q.content.original === currentQuestion.content.original
+                getQuestionIdentifier(q) === currentId
             );
 
             if (!exists) {
@@ -1479,10 +1494,12 @@
 
         // 交卷时自动将错题加入错题集
         function autoAddWrongQuestionToCollection(question, userAnswer) {
+            const questionId = getQuestionIdentifier(question);
+            
             // 检查是否已经存在
             const exists = wrongQuestions.some(q => 
                 q.type === question.type && 
-                q.content.original === question.content.original
+                getQuestionIdentifier(q) === questionId
             );
 
             if (!exists) {
@@ -2617,11 +2634,12 @@
             if (!result) return;
             
             const question = result.question;
+            const questionId = getQuestionIdentifier(question);
             
             // 检查是否已经存在
             const exists = wrongQuestions.some(q => 
                 q.type === question.type && 
-                q.content.original === question.content.original
+                getQuestionIdentifier(q) === questionId
             );
 
             if (!exists) {
@@ -2849,7 +2867,7 @@
                 filteredData = allData.data.filter(item => 
                     wrongQuestions.some(wrong => 
                         wrong.type === item.type && 
-                        wrong.content.original === item.content.original
+                        getQuestionIdentifier(wrong) === getQuestionIdentifier(item)
                     )
                 );
             }
