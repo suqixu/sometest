@@ -1093,6 +1093,14 @@
 
         <div class="controls">
             <div class="control-row">
+                <label for="segmentSelect">英语段数</label>
+                <select id="segmentSelect" style="width: 120px;">
+                    <option value="en5.json" selected>英语5段</option>
+                    <option value="en4.json">英语4段</option>
+                    <option value="en3.json">英语3段</option>
+                </select>
+            </div>
+            <div class="control-row">
                 <label id="practiceTypeLabel">题型选择</label>
                 <select id="practiceType" style="width: 140px;">
                     <option value="all">全部类型</option>
@@ -1225,39 +1233,41 @@
         let wrongQuestions = []; // 错题集
         let questionStatus = []; // 跟踪每个题目的状态：null=未作答, true=正确, false=错误
 
-        // 加载数据
-        async function loadData() {
+        // 当前选择的json文件名
+        let currentJsonFile = 'en5.json';
+
+        // 加载数据，参数为json文件名
+        async function loadData(jsonFile) {
+            if (!jsonFile) jsonFile = currentJsonFile;
+            currentJsonFile = jsonFile;
             try {
-                console.log('开始加载数据...');
-                const response = await fetch('en4.json');
-                
+                console.log('开始加载数据...', jsonFile);
+                // 添加时间戳参数避免缓存
+                const timestamp = new Date().getTime();
+                const response = await fetch(`${jsonFile}?v=${timestamp}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
-                
                 allData = await response.json();
                 console.log('数据加载成功，共', allData.count || allData.data?.length, '道题目');
-                
-                // 数据加载完成后更新题型数量
                 renderPracticeTypeOptions();
+                renderUnitOptions();
             } catch (error) {
                 console.error('数据加载失败:', error);
-                
                 // 尝试使用XMLHttpRequest作为备选方案
                 try {
-                    console.log('尝试使用XMLHttpRequest加载数据...');
-                    allData = await loadDataWithXHR();
+                    console.log('尝试使用XMLHttpRequest加载数据...', jsonFile);
+                    allData = await loadDataWithXHR(jsonFile);
                     console.log('XMLHttpRequest加载成功，共', allData.count || allData.data?.length, '道题目');
                     renderPracticeTypeOptions();
+                    renderUnitOptions();
                 } catch (xhrError) {
                     console.error('XMLHttpRequest也失败了:', xhrError);
-                    
-                    // 提供用户友好的错误信息
                     const errorMessage = `
 数据加载失败！可能的原因：
-1. 请确保 en4.json 文件与 english_practice.html 在同一目录下
+1. 请确保 ${jsonFile} 文件与 english_practice.html 在同一目录下
 2. 请使用本地服务器运行（如 Live Server）
-3. 或者直接在浏览器中打开 en4.json 文件检查内容
+3. 或者直接在浏览器中打开 ${jsonFile} 文件检查内容
 
 错误详情：${error.message}
                     `;
@@ -1267,10 +1277,11 @@
         }
 
         // 使用XMLHttpRequest加载数据的备选方案
-        function loadDataWithXHR() {
+        function loadDataWithXHR(jsonFile) {
+            if (!jsonFile) jsonFile = currentJsonFile;
             return new Promise((resolve, reject) => {
                 const xhr = new XMLHttpRequest();
-                xhr.open('GET', 'en4.json', true);
+                xhr.open('GET', jsonFile, true);
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState === 4) {
                         if (xhr.status === 200) {
@@ -2784,6 +2795,66 @@
             document.getElementById('resultScreen').classList.add('hidden');
         }
 
+        // 动态渲染单元选择下拉框
+        function renderUnitOptions() {
+            const unitSelect = document.getElementById('unitSelect');
+            if (!unitSelect || !allData || !allData.data) return;
+            
+            // 收集所有单元及其对应的Book信息
+            const unitMap = new Map(); // key: unit, value: book
+            
+            allData.data.forEach(item => {
+                if (item.tags && Array.isArray(item.tags)) {
+                    let unit = null;
+                    let book = null;
+                    
+                    item.tags.forEach(tag => {
+                        // 匹配 "Unit X" 或 "UnitX" 格式
+                        if (/^Unit\s*\d+/i.test(tag)) {
+                            unit = tag.replace(/(Unit)\s*(\d+)/i, '$1 $2');
+                        }
+                        // 匹配 "Book X" 或 "BookX" 格式
+                        if (/^Book\s*\d+/i.test(tag)) {
+                            book = tag.replace(/(Book)\s*(\d+)/i, '$1 $2');
+                        }
+                    });
+                    
+                    if (unit) {
+                        if (!unitMap.has(unit)) {
+                            unitMap.set(unit, book || null);
+                        }
+                    }
+                }
+            });
+            
+            // 排序：先按Book排序，再按Unit排序
+            const sortedUnits = Array.from(unitMap.entries()).sort((a, b) => {
+                const [unitA, bookA] = a;
+                const [unitB, bookB] = b;
+                
+                // 提取Book数字
+                const bookNumA = bookA ? parseInt(bookA.replace(/[^\d]/g, '')) : 999;
+                const bookNumB = bookB ? parseInt(bookB.replace(/[^\d]/g, '')) : 999;
+                
+                // 先按Book排序
+                if (bookNumA !== bookNumB) {
+                    return bookNumA - bookNumB;
+                }
+                
+                // 再按Unit排序
+                const unitNumA = parseInt(unitA.replace(/[^\d]/g, ''));
+                const unitNumB = parseInt(unitB.replace(/[^\d]/g, ''));
+                return unitNumA - unitNumB;
+            });
+            
+            // 渲染下拉框
+            unitSelect.innerHTML = '<option value="all">全部单元</option>';
+            sortedUnits.forEach(([unit, book]) => {
+                const displayText = book ? `${unit} (${book})` : unit;
+                unitSelect.innerHTML += `<option value="${unit}">${displayText}</option>`;
+            });
+        }
+
         // 删除所有错题
         function deleteAllWrongQuestions() {
             if (wrongQuestions.length === 0) {
@@ -2805,9 +2876,9 @@
         }
 
         // 页面加载时获取数据
-        window.addEventListener('load', function() {
-            // 加载本地数据
-            loadData();
+        window.addEventListener('load', async function() {
+            // 加载本地数据，默认英语4段
+            await loadData('en5.json');
             // 加载错题集
             loadWrongQuestions();
             // 添加事件监听器
@@ -2816,9 +2887,35 @@
             renderPracticeTypeOptions();
             // 初始化错题集标签
             updateWrongQuestionsLabel();
+            // 设置header标题
+            updateHeaderTitle('en5.json');
         });
 
         function setupEventListeners() {
+            // 段数切换事件
+            const segmentSelect = document.getElementById('segmentSelect');
+            if (segmentSelect) {
+                segmentSelect.addEventListener('change', async function() {
+                    const selectedFile = segmentSelect.value;
+                    await loadData(selectedFile);
+                    // 切换段数后，重置到初始界面
+                    resetToInitialState();
+                    // 同步header标题
+                    updateHeaderTitle(selectedFile);
+                });
+            }
+                    // 根据段数切换header标题
+                    function updateHeaderTitle(jsonFile) {
+                        const headerH1 = document.querySelector('.header h1');
+                        if (!headerH1) return;
+                        if (jsonFile === 'en3.json') {
+                            headerH1.textContent = '🎓 英语练习平台(3段)';
+                        } else if (jsonFile === 'en4.json') {
+                            headerH1.textContent = '🎓 英语练习平台(4段)';
+                        } else if (jsonFile === 'en5.json') {
+                            headerH1.textContent = '🎓 英语练习平台(5段)';
+                        }
+                    }
             // 为控制面板中的开始练习按钮添加事件监听器
             const startBtn = document.getElementById('startBtn');
             if (startBtn) {
