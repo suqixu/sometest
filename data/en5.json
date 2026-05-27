@@ -3043,12 +3043,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "确定；决定"
+        "original": "确定"
       },
       "answers": [
         "determine"
       ],
-      "analysis": "英文单词 determine 表示\"确定；决定\"。",
+      "analysis": "英文单词 determine 表示\"确定\"。",
       "tags": [
         "Unit 9",
         "Book 2"
@@ -3057,12 +3057,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "估价；估算"
+        "original": "估计"
       },
       "answers": [
         "estimate"
       ],
-      "analysis": "英文单词 estimate 表示\"估价；估算\"。",
+      "analysis": "英文单词 estimate 表示\"估计\"。",
       "tags": [
         "Unit 9",
         "Book 2"
@@ -3099,12 +3099,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "锤子，榔头"
+        "original": "用榔头敲，用锤击"
       },
       "answers": [
         "hammer"
       ],
-      "analysis": "英文单词 hammer 表示\"锤子，榔头\"。",
+      "analysis": "英文单词 hammer 表示\"用榔头敲，用锤击\"。",
       "tags": [
         "Unit 9",
         "Book 2"
@@ -3113,12 +3113,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "数字的；用数字表示的"
+        "original": "用数字表示的"
       },
       "answers": [
         "numerical"
       ],
-      "analysis": "英文单词 numerical 表示\"数字的；用数字表示的\"。",
+      "analysis": "英文单词 numerical 表示\"用数字表示的\"。",
       "tags": [
         "Unit 9",
         "Book 2"
@@ -3167,284 +3167,199 @@
       ]
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "Phrases and Expressions"
-      },
-      "answers": [
-        "II."
-      ],
-      "analysis": "英文单词 II. 表示\"Phrases and Expressions\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "by one's estimate",
+        "translated": null
+      },
+      "answers": [
+        "根据某人估计"
+      ],
+      "analysis": "短语 by one's estimate 表示\"根据某人估计\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "a fuss of/over        为…大惊小怪"
-      },
-      "answers": [
-        "make"
-      ],
-      "analysis": "英文单词 make 表示\"a fuss of/over        为…大惊小怪\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "for sure",
+        "translated": null
+      },
+      "answers": [
+        "确切地；肯定"
+      ],
+      "analysis": "短语 for sure 表示\"确切地；肯定\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "up                 编制；配制"
-      },
-      "answers": [
-        "make"
-      ],
-      "analysis": "英文单词 make 表示\"up                 编制；配制\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "make a fuss of/over",
+        "translated": null
+      },
+      "answers": [
+        "为…大惊小怪"
+      ],
+      "analysis": "短语 make a fuss of/over 表示\"为…大惊小怪\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "one's estimate          根据某人估计"
-      },
-      "answers": [
-        "by"
-      ],
-      "analysis": "英文单词 by 表示\"one's estimate          根据某人估计\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "make up",
+        "translated": null
+      },
+      "answers": [
+        "编制；配制"
+      ],
+      "analysis": "短语 make up 表示\"编制；配制\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "sth. for granted 认为…理所当然"
-      },
-      "answers": [
-        "take"
-      ],
-      "analysis": "英文单词 take 表示\"sth. for granted 认为…理所当然\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "pick out",
+        "translated": null
+      },
+      "answers": [
+        "挑选"
+      ],
+      "analysis": "短语 pick out 表示\"挑选\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "out                  挑选"
-      },
-      "answers": [
-        "pick"
-      ],
-      "analysis": "英文单词 pick 表示\"out                  挑选\"。",
+      "type": "phrase_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "take sth. for granted",
+        "translated": null
+      },
+      "answers": [
+        "认为…理所当然"
+      ],
+      "analysis": "短语 take sth. for granted 表示\"认为…理所当然\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "sure                  确切地；肯定"
-      },
-      "answers": [
-        "for"
-      ],
-      "analysis": "英文单词 for 表示\"sure                  确切地；肯定\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "作者认为，我们不应想当然地以为那些智力测验得高分的人在实际工作中就一定能干得好。",
+        "translated": null
+      },
+      "answers": [
+        "The author argues that we shouldn't take it for granted that those who score high on intelligence tests will naturally do well in practical work."
+      ],
+      "analysis": "注意 \"take it for granted that...\"（想当然地认为）固定句式，以及 \"score high on\"（在…上得高分）和 \"do well in\"（在…方面表现好）的搭配。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "Sentence Translation"
-      },
-      "answers": [
-        "Ⅲ."
-      ],
-      "analysis": "英文单词 Ⅲ. 表示\"Sentence Translation\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "我挑出几条英语成语(idiom)，考了一下我的同班同学。",
+        "translated": null
+      },
+      "answers": [
+        "I picked out some English idioms and tried them on my classmates."
+      ],
+      "analysis": "注意 \"pick out\"（挑选）和 \"try sth. on sb.\"（用…来考验/测试某人）两个动词短语的运用。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "作者认为，我们不应想当然地以为那些智力测验得高分的人在实际工作中就一定能干得好。"
-      },
-      "answers": [
-        "1."
-      ],
-      "analysis": "英文单词 1. 表示\"作者认为，我们不应想当然地以为那些智力测验得高分的人在实际工作中就一定能干得好。\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "三位教授被请来对新教员设计的教案作出评估。",
+        "translated": null
+      },
+      "answers": [
+        "Three professors were asked to make an evaluation of the teaching plans devised by the new teachers."
+      ],
+      "analysis": "被动句 \"be asked to do\"（被请来做）；\"make an evaluation of\"（对…作出评估）= evaluate；过去分词短语 \"devised by...\" 作后置定语修饰 plans。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "author argues that we shouldn't take it for granted that those who score high on intelligence tests will naturally do well in practical work."
-      },
-      "answers": [
-        "The"
-      ],
-      "analysis": "英文单词 The 表示\"author argues that we shouldn't take it for granted that those who score high on intelligence tests will naturally do well in practical work.\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "他比任何对手的得分都高得多，证明他不愧为一个胜利者。",
+        "translated": null
+      },
+      "answers": [
+        "He scored much higher than any of his rivals and proved himself a worthy winner."
+      ],
+      "analysis": "注意 \"much higher than\"（比较级强调差距）；\"prove oneself + n.\"（证明自己是…）；\"worthy\" 修饰 winner 表示\"当之无愧的\"。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "我挑出几条英语成语(idiom)，考了一下我的同班同学。"
-      },
-      "answers": [
-        "2."
-      ],
-      "analysis": "英文单词 2. 表示\"我挑出几条英语成语(idiom)，考了一下我的同班同学。\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "这两只动物外貌很相似，但它们属于不同的种类。",
+        "translated": null
+      },
+      "answers": [
+        "The two animals are similar in appearance, but they belong to different species."
+      ],
+      "analysis": "\"similar in appearance\"（外表相似）= similar in look；\"belong to\"（属于）；species 单复数同形。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "三位教授被请来对新教员设计的教案作出评估。"
-      },
-      "answers": [
-        "3."
-      ],
-      "analysis": "英文单词 3. 表示\"三位教授被请来对新教员设计的教案作出评估。\"。",
+      "type": "sentence_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
+      ],
+      "content": {
+        "original": "我并不确切知道他申请的贷款(loan)银行是否会批。",
+        "translated": null
+      },
+      "answers": [
+        "I don't know for sure whether the bank will grant him the loan he has applied for."
+      ],
+      "analysis": "\"for sure\"（确切地）作状语修饰 know；whether 引导宾语从句；定语从句 \"he has applied for\" 修饰 loan，注意句末介词 for。"
     },
     {
-      "type": "spelling",
-      "content": {
-        "original": "professors were asked to make an evaluation of the teaching plans devised by the new teachers."
-      },
-      "answers": [
-        "Three"
-      ],
-      "analysis": "英文单词 Three 表示\"professors were asked to make an evaluation of the teaching plans devised by the new teachers.\"。",
+      "type": "paragraph_translation",
       "tags": [
         "Unit 9",
         "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
+      ],
       "content": {
-        "original": "他比任何对手的得分都高得多，证明他不愧为一个胜利者。"
+        "original": "Consider my auto-repair man, again. He had a habit of telling me jokes whenever he saw me. One time he raised his head from under automobile hood to say: \"Doc, a deaf-and-dumb guy went into a hardware store to ask for some nails. He put two fingers together on the counter and made hammering motions with the other hand. The clerk brought him a hammer. He shook his head and pointed to the two fingers he was hammering. The clerk brought him nails. He picked out the sizes he wanted, and left. Well, doc, the next guy who came was a blind man. He wanted scissors. How do you suppose he asked for them?\"",
+        "translated": null
       },
       "answers": [
-        "4."
+        "再来考虑一下我的汽车修理师吧。他有个习惯，每次见到我都要跟我讲些笑话。有一次他从汽车引擎罩下面抬起头来说：\"博士，有一个又聋又哑的人走进一家五金店买钉子。他把两个手指头一起放在柜台上，用另一只手做了几次锤击动作。店员给他拿来一把锤子。他摇摇头，指了指他正在敲击的那两个手指头。店员给他拿来了钉子。他选出了自己需要的尺寸，然后就走了。听好，博士，接着进来的是个瞎子。他要买剪刀。你猜他是怎么表示的呢？\""
       ],
-      "analysis": "英文单词 4. 表示\"他比任何对手的得分都高得多，证明他不愧为一个胜利者。\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "scored much higher than any of his rivals and proved himself a worthy winner."
-      },
-      "answers": [
-        "He"
-      ],
-      "analysis": "英文单词 He 表示\"scored much higher than any of his rivals and proved himself a worthy winner.\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "这两只动物外貌很相似，但它们属于不同的种类。"
-      },
-      "answers": [
-        "5."
-      ],
-      "analysis": "英文单词 5. 表示\"这两只动物外貌很相似，但它们属于不同的种类。\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "two animals are similar in appearance, but they belong to different species."
-      },
-      "answers": [
-        "The"
-      ],
-      "analysis": "英文单词 The 表示\"two animals are similar in appearance, but they belong to different species.\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "我并不确切知道他申请的贷款(loan)银行是否会给。"
-      },
-      "answers": [
-        "6."
-      ],
-      "analysis": "英文单词 6. 表示\"我并不确切知道他申请的贷款(loan)银行是否会给。\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "Selected Paragraph"
-      },
-      "answers": [
-        "Ⅳ."
-      ],
-      "analysis": "英文单词 Ⅳ. 表示\"Selected Paragraph\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "spelling",
-      "content": {
-        "original": "my auto-repair man, again. He had a habit of telling me jokes whenever he saw me. One time he raised his head from under automobile hood to say: \"Doc, a deaf-and-dumb guy went into a hardware store to ask for some nails. He put two fingers together on the counter and made hammering motions with the other hand.The clerk brought him a hammer. He shook his head and pointed to the two fingers he was hammering. The clerk brought him nails. He picked out the sizes he wanted, and left. Well, doc, the next guy who came was a blind man. He wanted scissors. How do you suppose he asked for them?\""
-      },
-      "answers": [
-        "Consider"
-      ],
-      "analysis": "英文单词 Consider 表示\"my auto-repair man, again. He had a habit of telling me jokes whenever he saw me. One time he raised his head from under automobile hood to say: \"Doc, a deaf-and-dumb guy went into a hardware store to ask for some nails. He put two fingers together on the counter and made hammering motions with the other hand.The clerk brought him a hammer. He shook his head and pointed to the two fingers he was hammering. The clerk brought him nails. He picked out the sizes he wanted, and left. Well, doc, the next guy who came was a blind man. He wanted scissors. How do you suppose he asked for them?\"\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
+      "analysis": "这是修理工讲的一则关于聋哑人和盲人买东西的小笑话。注意 \"have a habit of doing\"（有…的习惯）、\"raise one's head from under...\"（从…下面抬起头）、\"deaf-and-dumb\"（又聋又哑的，复合形容词）、\"put ... together on the counter\"（把…一起放在柜台上）、\"made hammering motions\"（做锤击动作）、\"point to\"（指着）、\"pick out the sizes he wanted\"（挑出他想要的尺寸，定语从句省略 that）、\"How do you suppose he asked for them?\"（你猜他是怎么要求的？— 间接疑问嵌套在主句中，注意陈述语序）等表达。"
     },
     {
       "type": "multiple_choice",
@@ -7124,96 +7039,6 @@
     {
       "type": "sentence_translation",
       "content": {
-        "original": "作者认为，我们不应想当然地以为那些智力测验得高分的人在实际工作中就一定能干得好。",
-        "translated": null
-      },
-      "answers": [
-        "The author argues that we shouldn't take it for granted that those who score high on intelligence tests will naturally do well in practical work."
-      ],
-      "analysis": "本课重点短语 \"take it for granted that...\"（想当然地认为，it 为形式宾语，that 从句为真正宾语）；定语从句 \"those who score high on...\" 修饰主语。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
-        "original": "我挑出几条英语成语(idiom)，考了一下我的同班同学。",
-        "translated": null
-      },
-      "answers": [
-        "I picked out some English idioms and tried them on my classmates."
-      ],
-      "analysis": "本课重点短语 \"pick out\"（挑选出）；\"try sth. on sb.\"（拿…考某人 / 在某人身上试用），注意介词搭配。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
-        "original": "三位教授被请来对新教员设计的教案作出评估。",
-        "translated": null
-      },
-      "answers": [
-        "Three professors were asked to make an evaluation of the teaching plans devised by the new teachers."
-      ],
-      "analysis": "被动语态 \"were asked to do\"（被请来做）；\"make an evaluation of...\"（对…作出评估，名词化表达）；过去分词 \"devised by...\" 作后置定语修饰 plans。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
-        "original": "他比任何对手的得分都高得多，证明他不愧为一个胜利者。",
-        "translated": null
-      },
-      "answers": [
-        "He scored much higher than any of his rivals and proved himself a worthy winner."
-      ],
-      "analysis": "\"much higher than any of...\" 比较级前用 much 修饰加强；\"prove oneself + 名词\"（证明自己是…）为常见结构，比 prove that he was 更地道。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
-        "original": "这两只动物外貌很相似，但它们属于不同的种类。",
-        "translated": null
-      },
-      "answers": [
-        "The two animals are similar in appearance, but they belong to different species."
-      ],
-      "analysis": "搭配 \"be similar in appearance\"（外貌相似，注意介词用 in）和 \"belong to different species\"（属于不同种类）。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
-        "original": "我并不确切知道他申请的贷款(loan)银行是否会给。",
-        "translated": null
-      },
-      "answers": [
-        "I don't know for sure whether the bank will grant him the loan he has applied for."
-      ],
-      "analysis": "本课重点短语 \"for sure\"（确切地）；\"whether... or not\" 引导的宾语从句；定语从句 \"the loan he has applied for\" 修饰 loan，apply for 表\"申请\"。",
-      "tags": [
-        "Unit 9",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "sentence_translation",
-      "content": {
         "original": "作者想通过这篇文章向读者传达她对赞扬与批评的看法。",
         "translated": null
       },
@@ -7508,21 +7333,6 @@
       "analysis": "这是一篇关于美国大学反作弊运动的段落翻译。文章以马里兰大学心理系为例，描述了如何通过封堵出口、检查身份证和拍摄面部照来识别\"代考者\"。注意 \"do more than talk about...\"（不仅仅是谈论；采取一切措施）、\"the rise in student cheating\"（学生作弊的上升）、\"launch a campaign\"（开展一场运动）、\"file out of\"（鱼贯离开）、\"all but one exit\"（除一个出口外所有的出口）、\"produce an ID card\"（出示身份证）、\"had a mug shot taken\"（被拍面部照）和 \"ringers\"（冒名顶替者）等表达的翻译。",
       "tags": [
         "Unit 8",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "paragraph_translation",
-      "content": {
-        "original": "Consider my auto-repair man, again. He had a habit of telling me jokes whenever he saw me. One time he raised his head from under automobile hood to say: \"Doc, a deaf-and-dumb guy went into a hardware store to ask for some nails. He put two fingers together on the counter and made hammering motions with the other hand.The clerk brought him a hammer. He shook his head and pointed to the two fingers he was hammering. The clerk brought him nails. He picked out the sizes he wanted, and left. Well, doc, the next guy who came was a blind man. He wanted scissors. How do you suppose he asked for them?\"",
-        "translated": null
-      },
-      "answers": [
-        "再来考虑一下我的汽车修理师吧。他有个习惯，每次见到我都要跟我讲些笑话。有一次他从汽车引擎罩下面抬起头来说：\"博士，有一个又聋又哑的人走进一家五金店买钉子。他把两个手指头一起放在柜台上，用另一只手做了几次锤击动作。店员给他拿来一把锤子。他摇摇头，指了指他正在敲击的那两个手指头。店员给他拿来了钉子。他选出了自己需要的尺寸，然后就走了。听好，博士，接着进来的是个瞎子。他要买剪刀。你猜他是怎么表示的呢？\""
-      ],
-      "analysis": "这是一篇引述汽车修理师讲笑话的段落翻译。文章通过聋哑人和盲人在五金店买东西的对比，为后文对\"智力\"的讨论做铺垫。注意 \"have a habit of doing\"（有…的习惯）、\"raised his head from under automobile hood\"（从汽车引擎罩下面抬起头）、\"deaf-and-dumb guy\"（又聋又哑的人）、\"made hammering motions\"（做锤击动作）、\"shook his head\"（摇摇头）、\"picked out the sizes\"（选出尺寸）和 \"How do you suppose he asked for them?\"（你猜他是怎么表示的呢？）等表达的翻译。",
-      "tags": [
-        "Unit 9",
         "Book 2"
       ]
     },
