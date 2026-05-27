@@ -20,7 +20,7 @@
             --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
         }
 
-        /* ========== 主题：academic（默认）— 学术墨绿 + 砂金 + 羊皮纸 ========== */
+        /* ========== 主题：academic — 学术墨绿 + 砂金 + 羊皮纸 ========== */
         :root,
         [data-theme="academic"] {
             color-scheme: light;
@@ -59,6 +59,8 @@
             /* Header 渐变 */
             --header-grad-from: oklch(96% 0.02 85);
             --header-grad-to: oklch(93% 0.035 80);
+            /* Header 纯色背景 */
+            --header-bg: oklch(99% 0.006 85);
             /* Header 斜纹/阴影 */
             --header-hatch: oklch(40% 0.05 180 / 0.025);
             --header-shadow: oklch(40% 0.05 180 / 0.18);
@@ -68,7 +70,7 @@
             --card-inset: oklch(100% 0 0 / 0.7);
         }
 
-        /* ========== 主题：classic — 经典紫蓝渐变 + 鲜色按钮 ========== */
+        /* ========== 主题：classic（默认）— 经典紫蓝 + 鲜色按钮 ========== */
         [data-theme="classic"] {
             color-scheme: light;
             --surface-page: #f5f7fa;
@@ -104,6 +106,7 @@
             --bg-glow-2: rgba(118, 75, 162, 0.16);
             --header-grad-from: #667eea;
             --header-grad-to: #764ba2;
+            --header-bg: #6b5ce0;
             --header-hatch: rgba(255, 255, 255, 0.06);
             --header-shadow: rgba(102, 126, 234, 0.35);
             --header-inset: rgba(255, 255, 255, 0.18);
@@ -114,7 +117,6 @@
         [data-theme="classic"] .header h1,
         [data-theme="classic"] .header h1::first-letter { color: #ffffff; }
         [data-theme="classic"] .header p { color: rgba(255, 255, 255, 0.92); }
-        [data-theme="classic"] .header::after { color: rgba(255, 255, 255, 0.7); }
 
         /* ========== 主题：midnight — 深色墨夜 + 琥珀 ========== */
         [data-theme="midnight"] {
@@ -152,6 +154,7 @@
             --bg-glow-2: oklch(30% 0.06 200 / 0.5);
             --header-grad-from: oklch(24% 0.025 250);
             --header-grad-to: oklch(20% 0.04 270);
+            --header-bg: oklch(22% 0.015 250);
             --header-hatch: oklch(80% 0.05 90 / 0.04);
             --header-shadow: oklch(0% 0 0 / 0.6);
             --header-inset: oklch(100% 0 0 / 0.05);
@@ -195,6 +198,7 @@
             --bg-glow-2: oklch(95% 0.03 320);
             --header-grad-from: oklch(96% 0.04 5);
             --header-grad-to: oklch(92% 0.06 8);
+            --header-bg: oklch(99.2% 0.008 10);
             --header-hatch: oklch(45% 0.1 350 / 0.04);
             --header-shadow: oklch(45% 0.1 350 / 0.2);
             --header-inset: oklch(100% 0 0 / 0.6);
@@ -238,6 +242,7 @@
             --bg-glow-2: oklch(94% 0.04 50);
             --header-grad-from: oklch(95% 0.04 175);
             --header-grad-to: oklch(91% 0.06 168);
+            --header-bg: oklch(99% 0.012 175);
             --header-hatch: oklch(40% 0.08 175 / 0.04);
             --header-shadow: oklch(40% 0.08 170 / 0.22);
             --header-inset: oklch(100% 0 0 / 0.6);
@@ -281,6 +286,7 @@
             --bg-glow-2: oklch(96% 0 0);
             --header-grad-from: oklch(98% 0 0);
             --header-grad-to: oklch(94% 0 0);
+            --header-bg: oklch(100% 0 0);
             --header-hatch: oklch(20% 0 0 / 0.03);
             --header-shadow: oklch(0% 0 0 / 0.18);
             --header-inset: oklch(100% 0 0 / 0.7);
@@ -329,43 +335,27 @@
             position: relative;
         }
 
-        /* ========== Header：学术杂志风 ========== */
+        /* ========== Header：纯色简洁 ========== */
         .header {
             position: relative;
             text-align: left;
             margin-bottom: clamp(20px, 3vw, 36px);
             padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 44px);
-            background:
-                linear-gradient(135deg, var(--header-grad-from) 0%, var(--header-grad-to) 100%);
+            background: var(--header-bg, var(--surface-card));
             color: var(--text-primary);
             border-radius: 18px;
             border: 1px solid var(--line-soft);
             box-shadow:
                 0 1px 0 var(--header-inset) inset,
                 0 24px 60px -32px var(--header-shadow);
-            overflow: hidden;
         }
 
         .header::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                repeating-linear-gradient(135deg, transparent 0 22px, var(--header-hatch) 22px 23px);
-            pointer-events: none;
+            content: none;
         }
 
         .header::after {
-            content: "EST. 学院 · ENGLISH PRACTICE";
-            position: absolute;
-            bottom: 14px;
-            right: 22px;
-            font-family: var(--font-mono);
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--text-muted);
-            opacity: 0.75;
-            pointer-events: none;
+            content: none;
         }
 
         .header h1 {
@@ -574,13 +564,68 @@
         }
 
         @media (max-width: 640px) {
+            /* 主题切换器：紧贴 header 顶部右上，避免与标题重叠 */
             .theme-switcher {
-                top: calc(clamp(16px, 3vw, 36px) + 12px);
-                right: calc(clamp(16px, 3vw, 36px) + 12px);
+                top: calc(clamp(16px, 3vw, 36px) + 10px);
+                right: calc(clamp(16px, 3vw, 36px) + 10px);
             }
+            .theme-switcher__trigger {
+                padding: 5px 10px;
+                font-size: 0.62rem;
+                letter-spacing: 0.12em;
+                gap: 6px;
+            }
+            .theme-switcher__dot {
+                width: 8px;
+                height: 8px;
+            }
+            /* 面板：宽度自适应 viewport，最多两侧各留 16px 边距，不溢出 */
             .theme-switcher__panel {
                 right: 0;
-                min-width: 220px;
+                min-width: 0;
+                width: calc(100vw - 32px);
+                max-width: 320px;
+                padding: 10px;
+            }
+            .theme-option {
+                padding: 10px 8px;
+            }
+            .theme-option__swatches span {
+                width: 16px;
+                height: 16px;
+            }
+            .theme-option__name {
+                font-size: 0.9rem;
+            }
+            .theme-option__desc {
+                font-size: 0.68rem;
+            }
+
+            /* Header：缩小内边距/字号，给右上按钮留安全区 */
+            .header {
+                padding: 22px 18px 20px;
+            }
+            .header h1 {
+                font-size: clamp(1.35rem, 6.5vw, 1.8rem);
+                /* 给右上角主题按钮留出空间，避免最后一行被覆盖 */
+                padding-right: 86px;
+                line-height: 1.15;
+            }
+            .header p {
+                font-size: 0.85rem;
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .theme-switcher__trigger #themeSwitcherLabel {
+                display: none;  /* 极窄屏只保留圆点图标，节省空间 */
+            }
+            .theme-switcher__trigger {
+                padding: 6px 8px;
+            }
+            .header h1 {
+                padding-right: 56px;
             }
         }
 
@@ -1739,19 +1784,34 @@
         /* 超小屏幕优化 */
         @media (max-width: 480px) {
             .container {
-                padding: 8px;
+                padding: 10px;
             }
             
             .header {
-                padding: 12px 8px;
+                padding: 18px 14px 16px;
             }
             
             .header h1 {
-                font-size: 1.2rem;
+                font-size: 1.25rem;
+                /* 给右上角主题按钮留出安全区，避免标题被挡 */
+                padding-right: 76px;
+                line-height: 1.2;
+                margin-bottom: 6px;
+            }
+
+            .header p {
+                font-size: 0.78rem;
+                padding-right: 0;
+            }
+
+            /* 主题切换器：跟随 container 10px padding 重新对齐到 header 右上角 */
+            .theme-switcher {
+                top: 18px;
+                right: 18px;
             }
             
             .controls {
-                padding: 8px;
+                padding: 10px;
             }
             
             .control-row {
@@ -1786,10 +1846,10 @@
                 var m = document.cookie.match(/(?:^|;\s*)ep_theme=([^;]+)/);
                 var saved = m ? decodeURIComponent(m[1]) : null;
                 var allowed = ['academic', 'classic', 'midnight', 'sakura', 'mint', 'mono'];
-                var theme = (saved && allowed.indexOf(saved) !== -1) ? saved : 'academic';
+                var theme = (saved && allowed.indexOf(saved) !== -1) ? saved : 'classic';
                 document.documentElement.setAttribute('data-theme', theme);
             } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'academic');
+                document.documentElement.setAttribute('data-theme', 'classic');
             }
         })();
     </script>
@@ -1948,16 +2008,16 @@
         (function initThemeSwitcher() {
             const THEMES = [
                 {
+                    id: 'classic',
+                    name: '经典紫蓝',
+                    desc: '默认 · 初版风格 · 紫蓝',
+                    swatches: ['#667eea', '#764ba2', '#f5f7fa']
+                },
+                {
                     id: 'academic',
                     name: '学术墨绿',
                     desc: '深绿 · 砂金 · 羊皮纸',
                     swatches: ['#1d3a36', '#c89150', '#f4ecd9']
-                },
-                {
-                    id: 'classic',
-                    name: '经典紫蓝',
-                    desc: '初版风格 · 紫蓝渐变',
-                    swatches: ['#667eea', '#764ba2', '#f5f7fa']
                 },
                 {
                     id: 'midnight',
@@ -2000,7 +2060,7 @@
             function getCurrentTheme() {
                 const saved = getCookie(COOKIE_KEY);
                 if (saved && THEMES.some(t => t.id === saved)) return saved;
-                return 'academic';
+                return 'classic';
             }
 
             function applyTheme(id) {
