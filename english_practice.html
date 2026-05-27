@@ -4,59 +4,597 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>英语练习平台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        /* ========== 设计 Token：基础（字体 + 缓动） ========== */
+        :root {
+            /* 字体 */
+            --font-display: 'Fraunces', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+            --font-text: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+            /* 缓动 */
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+        }
+
+        /* ========== 主题：academic（默认）— 学术墨绿 + 砂金 + 羊皮纸 ========== */
+        :root,
+        [data-theme="academic"] {
+            color-scheme: light;
+            --surface-page: oklch(97.2% 0.012 85);
+            --surface-card: oklch(99% 0.006 85);
+            --surface-sunken: oklch(94.5% 0.014 85);
+            --surface-tinted: oklch(96% 0.018 85);
+
+            --ink-900: oklch(24% 0.02 200);
+            --ink-700: oklch(36% 0.045 185);
+            --ink-500: oklch(48% 0.07 178);
+            --ink-300: oklch(72% 0.05 178);
+
+            --accent-600: oklch(58% 0.135 65);
+            --accent-500: oklch(66% 0.14 70);
+            --accent-200: oklch(90% 0.06 78);
+
+            --rust-600: oklch(50% 0.15 30);
+            --rust-500: oklch(58% 0.16 32);
+            --rust-200: oklch(91% 0.04 32);
+
+            --moss-600: oklch(48% 0.09 155);
+            --moss-500: oklch(55% 0.11 155);
+            --moss-200: oklch(91% 0.045 155);
+
+            --text-primary: oklch(22% 0.02 200);
+            --text-secondary: oklch(42% 0.018 200);
+            --text-muted: oklch(58% 0.012 200);
+
+            --line-soft: oklch(89% 0.012 85);
+            --line-medium: oklch(82% 0.018 85);
+
+            /* Body 背景柔光 */
+            --bg-glow-1: oklch(94% 0.025 80);
+            --bg-glow-2: oklch(95% 0.02 175);
+            /* Header 渐变 */
+            --header-grad-from: oklch(96% 0.02 85);
+            --header-grad-to: oklch(93% 0.035 80);
+            /* Header 斜纹/阴影 */
+            --header-hatch: oklch(40% 0.05 180 / 0.025);
+            --header-shadow: oklch(40% 0.05 180 / 0.18);
+            --header-inset: oklch(100% 0 0 / 0.6);
+            /* 卡片阴影色调 */
+            --card-shadow: oklch(30% 0.04 180 / 0.25);
+            --card-inset: oklch(100% 0 0 / 0.7);
+        }
+
+        /* ========== 主题：classic — 经典紫蓝渐变 + 鲜色按钮 ========== */
+        [data-theme="classic"] {
+            color-scheme: light;
+            --surface-page: #f5f7fa;
+            --surface-card: #ffffff;
+            --surface-sunken: #eef1f6;
+            --surface-tinted: #f0f3f8;
+
+            --ink-900: #1f2a44;
+            --ink-700: #2c3e50;
+            --ink-500: #5a6d8a;
+            --ink-300: #aab4c4;
+
+            --accent-600: #5a3fd6;
+            --accent-500: #667eea;
+            --accent-200: #d8def5;
+
+            --rust-600: #c0392b;
+            --rust-500: #e74c3c;
+            --rust-200: #fadbd8;
+
+            --moss-600: #1d8348;
+            --moss-500: #27ae60;
+            --moss-200: #d5f5e3;
+
+            --text-primary: #1f2a44;
+            --text-secondary: #4a5872;
+            --text-muted: #7e8aa3;
+
+            --line-soft: #e1e6ee;
+            --line-medium: #cfd6e3;
+
+            --bg-glow-1: rgba(102, 126, 234, 0.18);
+            --bg-glow-2: rgba(118, 75, 162, 0.16);
+            --header-grad-from: #667eea;
+            --header-grad-to: #764ba2;
+            --header-hatch: rgba(255, 255, 255, 0.06);
+            --header-shadow: rgba(102, 126, 234, 0.35);
+            --header-inset: rgba(255, 255, 255, 0.18);
+            --card-shadow: rgba(31, 42, 68, 0.18);
+            --card-inset: rgba(255, 255, 255, 0.6);
+        }
+        /* classic 主题：header 文字反白 */
+        [data-theme="classic"] .header h1,
+        [data-theme="classic"] .header h1::first-letter { color: #ffffff; }
+        [data-theme="classic"] .header p { color: rgba(255, 255, 255, 0.92); }
+        [data-theme="classic"] .header::after { color: rgba(255, 255, 255, 0.7); }
+
+        /* ========== 主题：midnight — 深色墨夜 + 琥珀 ========== */
+        [data-theme="midnight"] {
+            color-scheme: dark;
+            --surface-page: oklch(18% 0.012 250);
+            --surface-card: oklch(22% 0.015 250);
+            --surface-sunken: oklch(16% 0.01 250);
+            --surface-tinted: oklch(24% 0.02 250);
+
+            --ink-900: oklch(96% 0.01 90);
+            --ink-700: oklch(85% 0.02 90);
+            --ink-500: oklch(70% 0.03 90);
+            --ink-300: oklch(55% 0.025 90);
+
+            --accent-600: oklch(72% 0.16 70);
+            --accent-500: oklch(78% 0.15 75);
+            --accent-200: oklch(40% 0.09 70);
+
+            --rust-600: oklch(70% 0.18 28);
+            --rust-500: oklch(75% 0.17 30);
+            --rust-200: oklch(35% 0.1 30);
+
+            --moss-600: oklch(72% 0.14 158);
+            --moss-500: oklch(78% 0.13 158);
+            --moss-200: oklch(35% 0.08 158);
+
+            --text-primary: oklch(94% 0.008 90);
+            --text-secondary: oklch(78% 0.015 90);
+            --text-muted: oklch(60% 0.012 90);
+
+            --line-soft: oklch(30% 0.012 250);
+            --line-medium: oklch(38% 0.018 250);
+
+            --bg-glow-1: oklch(28% 0.05 260 / 0.6);
+            --bg-glow-2: oklch(30% 0.06 200 / 0.5);
+            --header-grad-from: oklch(24% 0.025 250);
+            --header-grad-to: oklch(20% 0.04 270);
+            --header-hatch: oklch(80% 0.05 90 / 0.04);
+            --header-shadow: oklch(0% 0 0 / 0.6);
+            --header-inset: oklch(100% 0 0 / 0.05);
+            --card-shadow: oklch(0% 0 0 / 0.5);
+            --card-inset: oklch(100% 0 0 / 0.04);
+        }
+
+        /* ========== 主题：sakura — 樱花粉 + 桃红 ========== */
+        [data-theme="sakura"] {
+            color-scheme: light;
+            --surface-page: oklch(97.5% 0.018 5);
+            --surface-card: oklch(99.2% 0.008 10);
+            --surface-sunken: oklch(95% 0.025 5);
+            --surface-tinted: oklch(96.5% 0.03 5);
+
+            --ink-900: oklch(28% 0.06 350);
+            --ink-700: oklch(40% 0.08 350);
+            --ink-500: oklch(55% 0.1 350);
+            --ink-300: oklch(75% 0.06 350);
+
+            --accent-600: oklch(60% 0.18 15);
+            --accent-500: oklch(68% 0.18 18);
+            --accent-200: oklch(90% 0.06 12);
+
+            --rust-600: oklch(52% 0.17 25);
+            --rust-500: oklch(60% 0.17 28);
+            --rust-200: oklch(91% 0.04 28);
+
+            --moss-600: oklch(52% 0.1 155);
+            --moss-500: oklch(60% 0.11 155);
+            --moss-200: oklch(91% 0.045 155);
+
+            --text-primary: oklch(26% 0.04 350);
+            --text-secondary: oklch(45% 0.04 350);
+            --text-muted: oklch(62% 0.025 350);
+
+            --line-soft: oklch(90% 0.02 5);
+            --line-medium: oklch(83% 0.03 5);
+
+            --bg-glow-1: oklch(94% 0.04 5);
+            --bg-glow-2: oklch(95% 0.03 320);
+            --header-grad-from: oklch(96% 0.04 5);
+            --header-grad-to: oklch(92% 0.06 8);
+            --header-hatch: oklch(45% 0.1 350 / 0.04);
+            --header-shadow: oklch(45% 0.1 350 / 0.2);
+            --header-inset: oklch(100% 0 0 / 0.6);
+            --card-shadow: oklch(40% 0.06 350 / 0.22);
+            --card-inset: oklch(100% 0 0 / 0.7);
+        }
+
+        /* ========== 主题：mint — 薄荷绿 + 珊瑚 ========== */
+        [data-theme="mint"] {
+            color-scheme: light;
+            --surface-page: oklch(97% 0.025 175);
+            --surface-card: oklch(99% 0.012 175);
+            --surface-sunken: oklch(94% 0.03 175);
+            --surface-tinted: oklch(95.5% 0.035 175);
+
+            --ink-900: oklch(28% 0.04 175);
+            --ink-700: oklch(40% 0.06 170);
+            --ink-500: oklch(52% 0.09 168);
+            --ink-300: oklch(72% 0.06 170);
+
+            --accent-600: oklch(58% 0.16 25);
+            --accent-500: oklch(66% 0.17 28);
+            --accent-200: oklch(90% 0.05 28);
+
+            --rust-600: oklch(52% 0.17 18);
+            --rust-500: oklch(60% 0.17 20);
+            --rust-200: oklch(91% 0.04 20);
+
+            --moss-600: oklch(48% 0.12 155);
+            --moss-500: oklch(56% 0.13 155);
+            --moss-200: oklch(91% 0.05 155);
+
+            --text-primary: oklch(24% 0.03 175);
+            --text-secondary: oklch(42% 0.03 175);
+            --text-muted: oklch(58% 0.02 175);
+
+            --line-soft: oklch(89% 0.02 175);
+            --line-medium: oklch(82% 0.03 175);
+
+            --bg-glow-1: oklch(93% 0.05 175);
+            --bg-glow-2: oklch(94% 0.04 50);
+            --header-grad-from: oklch(95% 0.04 175);
+            --header-grad-to: oklch(91% 0.06 168);
+            --header-hatch: oklch(40% 0.08 175 / 0.04);
+            --header-shadow: oklch(40% 0.08 170 / 0.22);
+            --header-inset: oklch(100% 0 0 / 0.6);
+            --card-shadow: oklch(35% 0.06 170 / 0.22);
+            --card-inset: oklch(100% 0 0 / 0.7);
+        }
+
+        /* ========== 主题：mono — 极简灰白纸质 ========== */
+        [data-theme="mono"] {
+            color-scheme: light;
+            --surface-page: oklch(98% 0 0);
+            --surface-card: oklch(100% 0 0);
+            --surface-sunken: oklch(95% 0 0);
+            --surface-tinted: oklch(96.5% 0 0);
+
+            --ink-900: oklch(15% 0 0);
+            --ink-700: oklch(28% 0 0);
+            --ink-500: oklch(45% 0 0);
+            --ink-300: oklch(70% 0 0);
+
+            --accent-600: oklch(20% 0 0);
+            --accent-500: oklch(32% 0 0);
+            --accent-200: oklch(88% 0 0);
+
+            --rust-600: oklch(45% 0.15 28);
+            --rust-500: oklch(55% 0.16 30);
+            --rust-200: oklch(92% 0.03 30);
+
+            --moss-600: oklch(45% 0.08 155);
+            --moss-500: oklch(55% 0.1 155);
+            --moss-200: oklch(92% 0.04 155);
+
+            --text-primary: oklch(15% 0 0);
+            --text-secondary: oklch(38% 0 0);
+            --text-muted: oklch(58% 0 0);
+
+            --line-soft: oklch(90% 0 0);
+            --line-medium: oklch(82% 0 0);
+
+            --bg-glow-1: oklch(95% 0 0);
+            --bg-glow-2: oklch(96% 0 0);
+            --header-grad-from: oklch(98% 0 0);
+            --header-grad-to: oklch(94% 0 0);
+            --header-hatch: oklch(20% 0 0 / 0.03);
+            --header-shadow: oklch(0% 0 0 / 0.18);
+            --header-inset: oklch(100% 0 0 / 0.7);
+            --card-shadow: oklch(0% 0 0 / 0.16);
+            --card-inset: oklch(100% 0 0 / 0.7);
+        }
+        /* mono 主题：去掉 H1 首字母染色 */
+        [data-theme="mono"] .header h1::first-letter { color: var(--ink-900); }
+
+        /* 平滑切换 */
+        body, .header, .controls, .practice-area, .question-card,
+        .options li, button, select, input, textarea {
+            transition:
+                background-color 0.4s var(--ease-out-expo),
+                background 0.4s var(--ease-out-expo),
+                color 0.3s var(--ease-out-expo),
+                border-color 0.3s var(--ease-out-expo);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background: #f5f5f5;
+            font-family: var(--font-text);
+            background:
+                radial-gradient(1200px 600px at 12% -10%, var(--bg-glow-1) 0%, transparent 60%),
+                radial-gradient(900px 500px at 110% 10%, var(--bg-glow-2) 0%, transparent 55%),
+                var(--surface-page);
+            background-attachment: fixed;
             min-height: 100vh;
-            color: #333;
-            font-size: 14px;
-            line-height: 1.6;
+            color: var(--text-primary);
+            font-size: 15px;
+            line-height: 1.65;
+            font-feature-settings: "ss01", "cv11";
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: clamp(16px, 3vw, 36px);
+            position: relative;
         }
 
+        /* ========== Header：学术杂志风 ========== */
         .header {
-            text-align: center;
-            margin-bottom: 24px;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+            position: relative;
+            text-align: left;
+            margin-bottom: clamp(20px, 3vw, 36px);
+            padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 44px);
+            background:
+                linear-gradient(135deg, var(--header-grad-from) 0%, var(--header-grad-to) 100%);
+            color: var(--text-primary);
+            border-radius: 18px;
+            border: 1px solid var(--line-soft);
+            box-shadow:
+                0 1px 0 var(--header-inset) inset,
+                0 24px 60px -32px var(--header-shadow);
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(135deg, transparent 0 22px, var(--header-hatch) 22px 23px);
+            pointer-events: none;
+        }
+
+        .header::after {
+            content: "EST. 学院 · ENGLISH PRACTICE";
+            position: absolute;
+            bottom: 14px;
+            right: 22px;
+            font-family: var(--font-mono);
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            color: var(--text-muted);
+            opacity: 0.75;
+            pointer-events: none;
         }
 
         .header h1 {
-            font-size: 1.8rem;
-            margin: 0 0 8px 0;
-            font-weight: 700;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+            margin: 0 0 10px 0;
+            color: var(--ink-900);
+            font-variation-settings: "opsz" 96, "SOFT" 50;
+        }
+
+        .header h1::first-letter {
+            color: var(--accent-600);
         }
 
         .header p {
             font-size: 0.95rem;
             margin: 0;
-            opacity: 0.9;
+            color: var(--text-secondary);
+            max-width: 56ch;
+            font-style: italic;
+            font-family: var(--font-display);
+            font-weight: 400;
         }
 
+        /* ========== 主题切换器 ========== */
+        .theme-switcher {
+            position: absolute;
+            top: calc(clamp(16px, 3vw, 36px) + 14px);
+            right: calc(clamp(16px, 3vw, 36px) + 22px);
+            z-index: 50;
+            font-family: var(--font-mono);
+        }
+
+        .theme-switcher__trigger {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            background: color-mix(in oklab, var(--surface-card) 70%, transparent);
+            border: 1px solid var(--line-medium);
+            border-radius: 999px;
+            cursor: pointer;
+            transition:
+                background-color 0.25s var(--ease-out-expo),
+                color 0.25s var(--ease-out-expo),
+                border-color 0.25s var(--ease-out-expo),
+                transform 0.25s var(--ease-out-expo);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+        .theme-switcher__trigger:hover {
+            color: var(--ink-900);
+            border-color: var(--ink-500);
+            transform: translateY(-1px);
+        }
+
+        .theme-switcher__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent-500);
+            box-shadow: 0 0 0 2px color-mix(in oklab, var(--accent-500) 30%, transparent);
+            flex-shrink: 0;
+        }
+
+        /* classic 主题下的触发按钮：贴合深色 header */
+        [data-theme="classic"] .theme-switcher__trigger {
+            color: rgba(255,255,255,0.92);
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(255,255,255,0.28);
+        }
+        [data-theme="classic"] .theme-switcher__trigger:hover {
+            color: #ffffff;
+            background: rgba(255,255,255,0.22);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .theme-switcher__panel {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 240px;
+            padding: 12px;
+            background: var(--surface-card);
+            border: 1px solid var(--line-medium);
+            border-radius: 14px;
+            box-shadow:
+                0 1px 0 var(--card-inset) inset,
+                0 24px 60px -24px var(--card-shadow);
+            opacity: 0;
+            transform: translateY(-6px) scale(0.97);
+            transform-origin: top right;
+            pointer-events: none;
+            transition:
+                opacity 0.25s var(--ease-out-expo),
+                transform 0.25s var(--ease-out-expo);
+        }
+
+        .theme-switcher.is-open .theme-switcher__panel {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        .theme-switcher__title {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            padding: 4px 8px 8px;
+            border-bottom: 1px solid var(--line-soft);
+            margin-bottom: 6px;
+        }
+
+        .theme-switcher__list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .theme-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 9px 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 1px solid transparent;
+            background: transparent;
+            text-align: left;
+            font-family: var(--font-text);
+            color: var(--text-primary);
+            transition:
+                background-color 0.2s var(--ease-out-expo),
+                border-color 0.2s var(--ease-out-expo);
+        }
+
+        .theme-option:hover {
+            background: var(--surface-tinted);
+        }
+
+        .theme-option.is-active {
+            background: var(--surface-tinted);
+            border-color: var(--line-medium);
+        }
+
+        .theme-option__swatches {
+            display: flex;
+            gap: -4px;
+            flex-shrink: 0;
+        }
+
+        .theme-option__swatches span {
+            display: block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 2px solid var(--surface-card);
+            margin-left: -6px;
+            box-shadow: 0 1px 2px var(--card-shadow);
+        }
+        .theme-option__swatches span:first-child { margin-left: 0; }
+
+        .theme-option__meta {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            min-width: 0;
+            flex: 1;
+        }
+
+        .theme-option__name {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            line-height: 1.2;
+        }
+
+        .theme-option__desc {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.3;
+        }
+
+        .theme-option__check {
+            color: var(--accent-600);
+            font-size: 0.85rem;
+            font-weight: 600;
+            opacity: 0;
+            margin-left: auto;
+        }
+
+        .theme-option.is-active .theme-option__check {
+            opacity: 1;
+        }
+
+        @media (max-width: 640px) {
+            .theme-switcher {
+                top: calc(clamp(16px, 3vw, 36px) + 12px);
+                right: calc(clamp(16px, 3vw, 36px) + 12px);
+            }
+            .theme-switcher__panel {
+                right: 0;
+                min-width: 220px;
+            }
+        }
+
+        /* ========== Controls：克制的控制台 ========== */
         .controls {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            border: 1px solid #e8e8e8;
-            transition: all 0.3s ease;
+            background: var(--surface-card);
+            border-radius: 14px;
+            padding: clamp(14px, 2vw, 22px);
+            box-shadow:
+                0 1px 0 oklch(100% 0 0 / 0.7) inset,
+                0 8px 24px -18px oklch(30% 0.04 180 / 0.25);
+            margin-bottom: clamp(18px, 2.4vw, 28px);
+            border: 1px solid var(--line-soft);
+            transition: all 0.4s var(--ease-out-expo);
         }
 
         .controls.collapsed {
@@ -70,21 +608,22 @@
             align-items: center;
             cursor: pointer;
             padding: 10px 0;
-            border-bottom: 1px solid #e8e8e8;
+            border-bottom: 1px solid var(--line-soft);
             margin-bottom: 15px;
         }
 
         .controls-header h3 {
             margin: 0;
+            font-family: var(--font-display);
             font-size: 1.1rem;
-            color: #333;
+            color: var(--ink-900);
             font-weight: 600;
         }
 
         .toggle-icon {
             font-size: 1.2rem;
-            color: #666;
-            transition: transform 0.3s ease;
+            color: var(--text-muted);
+            transition: transform 0.4s var(--ease-out-expo);
         }
 
         .controls.collapsed .toggle-icon {
@@ -92,7 +631,7 @@
         }
 
         .controls-content {
-            transition: all 0.3s ease;
+            transition: all 0.4s var(--ease-out-expo);
         }
 
         .controls.collapsed .controls-content {
@@ -109,12 +648,13 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 12px;
-            padding: 10px 12px;
-            background: #fafafa;
-            border: 1px solid #e8e8e8;
-            border-radius: 6px;
+            margin-bottom: 10px;
+            padding: 10px 14px;
+            background: var(--surface-sunken);
+            border: 1px solid transparent;
+            border-radius: 10px;
             flex-wrap: nowrap;
+            transition: border-color 0.3s var(--ease-out-expo), background 0.3s var(--ease-out-expo);
         }
 
         .control-row:last-child {
@@ -122,69 +662,85 @@
         }
 
         .control-row:hover {
-            border-color: #007aff;
+            border-color: var(--ink-300);
+            background: var(--surface-tinted);
         }
 
         .control-row label {
             font-weight: 500;
-            color: #333;
+            color: var(--text-secondary);
             min-width: 70px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.01em;
             white-space: nowrap;
             flex-shrink: 0;
         }
 
         .control-row select, .control-row input, .control-row button {
             padding: 8px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            border: 1px solid var(--line-medium);
+            border-radius: 6px;
             font-size: 0.9rem;
-            transition: all 0.2s ease;
+            font-family: inherit;
+            background: var(--surface-card);
+            color: var(--text-primary);
+            transition: all 0.25s var(--ease-out-expo);
+        }
+
+        .control-row select {
+            appearance: none;
+            background-image: linear-gradient(45deg, transparent 50%, var(--text-muted) 50%),
+                              linear-gradient(135deg, var(--text-muted) 50%, transparent 50%);
+            background-position: calc(100% - 14px) 50%, calc(100% - 9px) 50%;
+            background-size: 5px 5px, 5px 5px;
+            background-repeat: no-repeat;
+            padding-right: 28px;
         }
 
         .control-row select:focus, .control-row input:focus {
             outline: none;
-            border-color: #007aff;
+            border-color: var(--ink-500);
+            box-shadow: 0 0 0 3px oklch(48% 0.07 178 / 0.12);
         }
 
         .control-row input[type="checkbox"] {
             appearance: none;
-            width: 14px;
-            height: 14px;
-            border: 1px solid #ddd;
-            border-radius: 2px;
-            background: white;
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid var(--line-medium);
+            border-radius: 4px;
+            background: var(--surface-card);
             cursor: pointer;
             position: relative;
-            transition: all 0.2s ease;
+            transition: all 0.2s var(--ease-out-expo);
             margin: 0;
             flex-shrink: 0;
         }
         
         .control-row input[type="checkbox"]:hover {
-            border-color: #007aff;
+            border-color: var(--ink-500);
         }
 
         .control-row input[type="checkbox"]:checked {
-            background-color: #007aff;
-            border-color: #007aff;
+            background-color: var(--ink-700);
+            border-color: var(--ink-700);
         }
 
         .control-row input[type="checkbox"]:checked::after {
             content: '';
             position: absolute;
-            left: 3px;
+            left: 4px;
             top: 1px;
-            width: 4px;
-            height: 6px;
+            width: 5px;
+            height: 8px;
             border: solid white;
-            border-width: 0 1px 1px 0;
+            border-width: 0 1.5px 1.5px 0;
             transform: rotate(45deg);
         }
 
         .control-row input[type="checkbox"]:focus {
             outline: none;
-            box-shadow: 0 0 0 1px rgba(0, 122, 255, 0.1);
+            box-shadow: 0 0 0 3px oklch(36% 0.045 185 / 0.15);
         }
 
         /* 移动端checkbox缩放和间距调整 */
@@ -218,33 +774,38 @@
             white-space: nowrap;
         }
 
+        /* ========== 按钮：墨绿主按钮 / 砂金强调 / 砖红警示 ========== */
         .start-btn {
-            background: #28a745 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: var(--ink-700) !important;
+            color: oklch(98% 0.012 85) !important;
+            border: 1px solid var(--ink-900) !important;
+            padding: 8px 18px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
-            font-size: 0.85rem !important;
+            font-size: 0.88rem !important;
             font-weight: 600 !important;
-            transition: all 0.2s ease !important;
-            min-width: 80px !important;
+            letter-spacing: 0.02em !important;
+            transition: transform 0.25s var(--ease-out-expo), background 0.25s var(--ease-out-expo), box-shadow 0.25s var(--ease-out-expo) !important;
+            min-width: 90px !important;
             white-space: nowrap !important;
+            box-shadow: 0 1px 0 oklch(100% 0 0 / 0.15) inset, 0 6px 14px -8px oklch(36% 0.045 185 / 0.55) !important;
         }
 
         .start-btn:hover {
-            background: #218838 !important;
+            background: var(--ink-900) !important;
+            transform: translateY(-1px);
         }
 
         .reset-btn {
-            background: #007aff !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: transparent !important;
+            color: var(--ink-700) !important;
+            border: 1px solid var(--ink-300) !important;
+            padding: 8px 16px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
-            transition: all 0.3s ease !important;
+            font-weight: 500 !important;
+            transition: all 0.3s var(--ease-out-expo) !important;
             margin-left: 10px !important;
             min-width: 80px !important;
             display: inline-block !important;
@@ -252,141 +813,225 @@
         }
 
         .reset-btn:hover {
-            background: #0056cc !important;
+            background: var(--surface-tinted) !important;
+            border-color: var(--ink-700) !important;
         }
 
         #prevBtn, #nextBtn {
-            background: #007aff !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: var(--surface-card) !important;
+            color: var(--ink-700) !important;
+            border: 1px solid var(--line-medium) !important;
+            padding: 8px 16px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
-            font-size: 0.85rem !important;
-            transition: all 0.2s ease !important;
+            font-size: 0.88rem !important;
+            font-weight: 500 !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
             margin-left: 8px !important;
-            min-width: 80px !important;
+            min-width: 88px !important;
             white-space: nowrap !important;
         }
-        
-        #prevBtn:hover, #nextBtn:hover {
-            background: #0056cc !important;
+
+        #nextBtn {
+            background: var(--ink-700) !important;
+            color: oklch(98% 0.012 85) !important;
+            border-color: var(--ink-900) !important;
+        }
+
+        #prevBtn:hover {
+            background: var(--surface-sunken) !important;
+            border-color: var(--ink-500) !important;
+        }
+
+        #nextBtn:hover {
+            background: var(--ink-900) !important;
+            transform: translateY(-1px);
         }
 
         #wrongQuestionsBtn {
-            background: #dc3545 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: transparent !important;
+            color: var(--rust-600) !important;
+            border: 1px solid oklch(75% 0.08 32) !important;
+            padding: 8px 16px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
-            transition: all 0.3s ease !important;
+            font-weight: 500 !important;
+            transition: all 0.3s var(--ease-out-expo) !important;
             margin-left: 10px !important;
             min-width: 80px !important;
             white-space: nowrap !important;
         }
         
         #wrongQuestionsBtn:hover {
-            background: #c82333 !important;
+            background: var(--rust-200) !important;
+            border-color: var(--rust-500) !important;
         }
 
+        /* ========== Practice 区 + 题目卡 ========== */
         .practice-area {
-            background: white;
-            border-radius: 4px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            min-height: 300px;
-            border: 1px solid #e8e8e8;
+            background: var(--surface-card);
+            border-radius: 16px;
+            padding: clamp(18px, 2.8vw, 32px);
+            box-shadow:
+                0 1px 0 oklch(100% 0 0 / 0.7) inset,
+                0 16px 40px -28px oklch(30% 0.04 180 / 0.25);
+            min-height: 320px;
+            border: 1px solid var(--line-soft);
         }
 
         .question-card {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border: 1px solid #e8e8e8;
+            background: transparent;
+            border-radius: 12px;
+            padding: 4px;
+            border: none;
             margin-bottom: 16px;
         }
 
         .question-type {
-            background: #007aff;
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            background: var(--ink-900);
+            color: oklch(96% 0.02 85);
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-family: var(--font-mono);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .question-type::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--accent-500);
         }
 
         .question-content {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 16px 0;
-            color: #333;
+            font-size: clamp(1.05rem, 1.3vw, 1.18rem);
+            line-height: 1.75;
+            margin: 22px 0;
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-weight: 400;
+            letter-spacing: -0.005em;
+            padding: 18px 22px;
+            background: var(--surface-sunken);
+            border-left: 3px solid var(--accent-500);
+            border-radius: 4px 10px 10px 4px;
         }
 
         .answer-input {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #e8e8e8;
-            border-radius: 6px;
+            padding: 14px 16px;
+            border: 1.5px solid var(--line-medium);
+            border-radius: 10px;
             font-size: 1rem;
-            transition: all 0.2s ease;
+            font-family: var(--font-text);
+            background: var(--surface-card);
+            color: var(--text-primary);
+            transition: all 0.25s var(--ease-out-expo);
             box-sizing: border-box;
         }
 
         .answer-input:focus {
             outline: none;
-            border-color: #007aff;
-            box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+            border-color: var(--ink-500);
+            background: oklch(99.5% 0.005 85);
+            box-shadow: 0 0 0 4px oklch(48% 0.07 178 / 0.12);
         }
+
+        .answer-input::placeholder { color: var(--text-muted); }
 
         .choice-options {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin: 16px 0;
+            gap: 10px;
+            margin: 18px 0;
         }
 
         .choice-option {
-            padding: 12px 16px;
-            border: 2px solid #e8e8e8;
-            border-radius: 6px;
-            background: white;
+            padding: 14px 18px 14px 48px;
+            border: 1.5px solid var(--line-medium);
+            border-radius: 10px;
+            background: var(--surface-card);
             cursor: pointer;
             font-size: 1rem;
-            transition: all 0.2s ease;
+            line-height: 1.5;
+            color: var(--text-primary);
+            transition: all 0.25s var(--ease-out-expo);
             text-align: left;
+            position: relative;
+        }
+
+        .choice-option::before {
+            content: "";
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border: 1.5px solid var(--line-medium);
+            border-radius: 50%;
+            background: var(--surface-page);
+            transition: all 0.25s var(--ease-out-expo);
         }
 
         .choice-option:hover {
-            border-color: #007aff;
-            background: #f8f9ff;
+            border-color: var(--ink-500);
+            background: var(--surface-tinted);
+            transform: translateX(2px);
         }
 
+        .choice-option:hover::before { border-color: var(--ink-500); }
+
         .choice-option.selected {
-            border-color: #007aff;
-            background: #e3f2fd;
+            border-color: var(--ink-700);
+            background: oklch(94% 0.025 178);
+        }
+
+        .choice-option.selected::before {
+            border-color: var(--ink-700);
+            background: var(--ink-700);
+            box-shadow: inset 0 0 0 3px oklch(94% 0.025 178);
         }
 
         .choice-option.correct {
-            border-color: #28a745;
-            background: #d4edda;
-            color: #155724;
+            border-color: var(--moss-500);
+            background: var(--moss-200);
+            color: oklch(28% 0.06 155);
+        }
+
+        .choice-option.correct::before {
+            border-color: var(--moss-500);
+            background: var(--moss-500);
+            box-shadow: inset 0 0 0 3px var(--moss-200);
         }
 
         .choice-option.incorrect {
-            border-color: #dc3545;
-            background: #f8d7da;
-            color: #721c24;
+            border-color: var(--rust-500);
+            background: var(--rust-200);
+            color: oklch(34% 0.1 30);
+        }
+
+        .choice-option.incorrect::before {
+            border-color: var(--rust-500);
+            background: var(--rust-500);
+            box-shadow: inset 0 0 0 3px var(--rust-200);
         }
 
         .feedback {
-            padding: 12px 16px;
-            border-radius: 6px;
-            margin: 16px 0;
+            padding: 14px 18px;
+            border-radius: 10px;
+            margin: 18px 0;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
+            border-left: 3px solid transparent;
         }
         
         .feedback.hidden {
@@ -394,126 +1039,160 @@
         }
 
         .feedback.correct {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: var(--moss-200);
+            color: oklch(30% 0.07 155);
+            border-left-color: var(--moss-500);
+            border-top: 1px solid oklch(85% 0.05 155);
+            border-right: 1px solid oklch(85% 0.05 155);
+            border-bottom: 1px solid oklch(85% 0.05 155);
         }
 
         .feedback.incorrect {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: var(--rust-200);
+            color: oklch(34% 0.1 30);
+            border-left-color: var(--rust-500);
+            border-top: 1px solid oklch(86% 0.05 32);
+            border-right: 1px solid oklch(86% 0.05 32);
+            border-bottom: 1px solid oklch(86% 0.05 32);
         }
 
+        /* ========== 统计面板 ========== */
         .stats {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 16px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #dee2e6;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            background: var(--surface-card);
+            padding: 16px 22px;
+            border-radius: 14px;
+            margin-bottom: 22px;
+            border: 1px solid var(--line-soft);
+            box-shadow: 0 1px 0 oklch(100% 0 0 / 0.7) inset;
         }
 
         .stat-item {
             text-align: center;
-            padding: 8px 16px;
-            background: white;
-            border-radius: 6px;
-            border: 1px solid #e9ecef;
-            min-width: 80px;
-            transition: all 0.2s ease;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 10px 18px;
+            background: var(--surface-sunken);
+            border-radius: 10px;
+            border: 1px solid transparent;
+            min-width: 90px;
+            transition: all 0.3s var(--ease-out-expo);
         }
 
         .stat-item:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+            border-color: var(--ink-300);
+            background: var(--surface-tinted);
         }
 
         .stat-number {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #007aff;
-            margin-bottom: 4px;
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--ink-900);
+            margin-bottom: 2px;
             display: block;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.02em;
         }
 
         .stat-label {
-            font-size: 0.85rem;
-            color: #495057;
+            font-size: 0.7rem;
+            color: var(--text-muted);
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.12em;
             display: block;
+            font-family: var(--font-mono);
         }
 
+        /* ========== 进度条 ========== */
         .progress-bar {
             width: 100%;
-            height: 4px;
-            background: #e8e8e8;
-            border-radius: 2px;
+            height: 3px;
+            background: var(--surface-sunken);
+            border-radius: 999px;
             overflow: hidden;
-            margin-bottom: 12px;
+            margin-bottom: 18px;
+            position: relative;
         }
 
         .progress-fill {
             height: 100%;
-            background: #007aff;
-            transition: width 0.3s ease;
+            background: linear-gradient(90deg, var(--ink-700) 0%, var(--accent-500) 100%);
+            transition: width 0.5s var(--ease-out-expo);
+            border-radius: 999px;
         }
 
         .hidden {
             display: none;
         }
 
+        /* ========== 欢迎屏 ========== */
         .welcome-screen {
             text-align: center;
-            padding: 40px 20px;
+            padding: clamp(36px, 6vw, 72px) 20px;
+            position: relative;
+        }
+
+        .welcome-screen::before {
+            content: "“";
+            display: block;
+            font-family: var(--font-display);
+            font-size: clamp(4rem, 8vw, 6rem);
+            line-height: 0.7;
+            color: var(--accent-500);
+            opacity: 0.45;
+            margin-bottom: 12px;
+            font-weight: 400;
         }
 
         .welcome-screen h2 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #333;
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+            margin-bottom: 14px;
+            color: var(--ink-900);
             font-weight: 600;
+            letter-spacing: -0.01em;
         }
 
         .welcome-screen p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+            line-height: 1.7;
+            max-width: 56ch;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .start-btn:hover {
-            background: #0056cc !important;
-        }
-
-        /* 新增：题目统计信息样式 */
+        /* 题目统计信息 */
         .question-stats {
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.9rem;
-            color: #666;
-            margin-left: 12px;
+            gap: 14px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-left: 14px;
+            font-family: var(--font-mono);
+            font-variant-numeric: tabular-nums;
         }
 
         .question-stats .current-total {
             font-weight: 600;
-            color: #007aff;
+            color: var(--ink-900);
+            background: var(--surface-sunken);
+            padding: 3px 10px;
+            border-radius: 999px;
         }
 
         .question-stats .correct-count {
-            color: #28a745;
+            color: var(--moss-600);
             font-weight: 500;
         }
 
         .question-stats .incorrect-count {
-            color: #dc3545;
+            color: var(--rust-600);
             font-weight: 500;
         }
 
@@ -759,26 +1438,27 @@
         }
         
         .toggle-answer-btn {
-            background: #28a745 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: var(--moss-600) !important;
+            color: oklch(98% 0.01 155) !important;
+            border: 1px solid oklch(40% 0.08 155) !important;
+            padding: 7px 14px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
-            transition: all 0.2s ease !important;
+            font-weight: 500 !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
             display: flex !important;
             align-items: center !important;
-            gap: 5px !important;
+            gap: 6px !important;
             white-space: nowrap !important;
         }
         
         .toggle-answer-btn:hover {
-            background: #218838 !important;
+            background: oklch(42% 0.09 155) !important;
         }
         
         .toggle-answer-btn.expanded {
-            background: #218838 !important;
+            background: oklch(40% 0.09 155) !important;
         }
         
         .toggle-icon {
@@ -795,58 +1475,63 @@
         }
 
         .show-answer-btn {
-            background: #28a745 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: var(--accent-600) !important;
+            color: oklch(99% 0.005 80) !important;
+            border: 1px solid oklch(48% 0.13 65) !important;
+            padding: 7px 14px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
-            transition: all 0.2s ease !important;
+            font-weight: 500 !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
             min-width: 80px !important;
             white-space: nowrap !important;
         }
         
         .show-answer-btn:hover {
-            background: #218838 !important;
+            background: oklch(50% 0.14 65) !important;
+            transform: translateY(-1px);
         }
         
-        /* 交卷按钮样式 */
+        /* 交卷按钮 */
         .submit-btn {
-            background: #ff6b35 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: var(--rust-600) !important;
+            color: oklch(99% 0.01 32) !important;
+            border: 1px solid oklch(42% 0.13 30) !important;
+            padding: 7px 14px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 500 !important;
-            transition: all 0.2s ease !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
             min-width: 80px !important;
             white-space: nowrap !important;
         }
         
         .submit-btn:hover {
-            background: #e55a2b !important;
+            background: oklch(44% 0.14 30) !important;
+            transform: translateY(-1px);
         }
         
-        /* 设置按钮样式 */
+        /* 设置按钮 */
         .settings-btn {
-            background: #6c757d !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: transparent !important;
+            color: var(--text-secondary) !important;
+            border: 1px solid var(--line-medium) !important;
+            padding: 7px 14px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 500 !important;
-            transition: all 0.2s ease !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
             min-width: 80px !important;
             white-space: nowrap !important;
         }
         
         .settings-btn:hover {
-            background: #5a6268 !important;
+            background: var(--surface-sunken) !important;
+            color: var(--ink-700) !important;
+            border-color: var(--ink-500) !important;
         }
         
         /* 通用按钮文字不换行样式 */
@@ -854,126 +1539,137 @@
             white-space: nowrap !important;
         }
         
-        /* 结果展示界面样式 */
+        /* ========== 结果展示 ========== */
         .result-screen {
-            background: white;
-            border-radius: 8px;
-            padding: 16px;
-            box-shadow: 0 1px 6px rgba(0,0,0,0.1);
-            border: 1px solid #e8e8e8;
-            max-width: 800px;
+            background: var(--surface-card);
+            border-radius: 16px;
+            padding: clamp(18px, 2.6vw, 28px);
+            box-shadow: 0 1px 0 oklch(100% 0 0 / 0.7) inset, 0 12px 32px -22px oklch(30% 0.04 180 / 0.2);
+            border: 1px solid var(--line-soft);
+            max-width: 860px;
             margin: 0 auto;
         }
         
         .result-header {
             text-align: center;
-            margin-bottom: 16px;
-            padding: 16px;
-            background: #e8f5e8;
-            color: #2d5a2d;
-            border-radius: 6px;
-            border: 1px solid #c3e6cb;
+            margin-bottom: 22px;
+            padding: 24px 18px;
+            background: linear-gradient(135deg, var(--moss-200) 0%, oklch(94% 0.04 155) 100%);
+            color: oklch(28% 0.06 155);
+            border-radius: 12px;
+            border: 1px solid oklch(85% 0.05 155);
         }
         
         .result-header h2 {
             margin: 0 0 12px 0;
-            font-size: 1.3rem;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
             font-weight: 600;
+            letter-spacing: -0.01em;
         }
         
         .score-display {
-            font-size: 2rem;
-            font-weight: bold;
-            margin: 12px 0;
-            color: #28a745;
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 600;
+            margin: 14px 0;
+            color: var(--moss-600);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
         }
         
         .result-summary {
             display: flex;
             justify-content: space-around;
-            margin: 12px 0;
-            font-size: 0.95rem;
+            margin: 14px 0 4px;
+            font-size: 0.92rem;
             font-weight: 500;
+            font-family: var(--font-mono);
         }
         
         .result-item {
-            background: #fafafa;
-            border: 1px solid #e8e8e8;
-            border-radius: 6px;
-            padding: 12px;
-            margin-bottom: 8px;
-            transition: all 0.2s ease;
+            background: var(--surface-sunken);
+            border: 1px solid var(--line-soft);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-bottom: 10px;
+            transition: all 0.25s var(--ease-out-expo);
         }
         
         .result-item:hover {
-            border-color: #28a745;
-            box-shadow: 0 2px 6px rgba(40, 167, 69, 0.1);
+            border-color: var(--ink-300);
+            transform: translateX(2px);
         }
         
         .result-item.correct {
-            border-left: 3px solid #28a745;
-            background: #f8fff9;
+            border-left: 3px solid var(--moss-500);
+            background: oklch(96% 0.025 155);
         }
         
         .result-item.incorrect {
-            border-left: 3px solid #dc3545;
-            background: #fff8f8;
+            border-left: 3px solid var(--rust-500);
+            background: oklch(96% 0.025 32);
         }
         
         .result-question {
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #333;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: var(--text-primary);
             display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-family: var(--font-display);
         }
         
         .result-answers {
             display: flex;
             gap: 12px;
             margin: 8px 0;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
         }
         
         .user-answer {
             flex: 1;
-            padding: 8px 10px;
-            background: #f8f9fa;
-            border-radius: 4px;
-            border: 1px solid #e8e8e8;
+            padding: 10px 12px;
+            background: var(--surface-card);
+            border-radius: 8px;
+            border: 1px solid var(--line-soft);
         }
         
         .correct-answer {
             flex: 1;
-            padding: 8px 10px;
-            background: #d4edda;
-            border-radius: 4px;
-            border: 1px solid #c3e6cb;
-            color: #155724;
+            padding: 10px 12px;
+            background: var(--moss-200);
+            border-radius: 8px;
+            border: 1px solid oklch(85% 0.05 155);
+            color: oklch(30% 0.07 155);
         }
         
         .add-to-wrong-btn {
-            background: #dc3545 !important;
-            color: white !important;
-            border: none !important;
-            padding: 6px 12px !important;
-            border-radius: 4px !important;
+            background: transparent !important;
+            color: var(--rust-600) !important;
+            border: 1px solid oklch(75% 0.08 32) !important;
+            padding: 7px 14px !important;
+            border-radius: 8px !important;
             cursor: pointer !important;
             font-size: 0.85rem !important;
             font-weight: 500 !important;
-            transition: all 0.2s ease !important;
-            margin-top: 8px !important;
+            transition: all 0.25s var(--ease-out-expo) !important;
+            margin-top: 10px !important;
             white-space: nowrap !important;
         }
         
         .add-to-wrong-btn:hover {
-            background: #c82333 !important;
+            background: var(--rust-200) !important;
+            border-color: var(--rust-500) !important;
         }
         
         .add-to-wrong-btn.added {
-            background: #6c757d !important;
+            background: var(--surface-sunken) !important;
+            color: var(--text-muted) !important;
+            border-color: var(--line-medium) !important;
             cursor: not-allowed !important;
         }
 
@@ -1083,18 +1779,42 @@
             }
         }
     </style>
+    <script>
+        // 尽早应用已保存主题，避免页面闪烁
+        (function () {
+            try {
+                var m = document.cookie.match(/(?:^|;\s*)ep_theme=([^;]+)/);
+                var saved = m ? decodeURIComponent(m[1]) : null;
+                var allowed = ['academic', 'classic', 'midnight', 'sakura', 'mint', 'mono'];
+                var theme = (saved && allowed.indexOf(saved) !== -1) ? saved : 'academic';
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'academic');
+            }
+        })();
+    </script>
 </head>
 <body>
     <div class="container">
+        <div class="theme-switcher" id="themeSwitcher">
+            <button type="button" class="theme-switcher__trigger" id="themeSwitcherTrigger" aria-haspopup="true" aria-expanded="false">
+                <span class="theme-switcher__dot" id="themeSwitcherDot"></span>
+                <span id="themeSwitcherLabel">主题</span>
+            </button>
+            <div class="theme-switcher__panel" id="themeSwitcherPanel" role="menu">
+                <div class="theme-switcher__title">选择主题 · Theme</div>
+                <div class="theme-switcher__list" id="themeSwitcherList"></div>
+            </div>
+        </div>
         <div class="header">
-            <h1>🎓 英语练习平台(4段)</h1>
+            <h1>🎓 英语练习平台(5段)</h1>
             <p>提升你的英语词汇、翻译和语法技能</p>
         </div>
 
         <div class="controls">
             <div class="control-row">
                 <label for="segmentSelect">英语段数</label>
-                <select id="segmentSelect" style="width: 120px;">
+                <select id="segmentSelect" style="width: 150px;">
                     <option value="en5.json" selected>英语5段</option>
                     <option value="en4.json">英语4段</option>
                     <option value="en3.json">英语3段</option>
@@ -1102,7 +1822,7 @@
             </div>
             <div class="control-row">
                 <label id="practiceTypeLabel">题型选择</label>
-                <select id="practiceType" style="width: 140px;">
+                <select id="practiceType" style="width: 150px;">
                     <option value="all">全部类型</option>
                     <option value="spelling">单词拼写</option>
                     <option value="phrase_translation">短语翻译</option>
@@ -1114,7 +1834,7 @@
             
             <div class="control-row">
                 <label>单元选择</label>
-                <select id="unitSelect" style="width: 140px;">
+                <select id="unitSelect" style="width: 150px;">
                     <option value="all">全部单元</option>
                     <option value="Unit 9">Unit 9 (Book 1)</option>
                     <option value="Unit 10">Unit 10 (Book 1)</option>
@@ -1129,7 +1849,7 @@
             
             <div class="control-row">
                 <label>题目数量</label>
-                <input type="number" id="questionCount" value="10" min="1" max="50">
+                <input type="number" id="questionCount" value="100" min="1" max="500" style="width: 150px;">
             </div>
             
             <div class="control-row">
@@ -1191,11 +1911,11 @@
 
             <div id="wrongQuestionsScreen" class="hidden">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3 style="margin: 0; color: #333;">错题集</h3>
+                    <h3 style="margin: 0; color: var(--ink-900); font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; letter-spacing: -0.01em;">错题集</h3>
                     <div style="display: flex; gap: 10px;">
-                        <button id="toggleAllAnswersBtn" style="background: #28a745; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">展开所有答案</button>
-                        <button id="deleteAllWrongBtn" style="background: #dc3545; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">删除所有错题</button>
-                        <button id="wrongSettingsBtn" style="background: #6c757d; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">设置</button>
+                        <button id="toggleAllAnswersBtn" class="toggle-answer-btn">展开所有答案</button>
+                        <button id="deleteAllWrongBtn" class="add-to-wrong-btn" style="margin-top: 0 !important;">删除所有错题</button>
+                        <button id="wrongSettingsBtn" class="settings-btn">设置</button>
                     </div>
                 </div>
                 <div id="wrongQuestionsList">
@@ -1224,6 +1944,173 @@
     </div>
 
     <script>
+        // ====== 主题切换器（cookie 持久化，1 年） ======
+        (function initThemeSwitcher() {
+            const THEMES = [
+                {
+                    id: 'academic',
+                    name: '学术墨绿',
+                    desc: '深绿 · 砂金 · 羊皮纸',
+                    swatches: ['#1d3a36', '#c89150', '#f4ecd9']
+                },
+                {
+                    id: 'classic',
+                    name: '经典紫蓝',
+                    desc: '初版风格 · 紫蓝渐变',
+                    swatches: ['#667eea', '#764ba2', '#f5f7fa']
+                },
+                {
+                    id: 'midnight',
+                    name: '深夜墨色',
+                    desc: '暗色模式 · 琥珀点缀',
+                    swatches: ['#171c2a', '#e9b46a', '#2a3045']
+                },
+                {
+                    id: 'sakura',
+                    name: '樱花粉',
+                    desc: '柔粉 · 桃红 · 暖白',
+                    swatches: ['#d96a8a', '#f0c9d3', '#fbf2f3']
+                },
+                {
+                    id: 'mint',
+                    name: '薄荷珊瑚',
+                    desc: '清薄荷 · 珊瑚强调',
+                    swatches: ['#3a7f78', '#e87a64', '#eef7f4']
+                },
+                {
+                    id: 'mono',
+                    name: '极简纸质',
+                    desc: '黑白灰 · 素净',
+                    swatches: ['#1a1a1a', '#666666', '#f8f8f8']
+                }
+            ];
+            const COOKIE_KEY = 'ep_theme';
+            const COOKIE_DAYS = 365;
+
+            function setCookie(name, value, days) {
+                const d = new Date();
+                d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+                document.cookie = name + '=' + encodeURIComponent(value) + ';expires=' + d.toUTCString() + ';path=/;SameSite=Lax';
+            }
+            function getCookie(name) {
+                const m = document.cookie.match(new RegExp('(?:^|;\\s*)' + name + '=([^;]+)'));
+                return m ? decodeURIComponent(m[1]) : null;
+            }
+
+            function getCurrentTheme() {
+                const saved = getCookie(COOKIE_KEY);
+                if (saved && THEMES.some(t => t.id === saved)) return saved;
+                return 'academic';
+            }
+
+            function applyTheme(id) {
+                document.documentElement.setAttribute('data-theme', id);
+                setCookie(COOKIE_KEY, id, COOKIE_DAYS);
+                renderActiveState(id);
+            }
+
+            const trigger = document.getElementById('themeSwitcherTrigger');
+            const panel = document.getElementById('themeSwitcherPanel');
+            const wrapper = document.getElementById('themeSwitcher');
+            const list = document.getElementById('themeSwitcherList');
+            const dot = document.getElementById('themeSwitcherDot');
+            const label = document.getElementById('themeSwitcherLabel');
+
+            if (!trigger || !panel || !wrapper || !list) return;
+
+            function renderActiveState(activeId) {
+                const active = THEMES.find(t => t.id === activeId) || THEMES[0];
+                if (dot) dot.style.background = active.swatches[0];
+                if (label) label.textContent = active.name;
+                Array.from(list.children).forEach(child => {
+                    if (child.dataset.themeId === activeId) {
+                        child.classList.add('is-active');
+                    } else {
+                        child.classList.remove('is-active');
+                    }
+                });
+            }
+
+            // 渲染主题列表
+            list.innerHTML = '';
+            THEMES.forEach(t => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'theme-option';
+                btn.dataset.themeId = t.id;
+                btn.setAttribute('role', 'menuitemradio');
+                btn.innerHTML =
+                    '<span class="theme-option__swatches">' +
+                        t.swatches.map(c => '<span style="background:' + c + '"></span>').join('') +
+                    '</span>' +
+                    '<span class="theme-option__meta">' +
+                        '<span class="theme-option__name">' + t.name + '</span>' +
+                        '<span class="theme-option__desc">' + t.desc + '</span>' +
+                    '</span>' +
+                    '<span class="theme-option__check">✓</span>';
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    applyTheme(t.id);
+                });
+                list.appendChild(btn);
+            });
+
+            // 初始化
+            renderActiveState(getCurrentTheme());
+
+            // 弹层切换
+            function setOpen(open) {
+                if (open) {
+                    wrapper.classList.add('is-open');
+                    trigger.setAttribute('aria-expanded', 'true');
+                } else {
+                    wrapper.classList.remove('is-open');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            }
+            trigger.addEventListener('click', function (e) {
+                e.stopPropagation();
+                setOpen(!wrapper.classList.contains('is-open'));
+            });
+            document.addEventListener('click', function (e) {
+                if (!wrapper.contains(e.target)) setOpen(false);
+            });
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') setOpen(false);
+            });
+        })();
+
+        // 统一配置
+        const APP_CONFIG = {
+            DEFAULT_JSON_FILE: 'en5.json',
+            DATA_DIR: 'data/',
+            COOKIE_KEYS: {
+                WRONG_QUESTIONS: 'wrongQuestions'
+            },
+            COOKIE_DAYS: {
+                WRONG_QUESTIONS: 365
+            },
+            DEFAULT_SELECTIONS: {
+                PRACTICE_TYPE: 'all',
+                UNIT: 'all',
+                QUESTION_COUNT: '100',
+                WRONG_ONLY: false
+            },
+            QUESTION_TYPE_ORDER: ['spelling', 'phrase_translation', 'multiple_choice', 'sentence_translation', 'paragraph_translation'],
+            QUESTION_TYPE_LABELS: {
+                spelling: '单词拼写',
+                phrase_translation: '短语翻译',
+                sentence_translation: '句子翻译',
+                paragraph_translation: '段落翻译',
+                multiple_choice: '选择填空'
+            },
+            SEGMENT_TITLES: {
+                'en3.json': '🎓 英语练习平台(3段)',
+                'en4.json': '🎓 英语练习平台(4段)',
+                'en5.json': '🎓 英语练习平台(5段)'
+            }
+        };
+
         // 全局变量
         let allData = null;
         let currentQuestions = [];
@@ -1234,17 +2121,108 @@
         let questionStatus = []; // 跟踪每个题目的状态：null=未作答, true=正确, false=错误
 
         // 当前选择的json文件名
-        let currentJsonFile = 'en5.json';
+        let currentJsonFile = APP_CONFIG.DEFAULT_JSON_FILE;
+
+        function getTypeLabel(type) {
+            return APP_CONFIG.QUESTION_TYPE_LABELS[type] || type;
+        }
+
+        function getSegmentTitle(jsonFile) {
+            return APP_CONFIG.SEGMENT_TITLES[jsonFile] || APP_CONFIG.SEGMENT_TITLES[APP_CONFIG.DEFAULT_JSON_FILE];
+        }
+
+        function resolveJsonPath(jsonFile) {
+            const fileName = jsonFile || currentJsonFile || APP_CONFIG.DEFAULT_JSON_FILE;
+            return `${APP_CONFIG.DATA_DIR}${fileName}`;
+        }
+
+        function getQuestionText(content) {
+            if (!content) return '';
+            if (content.question) return content.question;
+            if (content.original) return content.original;
+            return typeof content === 'string' ? content : '';
+        }
+
+        function getChoiceOptions(question) {
+            if (question?.content?.options) return question.content.options;
+            if (question?.options) return question.options;
+            if (question?.answers && question.answers.length > 1) return question.answers;
+            return [];
+        }
+
+        function buildQuestionContent(question, showTranslation = false, includeOptions = false) {
+            if (!question || !question.content) return '';
+
+            if (question.type === 'spelling') {
+                return `请拼写以下中文含义对应的英文单词：<br><strong>${question.content.original}</strong>`;
+            }
+            if (question.type === 'phrase_translation') {
+                return `请翻译以下英文短语：<br><strong>${question.content.original}</strong>`;
+            }
+            if (question.type === 'sentence_translation') {
+                return `请将以下中文句子翻译成英文：<br><strong>${question.content.original}</strong>`;
+            }
+            if (question.type === 'paragraph_translation') {
+                return `请将以下英文段落翻译成中文：<br><strong>${question.content.original}</strong>`;
+            }
+            if (question.type !== 'multiple_choice') {
+                return '';
+            }
+
+            const questionText = getQuestionText(question.content);
+            let content = `<strong>${questionText}</strong>`;
+            if (question.content.translated) {
+                if (showTranslation) {
+                    content += `<br><em style="color: #666; font-size: 0.9rem;">${question.content.translated}</em>`;
+                } else {
+                    content += `<span id="questionTranslation" style="display: none;"><br><em style="color: #666; font-size: 0.9rem;">${question.content.translated}</em></span>`;
+                }
+            }
+
+            if (!includeOptions) return content;
+
+            const options = getChoiceOptions(question);
+            if (options.length > 0) {
+                content += '<br><div style="margin-top: 10px;">';
+                options.forEach((option, optIndex) => {
+                    const letter = String.fromCharCode(65 + optIndex);
+                    content += `<div style="margin: 5px 0; padding: 5px; background: var(--surface-sunken); border-radius: 4px;">${letter}. ${option}</div>`;
+                });
+                content += '</div>';
+            }
+            return content;
+        }
+
+        function hasWrongQuestion(question) {
+            const questionId = getQuestionIdentifier(question);
+            return wrongQuestions.some(q => q.type === question.type && getQuestionIdentifier(q) === questionId);
+        }
+
+        function addQuestionToWrongCollection(question, userAnswer, options = {}) {
+            if (!question || hasWrongQuestion(question)) return false;
+            wrongQuestions.push({
+                ...question,
+                addedTime: new Date().toISOString(),
+                userAnswer: userAnswer || ''
+            });
+            saveWrongQuestions();
+            renderPracticeTypeOptions();
+            updateWrongQuestionsLabel();
+            if (!options.silent) {
+                alert('已加入错题集！');
+            }
+            return true;
+        }
 
         // 加载数据，参数为json文件名
         async function loadData(jsonFile) {
-            if (!jsonFile) jsonFile = currentJsonFile;
-            currentJsonFile = jsonFile;
+            currentJsonFile = jsonFile || currentJsonFile || APP_CONFIG.DEFAULT_JSON_FILE;
+            const resolvedPath = resolveJsonPath(currentJsonFile);
             try {
-                console.log('开始加载数据...', jsonFile);
+                console.log('开始加载数据...', resolvedPath);
                 // 添加时间戳参数避免缓存
                 const timestamp = new Date().getTime();
-                const response = await fetch(`${jsonFile}?v=${timestamp}`);
+                const response = await fetch(`${resolvedPath}?v=${timestamp}`);
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -1256,8 +2234,8 @@
                 console.error('数据加载失败:', error);
                 // 尝试使用XMLHttpRequest作为备选方案
                 try {
-                    console.log('尝试使用XMLHttpRequest加载数据...', jsonFile);
-                    allData = await loadDataWithXHR(jsonFile);
+                    console.log('尝试使用XMLHttpRequest加载数据...', resolvedPath);
+                    allData = await loadDataWithXHR(resolvedPath);
                     console.log('XMLHttpRequest加载成功，共', allData.count || allData.data?.length, '道题目');
                     renderPracticeTypeOptions();
                     renderUnitOptions();
@@ -1265,9 +2243,9 @@
                     console.error('XMLHttpRequest也失败了:', xhrError);
                     const errorMessage = `
 数据加载失败！可能的原因：
-1. 请确保 ${jsonFile} 文件与 english_practice.html 在同一目录下
+1. 请确保 ${resolvedPath} 文件存在
 2. 请使用本地服务器运行（如 Live Server）
-3. 或者直接在浏览器中打开 ${jsonFile} 文件检查内容
+3. 或者直接在浏览器中打开 ${resolvedPath} 文件检查内容
 
 错误详情：${error.message}
                     `;
@@ -1327,7 +2305,7 @@
 
         // 错题集管理
         function loadWrongQuestions() {
-            const saved = getCookie('wrongQuestions');
+            const saved = getCookie(APP_CONFIG.COOKIE_KEYS.WRONG_QUESTIONS);
             if (saved) {
                 try {
                     wrongQuestions = JSON.parse(saved);
@@ -1338,7 +2316,11 @@
         }
 
         function saveWrongQuestions() {
-            setCookie('wrongQuestions', JSON.stringify(wrongQuestions), 365); // 保存一年
+            setCookie(
+                APP_CONFIG.COOKIE_KEYS.WRONG_QUESTIONS,
+                JSON.stringify(wrongQuestions),
+                APP_CONFIG.COOKIE_DAYS.WRONG_QUESTIONS
+            );
         }
 
         function getWrongQuestions() {
@@ -1389,16 +2371,16 @@
 
         function resetSelections() {
             // 重置练习类型为全部类型
-            document.getElementById('practiceType').value = 'all';
+            document.getElementById('practiceType').value = APP_CONFIG.DEFAULT_SELECTIONS.PRACTICE_TYPE;
             
             // 重置单元选择为全部单元
-            document.getElementById('unitSelect').value = 'all';
+            document.getElementById('unitSelect').value = APP_CONFIG.DEFAULT_SELECTIONS.UNIT;
             
             // 重置题目数量为默认值
-            document.getElementById('questionCount').value = '10';
+            document.getElementById('questionCount').value = APP_CONFIG.DEFAULT_SELECTIONS.QUESTION_COUNT;
             
             // 重置错题集复选框为未选中
-            document.getElementById('wrongQuestionsOnly').checked = false;
+            document.getElementById('wrongQuestionsOnly').checked = APP_CONFIG.DEFAULT_SELECTIONS.WRONG_ONLY;
             
             // 更新错题集标签
             updateWrongQuestionsLabel();
@@ -1414,7 +2396,7 @@
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: #28a745;
+                background: var(--moss-500);
                 color: white;
                 padding: 12px 20px;
                 border-radius: 6px;
@@ -1440,30 +2422,8 @@
         function addToWrongQuestions() {
             const currentQuestion = currentQuestions[currentQuestionIndex];
             if (!currentQuestion) return;
-
-            const currentId = getQuestionIdentifier(currentQuestion);
-
-            // 检查是否已经存在
-            const exists = wrongQuestions.some(q => 
-                q.type === currentQuestion.type && 
-                getQuestionIdentifier(q) === currentId
-            );
-
-            if (!exists) {
-                wrongQuestions.push({
-                    ...currentQuestion,
-                    addedTime: new Date().toISOString(),
-                    userAnswer: document.getElementById('answerInput').value.trim()
-                });
-                saveWrongQuestions();
-                // 更新练习类型选项
-                renderPracticeTypeOptions();
-                // 更新错题集标签
-                updateWrongQuestionsLabel();
-                alert('已加入错题集！');
-            } else {
-                alert('该题目已在错题集中！');
-            }
+            const added = addQuestionToWrongCollection(currentQuestion, document.getElementById('answerInput').value.trim());
+            if (!added) alert('该题目已在错题集中！');
         }
 
         // 获取题目的唯一标识（用于匹配题目）
@@ -1481,51 +2441,20 @@
         function autoAddToWrongQuestions() {
             const currentQuestion = currentQuestions[currentQuestionIndex];
             if (!currentQuestion) return;
-
-            const currentId = getQuestionIdentifier(currentQuestion);
-            
-            // 检查是否已经存在
-            const exists = wrongQuestions.some(q => 
-                q.type === currentQuestion.type && 
-                getQuestionIdentifier(q) === currentId
+            const added = addQuestionToWrongCollection(
+                currentQuestion,
+                document.getElementById('answerInput').value.trim(),
+                { silent: true }
             );
-
-            if (!exists) {
-                wrongQuestions.push({
-                    ...currentQuestion,
-                    addedTime: new Date().toISOString(),
-                    userAnswer: document.getElementById('answerInput').value.trim()
-                });
-                saveWrongQuestions();
-                // 更新练习类型选项
-                renderPracticeTypeOptions();
-                // 更新错题集标签
-                updateWrongQuestionsLabel();
+            if (added) {
                 console.log('错题已自动加入错题集');
             }
         }
 
         // 交卷时自动将错题加入错题集
         function autoAddWrongQuestionToCollection(question, userAnswer) {
-            const questionId = getQuestionIdentifier(question);
-            
-            // 检查是否已经存在
-            const exists = wrongQuestions.some(q => 
-                q.type === question.type && 
-                getQuestionIdentifier(q) === questionId
-            );
-
-            if (!exists) {
-                wrongQuestions.push({
-                    ...question,
-                    addedTime: new Date().toISOString(),
-                    userAnswer: userAnswer
-                });
-                saveWrongQuestions();
-                // 更新练习类型选项
-                renderPracticeTypeOptions();
-                // 更新错题集标签
-                updateWrongQuestionsLabel();
+            const added = addQuestionToWrongCollection(question, userAnswer, { silent: true });
+            if (added) {
                 console.log('交卷错题已自动加入错题集');
             }
         }
@@ -1561,70 +2490,17 @@
 
             let html = '';
             wrongQuestions.forEach((question, index) => {
-                const typeMap = {
-                    'spelling': '单词拼写',
-                    'phrase_translation': '短语翻译',
-                    'sentence_translation': '句子翻译',
-                    'paragraph_translation': '段落翻译',
-                    'multiple_choice': '选择填空'
-                };
-
-                let content = '';
-                if (question.type === 'spelling') {
-                    content = `请拼写以下中文含义对应的英文单词：<br><strong>${question.content.original}</strong>`;
-                } else if (question.type === 'phrase_translation') {
-                    content = `请翻译以下英文短语：<br><strong>${question.content.original}</strong>`;
-                } else if (question.type === 'sentence_translation') {
-                    content = `请将以下中文句子翻译成英文：<br><strong>${question.content.original}</strong>`;
-                } else if (question.type === 'paragraph_translation') {
-                    content = `请将以下英文段落翻译成中文：<br><strong>${question.content.original}</strong>`;
-                } else if (question.type === 'multiple_choice') {
-                    // 选择题可能有英文题目和中文翻译
-                    let questionText = '';
-                    if (question.content.question) {
-                        questionText = question.content.question;
-                    } else if (question.content.original) {
-                        questionText = question.content.original;
-                    } else if (question.content) {
-                        questionText = question.content;
-                    }
-                    
-                    content = `<strong>${questionText}</strong>`;
-                    
-                    // 如果有中文翻译，也显示出来
-                    if (question.content.translated) {
-                        content += `<br><em style="color: #666; font-size: 0.9rem;">${question.content.translated}</em>`;
-                    }
-                    
-                    // 获取选项
-                    let options = [];
-                    if (question.content.options) {
-                        options = question.content.options;
-                    } else if (question.options) {
-                        options = question.options;
-                    } else if (question.answers && question.answers.length > 1) {
-                        options = question.answers;
-                    }
-                    
-                    if (options.length > 0) {
-                        content += '<br><div style="margin-top: 10px;">';
-                        options.forEach((option, optIndex) => {
-                            const letter = String.fromCharCode(65 + optIndex);
-                            content += `<div style="margin: 5px 0; padding: 5px; background: #f8f9fa; border-radius: 4px;">${letter}. ${option}</div>`;
-                        });
-                        content += '</div>';
-                    }
-                }
+                const content = buildQuestionContent(question, true, true);
 
                 const addedDate = new Date(question.addedTime).toLocaleDateString();
 
                 html += `
                     <div class="question-card" style="margin-bottom: 15px;">
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
-                            <div class="question-type">${typeMap[question.type] || question.type}</div>
+                            <div class="question-type">${getTypeLabel(question.type)}</div>
                             <div style="display: flex; gap: 5px;">
-                                <span style="font-size: 0.75rem; color: #666;">${addedDate}</span>
-                                <button onclick="removeFromWrongQuestions(${index})" style="background: #dc3545; color: white; border: none; font-size: 0.85rem; padding: 8px 16px; border-radius: 4px; cursor: pointer; transition: all 0.3s ease;">删除</button>
+                                <span style="font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono);">${addedDate}</span>
+                                <button onclick="removeFromWrongQuestions(${index})" class="add-to-wrong-btn" style="margin-top: 0 !important;">删除</button>
                             </div>
                         </div>
                         <div class="question-content">${content}</div>
@@ -1634,7 +2510,7 @@
                                 <span class="toggle-icon">▼</span>
                             </button>
                             <div class="answer-details hidden" id="answerDetails${index}">
-                                <div style="padding: 8px; background: #f8f9fa; border-radius: 4px; font-size: 0.85rem; margin-top: 8px;">
+                                <div style="padding: 8px; background: var(--surface-sunken); border-radius: 4px; font-size: 0.85rem; margin-top: 8px;">
                                     <strong>你的答案：</strong>${question.userAnswer || '未作答'}<br>
                                     <strong>正确答案：</strong>${question.answers.join(', ')}
                                     ${question.analysis ? `<br><strong>解析：</strong>${question.analysis}` : ''}
@@ -1707,14 +2583,6 @@
 
         // 动态渲染练习类型下拉菜单
         function renderPracticeTypeOptions() {
-            const typeMap = {
-                'spelling': '单词拼写',
-                'phrase_translation': '短语翻译',
-                'sentence_translation': '句子翻译',
-                'paragraph_translation': '段落翻译',
-                'multiple_choice': '选择填空'
-            };
-            
             const select = document.getElementById('practiceType');
             if (!select) return;
             select.innerHTML = '';
@@ -1735,10 +2603,10 @@
                 select.innerHTML += `<option value="all">全部错题（${wrongQuestions.length}）</option>`;
                 
                 // 各类型错题
-                ['spelling','phrase_translation','multiple_choice','sentence_translation','paragraph_translation'].forEach(type => {
+                APP_CONFIG.QUESTION_TYPE_ORDER.forEach(type => {
                     const count = wrongTypeCounts[type] || 0;
                     if (count > 0) { // 只显示有错题的题型
-                        select.innerHTML += `<option value="${type}">${typeMap[type]}（${count}）</option>`;
+                        select.innerHTML += `<option value="${type}">${getTypeLabel(type)}（${count}）</option>`;
                     }
                 });
             } else {
@@ -1747,8 +2615,8 @@
                 const allCount = allData && allData.data ? allData.data.length : 0;
                 select.innerHTML += `<option value="all">全部类型（${allCount}）</option>`;
                 
-                ['spelling','phrase_translation','multiple_choice','sentence_translation','paragraph_translation'].forEach(type => {
-                    select.innerHTML += `<option value="${type}">${typeMap[type]}（${counts[type]||0}）</option>`;
+                APP_CONFIG.QUESTION_TYPE_ORDER.forEach(type => {
+                    select.innerHTML += `<option value="${type}">${getTypeLabel(type)}（${counts[type]||0}）</option>`;
                 });
             }
         }
@@ -1798,47 +2666,10 @@
                 nextBtn.style.cursor = 'pointer';
             }
             
-            // 显示题目类型
-            const typeMap = {
-                'spelling': '单词拼写',
-                'phrase_translation': '短语翻译',
-                'sentence_translation': '句子翻译',
-                'paragraph_translation': '段落翻译',
-                'multiple_choice': '选择填空'
-            };
-            document.getElementById('questionType').textContent = typeMap[question.type] || question.type;
-            
-            // 显示题目内容
-            let content = '';
-            if (question.type === 'spelling') {
-                content = `请拼写以下中文含义对应的英文单词：<br><strong>${question.content.original}</strong>`;
-            } else if (question.type === 'phrase_translation') {
-                content = `请翻译以下英文短语：<br><strong>${question.content.original}</strong>`;
-            } else if (question.type === 'sentence_translation') {
-                content = `请将以下中文句子翻译成英文：<br><strong>${question.content.original}</strong>`;
-            } else if (question.type === 'paragraph_translation') {
-                content = `请将以下英文段落翻译成中文：<br><strong>${question.content.original}</strong>`;
-            } else if (question.type === 'multiple_choice') {
-                // 选择题可能有英文题目和中文翻译
-                let questionText = '';
-                if (question.content.question) {
-                    questionText = question.content.question;
-                } else if (question.content.original) {
-                    questionText = question.content.original;
-                } else if (question.content) {
-                    questionText = question.content;
-                }
-                
-                // 检查是否勾选了"显示翻译"复选框
-                const showTranslation = document.getElementById('showTranslation').checked;
-                if (showTranslation && question.content.translated) {
-                    // 如果勾选了显示翻译，直接显示翻译
-                    content = `<strong>${questionText}</strong><br><em style="color: #666; font-size: 0.9rem;">${question.content.translated}</em>`;
-                } else {
-                    // 初始不显示翻译，翻译将在点击选项时显示
-                    content = `<strong>${questionText}</strong><span id="questionTranslation" style="display: none;"><br><em style="color: #666; font-size: 0.9rem;">${question.content.translated || ''}</em></span>`;
-                }
-            }
+            // 显示题目类型与内容
+            document.getElementById('questionType').textContent = getTypeLabel(question.type);
+            const showTranslation = document.getElementById('showTranslation').checked;
+            const content = buildQuestionContent(question, showTranslation, false);
             document.getElementById('questionContent').innerHTML = content;
             
             // 渲染输入框
@@ -1859,17 +2690,10 @@
                 
                 let optionsHtml = '';
                 // 检查题目是否有options字段，如果没有则使用answers作为选项
-                let options = [];
-                if (question.content.options) {
-                    options = question.content.options;
-                } else if (question.options) {
-                    options = question.options;
-                } else if (question.answers && question.answers.length > 1) {
-                    // 如果answers有多个，可能本身就是选项
-                    options = question.answers;
-                } else {
+                const options = getChoiceOptions(question);
+                if (options.length === 0) {
                     // 如果没有选项，显示错误信息
-                    optionsHtml = '<p style="color: #dc3545;">题目格式错误，缺少选项</p>';
+                    optionsHtml = '<p style="color: var(--rust-600);">题目格式错误，缺少选项</p>';
                 }
                 
                 if (options.length > 0) {
@@ -2052,12 +2876,7 @@
                 console.log('正确答案(小写):', question.answers.map(a => a.toLowerCase()));
                 
                 // 获取选项
-                let options = [];
-                if (question.content.options) {
-                    options = question.content.options;
-                } else if (question.options) {
-                    options = question.options;
-                }
+                const options = getChoiceOptions(question);
                 
                 // 检查答案：支持字母答案（A、B、C、D）和内容答案
                 isCorrect = question.answers.some(answer => {
@@ -2199,7 +3018,7 @@
                 } else {
                     // 单词拼写题型，显示解析内容
                     let analysis = question.analysis || '暂无解析';
-                    feedback.innerHTML = `❌ 回答错误。<br>正确答案：<span style="color:#007aff;font-weight:bold;">${correctAnswer}</span><br><br><strong>解析：</strong><br>${analysis}`;
+                    feedback.innerHTML = `❌ 回答错误。<br>正确答案：<span style="color:var(--ink-700);font-weight:bold;">${correctAnswer}</span><br><br><strong>解析：</strong><br>${analysis}`;
                 }
                 
                 // 自动将错题加入错题集
@@ -2286,7 +3105,7 @@
             
             if (question.type === 'spelling') {
                 // 对于单词拼写，显示完整的英文单词
-                answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 // 显示解析内容
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
@@ -2339,7 +3158,7 @@
                 if (correctIndex >= 0) {
                     const correctLetter = String.fromCharCode(65 + correctIndex);
                     const correctContent = options[correctIndex] || question.answers.join(', ');
-                    answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${correctLetter}. ${correctContent}</span>`;
+                    answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${correctLetter}. ${correctContent}</span>`;
                     
                     // 更新选项显示状态
                     optionButtons.forEach((button, index) => {
@@ -2349,7 +3168,7 @@
                         // 保留用户的选择状态，不清除selected类
                     });
                 } else {
-                    answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                    answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 }
                 
                 // 如果有解析，添加到答案显示中
@@ -2365,21 +3184,21 @@
                 }
             } else if (question.type === 'phrase_translation') {
                 // 对于短语翻译，显示中文翻译
-                answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
             } else if (question.type === 'sentence_translation') {
                 // 对于句子翻译，显示英文翻译
-                answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
             } else if (question.type === 'paragraph_translation') {
                 // 对于段落翻译，显示中文翻译
-                answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
             } else {
-                answerDisplay += `<span style="font-size: 1.2em; color: #667eea; font-weight: bold;">${question.answers.join(', ')}</span>`;
+                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 
                 // 处理解析内容，修复被截断的单词
@@ -2430,15 +3249,15 @@
                 <div class="welcome-screen">
                     <h2>🎉 练习完成！</h2>
                     <div style="margin: 30px 0;">
-                        <div style="font-size: 3rem; color: #667eea; margin-bottom: 10px;">${accuracy}%</div>
+                        <div style="font-size: 3rem; color: var(--accent-600); margin-bottom: 10px;">${accuracy}%</div>
                         <div style="color: #666; margin-bottom: 20px;">正确率</div>
                         <div style="display: flex; justify-content: center; gap: 30px; margin: 20px 0;">
                             <div>
-                                <div style="font-size: 1.5rem; color: #28a745;">${correctCount}</div>
+                                <div style="font-size: 1.5rem; color: var(--moss-600);">${correctCount}</div>
                                 <div style="color: #666;">正确</div>
                             </div>
                             <div>
-                                <div style="font-size: 1.5rem; color: #dc3545;">${incorrectCount}</div>
+                                <div style="font-size: 1.5rem; color: var(--rust-600);">${incorrectCount}</div>
                                 <div style="color: #666;">错误</div>
                             </div>
                         </div>
@@ -2623,13 +3442,6 @@
         // 渲染结果列表
         function renderResultList(results) {
             const resultList = document.getElementById('resultList');
-            const typeMap = {
-                'spelling': '单词拼写',
-                'phrase_translation': '短语翻译',
-                'sentence_translation': '句子翻译',
-                'paragraph_translation': '段落翻译',
-                'multiple_choice': '选择填空'
-            };
             
             let html = '';
             results.forEach((result, index) => {
@@ -2637,35 +3449,18 @@
                 const isCorrect = result.isCorrect;
                 
                 // 构建题目内容
-                let questionContent = '';
-                if (question.type === 'spelling') {
-                    questionContent = question.content.original;
-                } else if (question.type === 'phrase_translation') {
-                    questionContent = question.content.original;
-                } else if (question.type === 'sentence_translation') {
-                    questionContent = question.content.original;
-                } else if (question.type === 'paragraph_translation') {
-                    questionContent = question.content.original;
-                } else if (question.type === 'multiple_choice') {
-                    let questionText = '';
-                    if (question.content.question) {
-                        questionText = question.content.question;
-                    } else if (question.content.original) {
-                        questionText = question.content.original;
-                    } else if (question.content) {
-                        questionText = question.content;
-                    }
-                    questionContent = questionText;
-                }
+                const questionContent = question.type === 'multiple_choice'
+                    ? getQuestionText(question.content)
+                    : question.content.original;
                 
                 html += `
                     <div class="result-item ${isCorrect ? 'correct' : 'incorrect'}">
                         <div class="result-question">
-                            <span style="background: ${isCorrect ? '#28a745' : '#dc3545'}; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; margin-right: 8px;">${isCorrect ? '✓' : '✗'}</span>
-                            <span style="background: #007aff; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.85rem; margin-right: 8px;">${typeMap[question.type] || question.type}</span>
-                            第${index + 1}题
+                            <span style="background: ${isCorrect ? 'var(--moss-500)' : 'var(--rust-500)'}; color: oklch(99% 0.005 80); padding: 3px 8px; border-radius: 999px; font-size: 0.78rem; margin-right: 8px; font-family: var(--font-mono); display: inline-flex; align-items: center; justify-content: center; min-width: 22px;">${isCorrect ? '✓' : '✗'}</span>
+                            <span style="background: var(--ink-900); color: oklch(96% 0.02 85); padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; margin-right: 8px; font-family: var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase;">${getTypeLabel(question.type)}</span>
+                            <span style="font-family: var(--font-mono); color: var(--text-muted); font-size: 0.85rem;">第${index + 1}题</span>
                         </div>
-                        <div style="margin: 8px 0; font-size: 0.9rem; color: #666;">${questionContent}</div>
+                        <div style="margin: 10px 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; padding: 10px 14px; background: var(--surface-page); border-radius: 6px; border-left: 2px solid var(--accent-500);">${questionContent}</div>
                         <div class="result-answers">
                             <div class="user-answer">
                                 <strong>你的答案：</strong> ${result.userAnswer || '未作答'}
@@ -2687,30 +3482,13 @@
             if (!result) return;
             
             const question = result.question;
-            const questionId = getQuestionIdentifier(question);
-            
-            // 检查是否已经存在
-            const exists = wrongQuestions.some(q => 
-                q.type === question.type && 
-                getQuestionIdentifier(q) === questionId
-            );
-
-            if (!exists) {
-                wrongQuestions.push({
-                    ...question,
-                    addedTime: new Date().toISOString(),
-                    userAnswer: result.userAnswer
-                });
-                saveWrongQuestions();
+            if (addQuestionToWrongCollection(question, result.userAnswer, { silent: true })) {
                 
                 // 更新按钮状态
                 const button = event.target;
                 button.textContent = '已添加';
                 button.classList.add('added');
                 button.disabled = true;
-                
-                // 更新错题集标签
-                updateWrongQuestionsLabel();
                 alert('已加入错题集！');
             } else {
                 alert('该题目已在错题集中！');
@@ -2738,10 +3516,10 @@
             const incorrectElement = document.getElementById('incorrectCount');
             
             correctElement.textContent = correctCount;
-            correctElement.style.color = '#28a745'; // 绿色
+            correctElement.style.color = 'var(--moss-600)'; // 绿色
             
             incorrectElement.textContent = incorrectCount;
-            incorrectElement.style.color = '#dc3545'; // 红色
+            incorrectElement.style.color = 'var(--rust-600)'; // 红色
         }
 
         function toggleAllAnswers() {
@@ -2878,7 +3656,7 @@
         // 页面加载时获取数据
         window.addEventListener('load', async function() {
             // 加载本地数据，默认英语4段
-            await loadData('en5.json');
+            await loadData(APP_CONFIG.DEFAULT_JSON_FILE);
             // 加载错题集
             loadWrongQuestions();
             // 添加事件监听器
@@ -2888,7 +3666,7 @@
             // 初始化错题集标签
             updateWrongQuestionsLabel();
             // 设置header标题
-            updateHeaderTitle('en5.json');
+            updateHeaderTitle(APP_CONFIG.DEFAULT_JSON_FILE);
         });
 
         function setupEventListeners() {
@@ -2908,13 +3686,7 @@
                     function updateHeaderTitle(jsonFile) {
                         const headerH1 = document.querySelector('.header h1');
                         if (!headerH1) return;
-                        if (jsonFile === 'en3.json') {
-                            headerH1.textContent = '🎓 英语练习平台(3段)';
-                        } else if (jsonFile === 'en4.json') {
-                            headerH1.textContent = '🎓 英语练习平台(4段)';
-                        } else if (jsonFile === 'en5.json') {
-                            headerH1.textContent = '🎓 英语练习平台(5段)';
-                        }
+                        headerH1.textContent = getSegmentTitle(jsonFile);
                     }
             // 为控制面板中的开始练习按钮添加事件监听器
             const startBtn = document.getElementById('startBtn');
