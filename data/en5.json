@@ -3,12 +3,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "应用，运用；申请（书/表）v. 申请；使用，应用"
+        "original": "申请（书/表）；应用，实施"
       },
       "answers": [
         "application"
       ],
-      "analysis": "英文单词 application 表示\"应用，运用；申请（书/表）v. 申请；使用，应用\"。",
+      "analysis": "英文单词 application 表示\"申请（书/表）；应用，实施\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -45,12 +45,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "赞扬；称赞"
+        "original": "赞美(话)"
       },
       "answers": [
         "compliment"
       ],
-      "analysis": "英文单词 compliment 表示\"赞扬；称赞\"。",
+      "analysis": "英文单词 compliment 表示\"赞美(话)\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -87,12 +87,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "使窘迫，使尴尬"
+        "original": "使尴尬"
       },
       "answers": [
         "embarrass"
       ],
-      "analysis": "英文单词 embarrass 表示\"使窘迫，使尴尬\"。",
+      "analysis": "英文单词 embarrass 表示\"使尴尬\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -185,12 +185,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "令人吃惊地；使人惊奇地；出人意料地"
+        "original": "令人吃惊地"
       },
       "answers": [
         "surprisingly"
       ],
-      "analysis": "英文单词 surprisingly 表示\"令人吃惊地；使人惊奇地；出人意料地\"。",
+      "analysis": "英文单词 surprisingly 表示\"令人吃惊地\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -213,11 +213,26 @@
     {
       "type": "phrase_translation",
       "content": {
+        "original": "live on",
+        "translated": null
+      },
+      "answers": [
+        "靠…生活"
+      ],
+      "analysis": "短语 live on 表示\"靠…生活\"。",
+      "tags": [
+        "Unit 10",
+        "Book 2"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
         "original": "make out",
         "translated": null
       },
       "answers": [
-        "开出；填写"
+        "开出；写出"
       ],
       "analysis": "短语 make out 表示\"开出；填写\"。",
       "tags": [
@@ -243,13 +258,13 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "shrug off",
+        "original": "pass on",
         "translated": null
       },
       "answers": [
-        "耸肩表示对…不屑理睬"
+        "传递"
       ],
-      "analysis": "短语 shrug off 表示\"耸肩表示对…不屑理睬\"。",
+      "analysis": "短语 pass on 表示\"传递\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -273,28 +288,13 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "pass on",
+        "original": "shrug off",
         "translated": null
       },
       "answers": [
-        "传递"
+        "耸肩表示对…不屑理睬"
       ],
-      "analysis": "短语 pass on 表示\"传递\"。",
-      "tags": [
-        "Unit 10",
-        "Book 2"
-      ]
-    },
-    {
-      "type": "phrase_translation",
-      "content": {
-        "original": "live on",
-        "translated": null
-      },
-      "answers": [
-        "靠…生活"
-      ],
-      "analysis": "短语 live on 表示\"靠…生活\"。",
+      "analysis": "短语 shrug off 表示\"耸肩表示对…不屑理睬\"。",
       "tags": [
         "Unit 10",
         "Book 2"
@@ -4039,12 +4039,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "构成逮捕的；应予逮捕的"
+        "original": "应被逮捕的"
       },
       "answers": [
         "arrestable"
       ],
-      "analysis": "英文单词 arrestable 表示\"构成逮捕的；应予逮捕的\"。",
+      "analysis": "英文单词 arrestable 表示\"应被逮捕的\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4081,12 +4081,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "抱怨；埋怨；发牢骚"
+        "original": "抱怨"
       },
       "answers": [
         "complain"
       ],
-      "analysis": "英文单词 complain 表示\"抱怨；埋怨；发牢骚\"。",
+      "analysis": "英文单词 complain 表示\"抱怨\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4123,12 +4123,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "辩护；辩解；答辩"
+        "original": "辩护"
       },
       "answers": [
         "defence"
       ],
-      "analysis": "英文单词 defence 表示\"辩护；辩解；答辩\"。",
+      "analysis": "英文单词 defence 表示\"辩护\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4137,12 +4137,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "驳回，对…不予受理；免…职，解雇"
+        "original": "[律]驳回，对…不予受理；解雇"
       },
       "answers": [
         "dismiss"
       ],
-      "analysis": "英文单词 dismiss 表示\"驳回，对…不予受理；免…职，解雇\"。",
+      "analysis": "英文单词 dismiss 表示\"[律]驳回，对…不予受理；解雇\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4179,12 +4179,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "(as) 将…认为；把…视为；看待"
+        "original": "(as) 将…认为；把…看作"
       },
       "answers": [
         "regard"
       ],
-      "analysis": "英文单词 regard 表示\"(as) 将…认为；把…视为；看待\"。",
+      "analysis": "英文单词 regard 表示\"(as) 将…认为；把…看作\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4264,28 +4264,13 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "take one’s time",
-        "translated": null
-      },
-      "answers": [
-        "慢慢来，不着急"
-      ],
-      "analysis": "短语 take one’s time 表示\"慢慢来，不着急\"。",
-      "tags": [
-        "Unit 1",
-        "Book 3"
-      ]
-    },
-    {
-      "type": "phrase_translation",
-      "content": {
         "original": "at first",
         "translated": null
       },
       "answers": [
-        "起初；起先"
+        "起先"
       ],
-      "analysis": "短语 at first 表示\"起初；起先\"。",
+      "analysis": "短语 at first 表示\"起先\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4298,9 +4283,9 @@
         "translated": null
       },
       "answers": [
-        "要求"
+        "要求，号召"
       ],
-      "analysis": "短语 call on 表示\"要求\"。",
+      "analysis": "短语 call on 表示\"要求，号召\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -4324,13 +4309,28 @@
     {
       "type": "phrase_translation",
       "content": {
+        "original": "take one’s time",
+        "translated": null
+      },
+      "answers": [
+        "慢慢来，不着急"
+      ],
+      "analysis": "短语 take one’s time 表示\"慢慢来，不着急\"。",
+      "tags": [
+        "Unit 1",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
         "original": "turn against",
         "translated": null
       },
       "answers": [
-        "（使）与…反目成仇，变得敌对"
+        "（使）变成和…敌对"
       ],
-      "analysis": "短语 turn against 表示\"（使）与…反目成仇，变得敌对\"。",
+      "analysis": "短语 turn against 表示\"（使）变成和…敌对\"。",
       "tags": [
         "Unit 1",
         "Book 3"
@@ -5140,12 +5140,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "（限定的）因素，特性；界限"
+        "original": "因素，特性；界限"
       },
       "answers": [
         "parameter"
       ],
-      "analysis": "英文单词 parameter 表示\"（限定的）因素，特性；界限\"。",
+      "analysis": "英文单词 parameter 表示\"因素，特性；界限\"。",
       "tags": [
         "Unit 2",
         "Book 3"
@@ -5216,6 +5216,66 @@
         "view"
       ],
       "analysis": "英文单词 view 表示\"察看；考虑，看待\"。",
+      "tags": [
+        "Unit 2",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "bring up",
+        "translated": null
+      },
+      "answers": [
+        "使注意；提出"
+      ],
+      "analysis": "短语 bring up 表示\"使注意；提出\"。",
+      "tags": [
+        "Unit 2",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "in short",
+        "translated": null
+      },
+      "answers": [
+        "总之;简言之"
+      ],
+      "analysis": "短语 in short 表示\"总之;简言之\"。",
+      "tags": [
+        "Unit 2",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "take out",
+        "translated": null
+      },
+      "answers": [
+        "拿出；抽出"
+      ],
+      "analysis": "短语 take out 表示\"拿出；抽出\"。",
+      "tags": [
+        "Unit 2",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "think up",
+        "translated": null
+      },
+      "answers": [
+        "想出"
+      ],
+      "analysis": "短语 think up 表示\"想出\"。",
       "tags": [
         "Unit 2",
         "Book 3"
@@ -5941,12 +6001,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "创造；创建；（尤指《圣经》所述由上帝）创造天地"
+        "original": "创造（物）；创建"
       },
       "answers": [
         "creation"
       ],
-      "analysis": "英文单词 creation 表示\"创造；创建；（尤指《圣经》所述由上帝）创造天地\"。",
+      "analysis": "英文单词 creation 表示\"创造（物）；创建\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -6025,12 +6085,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "偶尔的；偶然的；临时的"
+        "original": "偶尔的，间或的"
       },
       "answers": [
         "occasional"
       ],
-      "analysis": "英文单词 occasional 表示\"偶尔的；偶然的；临时的\"。",
+      "analysis": "英文单词 occasional 表示\"尔的，间或的\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -6039,12 +6099,12 @@
     {
       "type": "spelling",
       "content": {
-        "original": "机会；时机"
+        "original": "机会"
       },
       "answers": [
         "opportunity"
       ],
-      "analysis": "英文单词 opportunity 表示\"机会；时机\"。",
+      "analysis": "英文单词 opportunity 表示\"机会\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -6109,28 +6169,13 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "stay up",
+        "original": "catch one’s breath",
         "translated": null
       },
       "answers": [
-        "不睡觉，熬夜"
+        "喘息；屏息"
       ],
-      "analysis": "短语 stay up 表示\"不睡觉，熬夜\"。",
-      "tags": [
-        "Unit 3",
-        "Book 3"
-      ]
-    },
-    {
-      "type": "phrase_translation",
-      "content": {
-        "original": "take notes",
-        "translated": null
-      },
-      "answers": [
-        "记笔记"
-      ],
-      "analysis": "短语 take notes 表示\"记笔记\"。",
+      "analysis": "短语 catch one’s breath 表示\"喘息；屏息\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -6154,13 +6199,13 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "send off",
+        "original": "leave out",
         "translated": null
       },
       "answers": [
-        "寄出；发出"
+        "遗漏;省去"
       ],
-      "analysis": "短语 send off 表示\"寄出；发出\"。",
+      "analysis": "短语 leave out 表示\"遗漏;省去\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -6169,13 +6214,43 @@
     {
       "type": "phrase_translation",
       "content": {
-        "original": "catch one’s breath",
+        "original": "send off",
         "translated": null
       },
       "answers": [
-        "恢复正常呼吸"
+        "寄出；派遣"
       ],
-      "analysis": "短语 catch one’s breath 表示\"恢复正常呼吸\"。",
+      "analysis": "短语 send off 表示\"寄出；派遣\"。",
+      "tags": [
+        "Unit 3",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "stay up",
+        "translated": null
+      },
+      "answers": [
+        "不睡觉，熬夜"
+      ],
+      "analysis": "短语 stay up 表示\"不睡觉，熬夜\"。",
+      "tags": [
+        "Unit 3",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "phrase_translation",
+      "content": {
+        "original": "take notes",
+        "translated": null
+      },
+      "answers": [
+        "记笔记"
+      ],
+      "analysis": "短语 take notes 表示\"记笔记\"。",
       "tags": [
         "Unit 3",
         "Book 3"
@@ -7264,7 +7339,7 @@
     {
       "type": "sentence_translation",
       "content": {
-        "original": "她的结论是建立在对当前国际情况进行了认真的分析的基础上的",
+        "original": "她的结论是建立在对当前国际情况进行了认真的分析的基础上的。",
         "translated": null
       },
       "answers": [
@@ -7363,6 +7438,21 @@
       "analysis": "这是一篇关于作者一次法律遭遇的段落翻译。文章揭示了口音、家庭背景和受教育程度等阶级因素对司法判决的隐性影响。注意 \"criminal record\"（犯罪记录）、\"my release from the charge\"（宣布我无罪）、\"the \\\"right\\\" accent\"（\"表明教养良好\"的口音）、\"respectable middle-class parents\"（体面的中产阶级双亲）、\"reliable witnesses\"（可靠的证人）、\"afford a very good solicitor\"（请得起一名很好的律师）、\"the obscure nature of the charge\"（对我指控的捕风捉影的做法）、\"be found guilty\"（被判有罪）、\"costs to be awarded\"（赔偿诉讼费）和 \"revolved around the fact that...\"（建立在…这一事实上）等表达的翻译。同时注意虚拟语气 \"if I had come from..., I would have been found guilty\" 的处理。",
       "tags": [
         "Unit 1",
+        "Book 3"
+      ]
+    },
+    {
+      "type": "sentence_translation",
+      "content": {
+        "original": "迅速方便地获得信息很重要，但学会以新的方式看信息甚至更为重要。医学上一次重大突破也许能说明这一观点。科学家本想寻找一种治天花的特效药，但他们没有成功。英国医生爱德华. 詹纳放弃寻找特效药，靠找到一种预防天花的办法征服了这一疾病。显然，是创造性思维使他的工作获得巨大收获。总之，记住下面这句话肯定大有裨益：有多种方法对待你下载的大量资料。",
+        "translated": null
+      },
+      "answers": [
+        "It is important to have easy and quick access to information, but it is even more important to learn to look at information in new ways.  A major medical breakthrough may illustrate the point.  Scientists had intended to find a cure for smallpox, but they got nowhere.  Edward Jenner, a British physician, abandoned the quest for a cure and conquered the disease by finding a way to prevent it.  Obviously, it was creative thinking that led to his fruitful work.  In short, it definitely pays to keep this in mind:  there is more than one way to look at volumes of data you download."
+      ],
+      "analysis": "这是一段关于创造性思维重要性的段落翻译。注意 \"have easy and quick access to\"（迅速方便地获得）、\"look at information in new ways\"（以新的方式看信息）、\"illustrate the point\"（说明这一观点）、\"had intended to find a cure for smallpox\"（本想寻找一种治天花的特效药，过去完成时表示未实现的意图）、\"got nowhere\"（没有成功）、\"abandoned the quest for a cure\"（放弃寻找特效药）、\"conquered the disease by finding a way to prevent it\"（靠找到预防办法征服疾病）等表达的翻译。同时注意强调句型 \"it was creative thinking that led to his fruitful work\"（是创造性思维使他的工作获得巨大收获）和 \"it definitely pays to keep this in mind\"（记住…肯定大有裨益）的处理。\"In short\"（总之）、\"volumes of data\"（大量资料）也是重点词汇。",
+      "tags": [
+        "Unit 2",
         "Book 3"
       ]
     },
