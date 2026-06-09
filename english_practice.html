@@ -1915,6 +1915,8 @@
             <div class="control-row">
                 <input type="checkbox" id="showTranslation" checked>
                 <label for="showTranslation">显示翻译</label>
+                <input type="checkbox" id="engToChiMode">
+                <label for="engToChiMode">单词英译汉</label>
                 <input type="checkbox" id="randomQuestions">
                 <label for="randomQuestions">随机出题</label>
                 <input type="checkbox" id="wrongQuestionsOnly">
@@ -2213,7 +2215,14 @@
         function buildQuestionContent(question, showTranslation = false, includeOptions = false) {
             if (!question || !question.content) return '';
 
+            // 检查是否勾选了"英译汉"模式
+            const engToChiMode = document.getElementById('engToChiMode') && document.getElementById('engToChiMode').checked;
+
             if (question.type === 'spelling') {
+                if (engToChiMode) {
+                    // 英译汉模式：题目显示英文单词，用户输入中文含义
+                    return `请写出以下英文单词的中文含义：<br><strong>${question.answers[0]}</strong>`;
+                }
                 return `请拼写以下中文含义对应的英文单词：<br><strong>${question.content.original}</strong>`;
             }
             if (question.type === 'phrase_translation') {
@@ -2909,14 +2918,28 @@
             let correctAnswer = '';
 
             if (question.type === 'spelling') {
-                isCorrect = question.answers.some(answer => 
-                    answer.toLowerCase() === userAnswer.toLowerCase()
-                );
-                correctAnswer = question.answers[0];
+                // 检查是否为英译汉模式
+                const engToChiMode = document.getElementById('engToChiMode') && document.getElementById('engToChiMode').checked;
+                if (engToChiMode) {
+                    // 英译汉模式：答案是中文含义
+                    const chineseAnswer = question.content.original;
+                    // 用标点符号分割中文含义，用户输入匹配任意一个词语即为正确
+                    const parts = chineseAnswer.split(/[，,；;、\/\\（）()｜|～~…·\s]+/).filter(p => p.trim().length > 0);
+                    isCorrect = userAnswer === chineseAnswer || parts.some(part => part.trim() === userAnswer.trim());
+                    correctAnswer = chineseAnswer;
+                } else {
+                    isCorrect = question.answers.some(answer => 
+                        answer.toLowerCase() === userAnswer.toLowerCase()
+                    );
+                    correctAnswer = question.answers[0];
+                }
             } else if (question.type === 'phrase_translation') {
-                isCorrect = question.answers.some(answer => 
-                    answer === userAnswer
-                );
+                // 用标点符号分割答案，用户输入匹配任意一个词语即为正确
+                isCorrect = question.answers.some(answer => {
+                    if (answer === userAnswer) return true;
+                    const parts = answer.split(/[，,；;、\/\\（）()｜|～~…·\s]+/).filter(p => p.trim().length > 0);
+                    return parts.some(part => part.trim() === userAnswer.trim());
+                });
                 correctAnswer = question.answers[0];
             } else if (question.type === 'sentence_translation') {
                 isCorrect = question.answers.some(answer => 
@@ -3164,8 +3187,15 @@
             let answerDisplay = `<strong>正确答案：</strong><br>`;
             
             if (question.type === 'spelling') {
-                // 对于单词拼写，显示完整的英文单词
-                answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
+                // 检查是否为英译汉模式
+                const engToChiMode = document.getElementById('engToChiMode') && document.getElementById('engToChiMode').checked;
+                if (engToChiMode) {
+                    // 英译汉模式：答案显示中文含义
+                    answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.content.original}</span>`;
+                } else {
+                    // 默认模式：显示完整的英文单词
+                    answerDisplay += `<span style="font-size: 1.2em; color: var(--accent-600); font-weight: bold;">${question.answers.join(', ')}</span>`;
+                }
                 // 显示解析内容
                 answerDisplay += '<br><br><strong>解析：</strong><br>';
                 answerDisplay += question.analysis ? question.analysis : '暂无解析';
@@ -3424,13 +3454,24 @@
             if (!userAnswer) return false;
             
             if (question.type === 'spelling') {
+                // 检查是否为英译汉模式
+                const engToChiMode = document.getElementById('engToChiMode') && document.getElementById('engToChiMode').checked;
+                if (engToChiMode) {
+                    const chineseAnswer = question.content.original;
+                    // 用标点符号分割中文含义，用户输入匹配任意一个词语即为正确
+                    const parts = chineseAnswer.split(/[，,；;、\/\\（）()｜|～~…·\s]+/).filter(p => p.trim().length > 0);
+                    return userAnswer === chineseAnswer || parts.some(part => part.trim() === userAnswer.trim());
+                }
                 return question.answers.some(answer => 
                     answer.toLowerCase() === userAnswer.toLowerCase()
                 );
             } else if (question.type === 'phrase_translation') {
-                return question.answers.some(answer => 
-                    answer === userAnswer
-                );
+                // 用标点符号分割答案，用户输入匹配任意一个词语即为正确
+                return question.answers.some(answer => {
+                    if (answer === userAnswer) return true;
+                    const parts = answer.split(/[，,；;、\/\\（）()｜|～~…·\s]+/).filter(p => p.trim().length > 0);
+                    return parts.some(part => part.trim() === userAnswer.trim());
+                });
             } else if (question.type === 'sentence_translation') {
                 return question.answers.some(answer => 
                     answer.toLowerCase() === userAnswer.toLowerCase()
