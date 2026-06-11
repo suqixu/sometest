@@ -383,6 +383,30 @@
             font-weight: 400;
         }
 
+        .extra-resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 14px;
+            padding: 6px 14px;
+            font-size: 0.88rem;
+            font-family: var(--font-text);
+            font-weight: 500;
+            color: var(--accent-600);
+            background: var(--surface-tinted);
+            border: 1px solid var(--line-soft);
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.25s var(--ease-out-expo);
+        }
+
+        .extra-resource-link:hover {
+            background: var(--accent-600);
+            color: #fff;
+            border-color: var(--accent-600);
+            transform: translateY(-1px);
+        }
+
         /* ========== 主题切换器 ========== */
         .theme-switcher {
             position: absolute;
@@ -1869,6 +1893,7 @@
         <div class="header">
             <h1>🎓 英语练习平台(5段)</h1>
             <p>提升你的英语词汇、翻译和语法技能</p>
+            <a href="test.html" class="extra-resource-link" target="_blank" rel="noopener">📚 复旦考试其他复习资料(第3学期) →</a>
         </div>
 
         <div class="controls">

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复旦考试其他复习资料(第3学期)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-display: 'Fraunces', 'Songti SC', 'STSong', 'Noto Serif SC', serif;
+            --font-text: 'Inter', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+            --surface-page: #f5f7fa;
+            --surface-card: #ffffff;
+            --surface-sunken: #eef1f6;
+            --surface-tinted: #f0f3f8;
+
+            --ink-900: #1f2a44;
+            --text-primary: #1f2a44;
+            --text-secondary: #4a5872;
+            --text-muted: #7e8aa3;
+
+            --accent-600: #5a3fd6;
+            --accent-500: #667eea;
+            --accent-200: #d8def5;
+
+            --line-soft: #e3e8ef;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-text);
+            color: var(--text-primary);
+            background:
+                radial-gradient(1200px 600px at 10% 0%, rgba(102, 126, 234, 0.08), transparent 60%),
+                radial-gradient(900px 500px at 100% 100%, rgba(90, 63, 214, 0.06), transparent 60%),
+                var(--surface-page);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 880px;
+            margin: 0 auto;
+            padding: clamp(20px, 4vw, 48px) clamp(16px, 4vw, 36px);
+        }
+
+        .header {
+            position: relative;
+            padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 44px);
+            background: var(--surface-card);
+            border: 1px solid var(--line-soft);
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(31, 42, 68, 0.06);
+            margin-bottom: 28px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.88rem;
+            color: var(--accent-600);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.7; }
+
+        h1 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: clamp(1.8rem, 3.4vw, 2.6rem);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin: 0 0 12px 0;
+            color: var(--ink-900);
+        }
+        h1::first-letter { color: var(--accent-600); }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-family: var(--font-display);
+            font-style: italic;
+            margin: 0;
+        }
+
+        .section {
+            background: var(--surface-card);
+            border: 1px solid var(--line-soft);
+            border-radius: 16px;
+            padding: clamp(20px, 3vw, 32px);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 16px rgba(31, 42, 68, 0.04);
+        }
+
+        .section h2 {
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin: 0 0 8px 0;
+            color: var(--ink-900);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section .section-desc {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            margin: 0 0 16px 0;
+        }
+
+        .link-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+
+        .link-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 14px 18px;
+            background: var(--surface-tinted);
+            border: 1px solid transparent;
+            border-radius: 12px;
+            transition: all 0.25s var(--ease-out-expo);
+        }
+        .link-list li:hover {
+            background: #fff;
+            border-color: var(--accent-200);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(90, 63, 214, 0.08);
+        }
+
+        .link-list a {
+            color: var(--accent-600);
+            font-weight: 500;
+            text-decoration: none;
+            flex: 1;
+            min-width: 0;
+            word-break: break-all;
+        }
+        .link-list a:hover { text-decoration: underline; }
+
+        .link-list .link-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            margin-left: auto;
+        }
+
+        .exam-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+        .exam-table th {
+            padding: 10px 14px;
+            border-bottom: 2px solid var(--line-soft);
+            background: var(--surface-tinted);
+            text-align: left;
+        }
+        .exam-table th:nth-child(2) { text-align: center; }
+        .exam-table th:nth-child(3) { text-align: right; }
+        .exam-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--line-soft);
+        }
+        .exam-table td:nth-child(2) { text-align: center; }
+        .exam-table td:nth-child(3) { text-align: right; font-weight: 600; }
+        .exam-table .total-row {
+            background: var(--surface-tinted);
+            font-weight: 600;
+        }
+        .exam-table .total-row td:last-child {
+            color: var(--accent-600);
+            font-size: 1.1rem;
+        }
+
+        .deadline { color: #c0392b; font-weight: 600; }
+
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 24px 0 12px;
+        }
+
+        @media (max-width: 600px) {
+            .link-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .link-list .link-desc {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="english_practice.html" class="back-link">← 返回英语练习平台</a>
+            <h1>📚 复旦考试其他复习资料(第3学期)</h1>
+            <p class="subtitle">汇总整理 · 持续更新</p>
+        </header>
+
+        <!-- ========== 常用链接 ========== -->
+
+        <section class="section">
+            <h2>🔗 常用链接</h2>
+            <p class="section-desc">查分、座位查询、考试安排、学习平台入口。</p>
+            <ul class="link-list">
+                <li>
+                    <a href="https://mcce.fudan.edu.cn/fudanscore/wap/default/index" target="_blank" rel="noopener">成绩查询</a>
+                    <span class="link-desc">复旦成绩查询系统</span>
+                </li>
+                <li>
+                    <a href="https://mcce.fudan.edu.cn/site/universalForm/index?id=130" target="_blank" rel="noopener">英语座位查询</a>
+                    <span class="link-desc">考试座位号</span>
+                </li>
+                <li>
+                    <a href="https://mcce.fudan.edu.cn/site/universalForm/index?id=95" target="_blank" rel="noopener">考试安排</a>
+                    <span class="link-desc">考试时间与地点</span>
+                </li>
+                <li>
+                    <a href="https://elearning.fudan.edu.cn/" target="_blank" rel="noopener">形势与政策</a>
+                    <span class="link-desc">eLearning 平台 · 60分</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ========== 复习资料（腾讯文档） ========== -->
+
+        <section class="section">
+            <h2>📄 复习资料（腾讯文档）</h2>
+            <p class="section-desc">待整理更新</p>
+            <ul class="link-list">
+                <li>
+                    <a href="https://docs.qq.com/doc/DVkRxSUxoQkdobHZC" target="_blank" rel="noopener">Java 复习资料</a>
+                    <span class="link-desc">腾讯文档</span>
+                </li>
+                <li>
+                    <a href="https://docs.qq.com/doc/DVm9nSnZiSERDekFq" target="_blank" rel="noopener">习思想复习资料</a>
+                    <span class="link-desc">腾讯文档</span>
+                </li>
+                <li>
+                    <a href="https://docs.qq.com/doc/DVmFWQUp2UU9jSGZw" target="_blank" rel="noopener">数据库复习资料(来自其他同学)</a>
+                    <span class="link-desc">腾讯文档</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ========== 作业提醒 ========== -->
+
+        <section class="section">
+            <h2>📋 作业提醒</h2>
+            <p class="section-desc">各科作业截止时间与提交方式。</p>
+            <ul class="link-list">
+                <li>
+                    <a href="https://ks.wjx.top/m/79911768.aspx" target="_blank" rel="noopener">Java 作业</a>
+                    <span class="link-desc">问卷星提交</span>
+                </li>
+                <li>
+                    <span style="flex:1; font-weight:500;">数据库作业</span>
+                    <span class="link-desc">发送至 daxueli@126.com（李大学老师）· 群文件 · <span class="deadline">6月20日 8:00 前提交</span></span>
+                </li>
+                <li>
+                    <span style="flex:1; font-weight:500;">操作系统作业</span>
+                    <span class="link-desc">正在学上自行下载 · <span class="deadline">6月7日 — 6月14日 提交</span></span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ========== 英语考试题型分布 ========== -->
+
+        <section class="section">
+            <h2>📝 英语考试题型 & 分值</h2>
+            <p class="section-desc">5段英语考试各题型与分值分布，总分 100 分。</p>
+            <table class="exam-table">
+                <thead>
+                    <tr>
+                        <th>题型</th>
+                        <th>题数 × 分值</th>
+                        <th>小计</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>单词+词组（英译汉）</td>
+                        <td>20 × 0.5</td>
+                        <td>10 分</td>
+                    </tr>
+                    <tr>
+                        <td>辨错题</td>
+                        <td>10 × 1</td>
+                        <td>10 分</td>
+                    </tr>
+                    <tr>
+                        <td>选择填空</td>
+                        <td>25 × 1</td>
+                        <td>25 分</td>
+                    </tr>
+                    <tr>
+                        <td>阅读理解</td>
+                        <td>10 × 2</td>
+                        <td>20 分</td>
+                    </tr>
+                    <tr>
+                        <td>句子翻译（汉译英）</td>
+                        <td>5 × 4</td>
+                        <td>20 分</td>
+                    </tr>
+                    <tr>
+                        <td>段落翻译（英译汉）</td>
+                        <td>1 × 15</td>
+                        <td>15 分</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td colspan="2">合计</td>
+                        <td>100 分</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ========== 数据库勘误 ========== -->
+
+        <section class="section">
+            <h2>⚠️ 数据库作业勘误</h2>
+            <p class="section-desc">题目有误或参考答案补充。</p>
+            <ul class="link-list">
+                <li>
+                    <span style="flex:1; font-weight:500;">第 29 题：选择 C 和 D 都可以</span>
+                    <span class="link-desc deadline">题目有误，不用做</span>
+                </li>
+                <li>
+                    <span style="flex:1; font-weight:500;">第 32 题</span>
+                    <span class="link-desc">答案：<strong>A</strong></span>
+                </li>
+                <li>
+                    <span style="flex:1; font-weight:500;">第 33 题</span>
+                    <span class="link-desc">答案：<strong>B</strong></span>
+                </li>
+            </ul>
+        </section>
+
+        <footer>
+            最后更新：2026 年 6 月
+        </footer>
+    </div>
+</body>
+</html>
