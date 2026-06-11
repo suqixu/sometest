@@ -7485,6 +7485,566 @@
         "Unit 3",
         "Book 3"
       ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Silk, in fact, was so expensive and it was known as the \"cloth of kings\".",
+        "options": [
+          "in fact",
+          "and",
+          "was known as",
+          "kings"
+        ],
+        "translated": "事实上，丝绸非常昂贵，以至于被誉为\"国王之布\"。",
+        "options_translated": [
+          "事实上",
+          "（错误：应为 that）",
+          "被称为",
+          "国王（复数）"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查 so...that 结果状语从句。so + adj. + that + 从句 表\"如此……以至于……\"，原句用 and 连接两个分句无法表达\"昂贵到被称为国王之布\"的因果/结果关系。\n【改正】将 and 改为 that：Silk, in fact, was so expensive **that** it was known as the \"cloth of kings\".",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] This kind of tree is often enough strong to bear the weight of a grown man.",
+        "options": [
+          "enough strong",
+          "to bear",
+          "weight",
+          "grown"
+        ],
+        "translated": "这种树通常坚固得足以承受一个成年人的重量。",
+        "options_translated": [
+          "（错误：应为 strong enough）",
+          "承受",
+          "重量",
+          "已长成的、成年的"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查 enough 修饰形容词的语序。enough 作副词修饰形容词或副词时必须**后置**，即 adj./adv. + enough，不能像中文那样\"足够 + 形容词\"。\n【改正】enough strong → **strong enough**：This kind of tree is often **strong enough** to bear the weight of a grown man.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] He has cut down smoke from thirty to five cigarettes a day.",
+        "options": [
+          "cut down",
+          "smoke",
+          "cigarettes",
+          "a day"
+        ],
+        "translated": "他把吸烟量从每天三十支减少到了五支。",
+        "options_translated": [
+          "减少",
+          "（错误：应为 smoking）",
+          "香烟",
+          "每天"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查动名词作宾语。cut down 后接\"吸烟\"这一行为应使用动名词 smoking，而 smoke 作名词意为\"烟雾\"，与\"从30支减少到5支香烟\"语义不符。\n【改正】smoke → **smoking**：He has cut down **smoking** from thirty to five cigarettes a day.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Breaking sports records is becoming an increasing difficult achievement.",
+        "options": [
+          "Breaking",
+          "is becoming",
+          "increasing",
+          "achievement"
+        ],
+        "translated": "打破体育记录正变成一项越来越困难的成就。",
+        "options_translated": [
+          "打破（动名词主语）",
+          "正变成",
+          "（错误：应为 increasingly）",
+          "成就"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "analysis": "本题考查副词修饰形容词。修饰形容词 difficult 必须用副词 increasingly（越来越地），而 increasing 是形容词（不断增加的），不能修饰另一个形容词。\n【改正】increasing → **increasingly**：Breaking sports records is becoming an **increasingly** difficult achievement.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] He is one of those people who is never satisfied.",
+        "options": [
+          "those",
+          "who",
+          "is",
+          "satisfied"
+        ],
+        "translated": "他是那些永远不会感到满足的人之一。",
+        "options_translated": [
+          "那些",
+          "（关系代词）",
+          "（错误：应为 are）",
+          "感到满足的"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "analysis": "本题考查 \"one of + 复数名词 + 定语从句\" 中从句谓语的数。who 引导的定语从句修饰的先行词是 those people（复数），从句谓语应与 people 一致，用复数 are，而非 is。\n【改正】is → **are**：He is one of those people who **are** never satisfied.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] If he would have finished his paper a little sooner, he would have been able to attend the international academic discussion.",
+        "options": [
+          "would have finished",
+          "a little sooner",
+          "would have been",
+          "attend"
+        ],
+        "translated": "如果他能早一点完成论文，他就能参加这次国际学术研讨会了。",
+        "options_translated": [
+          "（错误：应为 had finished）",
+          "早一点",
+          "本应能够",
+          "出席、参加"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查与过去事实相反的虚拟条件句。If 从句应使用过去完成时 had + 过去分词，主句使用 would/could/might + have + 过去分词。原句 if 从句误用了 would have done。\n【改正】would have finished → **had finished**：**If he had finished** his paper a little sooner, he would have been able to attend the international academic discussion.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] He hasn't come yet, but I'm expecting him arrive at any time.",
+        "options": [
+          "yet",
+          "I'm expecting",
+          "arrive",
+          "any"
+        ],
+        "translated": "他还没来，但我期待他随时会到。",
+        "options_translated": [
+          "还（未）",
+          "我期待",
+          "（错误：应为 to arrive）",
+          "任何（时间）"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "analysis": "本题考查 expect 的用法。expect sb to do sth 是固定搭配，意为\"期望某人做某事\"，必须使用带 to 的不定式，不能用动词原形。\n【改正】arrive → **to arrive**：He hasn't come yet, but I'm expecting him **to arrive** at any time.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] It is necessary that each member will read all of the copies, not just the top ones.",
+        "options": [
+          "that",
+          "will read",
+          "all of",
+          "ones"
+        ],
+        "translated": "每位成员都必须阅读所有材料的副本，而不仅仅是最上面的那几份。",
+        "options_translated": [
+          "（连接词）",
+          "（错误：应为 (should) read）",
+          "所有",
+          "（指代 copies）"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查\"It is necessary/important/essential that + 从句\"句型的虚拟语气。这类表示\"必要、重要、建议\"的句型，that 从句应使用 (should) + 动词原形，should 可省略，不能用 will。\n【改正】will read → **(should) read**：It is necessary that each member **(should) read** all of the copies, not just the top ones.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] I am thinking to give you another two weeks to finish your work.",
+        "options": [
+          "am thinking",
+          "to give",
+          "another",
+          "to finish"
+        ],
+        "translated": "我在考虑再给你两周的时间来完成你的工作。",
+        "options_translated": [
+          "在考虑",
+          "（错误：应为 of giving）",
+          "另外的（再）",
+          "去完成"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查 think 的搭配。think of/about doing sth 表\"考虑做某事\"，是固定搭配，of/about 是介词，后面必须接动名词 doing，不能用不定式 to do。think to do sth 不是正确表达。\n【改正】to give → **of giving**：I am thinking **of giving** you another two weeks to finish your work.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Man's first occupation was that of a hunter, and his first stone weapons were made of hunting.",
+        "options": [
+          "Man's",
+          "that of",
+          "first",
+          "of"
+        ],
+        "translated": "人类最早的职业是猎人，他最早的石制武器是为狩猎而制造的。",
+        "options_translated": [
+          "人类的（所有格）",
+          "那种（指代 occupation）",
+          "最初的、最早的",
+          "（错误：应为 for）"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "analysis": "本题考查介词搭配与逻辑。be made of 表\"由……（材料）制成\"，hunting 是行为而非材料，不通；此处要表达\"为狩猎而造\"应使用 be made for（为……而造）。\n【改正】of → **for**：...his first stone weapons were made **for** hunting.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] It usually takes much less time to fly from one city to other than travel by train.",
+        "options": [
+          "It",
+          "to fly",
+          "to other",
+          "by train"
+        ],
+        "translated": "通常坐飞机从一个城市到另一个城市所花的时间比坐火车要少得多。",
+        "options_translated": [
+          "（形式主语）",
+          "去飞行",
+          "（错误：应为 to another）",
+          "乘火车"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "analysis": "本题考查 other 与 another 的辨析。other 是形容词或代词，但作代词单独使用时通常带 the 或用复数 others；表示\"另一个（泛指）\"应使用 another。one... another... 表\"一个……另一个……\"是固定搭配。\n【改正】to other → **to another**：...to fly from one city **to another** than travel by train.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Neither his father or he himself had a chance to go to college in the old days.",
+        "options": [
+          "or",
+          "himself",
+          "chance",
+          "in the old days"
+        ],
+        "translated": "在过去的日子里，他父亲和他本人都没有机会上大学。",
+        "options_translated": [
+          "（错误：应为 nor）",
+          "他自己",
+          "机会",
+          "在过去的日子里"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查 neither...nor... 固定搭配，意为\"既不……也不……\"。neither 必须搭配 nor，不能与 or 连用（either 才搭配 or）。\n【改正】or → **nor**：Neither his father **nor** he himself had a chance to go to college in the old days.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] In some countries little is done to make the smoke to be clean before it goes into the air.",
+        "options": [
+          "is done",
+          "to be clean",
+          "before",
+          "the air"
+        ],
+        "translated": "在一些国家，几乎没有采取什么措施在烟排放到空气中之前让它变得干净。",
+        "options_translated": [
+          "被做（采取）",
+          "（错误：应为 clean，去掉 to be）",
+          "在……之前",
+          "空气"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查 make 的复合宾语结构。make + 宾语 + 形容词/名词 是固定结构（make sth + adj.），形容词作宾语补足语，不能在中间加 to be。\n【改正】to be clean → **clean**：...to make the smoke **clean** before it goes into the air.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] I hope you would not mind to wait for such a long time.",
+        "options": [
+          "I hope",
+          "would not",
+          "to wait",
+          "such"
+        ],
+        "translated": "我希望你不会介意等这么长时间。",
+        "options_translated": [
+          "我希望",
+          "不会",
+          "（错误：应为 waiting）",
+          "如此（之长）"
+        ]
+      },
+      "answers": [
+        "C"
+      ],
+      "analysis": "本题考查 mind 的用法。mind 后接动词必须使用动名词形式（mind doing sth），表\"介意做某事\"，不能用不定式 to do。\n【改正】to wait → **waiting**：I hope you would not mind **waiting** for such a long time.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] What you should do first is to prepare for a test at these tools.",
+        "options": [
+          "What",
+          "first",
+          "to prepare",
+          "at"
+        ],
+        "translated": "你首先应该做的是用这些工具准备一场测试。",
+        "options_translated": [
+          "（连接代词）",
+          "首先",
+          "去准备",
+          "（错误：应为 with）"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "analysis": "本题考查介词搭配。表示\"用、借助于（工具）\"应使用介词 with（with these tools = 用这些工具），at 表方位或目标点，与\"使用工具\"语义不合。\n【改正】at → **with**：What you should do first is to prepare for a test **with** these tools.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] The secretary finished her work little early today so that she could have a talk with the manager.",
+        "options": [
+          "finished",
+          "little early",
+          "so that",
+          "have a talk"
+        ],
+        "translated": "今天秘书把工作早一点完成了，以便能和经理谈谈。",
+        "options_translated": [
+          "完成",
+          "（错误：应为 a little early）",
+          "以便",
+          "进行谈话"
+        ]
+      },
+      "answers": [
+        "B"
+      ],
+      "analysis": "本题考查 little 与 a little 的区别。little 表否定意义（几乎没有），a little 表肯定意义（一点点）。这里要表达\"早了一点点\"（肯定含义），应使用 a little early；little early 意为\"几乎没早\"，与语境矛盾。\n【改正】little early → **a little early**：The secretary finished her work **a little early** today...",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] A telegram will be the quicker way to send the message to him, for we cannot call him on the phone.",
+        "options": [
+          "quicker",
+          "to send",
+          "to him",
+          "on the phone"
+        ],
+        "translated": "电报将是给他传送消息最快的方式，因为我们无法给他打电话。",
+        "options_translated": [
+          "（错误：应为 quickest）",
+          "去发送",
+          "给他",
+          "通过电话"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查比较级与最高级。原文搭配 the + 比较级 + way 不符合英语习惯，且语境是\"在所有传递方式中最快的\"，应使用最高级 the quickest way。the + 比较级用于两者比较时（如 the quicker of the two）。\n【改正】quicker → **quickest**：A telegram will be the **quickest** way to send the message to him...",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Because the bad weather, both cars and buses were difficult to find in the street.",
+        "options": [
+          "Because",
+          "both",
+          "to find",
+          "in the street"
+        ],
+        "translated": "由于天气恶劣，在街上很难找到出租车和公交车。",
+        "options_translated": [
+          "（错误：应为 Because of）",
+          "两者都",
+          "找到",
+          "在街上"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查 because 与 because of 的区别。because 是连词，后接句子（主谓结构）；because of 是介词短语，后接名词或名词短语。原句 the bad weather 是名词短语，必须使用 because of。\n【改正】Because → **Because of**：**Because of** the bad weather, both cars and buses were difficult to find in the street.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] Don't forget telling him that there is no bus service in that small city.",
+        "options": [
+          "telling",
+          "that",
+          "no bus",
+          "in"
+        ],
+        "translated": "别忘了告诉他那个小城市没有公交车。",
+        "options_translated": [
+          "（错误：应为 to tell）",
+          "（连接词）",
+          "没有公交车",
+          "在（某地）"
+        ]
+      },
+      "answers": [
+        "A"
+      ],
+      "analysis": "本题考查 forget to do 与 forget doing 的区别。forget to do sth 表\"忘记要做某事\"（事情尚未做）；forget doing sth 表\"忘记曾经做过某事\"（事情已做）。语境是提醒对方不要忘记去告诉，事情尚未做，应使用 to do。\n【改正】telling → **to tell**：Don't forget **to tell** him that there is no bus service in that small city.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
+    },
+    {
+      "type": "multiple_choice",
+      "content": {
+        "question": "[纠错] As air is heated by the sun, it rises and colder air rushes in to take it place, creating wind.",
+        "options": [
+          "As",
+          "rises",
+          "colder",
+          "take it place"
+        ],
+        "translated": "当空气被太阳加热时，它会上升，较冷的空气则涌入填补它的位置，从而形成风。",
+        "options_translated": [
+          "当……时",
+          "上升",
+          "更冷的",
+          "（错误：应为 take its place）"
+        ]
+      },
+      "answers": [
+        "D"
+      ],
+      "analysis": "本题考查形容词性物主代词与人称代词的区别。take one's place 意为\"占据某人/某物的位置\"，其中 one's 应为形容词性物主代词；it 是主格/宾格人称代词，不能直接修饰名词 place，应改为形容词性物主代词 its。\n【改正】take it place → **take its place**：...colder air rushes in to **take its place**, creating wind.",
+      "tags": [
+        "Unit 3",
+        "Book 3",
+        "纠错题"
+      ]
     }
   ]
 }
