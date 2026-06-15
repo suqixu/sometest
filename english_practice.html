@@ -383,29 +383,6 @@
             font-weight: 400;
         }
 
-        .extra-resource-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 14px;
-            padding: 6px 14px;
-            font-size: 0.88rem;
-            font-family: var(--font-text);
-            font-weight: 500;
-            color: var(--accent-600);
-            background: var(--surface-tinted);
-            border: 1px solid var(--line-soft);
-            border-radius: 999px;
-            text-decoration: none;
-            transition: all 0.25s var(--ease-out-expo);
-        }
-
-        .extra-resource-link:hover {
-            background: var(--accent-600);
-            color: #fff;
-            border-color: var(--accent-600);
-            transform: translateY(-1px);
-        }
 
         /* ========== 主题切换器 ========== */
         .theme-switcher {
@@ -1015,6 +992,52 @@
         }
 
         .answer-input::placeholder { color: var(--text-muted); }
+
+        .answer-input-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .answer-input-wrapper .answer-input {
+            padding-right: 40px;
+        }
+
+        .answer-clear-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: var(--line-medium);
+            color: var(--surface-card);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 14px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+        }
+
+        .answer-input-wrapper textarea ~ .answer-clear-btn {
+            top: 14px;
+            transform: none;
+        }
+
+        .answer-input-wrapper .answer-input:not(:placeholder-shown) ~ .answer-clear-btn,
+        .answer-input-wrapper.has-value .answer-clear-btn {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .answer-clear-btn:hover {
+            background: var(--ink-500);
+        }
 
         .choice-options {
             display: flex;
@@ -1958,9 +1981,7 @@
                 <h2>欢迎来到英语练习平台！</h2>
                 <p>这里有丰富的英语练习内容，包括单词拼写、短语翻译、选择题空、句子翻译和段落翻译等多种类型。</p>
                 <p>请选择练习类型和单元，然后点击"开始练习"按钮开始你的学习之旅！</p>
-                <div style="margin-top: 24px;">
-                    <a href="test.html" class="extra-resource-link" target="_blank" rel="noopener">📚 复旦考试其他复习资料(第3学期) →</a>
-                </div>
+
             </div>
 
             <div id="practiceScreen" class="hidden">
@@ -2771,11 +2792,23 @@
             // 渲染输入框
             const answerInputContainer = document.getElementById('answerInputContainer');
             if (question.type === 'sentence_translation' || question.type === 'paragraph_translation') {
-                answerInputContainer.innerHTML = '<textarea class="answer-input" id="answerInput" rows="4" placeholder="请输入你的答案..."></textarea>';
+                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><textarea class="answer-input" id="answerInput" rows="4" placeholder="请输入你的答案..."></textarea><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
             } else {
-                answerInputContainer.innerHTML = '<input type="text" class="answer-input" id="answerInput" placeholder="请输入你的答案...">';
+                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><input type="text" class="answer-input" id="answerInput" placeholder="请输入你的答案..."><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
             }
             const answerInput = document.getElementById('answerInput');
+            // 清除按钮逻辑
+            const clearBtn = document.getElementById('answerClearBtn');
+            if (clearBtn) {
+                clearBtn.addEventListener('click', function() {
+                    answerInput.value = '';
+                    answerInput.focus();
+                    this.closest('.answer-input-wrapper').classList.remove('has-value');
+                });
+                answerInput.addEventListener('input', function() {
+                    this.closest('.answer-input-wrapper').classList.toggle('has-value', this.value.length > 0);
+                });
+            }
 
             // 处理选择题选项
             const choiceOptions = document.getElementById('choiceOptions');
@@ -2900,6 +2933,8 @@
             // 加载已保存的答案
             if (userAnswers[currentQuestionIndex]) {
                 answerInput.value = userAnswers[currentQuestionIndex];
+                const wrapper = answerInput.closest('.answer-input-wrapper');
+                if (wrapper) wrapper.classList.add('has-value');
             }
             
             // 显示显示答案按钮
