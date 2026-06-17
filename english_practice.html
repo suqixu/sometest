@@ -2792,9 +2792,9 @@
             // 渲染输入框
             const answerInputContainer = document.getElementById('answerInputContainer');
             if (question.type === 'sentence_translation' || question.type === 'paragraph_translation') {
-                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><textarea class="answer-input" id="answerInput" rows="4" placeholder="请输入你的答案..."></textarea><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
+                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><textarea class="answer-input" id="answerInput" rows="4" placeholder="请输入你的答案..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
             } else {
-                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><input type="text" class="answer-input" id="answerInput" placeholder="请输入你的答案..."><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
+                answerInputContainer.innerHTML = '<div class="answer-input-wrapper"><input type="text" class="answer-input" id="answerInput" placeholder="请输入你的答案..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"><button type="button" class="answer-clear-btn" id="answerClearBtn">✕</button></div>';
             }
             const answerInput = document.getElementById('answerInput');
             // 清除按钮逻辑
