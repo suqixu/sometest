@@ -1914,7 +1914,7 @@
             </div>
         </div>
         <div class="header">
-            <h1>🎓 英语练习平台(5段)</h1>
+            <h1>🎓 英语练习平台(6段)</h1>
             <p>提升你的英语词汇、翻译和语法技能</p>
         </div>
 
@@ -1922,7 +1922,8 @@
             <div class="control-row">
                 <label for="segmentSelect">英语段数</label>
                 <select id="segmentSelect" style="width: 150px;">
-                    <option value="en5.json" selected>英语5段</option>
+                    <option value="en6.json" selected>英语6段</option>
+                    <option value="en5.json">英语5段</option>
                     <option value="en4.json">英语4段</option>
                     <option value="en3.json">英语3段</option>
                 </select>
@@ -2192,7 +2193,7 @@
 
         // 统一配置
         const APP_CONFIG = {
-            DEFAULT_JSON_FILE: 'en5.json',
+            DEFAULT_JSON_FILE: 'en6.json',
             DATA_DIR: 'data/',
             COOKIE_KEYS: {
                 WRONG_QUESTIONS: 'wrongQuestions'
@@ -2217,7 +2218,8 @@
             SEGMENT_TITLES: {
                 'en3.json': '🎓 英语练习平台(3段)',
                 'en4.json': '🎓 英语练习平台(4段)',
-                'en5.json': '🎓 英语练习平台(5段)'
+                'en5.json': '🎓 英语练习平台(5段)',
+                'en6.json': '🎓 英语练习平台(6段)'
             }
         };
 
@@ -3818,7 +3820,7 @@
 
         // 页面加载时获取数据
         window.addEventListener('load', async function() {
-            // 加载本地数据，默认英语4段
+            // 加载本地数据，默认英语6段
             await loadData(APP_CONFIG.DEFAULT_JSON_FILE);
             // 加载错题集
             loadWrongQuestions();
@@ -4019,4 +4021,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
