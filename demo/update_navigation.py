@@ -19,6 +19,48 @@ import sys
 from urllib.parse import quote, urlsplit
 
 ITEMS_PATTERN = re.compile(r'const ITEMS\s*=\s*(\[.*?\]);', re.S)
+RETURN_CHECK = '''<script id="demo-return-check-script">
+if (parent !== window && new URLSearchParams(location.search).has('demo-return-check')) {
+  parent.postMessage({ type: 'demo-return-available' }, '*');
+}
+</script>'''
+RETURN_SCRIPT = '''<script id="demo-return-script">
+(() => {
+  const fallback = 'https://suqixu.github.io/sometest/demo/demo.html';
+  document.querySelectorAll('a[data-demo-return]').forEach(link => {
+    let pending = false;
+    link.addEventListener('click', event => {
+      if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (pending) return;
+      pending = true;
+      const destination = new URL(link.getAttribute('href'), location.href);
+      const probe = document.createElement('iframe');
+      probe.hidden = true;
+      const check = new URL(destination);
+      check.searchParams.set('demo-return-check', '1');
+      let finished = false;
+      const finish = url => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        removeEventListener('message', receive);
+        probe.remove();
+        window.top.location.href = url;
+      };
+      const receive = event => {
+        if (event.source === probe.contentWindow && event.data?.type === 'demo-return-available') {
+          finish(destination.href);
+        }
+      };
+      addEventListener('message', receive);
+      const timer = setTimeout(() => finish(fallback), 3000);
+      probe.src = check.href;
+      document.body.appendChild(probe);
+    });
+  });
+})();
+</script>'''
 
 
 class PageMetadata(HTMLParser):
@@ -141,8 +183,13 @@ def update_return_links(source, page, navigation):
         return source
     for start, end, updated in reversed(parser.replacements):
         source = source[:start] + updated + source[end:]
-    return (source.replace('a[href="demo.html"]', 'a[data-demo-return]')
-            .replace(r'a[href=\"demo.html\"]', 'a[data-demo-return]'))
+    source = (source.replace('a[href="demo.html"]', 'a[data-demo-return]')
+              .replace(r'a[href=\"demo.html\"]', 'a[data-demo-return]'))
+    if 'id="demo-return-script"' not in source:
+        closing = re.search(r'</body\s*>', source, re.I)
+        offset = closing.start() if closing else len(source)
+        source = source[:offset] + RETURN_SCRIPT + '\n' + source[offset:]
+    return source
 
 
 def update_navigation(root):
@@ -199,6 +246,13 @@ def update_navigation(root):
     source = source.replace('${groupEmoji[g]} ${g}', "${groupEmoji[g] || '📄'} ${g}")
     source = re.sub(r'\d+ 个演示 · 同页预览', f'{len(entries)} 个演示 · 同页预览', source)
     source = source.replace('\nselect(ITEMS[0]);', '\nif (ITEMS.length) select(ITEMS[0]);')
+    if 'id="demo-return-check-script"' not in source:
+        head = re.search(r'<head\b[^>]*>', source, re.I)
+        offset = head.end() if head else 0
+        source = source[:offset] + '\n' + RETURN_CHECK + '\n' + source[offset:]
+    source = source.replace('renderList();\nif (ITEMS.length) select(ITEMS[0]);',
+                            "if (!new URLSearchParams(location.search).has('demo-return-check')) {\n"
+                            '  renderList();\n  if (ITEMS.length) select(ITEMS[0]);\n}')
     for path, updated in updates:
         write_preserving_permissions(path, updated)
     write_preserving_permissions(navigation, source)

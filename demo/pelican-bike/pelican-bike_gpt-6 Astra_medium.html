@@ -251,5 +251,42 @@ body.ui-collapsed .ui-surface { display: none !important; }
   document.body.appendChild(button);
 })();
 </script>
+<script id="demo-return-script">
+(() => {
+  const fallback = 'https://suqixu.github.io/sometest/demo/demo.html';
+  document.querySelectorAll('a[data-demo-return]').forEach(link => {
+    let pending = false;
+    link.addEventListener('click', event => {
+      if (event.button || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (pending) return;
+      pending = true;
+      const destination = new URL(link.getAttribute('href'), location.href);
+      const probe = document.createElement('iframe');
+      probe.hidden = true;
+      const check = new URL(destination);
+      check.searchParams.set('demo-return-check', '1');
+      let finished = false;
+      const finish = url => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timer);
+        removeEventListener('message', receive);
+        probe.remove();
+        window.top.location.href = url;
+      };
+      const receive = event => {
+        if (event.source === probe.contentWindow && event.data?.type === 'demo-return-available') {
+          finish(destination.href);
+        }
+      };
+      addEventListener('message', receive);
+      const timer = setTimeout(() => finish(fallback), 3000);
+      probe.src = check.href;
+      document.body.appendChild(probe);
+    });
+  });
+})();
+</script>
 </body>
 </html>

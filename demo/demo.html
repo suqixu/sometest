@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<script id="demo-return-check-script">
+if (parent !== window && new URLSearchParams(location.search).has('demo-return-check')) {
+  parent.postMessage({ type: 'demo-return-available' }, '*');
+}
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Demo 导航 · 海岛 & 鹈鹕骑行</title>
@@ -356,8 +362,10 @@ function select(it) {
   });
 }
 
-renderList();
-if (ITEMS.length) select(ITEMS[0]);
+if (!new URLSearchParams(location.search).has('demo-return-check')) {
+  renderList();
+  if (ITEMS.length) select(ITEMS[0]);
+}
 </script>
 
 <script id="navigation-toggle-script">

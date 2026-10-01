@@ -86,6 +86,7 @@
     max-width:70vw;white-space:pre-wrap;pointer-events:none}
   @media (max-width:720px){
     #board{width:180px} #lapbox{left:204px;min-width:110px} #minimap{width:132px;height:132px}
+    #mapwrap{top:auto;bottom:14px}
     #lapnum{font-size:22px} #toast{font-size:24px}
   }
 </style>
@@ -115,37 +116,9 @@
 
   <div id="toast"></div>
   <div id="msg"></div>
-  <div class="hint" id="hint">空格：开始 / 暂停　C：切换镜头　1-4：跟随赛车　R：重开（重新随机赛道）　M：音乐　N：音效</div>
 
-  <div class="panel" id="bar">
-    <button class="btn" id="btnStart">开始比赛</button>
-    <button class="btn" id="btnCam">镜头：跟车</button>
-    <button class="btn" id="btnCar">跟随：1号</button>
-    <button class="btn on" id="btnMusic">音乐 开</button>
-    <button class="btn on" id="btnSfx">音效 开</button>
-    <button class="btn" id="btnNew">随机新赛道</button>
-  </div>
 </div>
 
-<div id="overlay">
-  <div class="card" id="card">
-    <h1>四驱赛车 <span>随机赛道</span></h1>
-    <p class="sub">
-      每次刷新都会生成一条全新的环形赛道：随机弯道、随机的上下坡、随机分布的水池 / 沙地 / 草地 / 沥青路面，
-      以及 4 辆随机配色、随机性能的四驱赛车。3 圈定胜负，冲过终点线见分晓。
-    </p>
-    <div class="keys">
-      <div class="key"><b>空格</b>开始 / 暂停</div>
-      <div class="key"><b>C</b>切换镜头（跟车·车头·俯视·环绕·巡航）</div>
-      <div class="key"><b>1 / 2 / 3 / 4</b>选择要跟随的赛车</div>
-      <div class="key"><b>R</b>重新随机整条赛道与赛车</div>
-      <div class="key"><b>M / N</b>背景音乐 / 音效 开关</div>
-      <div class="key"><b>鼠标拖拽</b>环绕视角下自由观察</div>
-    </div>
-    <div class="row"><button class="big" id="btnGo">开始比赛</button>
-      <span style="color:#9fb3cc;font-size:12px">点一下才会播放音乐与音效（浏览器要求）</span></div>
-  </div>
-</div>
 <div id="err"></div>
 
 <script type="module">
@@ -285,52 +258,49 @@ const AUDIO = {
     return clamp(1 / (1 + d / 26), 0, 1);
   },
 
-  /* --- 背景音乐：16 分音符步进音序器（Am-F-C-G，电音飙车风） --- */
+  /* --- 背景音乐：《祝你生日快乐》，C 大调、三拍子，循环演奏 --- */
   music: {
-    playing: false, step: 0, next: 0, timer: null, bpm: 132,
-    chords: [ // [pad 音, 低音, 琶音音阶]
-      { pad: [57, 60, 64], bass: 33, arp: [69, 72, 76, 79] },
-      { pad: [57, 60, 65], bass: 29, arp: [69, 72, 77, 81] },
-      { pad: [55, 60, 64], bass: 36, arp: [67, 72, 76, 79] },
-      { pad: [55, 59, 62], bass: 31, arp: [67, 71, 74, 79] }
+    playing: false, step: 0, next: 0, timer: null, bpm: 100,
+    // MIDI 音高与拍数；每句六拍，共八小节。
+    melody: [
+      [67, .75], [67, .25], [69, 1], [67, 1], [72, 1], [71, 2],
+      [67, .75], [67, .25], [69, 1], [67, 1], [74, 1], [72, 2],
+      [67, .75], [67, .25], [79, 1], [76, 1], [72, .75], [71, .25], [69, 2],
+      [77, .75], [77, .25], [76, 1], [72, 1], [74, 1], [72, 2]
     ],
     midi: m => 440 * Math.pow(2, (m - 69) / 12),
     start() {
-      if (!AUDIO.ready) return;
-      this.playing = true; this.next = AUDIO.ctx.currentTime + 0.12;
+      if (!AUDIO.ready || this.playing) return;
+      this.playing = true;
+      this.next = AUDIO.ctx.currentTime + 0.12;
       if (!this.timer) this.timer = setInterval(() => this.tick(), 40);
     },
     stop() { this.playing = false; },
     tick() {
       const ctx = AUDIO.ctx;
-      if (!ctx || !this.playing) return;
+      if (!ctx || ctx.state !== 'running' || !this.playing) return;
       if (!AUDIO.musicOn) { this.next = ctx.currentTime + 0.2; return; }
-      const stepDur = (60 / this.bpm) / 4;
+      if (this.next < ctx.currentTime - 0.5) this.next = ctx.currentTime + 0.02;
       while (this.next < ctx.currentTime + 0.25) {
         this.play(this.step, this.next);
-        this.step = (this.step + 1) % 64;
-        this.next += stepDur;
+        this.next += this.melody[this.step][1] * 60 / this.bpm;
+        this.step = (this.step + 1) % this.melody.length;
       }
     },
     play(step, t) {
-      const bus = AUDIO.musicBus, bar = Math.floor(step / 16) % 4, s = step % 16;
-      const C = this.chords[bar], M = this.midi;
-      // 鼓
-      if (s === 0 || s === 4 || s === 8 || s === 12 || s === 14) {
-        AUDIO.tone({ t, type: 'sine', freq: 150, freqEnd: 44, dur: 0.18, gain: 0.5, dest: bus, force: 1 });
-      }
-      if (s === 4 || s === 12) AUDIO.noiseHit({ t, dur: 0.16, f0: 1900, q: 0.9, gain: 0.24, dest: bus, force: 1 });
-      if (s % 2 === 0) AUDIO.noiseHit({ t, dur: 0.05, f0: 9000, q: 0.7, gain: s % 4 === 2 ? 0.09 : 0.05, filter: 'highpass', dest: bus, force: 1 });
-      // 低音
-      if (s === 0 || s === 3 || s === 6 || s === 8 || s === 11 || s === 14) {
-        AUDIO.tone({ t, type: 'sawtooth', freq: M(C.bass), dur: 0.2, gain: 0.2, dest: bus, force: 1 });
-      }
-      // 琶音主旋律
-      const arpIdx = [0, 2, 1, 3, 2, 3, 1, 2, 0, 2, 3, 1, 2, 0, 3, 2][s];
-      AUDIO.tone({ t, type: 'square', freq: M(C.arp[arpIdx] + (s >= 8 ? 12 : 0)), dur: 0.14, gain: 0.075, dest: bus, force: 1 });
-      // 铺底和声
-      if (s === 0) C.pad.forEach((m, i) => AUDIO.tone({
-        t, type: 'triangle', freq: M(m - 12), dur: 1.7, gain: 0.05, attack: 0.25, decay: 1.6, dest: bus, detune: (i - 1) * 6, force: 1
+      const bus = AUDIO.musicBus;
+      const [note, beats] = this.melody[step];
+      const duration = beats * 60 / this.bpm;
+      // 柔和的钟琴音色，突出熟悉的生日歌旋律。
+      AUDIO.tone({ t, type: 'triangle', freq: this.midi(note), dur: duration * 0.9,
+        gain: 0.18, attack: 0.015, decay: duration * 0.85, dest: bus, force: 1 });
+      AUDIO.tone({ t, type: 'sine', freq: this.midi(note + 12), dur: duration * 0.6,
+        gain: 0.035, attack: 0.01, decay: duration * 0.55, dest: bus, force: 1 });
+      const chords = { 0: [48, 60, 64, 67], 6: [43, 59, 62, 67],
+        12: [48, 60, 64, 67], 19: [41, 60, 65, 69], 23: [43, 59, 62, 67], 24: [48, 60, 64, 67] };
+      if (chords[step]) chords[step].forEach((m, i) => AUDIO.tone({
+        t, type: 'sine', freq: this.midi(m), dur: 1.2, gain: i === 0 ? 0.065 : 0.025,
+        attack: 0.04, decay: 1.1, dest: bus, force: 1
       }));
     }
   }
@@ -638,7 +608,11 @@ function makeTextTexture(text, sub, bg) {
   const cv = document.createElement('canvas');
   cv.width = 1024; cv.height = 192;
   const x = cv.getContext('2d');
-  x.fillStyle = bg; x.fillRect(0, 0, cv.width, cv.height);
+  const gradient = x.createLinearGradient(0, 0, 0, cv.height);
+  gradient.addColorStop(0, '#163f32');
+  gradient.addColorStop(0.55, '#4a8b45');
+  gradient.addColorStop(1, '#c5c16f');
+  x.fillStyle = gradient; x.fillRect(0, 0, cv.width, cv.height);
   x.fillStyle = 'rgba(255,255,255,.14)'; x.fillRect(0, 0, cv.width, 12); x.fillRect(0, cv.height - 12, cv.width, 12);
   x.fillStyle = '#fff'; x.textAlign = 'center'; x.textBaseline = 'middle';
   x.font = 'bold 96px "PingFang SC","Microsoft YaHei",sans-serif';
@@ -655,21 +629,54 @@ function buildGate(group, u, text, sub, color) {
   g.position.copy(r.pos);
   g.rotation.y = Math.atan2(r.tan.x, r.tan.z);
   const postH = 8, off = HALF_W + 1.4;
-  const postM = new THREE.MeshStandardMaterial({ color, metalness: 0.4, roughness: 0.45 });
+  const postM = new THREE.MeshStandardMaterial({ color: 0x536b35, metalness: 0, roughness: 0.9 });
   for (const sx of [-1, 1]) {
     const p = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.5, postH, 12), postM);
     p.position.set(sx * off, postH / 2 - 0.4, 0);
     p.castShadow = true;
     g.add(p);
   }
-  const tex = makeTextTexture(text, sub, '#' + new THREE.Color(color).getHexString());
+  // 海带编成的横旗与垂下的叶片；保留起点、终点文字。
+  const tex = makeTextTexture(text, sub, '#426329');
   const banner = new THREE.Mesh(
-    new THREE.BoxGeometry(off * 2, 2.4, 0.35),
-    [postM, postM, postM, postM,
-     new THREE.MeshBasicMaterial({ map: tex }), new THREE.MeshBasicMaterial({ map: tex })]
+    new THREE.PlaneGeometry(off * 2, 2.4, 48, 8),
+    new THREE.MeshBasicMaterial({ map: tex, side: THREE.FrontSide })
   );
+  banner.name = '海带旗帜';
   banner.position.set(0, postH - 0.2, 0);
   g.add(banner);
+  const kelpParts = [{ mesh: banner, base: banner.geometry.attributes.position.array.slice(), phase: u * TAU, strength: 0.42 }];
+  // 背面翻转纹理坐标，让从两个方向经过时都能正常阅读文字。
+  const backGeometry = banner.geometry.clone();
+  const uv = backGeometry.attributes.uv;
+  for (let i = 0; i < uv.count; i++) uv.setX(i, 1 - uv.getX(i));
+  const back = new THREE.Mesh(backGeometry, new THREE.MeshBasicMaterial({ map: tex, side: THREE.BackSide }));
+  back.position.copy(banner.position); back.position.z = -0.01;
+  g.add(back);
+  kelpParts.push({ mesh: back, base: backGeometry.attributes.position.array.slice(), phase: u * TAU, strength: 0.42 });
+  for (let i = 0; i < 12; i++) {
+    const leaf = new THREE.Mesh(
+      new THREE.PlaneGeometry(0.6, 2.7 + (i % 3) * 0.25, 4, 12),
+      new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: 0.85, side: THREE.DoubleSide })
+    );
+    const positions = leaf.geometry.attributes.position;
+    const height = 2.7 + (i % 3) * 0.25;
+    const colors = [], rootColor = new THREE.Color('#163f32'), middleColor = new THREE.Color('#4a8b45'), tipColor = new THREE.Color('#c5c16f');
+    for (let j = 0; j < positions.count; j++) {
+      const t = (positions.getY(j) + height / 2) / height;
+      positions.setX(j, positions.getX(j) * (0.2 + 0.8 * Math.sin(Math.PI * t)) + 0.08 * Math.sin(t * 22));
+      const color = t < 0.55
+        ? tipColor.clone().lerp(middleColor, t / 0.55)
+        : middleColor.clone().lerp(rootColor, (t - 0.55) / 0.45);
+      colors.push(color.r, color.g, color.b);
+    }
+    leaf.geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+    leaf.position.set(-off + 1 + i / 11 * (off * 2 - 2), postH - 1.4 - height / 2, -0.05);
+    leaf.name = '飘动海带叶';
+    g.add(leaf);
+    kelpParts.push({ mesh: leaf, base: positions.array.slice(), phase: i * 0.7 + u * TAU, strength: 0.3 });
+  }
+  g.userData.kelpParts = kelpParts;
   group.add(g);
   return g;
 }
@@ -772,18 +779,71 @@ function buildCarMesh(bodyHex, trimHex) {
   return { group: g, wheels };
 }
 
+// 两位生物直接奔跑参赛，沿用赛车的赛道、计圈和排名规则。
+function buildCreatureMesh(kind) {
+  const group = new THREE.Group(), legs = [], segments = [];
+  const roach = kind === 'roach';
+  const shell = new THREE.MeshStandardMaterial({ color: roach ? 0x54677a : 0xb34822, roughness: 0.48, metalness: roach ? 0.2 : 0 });
+  const limb = new THREE.MeshStandardMaterial({ color: roach ? 0xb3aaa0 : 0xeab64d, roughness: 0.7 });
+  const dark = new THREE.MeshStandardMaterial({ color: 0x101b20, roughness: 0.4 });
+  const eye = new THREE.MeshStandardMaterial({ color: 0xf7df87, roughness: 0.3 });
+  const sphere = new THREE.SphereGeometry(1, 14, 10);
+  const ball = (material, x, y, z, sx, sy, sz, parent = group) => {
+    const mesh = new THREE.Mesh(sphere, material);
+    mesh.position.set(x, y, z); mesh.scale.set(sx, sy, sz); parent.add(mesh);
+    return mesh;
+  };
+  const rod = (parent, a, b, radius, material) => {
+    const direction = b.clone().sub(a);
+    const mesh = new THREE.Mesh(new THREE.CylinderGeometry(radius * 0.7, radius, direction.length(), 8), material);
+    mesh.position.copy(a).add(b).multiplyScalar(0.5);
+    mesh.quaternion.setFromUnitVectors(V3(0, 1, 0), direction.normalize());
+    parent.add(mesh);
+  };
+  const count = roach ? 7 : 18, step = roach ? 0.4 : 0.29;
+  for (let i = 0; i < count; i++) {
+    const z = (count - 1) * step / 2 - i * step;
+    const width = roach ? 0.62 + 0.4 * Math.sin((i + 1) / (count + 1) * Math.PI) : 0.43;
+    const segment = ball(shell, 0, 0.6, z, width, roach ? 0.36 : 0.3, step * 0.7);
+    segments.push(segment);
+    for (const side of [-1, 1]) {
+      const pivot = new THREE.Group(); pivot.position.set(side * width * 0.72, 0.42, z);
+      rod(pivot, V3(0, 0, 0), V3(side * 0.55, -0.04, -0.15), 0.07, limb);
+      rod(pivot, V3(side * 0.55, -0.04, -0.15), V3(side * 0.9, -0.38, 0.08), 0.045, limb);
+      group.add(pivot); legs.push({ pivot, side, phase: i * 0.85 });
+    }
+  }
+  const headZ = (count - 1) * step / 2 + 0.35;
+  ball(shell, 0, 0.65, headZ, roach ? 0.62 : 0.55, 0.36, 0.48);
+  for (const side of [-1, 1]) {
+    ball(eye, side * 0.35, 0.88, headZ + 0.25, 0.12, 0.12, 0.13);
+    ball(dark, side * 0.35, 0.9, headZ + 0.34, 0.055, 0.06, 0.065);
+    const antenna = new THREE.Group(); antenna.position.set(side * 0.25, 0.82, headZ + 0.25);
+    rod(antenna, V3(0, 0, 0), V3(side * 0.25, 0.35, 0.55), 0.045, limb);
+    rod(antenna, V3(side * 0.25, 0.35, 0.55), V3(side * 0.6, 0.42, 0.95), 0.03, limb);
+    group.add(antenna);
+  }
+  group.name = roach ? '海蟑螂' : '百足虫';
+  group.traverse(object => { if (object.isMesh) object.castShadow = true; });
+  return { group, wheels: [], legs, segments };
+}
+
 class Car {
-  constructor(index, num, colorHex) {
-    const def = CAR_DEFS[num - 1];
+  constructor(index, num, colorHex, kind = 'car') {
+    this.kind = kind;
+    const def = kind === 'car' ? CAR_DEFS[num - 1] : {
+      name: kind === 'roach' ? '海蟑螂' : '百足虫', colors: [colorHex, kind === 'roach' ? 0xb3aaa0 : 0xeab64d]
+    };
     this.index = index; this.num = num; this.name = def.name; this.color = colorHex;
-    const built = buildCarMesh(def.colors[0], def.colors[1]);
+    const built = kind === 'car' ? buildCarMesh(def.colors[0], def.colors[1]) : buildCreatureMesh(kind);
+    this.legs = built.legs || []; this.bodySegments = built.segments || [];
     this.mesh = built.group; this.wheels = built.wheels;
     this.sprite = numberSprite(num, def.colors[1]);
     this.sprite.position.y = 2.15;
     this.mesh.add(this.sprite);
     this.baseSpeed = rnd(31.0, 36.0);       // 车身性能
     this.accent = rnd(0.9, 1.1);
-    // 起跑排位：两排两列
+    // 起跑排位：两列，按参赛者数量安排排数
     const row = Math.floor(index / 2), col = index % 2;
     this.u = wrap01(-0.010 - row * 0.009);
     this.lane = (col === 0 ? -0.34 : 0.34);
@@ -873,6 +933,14 @@ class Car {
     // 车轮
     this.wheelSpin += this.speed * dt / 0.46;
     for (const w of this.wheels) w.rotation.x = this.wheelSpin;
+    for (const leg of this.legs) {
+      const phase = this.wheelSpin * 0.55 + leg.phase + (leg.side > 0 ? Math.PI : 0);
+      leg.pivot.rotation.y = Math.sin(phase) * 0.48;
+      leg.pivot.rotation.z = leg.side * Math.max(0, Math.cos(phase)) * 0.28;
+    }
+    this.bodySegments.forEach((segment, i) => {
+      segment.position.x = Math.sin(this.wheelSpin * 0.45 - i * 0.5) * (this.kind === 'centipede' ? 0.12 : 0.035);
+    });
 
     // 上下坡颠簸音效 + 打滑音效
     this.bumpT -= dt;
@@ -1217,12 +1285,12 @@ function newRace() {
   checkerStrip(world, 0.0);
   checkerStrip(world, 0.5);
 
-  // 赛车：随机挑选 4 种配色
+  // 赛车：随机挑选 2 种配色，另有海蟑螂和百足虫参赛
   spray = new Spray(1400);
   world.add(spray.points);
   const pool = CAR_DEFS.map((d, i) => i);
   const chosen = [];
-  for (let i = 0; i < 4; i++) chosen.push(pool.splice(rint(0, pool.length - 1), 1)[0]);
+  for (let i = 0; i < 2; i++) chosen.push(pool.splice(rint(0, pool.length - 1), 1)[0]);
   carColors = chosen.map(i => CAR_DEFS[i].colors[0]);
   cars = chosen.map((defIdx, i) => {
     const c = new Car(i, defIdx + 1, CAR_DEFS[defIdx].colors[0]);
@@ -1230,14 +1298,17 @@ function newRace() {
     world.add(c.mesh);
     return c;
   });
+  for (const [kind, color] of [['roach', 0x54677a], ['centipede', 0xb34822]]) {
+    const creature = new Car(cars.length, 7 + (kind === 'centipede' ? 1 : 0), color, kind);
+    world.add(creature.mesh);
+    cars.push(creature);
+  }
   // 立刻停到发车格上（否则在待机画面里会堆在原点）
   cars.forEach(c => { c.update(0.0001, null); c.prevU = c.u; c.dist = 0; });
 
   buildMinimapPoints();
   race.mode = 'ready'; race.time = 0; race.countdown = 3.4; race.started = false; race.leaderDist = 0;
   hideToast();
-  $('btnStart').textContent = '开始比赛';
-  updateCarBtn(); updateCamBtn();
 }
 
 /* ---------- 11. 流程控制 ---------- */
@@ -1247,35 +1318,19 @@ function startRace() {
   // 音频上下文是首次点击后才建立的，这里补建引擎声
   cars.forEach(c => {
     c.reset();
-    if (!c.engine || !c.engine.gain) c.engine = new EngineSound();
+    if (c.kind === 'car' && (!c.engine || !c.engine.gain)) c.engine = new EngineSound();
   });
   race.mode = 'countdown'; race.countdown = 3.4; race.time = 0; race.started = true;
   sendMsg('准备发车…');
 }
-function pauseRace() {
-  if (race.mode === 'racing') { race.mode = 'paused'; $('btnStart').textContent = '继续'; showToast('暂停'); }
-  else if (race.mode === 'paused') { race.mode = 'racing'; $('btnStart').textContent = '暂停'; hideToast(); }
-}
 function finishRace() {
   race.mode = 'finished';
-  $('btnStart').textContent = '再来一局';
   AUDIO.finish();
-  const order = cars.slice().sort((a, b) => (a.finished ? a.finishTime : 1e9) - (b.finished ? b.finishTime : 1e9) || b.dist - a.dist);
-  const rows = order.map((c, i) => {
-    const hex = '#' + new THREE.Color(c.color).getHexString();
-    return `<tr><td style="font-weight:800;color:#ffd34d">${i + 1}</td>
-      <td><span class="dot" style="display:inline-block;background:${hex}"></span> ${c.num}号 ${c.name}</td>
-      <td>${c.finishTime ? fmtTime(c.finishTime) : '—'}</td>
-      <td>${(c.dist / trackLen).toFixed(2)} 圈</td></tr>`;
-  }).join('');
-  $('card').innerHTML = `<h1>比赛结束 🏁 <span>${order[0].num}号 ${order[0].name}</span> 夺冠</h1>
-    <p class="sub">每条赛道、每辆车的性能都是随机生成的。再来一局会得到一条全新的赛道。</p>
-    <table class="res"><tr><th>名次</th><th>赛车</th><th>用时</th><th>里程</th></tr>${rows}</table>
-    <div class="row"><button class="big" id="btnAgain">再来一局（新赛道）</button>
-      <button class="big" id="btnClose" style="background:rgba(255,255,255,.12);color:#eaf2ff;box-shadow:none">看看赛道</button></div>`;
-  $('overlay').classList.remove('hide');
-  $('btnAgain').onclick = () => { $('overlay').classList.add('hide'); newRace(); startRace(); };
-  $('btnClose').onclick = () => $('overlay').classList.add('hide');
+  const winner = cars.slice().sort((a, b) =>
+    (a.finished ? a.finishTime : 1e9) - (b.finished ? b.finishTime : 1e9) || b.dist - a.dist
+  )[0];
+  sendMsg(`🏁 ${winner.num}号 ${winner.name} 夺冠，稍后自动开始下一场…`);
+  setTimeout(() => { newRace(); startRace(); }, 5000);
 }
 function sendMsg(t) { showMsg(t); }
 
@@ -1298,7 +1353,7 @@ function tick() {
     if (Math.ceil(prev) !== p3 && p3 >= 1 && p3 <= 3) AUDIO.beep(false);
     if (race.countdown > 0) showToast(String(Math.max(1, p3)));
     if (race.countdown <= 0) {
-      race.mode = 'racing'; AUDIO.beep(true); $('btnStart').textContent = '暂停';
+      race.mode = 'racing'; AUDIO.beep(true);
       showToast('GO!', 1.1);
     }
   }
@@ -1325,7 +1380,20 @@ function tick() {
     if (cars.every(c => c.finished)) finishRace();
   }
 
-  if (cars.length) updateCamera(dt, cars[0]);
+  // 自动轮流跟拍所有参赛者，无需手动选择。
+  if (cars.length) {
+    camCar = Math.floor(elapsed / 10) % cars.length;
+    updateCamera(dt, cars[0]);
+  }
+  for (const gate of gates) for (const part of gate.userData.kelpParts || []) {
+    const positions = part.mesh.geometry.attributes.position;
+    for (let i = 0; i < positions.count; i++) {
+      const x = part.base[i * 3], y = part.base[i * 3 + 1];
+      positions.setZ(i, part.base[i * 3 + 2] + Math.sin(elapsed * 2.2 + x * 0.65 + y * 0.9 + part.phase) * part.strength);
+    }
+    positions.needsUpdate = true;
+    part.mesh.geometry.computeVertexNormals();
+  }
   if (spray) spray.update(dt);
 
   // 引擎声空间化
@@ -1336,7 +1404,7 @@ function tick() {
   // 音乐滤波器随速度打开
   if (AUDIO.ready && AUDIO.musicFilter && cars.length) {
     const me = cars[camCar] || cars[0];
-    const f = 420 + clamp(me.speed / 34, 0, 1.2) * 2600;
+    const f = 1600 + clamp(me.speed / 34, 0, 1.2) * 2200;
     AUDIO.musicFilter.frequency.setTargetAtTime(f, AUDIO.ctx.currentTime, 0.3);
   }
 
@@ -1356,72 +1424,12 @@ function tick() {
   renderer.render(scene, camera);
 }
 
-/* ---------- 13. 交互 ---------- */
+/* ---------- 13. 适配窗口尺寸 ---------- */
 addEventListener('resize', () => {
   camera.aspect = innerWidth / innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(innerWidth, innerHeight);
 });
-addEventListener('keydown', e => {
-  const k = e.key.toLowerCase();
-  if (k === ' ') {
-    e.preventDefault();
-    if (race.mode === 'menu' || race.mode === 'ready' || race.mode === 'finished') { $('overlay').classList.add('hide'); newRace(); startRace(); }
-    else pauseRace();
-  }
-  if (k === 'c') { camMode = (camMode + 1) % CAMS.length; updateCamBtn(); }
-  if (k === 'r') { newRace(); startRace(); }
-  if (k >= '1' && k <= '4') { camCar = +k - 1; updateCarBtn(); }
-  if (k === 'm') toggleMusic();
-  if (k === 'n') toggleSfx();
-});
-renderer.domElement.addEventListener('pointerdown', e => {
-  mouse.down = true; mouse.x = e.clientX; mouse.y = e.clientY;
-  renderer.domElement.setPointerCapture(e.pointerId);
-});
-renderer.domElement.addEventListener('pointermove', e => {
-  if (!mouse.down) return;
-  const dx = e.clientX - mouse.x, dy = e.clientY - mouse.y;
-  mouse.yaw = clamp(mouse.yaw + dx * 0.004, -1.2, 1.2);
-  mouse.pitch = clamp(mouse.pitch - dy * 0.003, -0.6, 0.8);
-  orbitA -= dx * 0.006;                  // 环绕视角可直接拖着转
-  mouse.x = e.clientX; mouse.y = e.clientY;
-});
-addEventListener('pointerup', () => mouse.down = false);
-
-function updateCarBtn() {
-  const c = cars[camCar];
-  $('btnCar').textContent = c ? `跟随：${c.num}号 ${c.name}` : '跟随';
-}
-function updateCamBtn() { $('btnCam').textContent = '镜头：' + CAMS[camMode]; }
-function toggleMusic() {
-  AUDIO.init(); AUDIO.resume();
-  AUDIO.musicOn = !AUDIO.musicOn;
-  $('btnMusic').textContent = '音乐 ' + (AUDIO.musicOn ? '开' : '关');
-  $('btnMusic').classList.toggle('on', AUDIO.musicOn);
-  if (AUDIO.musicOn && race.mode !== 'menu') AUDIO.music.start();
-}
-function toggleSfx() {
-  AUDIO.init(); AUDIO.resume();
-  AUDIO.sfxOn = !AUDIO.sfxOn;
-  $('btnSfx').textContent = '音效 ' + (AUDIO.sfxOn ? '开' : '关');
-  $('btnSfx').classList.toggle('on', AUDIO.sfxOn);
-}
-$('btnStart').onclick = () => {
-  AUDIO.init(); AUDIO.resume();
-  if (race.mode === 'menu' || race.mode === 'ready' || race.mode === 'finished') {
-    $('overlay').classList.add('hide');
-    if (race.mode === 'finished') newRace();
-    startRace();
-  } else pauseRace();
-};
-$('btnCam').onclick = () => { camMode = (camMode + 1) % CAMS.length; updateCamBtn(); };
-$('btnCar').onclick = () => { camCar = (camCar + 1) % Math.max(1, cars.length); updateCarBtn(); };
-$('btnMusic').onclick = toggleMusic;
-$('btnSfx').onclick = toggleSfx;
-$('btnNew').onclick = () => { newRace(); startRace(); if (AUDIO.ready && AUDIO.musicOn) AUDIO.music.start(); };
-$('btnGo').onclick = () => { $('overlay').classList.add('hide'); startRace(); };
-
 /* ---------- 14. 启动 ---------- */
 // 浏览器要求“用户手势”后才能出声：任意第一次点击/按键都尝试解锁音频
 const unlockAudio = () => {
@@ -1433,6 +1441,7 @@ addEventListener('keydown', unlockAudio);
 addEventListener('touchstart', unlockAudio, { passive: true });
 
 newRace();
+startRace();
 tick();
 window.__ready = true;
 </script>
