@@ -1,11 +1,79 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<meta name="demo-tag" content="GPT-6 Astra · 高">
+<meta name="demo-group" content="海岛主题">
+<meta name="demo-order" content="1">
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#f2b28d"><title>棕榈来信 · 一座慢慢生活的小岛</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ctext y='32' font-size='32'%3E🌴%3C/text%3E%3C/svg%3E">
 <style>:root{--ink:#433f35;--muted:#716f60;--paper:#fff6e8;--accent:#dc7553;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:var(--ink);font-synthesis:none}*{box-sizing:border-box}body{margin:0;overflow:hidden;background:#f2b99a}button,input{font:inherit}button{cursor:pointer;-webkit-tap-highlight-color:transparent}#scene{position:fixed;inset:0}canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:none}canvas:active{cursor:grabbing}.paper-grain{position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.35' d='M0 0h180v180H0z'/%3E%3C/svg%3E");mix-blend-mode:multiply}.masthead{position:absolute;inset:30px 38px auto;display:flex;align-items:center;justify-content:space-between;pointer-events:none}.masthead>*{pointer-events:auto}.wordmark{display:flex;gap:12px;align-items:center;font-size:21px;font-weight:600;letter-spacing:3px}.wordmark>svg{width:41px;height:41px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.wordmark small{display:block;font-size:8px;font-weight:400;letter-spacing:2px;margin-top:5px}.header-right{display:flex;align-items:center;gap:24px}.offline{font-size:10px;letter-spacing:2px;display:flex;align-items:center;gap:8px}.offline i,.weather-dot{width:5px;height:5px;border-radius:50%;background:#779775}.icon-button{display:grid;place-items:center;width:37px;height:37px;padding:9px;background:transparent;border:0;border-radius:50%;color:var(--ink);transition:background .2s,color .2s}.icon-button:hover{background:#dc75531c}.icon-button[aria-pressed=true]{background:var(--accent);color:#fff5e7}.icon-button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}#fullscreen{border:1px solid #514d3d36}.postcard{position:absolute;top:23%;left:5.2%;pointer-events:none}.overline{font-size:9px;letter-spacing:2px;display:flex;align-items:center;gap:13px}.overline span{font-size:9px;letter-spacing:1px}.overline i{height:1px;width:28px;background:var(--ink);opacity:.4}h1{font-family:"Songti SC","STSong","Noto Serif SC",serif;font-weight:500;font-size:clamp(44px,5.4vw,80px);letter-spacing:4px;line-height:1.25;margin:25px 0 24px}.postcard p{font-size:12px;line-height:2.1;letter-spacing:2px;color:#555c51}.postmark{display:flex;align-items:center;gap:5px;margin-top:25px;color:#6e715d;transform:rotate(-9deg);opacity:.8}.postmark svg{width:67px;height:67px;fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round}.postmark span{font-size:9px;letter-spacing:2px;line-height:1.8}.island-caption{position:absolute;right:24%;bottom:25%;font-size:12px;letter-spacing:3px;color:#355e54;pointer-events:none;text-shadow:0 1px 12px #fff4c888}.island-caption>span{font-size:17px;margin-right:9px}.island-caption i{display:block;font-size:8px;font-style:normal;letter-spacing:2px;margin:6px 0 0 31px}.weather-card{position:absolute;right:38px;top:111px;display:flex;gap:12px;align-items:center;padding:15px 18px;border:1px solid #fff4e855;border-radius:9px;background:#fff4e81c}.weather-icon{font-size:29px;font-family:serif;font-weight:200;color:#a56d52}.weather-card b{font-size:11px;font-weight:500;letter-spacing:2px;display:block}.weather-card div>span{display:block;font-size:8px;letter-spacing:1px;margin-top:7px;color:#67675c}.weather-dot{margin-left:7px;background:#c99560}.dock{position:absolute;bottom:65px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:25px;padding:18px 23px;background:#fff7eae8;box-shadow:0 10px 50px #1a605528;border:1px solid #fffdf3a0;border-radius:16px;backdrop-filter:blur(18px);width:max-content;max-width:calc(100% - 48px)}.presets{display:flex;align-items:center;background:#ebe5d9;border-radius:7px;padding:3px;gap:2px}.presets button{color:#7c7c6b;background:none;border:0;padding:10px 11px;font-size:10px;border-radius:5px;letter-spacing:1px;white-space:nowrap}.presets .selected{background:#fff9ed;box-shadow:0 2px 5px #51443312;color:#ac6249}.slider-group{width:160px;flex-shrink:0}.slider-group>div{display:flex;justify-content:space-between;font-size:10px;letter-spacing:1px;margin-bottom:10px}.slider-group output{font-size:9px;color:#978372;font-variant-numeric:tabular-nums}.breeze{width:120px}.dock input{width:100%;display:block;appearance:none;background:#ddd8ca;height:3px;border-radius:3px;cursor:pointer;margin:0}.dock input::-webkit-slider-thumb{appearance:none;width:10px;height:10px;background:#d78966;border:2px solid #fff8e9;border-radius:50%;box-shadow:0 0 0 1px #d78966}.dock input::-moz-range-thumb{width:8px;height:8px;background:#d78966;border:2px solid #fff8e9;border-radius:50%}.dock-actions{display:flex;gap:6px;border-left:1px solid #d7d2c6;padding-left:18px}footer{position:absolute;bottom:24px;left:38px;right:38px;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:1px;color:#3d685b}footer i{font-style:normal;margin:0 9px;opacity:.5}footer button{border:0;background:none;color:inherit;font-size:9px;letter-spacing:1px}footer button span{font-size:16px;margin-left:10px}#loading{position:fixed;inset:0;z-index:5;background:#f5e7d1;display:grid;place-content:center;justify-items:center;transition:opacity .8s}#loading svg{width:65px;height:65px;stroke:#c87b5a;stroke-width:1.2;fill:none;animation:turn 16s linear infinite}#loading h2{font-family:"Songti SC",serif;font-size:24px;font-weight:400;letter-spacing:4px;margin:25px 0 15px}#loading p{font-size:11px;letter-spacing:4px;color:#9a8973}#loading.ready{opacity:0;pointer-events:none}@keyframes turn{to{transform:rotate(360deg)}}button:focus-visible,input:focus-visible{outline:2px solid #ad654f;outline-offset:5px}body.night{--ink:#e8dfd1;--muted:#d4cbbb}body.night .postcard p,body.night .postmark,body.night .weather-card div>span{color:#cec4c3}body.night .dock{--ink:#433f35}body.night footer,body.night .island-caption{color:#e0d8c8}@media(max-width:850px){.masthead{inset:22px 23px auto}.wordmark{font-size:18px;gap:8px}.wordmark>svg{width:34px}.wordmark small{font-size:7px}.offline{display:none}.postcard{top:16%;left:27px}h1{font-size:47px;margin:17px 0}.postcard p{font-size:10px}.postmark{display:none}.weather-card{right:22px;top:105px;padding:12px;gap:8px}.weather-card div>span,.weather-dot{display:none}.weather-icon{font-size:22px}.weather-card b{font-size:9px;letter-spacing:1px}.dock{gap:18px;bottom:61px;padding:16px 19px}.slider-group{width:135px}.breeze{width:90px}.dock-actions{padding-left:12px;gap:0}.presets button{padding:9px 8px}.island-caption{right:22%;bottom:26%}footer{left:25px;right:25px}}@media(max-width:600px){.dock{display:grid;grid-template-columns:1fr 1fr;gap:17px 24px;width:calc(100% - 36px);max-width:400px;bottom:51px;padding:15px 19px}.presets{grid-column:1;grid-row:1;width:max-content}.dock-actions{grid-column:2;grid-row:1;border:0;justify-content:flex-end;padding:0}.slider-group{grid-column:1;grid-row:2;width:100%}.breeze{grid-column:2;width:100%}.presets button{padding:8px 10px;font-size:9px}.icon-button{width:32px;height:32px;padding:7px}.postcard{top:15%;left:25px}.overline{font-size:8px;gap:8px}.overline i{width:15px}h1{font-size:43px}.postcard p{line-height:1.8;font-size:9px}.island-caption{right:15%;bottom:30%;font-size:10px}.island-caption i{font-size:7px}footer{bottom:17px;left:20px;right:20px;font-size:8px}footer i{margin:0 4px}footer button{font-size:8px}footer button span{margin-left:3px}.weather-card{top:103px;right:20px;border:0;background:none}.weather-card b{writing-mode:vertical-rl;letter-spacing:3px}.weather-icon{display:none}}@media(prefers-reduced-motion:reduce){#loading svg{animation:none}}
 body.night{color:var(--ink)}
+</style>
+<style id="mobile-ui-style">
+
+/* 移动端布局与可收起 UI；不影响场景动画。 */
+#ui-toggle {
+  position: fixed; top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); z-index: 2147483647;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 88px; min-height: 44px; margin: 0; padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+  background: rgba(20,30,45,.78); color: #fff;
+  font: 600 13px/1.2 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+#ui-toggle:focus-visible { outline: 3px solid #ffb96e; outline-offset: 3px; }
+body.ui-collapsed .ui-surface { display: none !important; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  html { -webkit-text-size-adjust: 100%; }
+  button, a, input { touch-action: manipulation; }
+  button, a[href="demo.html"] { min-height: 44px; }
+  body > a[href="demo.html"] {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    box-sizing: border-box; padding: 10px 12px !important;
+    font-size: 12px !important; letter-spacing: 0 !important;
+  }
+}
+
+.masthead { right: 130px; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  .masthead { inset: calc(72px + env(safe-area-inset-top)) 16px auto; }
+  .postcard { top: calc(132px + env(safe-area-inset-top)); left: 20px; }
+  .postcard h1 { font-size: clamp(30px, 8vw, 43px); margin: 12px 0; }
+  .weather-card { top: calc(132px + env(safe-area-inset-top)); right: 18px; }
+  .dock {
+    display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+    width: calc(100% - 24px); max-width: 400px; box-sizing: border-box;
+    gap: 12px; padding: 12px; bottom: calc(64px + env(safe-area-inset-bottom));
+    max-height: calc(100dvh - 140px); overflow-y: auto; overscroll-behavior: contain;
+  }
+  .presets { grid-column: 1 / -1; grid-row: 1; width: 100%; }
+  .presets button { flex: 1; padding: 8px; font-size: 11px; }
+  .dock-actions { grid-column: 1 / -1; grid-row: 3; justify-content: center; border: 0; padding: 0; gap: 16px; }
+  .slider-group { grid-column: 1; grid-row: 2; width: 100%; min-width: 0; }
+  .breeze { grid-column: 2; width: 100%; }
+  .icon-button { width: 44px; height: 44px; padding: 11px; }
+  .dock input { height: 24px; background: linear-gradient(#ddd8ca,#ddd8ca) center / 100% 3px no-repeat; }
+  .dock input::-webkit-slider-thumb { width: 20px; height: 20px; }
+  .dock input::-moz-range-thumb { width: 18px; height: 18px; }
+  footer { left: 16px; right: 16px; bottom: max(10px, env(safe-area-inset-bottom)); gap: 8px; font-size: 9px; letter-spacing: 0; }
+  footer > span { max-width: 55%; line-height: 1.6; }
+  footer button { font-size: 10px; }
+  .island-caption { bottom: calc(295px + env(safe-area-inset-bottom)); }
+}
+@media (max-height: 500px) and (max-width: 950px) {
+  .dock { left: auto; right: 12px; transform: none; width: min(360px, 48vw); bottom: max(12px, env(safe-area-inset-bottom)); max-height: calc(100dvh - 84px); }
+  .masthead { right: 54%; }
+  .postcard { top: 136px; }
+  .weather-card { display: none; }
+  .island-caption { left: 20px; right: auto; bottom: 60px; }
+  footer { right: 54%; flex-wrap: wrap; }
+  footer > span { max-width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -54802,4 +54870,26 @@ renderer.setAnimationLoop(animate);
 
 })();</script>
 <a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+
+<script id="mobile-ui-script">
+(() => {
+  const surfaces = Array.from(document.querySelectorAll(".masthead, .postcard, .island-caption, .weather-card, .dock, footer, body > a[href=\"demo.html\"]"));
+  const button = document.createElement('button');
+  button.id = 'ui-toggle';
+  button.type = 'button';
+  button.textContent = '收起 UI';
+  button.setAttribute('aria-expanded', 'true');
+  surfaces.forEach((surface, index) => {
+    surface.classList.add('ui-surface');
+    if (!surface.id) surface.id = `ui-surface-${index}`;
+  });
+  button.setAttribute('aria-controls', surfaces.map(surface => surface.id).join(' '));
+  button.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('ui-collapsed');
+    button.textContent = collapsed ? '展开 UI' : '收起 UI';
+    button.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.body.appendChild(button);
+})();
+</script>
 </body></html>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta name="demo-tag" content="Astra · high">
+<meta name="demo-group" content="鹈鹕骑行主题">
+<meta name="demo-order" content="4">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>鹈鹕的海岸骑行</title>
@@ -33,6 +36,53 @@
     footer { display: flex; justify-content: space-between; margin-top: 36px; padding-top: 19px; border-top: 1px solid #dedfd3; font-size: 9px; letter-spacing: 2px; color: #a0a494; }
     @media (max-width: 650px) { main { padding: 24px 18px; } .intro { margin-top: 36px; } .edition, .caption { display: none; } .scene { margin-top: 26px; border-radius: 14px; } #landscape { min-height: 340px; object-fit: cover; } .scene-label { left: 14px; top: 15px; font-size: 8px; } .scene-note { right: 14px; bottom: 12px; font-size: 8px; } .controls { gap: 12px; } input { width: 88px; } .speed { gap: 8px; } footer { font-size: 8px; letter-spacing: 1px; } }
   </style>
+<style id="mobile-ui-style">
+
+/* 移动端布局与可收起 UI；不影响场景动画。 */
+#ui-toggle {
+  position: fixed; top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); z-index: 2147483647;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 88px; min-height: 44px; margin: 0; padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+  background: rgba(20,30,45,.78); color: #fff;
+  font: 600 13px/1.2 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+#ui-toggle:focus-visible { outline: 3px solid #ffb96e; outline-offset: 3px; }
+body.ui-collapsed .ui-surface { display: none !important; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  html { -webkit-text-size-adjust: 100%; }
+  button, a, input { touch-action: manipulation; }
+  button, a[href="demo.html"] { min-height: 44px; }
+  body > a[href="demo.html"] {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    box-sizing: border-box; padding: 10px 12px !important;
+    font-size: 12px !important; letter-spacing: 0 !important;
+  }
+}
+
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  body {
+    box-sizing: border-box; min-height: 100svh; height: auto; overflow: auto;
+    padding: calc(72px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  main { width: 100%; min-width: 0; padding: 0; }
+  header { flex-wrap: wrap; gap: 12px; }
+  h1 { font-size: clamp(25px, 7vw, 36px); letter-spacing: .03em; overflow-wrap: anywhere; }
+  p, .caption, .note, .status { line-height: 1.7; }
+  footer, .controls, .buttons, .cap { flex-wrap: wrap; gap: 12px; }
+  .controls .speed { flex-wrap: wrap; gap: 10px; }
+  .scene-label { top: 10px; left: 12px; letter-spacing: 0; }
+  .scene-note { right: 12px; bottom: 10px; letter-spacing: 0; }
+  input[type="range"] { min-height: 28px; }
+  body.ui-collapsed { padding-top: calc(72px + env(safe-area-inset-top)); }
+}
+</style>
 </head>
 <body>
   <main>
@@ -208,5 +258,27 @@
     })();
   </script>
 <a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+
+<script id="mobile-ui-script">
+(() => {
+  const surfaces = Array.from(document.querySelectorAll("main > header, .intro, main > footer, main > .controls, .scene-label, .scene-note, body > a[href=\"demo.html\"]"));
+  const button = document.createElement('button');
+  button.id = 'ui-toggle';
+  button.type = 'button';
+  button.textContent = '收起 UI';
+  button.setAttribute('aria-expanded', 'true');
+  surfaces.forEach((surface, index) => {
+    surface.classList.add('ui-surface');
+    if (!surface.id) surface.id = `ui-surface-${index}`;
+  });
+  button.setAttribute('aria-controls', surfaces.map(surface => surface.id).join(' '));
+  button.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('ui-collapsed');
+    button.textContent = collapsed ? '展开 UI' : '收起 UI';
+    button.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.body.appendChild(button);
+})();
+</script>
 </body>
 </html>

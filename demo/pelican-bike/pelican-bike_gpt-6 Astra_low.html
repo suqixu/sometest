@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta name="demo-tag" content="Astra · low">
+<meta name="demo-group" content="鹈鹕骑行主题">
+<meta name="demo-order" content="6">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>鹈鹕的海岸骑行</title>
 <style>
 :root{color-scheme:light;--ink:#263f42;--paper:#f6f2e8}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",sans-serif;min-height:100svh;display:grid;place-items:center;padding:30px}main{width:min(1100px,100%)}header{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #263f4233;padding-top:20px}.brand{font-size:12px;letter-spacing:3px;font-weight:600}.edition{font-size:11px;letter-spacing:2px;color:#798683}h1{font-size:clamp(30px,5vw,57px);font-weight:500;letter-spacing:4px;margin:52px 0 12px}p{font-size:14px;color:#778582;letter-spacing:2px;margin:0}.scene{width:100%;height:auto;display:block;margin-top:12px;overflow:visible}footer{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-top:1px solid #263f4226;gap:20px}.caption{font-size:12px;letter-spacing:2px;color:#778582}button{border:1px solid #263f4250;border-radius:30px;padding:10px 20px;background:transparent;color:var(--ink);font:inherit;font-size:12px;letter-spacing:1px;cursor:pointer}button:hover{background:#e5e9df}button:focus-visible{outline:3px solid #d98554;outline-offset:4px}.dot{display:inline-block;width:6px;height:6px;background:#dc8354;border-radius:50%;margin-right:9px}.cloud{animation:drift 26s linear infinite}.cloud.second{animation-duration:39s;animation-delay:-13s}.road{animation:road 1.4s linear infinite}.scarf{animation:flutter .6s ease-in-out infinite alternate;transform-origin:532px 264px}.tuft{animation:flutter .8s ease-in-out infinite alternate;transform-origin:548px 160px}.bird{animation:bob .7s ease-in-out infinite alternate}.blink{animation:blink 5s infinite;transform-origin:571px 189px}.paused *{animation-play-state:paused!important}@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-1200px)}}@keyframes road{to{transform:translateX(-180px)}}@keyframes flutter{to{transform:rotate(-7deg)}}@keyframes bob{to{transform:translateY(3px)}}@keyframes blink{0%,43%,47%,100%{transform:scaleY(1)}45%{transform:scaleY(.1)}}@media(max-width:600px){body{padding:20px}h1{margin-top:35px}.edition{display:none}.caption{font-size:10px;letter-spacing:1px}footer{align-items:center}.scene{margin:35px 0}}
+</style>
+<style id="mobile-ui-style">
+
+/* 移动端布局与可收起 UI；不影响场景动画。 */
+#ui-toggle {
+  position: fixed; top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); z-index: 2147483647;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 88px; min-height: 44px; margin: 0; padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+  background: rgba(20,30,45,.78); color: #fff;
+  font: 600 13px/1.2 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+#ui-toggle:focus-visible { outline: 3px solid #ffb96e; outline-offset: 3px; }
+body.ui-collapsed .ui-surface { display: none !important; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  html { -webkit-text-size-adjust: 100%; }
+  button, a, input { touch-action: manipulation; }
+  button, a[href="demo.html"] { min-height: 44px; }
+  body > a[href="demo.html"] {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    box-sizing: border-box; padding: 10px 12px !important;
+    font-size: 12px !important; letter-spacing: 0 !important;
+  }
+}
+
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  body {
+    box-sizing: border-box; min-height: 100svh; height: auto; overflow: auto;
+    padding: calc(72px + env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  main { width: 100%; min-width: 0; padding: 0; }
+  header { flex-wrap: wrap; gap: 12px; }
+  h1 { font-size: clamp(25px, 7vw, 36px); letter-spacing: .03em; overflow-wrap: anywhere; }
+  p, .caption, .note, .status { line-height: 1.7; }
+  footer, .controls, .buttons, .cap { flex-wrap: wrap; gap: 12px; }
+  .controls .speed { flex-wrap: wrap; gap: 10px; }
+  .scene-label { top: 10px; left: 12px; letter-spacing: 0; }
+  .scene-note { right: 12px; bottom: 10px; letter-spacing: 0; }
+  input[type="range"] { min-height: 28px; }
+  body.ui-collapsed { padding-top: calc(72px + env(safe-area-inset-top)); }
+}
 </style>
 </head>
 <body>
@@ -96,5 +146,27 @@ function frame(now){if(previous!==null&&!paused){time+=Math.min(now-previous,60)
 pose(0);sync();requestAnimationFrame(frame);
 </script>
 <a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+
+<script id="mobile-ui-script">
+(() => {
+  const surfaces = Array.from(document.querySelectorAll("main > header, .intro, main > footer, main > .controls, .scene-label, .scene-note, body > a[href=\"demo.html\"]"));
+  const button = document.createElement('button');
+  button.id = 'ui-toggle';
+  button.type = 'button';
+  button.textContent = '收起 UI';
+  button.setAttribute('aria-expanded', 'true');
+  surfaces.forEach((surface, index) => {
+    surface.classList.add('ui-surface');
+    if (!surface.id) surface.id = `ui-surface-${index}`;
+  });
+  button.setAttribute('aria-controls', surfaces.map(surface => surface.id).join(' '));
+  button.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('ui-collapsed');
+    button.textContent = collapsed ? '展开 UI' : '收起 UI';
+    button.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.body.appendChild(button);
+})();
+</script>
 </body>
 </html>

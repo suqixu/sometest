@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta name="demo-tag" content="Opus 5.5">
+<meta name="demo-group" content="海岛主题">
+<meta name="demo-order" content="2">
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>热带海岛 · Tropical Island</title>
@@ -109,6 +112,61 @@
   }
 }
 </script>
+<style id="mobile-ui-style">
+
+/* 移动端布局与可收起 UI；不影响场景动画。 */
+#ui-toggle {
+  position: fixed; top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); z-index: 2147483647;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 88px; min-height: 44px; margin: 0; padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+  background: rgba(20,30,45,.78); color: #fff;
+  font: 600 13px/1.2 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+#ui-toggle:focus-visible { outline: 3px solid #ffb96e; outline-offset: 3px; }
+body.ui-collapsed .ui-surface { display: none !important; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  html { -webkit-text-size-adjust: 100%; }
+  button, a, input { touch-action: manipulation; }
+  button, a[href="demo.html"] { min-height: 44px; }
+  body > a[href="demo.html"] {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    box-sizing: border-box; padding: 10px 12px !important;
+    font-size: 12px !important; letter-spacing: 0 !important;
+  }
+}
+
+.hint { top: 66px; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  .title { top: calc(72px + env(safe-area-inset-top)); left: max(16px, env(safe-area-inset-left)); }
+  .title h1 { font-size: 26px; }
+  .title p { font-size: 11px; letter-spacing: 2px; }
+  .scene-panels {
+    position: fixed; left: max(12px, env(safe-area-inset-left)); right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom)); max-height: 44vh; max-height: 44dvh;
+    overflow-y: auto; overscroll-behavior: contain; border-radius: 16px;
+    background: rgba(14,24,34,.65); backdrop-filter: blur(14px);
+  }
+  .scene-panels .panel, .scene-panels .panel.right {
+    position: static; width: auto; padding: 14px 16px; margin: 0;
+    border: 0; border-radius: 0; box-shadow: none; background: transparent; backdrop-filter: none;
+  }
+  .scene-panels .panel.right { border-top: 1px solid var(--line); }
+  .row { margin-bottom: 10px; }
+  input[type="range"] { height: 24px; background: linear-gradient(rgba(255,255,255,.22), rgba(255,255,255,.22)) center / 100% 4px no-repeat; }
+  input[type="range"]::-webkit-slider-thumb { width: 22px; height: 22px; }
+  input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; }
+}
+@media (max-height: 500px) and (max-width: 950px) {
+  .scene-panels { left: auto; width: min(340px, 48vw); max-height: calc(100dvh - 84px - env(safe-area-inset-top)); }
+  .title { max-width: 45vw; }
+}
+</style>
 </head>
 <body>
 <div id="loader"><div class="ring"></div><p>正在生成海岛…</p></div>
@@ -117,6 +175,7 @@
   <h1>Tropical Island</h1>
   <p>热带海岛 · 实时三维场景</p>
 </header>
+<div class="scene-panels">
 <div class="panel">
   <label class="row">
     <div class="head"><span>太阳高度</span><span id="sunVal">20°</span></div>
@@ -148,6 +207,7 @@
     <div class="head"><span>音量</span><span id="volVal">70%</span></div>
     <input type="range" id="vol" min="0" max="1" step="0.01" value="0.7" />
   </label>
+</div>
 </div>
 <div id="flash"></div>
 <div class="hint">拖拽旋转 · 滚轮缩放 · 右键平移</div>
@@ -1938,4 +1998,26 @@ function animate() {
 requestAnimationFrame(() => setTimeout(init, 30));
 </script>
 <a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+
+<script id="mobile-ui-script">
+(() => {
+  const surfaces = Array.from(document.querySelectorAll(".title, .scene-panels, .hint, body > a[href=\"demo.html\"]"));
+  const button = document.createElement('button');
+  button.id = 'ui-toggle';
+  button.type = 'button';
+  button.textContent = '收起 UI';
+  button.setAttribute('aria-expanded', 'true');
+  surfaces.forEach((surface, index) => {
+    surface.classList.add('ui-surface');
+    if (!surface.id) surface.id = `ui-surface-${index}`;
+  });
+  button.setAttribute('aria-controls', surfaces.map(surface => surface.id).join(' '));
+  button.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('ui-collapsed');
+    button.textContent = collapsed ? '展开 UI' : '收起 UI';
+    button.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.body.appendChild(button);
+})();
+</script>
 </body>

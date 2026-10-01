@@ -54,10 +54,10 @@
   .item-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
   .item .title { font-size: 14px; font-weight: 600; line-height: 1.3; color: #fff; }
   .item.active .title { color: #ffd9a8; }
-  .item .meta { font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .item .meta { font-size: 11px; color: var(--muted); display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
   .item .tag {
     font-size: 10px; letter-spacing: .5px; font-weight: 600; color: #fff;
-    background: linear-gradient(135deg, #ff9e5e, #ff6a88);
+    background: #2563eb; white-space: nowrap; flex-shrink: 0;
     padding: 1px 7px; border-radius: 999px;
   }
   .item .file { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; word-break: break-all; }
@@ -104,13 +104,69 @@
     .stage { height: 58vh; }
   }
 </style>
+<style id="mobile-ui-style">
+
+/* 移动端布局与可收起 UI；不影响场景动画。 */
+#ui-toggle {
+  position: fixed; top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right)); z-index: 2147483647;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 88px; min-height: 44px; margin: 0; padding: 10px 14px;
+  border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+  background: rgba(20,30,45,.78); color: #fff;
+  font: 600 13px/1.2 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  letter-spacing: 0; cursor: pointer; touch-action: manipulation;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0,0,0,.18);
+}
+#ui-toggle:focus-visible { outline: 3px solid #ffb96e; outline-offset: 3px; }
+body.ui-collapsed .ui-surface { display: none !important; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  html { -webkit-text-size-adjust: 100%; }
+  button, a, input { touch-action: manipulation; }
+  button, a[href="demo.html"] { min-height: 44px; }
+  body > a[href="demo.html"] {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    left: max(12px, env(safe-area-inset-left)) !important;
+    box-sizing: border-box; padding: 10px 12px !important;
+    font-size: 12px !important; letter-spacing: 0 !important;
+  }
+}
+
+#ui-toggle { top: auto; bottom: max(12px, env(safe-area-inset-bottom)); }
+.app { height: 100dvh; }
+.sidebar { min-height: 0; }
+.stage-title, .stage-file { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.open { flex-shrink: 0; }
+.hint { max-width: calc(100% - 32px); text-align: center; box-sizing: border-box; }
+@media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
+  .app { height: 100dvh; min-height: 0; flex-direction: column; overflow: hidden; }
+  .sidebar { width: 100%; flex: 0 0 auto; border-right: 0; }
+  .brand { padding: calc(10px + env(safe-area-inset-top)) 16px 10px; }
+  .brand-emoji { font-size: 24px; }
+  .side-foot { display: none; }
+  .nav { max-height: 24vh; max-height: 24dvh; overscroll-behavior: contain; padding-bottom: 8px; }
+  .item { padding: 8px 10px; }
+  .item-open { width: 44px; height: 44px; }
+  .stage { height: auto; flex: 1 1 0; min-height: 0; }
+  .stage-bar { height: auto; flex: 0 0 auto; min-height: 52px; gap: 8px; padding: 6px 12px; }
+  .stage-title { flex: 1; font-size: 12px; }
+  .stage-file, .stage-spacer { display: none; }
+  .open { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; font-size: 12px; }
+  .hint { bottom: max(64px, env(safe-area-inset-bottom)); font-size: 10px; letter-spacing: 0; }
+}
+@media (max-height: 500px) and (max-width: 950px) {
+  .brand { display: none; }
+  .nav { max-height: 24dvh; }
+}
+</style>
 </head>
 <body>
 <div class="app">
   <aside class="sidebar">
     <div class="brand">
       <span class="brand-emoji">🏝️🚲</span>
-      <div><b>Demo 导航</b><small>12 个演示 · 同页预览</small></div>
+      <div><b>Demo 导航</b><small>13 个演示 · 同页预览</small></div>
     </div>
     <nav class="nav" id="nav"></nav>
     <div class="side-foot">点击条目在右侧同页预览；点条目后的 ↗ 可在新标签单独打开。</div>
@@ -132,18 +188,84 @@
 
 <script>
 const ITEMS = [
-  { file: 'tropical-island.html', title: '热带海岛 · 3D 动态场景', tag: '3D · Three.js', group: '海岛主题' },
-  { file: 'index_gpt6-astra-高.html', title: '棕榈来信 · 一座慢慢生活的小岛', tag: 'GPT-6 Astra · 高', group: '海岛主题' },
-  { file: 'index_opus5.5.html', title: '热带海岛 · Tropical Island', tag: 'Opus 5.5', group: '海岛主题' },
-  { file: 'pelican-bicycle_kimi_k3.html', title: 'The Pelican Courier · 鹈鹕骑行', tag: 'Kimi K3', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Astra_high.html', title: '鹈鹕的海岸骑行', tag: 'Astra · high', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Astra_medium.html', title: '鹈鹕的海岸骑行', tag: 'Astra · medium', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Astra_low.html', title: '鹈鹕的海岸骑行', tag: 'Astra · low', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Luna_high.html', title: '沿着海岸慢慢骑 · 鹈鹕骑行记', tag: 'Luna · high', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Luna_xhigh.html', title: '鹈鹕骑行俱乐部 · 海岸慢游', tag: 'Luna · xhigh', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Soul_medium.html', title: '鹈鹕骑自行车', tag: 'Soul · medium', group: '鹈鹕骑行主题' },
-  { file: 'pelican-bike_gpt-6 Terra_high.html', title: '鹈鹕的海边兜风', tag: 'Terra · high', group: '鹈鹕骑行主题' },
-  { file: 'pelican_bike_hy4.html', title: '鹈鹕骑自行车 · SVG 2D Animation', tag: 'HY4 · SVG', group: '鹈鹕骑行主题' }
+  {
+    "file": "island/index_deepseek4pro.html",
+    "title": "热带海岛 · 3D 动态场景",
+    "tag": "deepseek 4pro",
+    "group": "海岛主题"
+  },
+  {
+    "file": "island/index_gpt6-astra-高.html",
+    "title": "棕榈来信 · 一座慢慢生活的小岛",
+    "tag": "GPT-6 Astra · 高",
+    "group": "海岛主题"
+  },
+  {
+    "file": "island/index_opus5.5.html",
+    "title": "热带海岛 · Tropical Island",
+    "tag": "Opus 5.5",
+    "group": "海岛主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bicycle_kimi_k3.html",
+    "title": "The Pelican Courier · 鹈鹕骑行",
+    "tag": "Kimi K3",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Astra_high.html",
+    "title": "鹈鹕的海岸骑行",
+    "tag": "Astra · high",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Astra_medium.html",
+    "title": "鹈鹕的海岸骑行",
+    "tag": "Astra · medium",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Astra_low.html",
+    "title": "鹈鹕的海岸骑行",
+    "tag": "Astra · low",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Luna_high.html",
+    "title": "沿着海岸慢慢骑 · 鹈鹕骑行记",
+    "tag": "Luna · high",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Luna_xhigh.html",
+    "title": "鹈鹕骑行俱乐部 · 海岸慢游",
+    "tag": "Luna · xhigh",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Soul_medium.html",
+    "title": "鹈鹕骑自行车",
+    "tag": "Soul · medium",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican-bike_gpt-6 Terra_high.html",
+    "title": "鹈鹕的海边兜风",
+    "tag": "Terra · high",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "pelican-bike/pelican_bike_hy4.html",
+    "title": "鹈鹕骑自行车 · SVG 2D Animation",
+    "tag": "HY4 · SVG",
+    "group": "鹈鹕骑行主题"
+  },
+  {
+    "file": "racing/deepseek-4.1-flash.html",
+    "title": "四驱赛车 · 随机赛道生成器",
+    "tag": "deepseek 4.1 flash",
+    "group": "其他演示"
+  }
 ];
 
 const nav = document.getElementById('nav');
@@ -152,17 +274,17 @@ const stageTitle = document.getElementById('stageTitle');
 const stageFile = document.getElementById('stageFile');
 const openLink = document.getElementById('openLink');
 
-const groups = ['海岛主题', '鹈鹕骑行主题'];
+const groups = [...new Set(ITEMS.map(item => item.group))];
 const groupEmoji = { '海岛主题': '🏝️', '鹈鹕骑行主题': '🚲' };
 
-function hrefOf(file) { return encodeURIComponent(file); }
+function hrefOf(file) { return file.split('/').map(encodeURIComponent).join('/'); }
 
 function renderList() {
   nav.innerHTML = '';
   groups.forEach(g => {
     const h = document.createElement('div');
     h.className = 'group';
-    h.textContent = `${groupEmoji[g]} ${g}`;
+    h.textContent = `${groupEmoji[g] || '📄'} ${g}`;
     nav.appendChild(h);
 
     ITEMS.filter(it => it.group === g).forEach(it => {
@@ -219,7 +341,29 @@ function select(it) {
 }
 
 renderList();
-select(ITEMS[0]);
+if (ITEMS.length) select(ITEMS[0]);
+</script>
+
+<script id="mobile-ui-script">
+(() => {
+  const surfaces = Array.from(document.querySelectorAll(".sidebar, .stage-bar, .hint"));
+  const button = document.createElement('button');
+  button.id = 'ui-toggle';
+  button.type = 'button';
+  button.textContent = '收起 UI';
+  button.setAttribute('aria-expanded', 'true');
+  surfaces.forEach((surface, index) => {
+    surface.classList.add('ui-surface');
+    if (!surface.id) surface.id = `ui-surface-${index}`;
+  });
+  button.setAttribute('aria-controls', surfaces.map(surface => surface.id).join(' '));
+  button.addEventListener('click', () => {
+    const collapsed = document.body.classList.toggle('ui-collapsed');
+    button.textContent = collapsed ? '展开 UI' : '收起 UI';
+    button.setAttribute('aria-expanded', String(!collapsed));
+  });
+  document.body.appendChild(button);
+})();
 </script>
 </body>
 </html>
