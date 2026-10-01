@@ -92,8 +92,8 @@ body.ui-collapsed .ui-surface { display: none !important; }
 @media (max-width: 720px), (max-height: 500px) and (max-width: 950px) {
   html { -webkit-text-size-adjust: 100%; }
   button, a, input { touch-action: manipulation; }
-  button, a[href="demo.html"] { min-height: 44px; }
-  body > a[href="demo.html"] {
+  button, a[data-demo-return] { min-height: 44px; }
+  body > a[data-demo-return] {
     top: max(12px, env(safe-area-inset-top)) !important;
     left: max(12px, env(safe-area-inset-left)) !important;
     box-sizing: border-box; padding: 10px 12px !important;
@@ -214,11 +214,11 @@ body.ui-collapsed .ui-surface { display: none !important; }
     label.textContent = paused ? '海岸稍歇　·　按下按钮继续骑行' : '海岸骑行中　·　慢一点，刚刚好';
   });
 </script>
-<a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+<a href="../demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);" data-demo-return>← 返回 Demo 导航</a>
 
 <script id="mobile-ui-script">
 (() => {
-  const surfaces = Array.from(document.querySelectorAll("main > header, .intro, main > footer, main > .controls, .scene-label, .scene-note, body > a[href=\"demo.html\"]"));
+  const surfaces = Array.from(document.querySelectorAll("main > header, .intro, main > footer, main > .controls, .scene-label, .scene-note, body > a[data-demo-return]"));
   const button = document.createElement('button');
   button.id = 'ui-toggle';
   button.type = 'button';

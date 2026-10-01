@@ -12,9 +12,11 @@ import ast
 from html import escape
 from html.parser import HTMLParser
 import json
+import os
 from pathlib import Path
 import re
 import sys
+from urllib.parse import quote, urlsplit
 
 ITEMS_PATTERN = re.compile(r'const ITEMS\s*=\s*(\[.*?\]);', re.S)
 
@@ -99,6 +101,50 @@ def add_metadata(source, metadata):
     return source[:offset] + '\n' + lines + '\n' + source[offset:]
 
 
+def update_return_links(source, page, navigation):
+    """修复现有本地返回链接，并让 UI 选择器与链接地址解耦。"""
+    relative = quote(Path(os.path.relpath(navigation, page.parent)).as_posix(), safe='/')
+    offsets = [0]
+    for line in source.splitlines(keepends=True):
+        offsets.append(offsets[-1] + len(line))
+
+    class Links(HTMLParser):
+        def __init__(self):
+            super().__init__()
+            self.replacements = []
+
+        def handle_starttag(self, tag, attrs):
+            if tag != 'a':
+                return
+            attrs = dict(attrs)
+            href = attrs.get('href') or ''
+            url = urlsplit(href)
+            managed = 'data-demo-return' in attrs
+            local_demo = (not url.scheme and not url.netloc
+                          and url.path.rsplit('/', 1)[-1] == 'demo.html')
+            if not managed and not local_demo:
+                return
+            original = self.get_starttag_text()
+            updated = re.sub(r'''\bhref\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)''',
+                             lambda match: f'href="{relative}"', original, count=1, flags=re.I)
+            if 'href' not in attrs:
+                updated = updated[:-1] + f' href="{relative}">'
+            if not managed:
+                updated = updated[:-1] + ' data-demo-return>'
+            line, column = self.getpos()
+            start = offsets[line - 1] + column
+            self.replacements.append((start, start + len(original), updated))
+
+    parser = Links()
+    parser.feed(source)
+    if not parser.replacements:
+        return source
+    for start, end, updated in reversed(parser.replacements):
+        source = source[:start] + updated + source[end:]
+    return (source.replace('a[href="demo.html"]', 'a[data-demo-return]')
+            .replace(r'a[href=\"demo.html\"]', 'a[data-demo-return]'))
+
+
 def update_navigation(root):
     root = Path(root).resolve()
     navigation = root / 'demo.html'
@@ -136,7 +182,8 @@ def update_navigation(root):
         missing = {name: value for name, value in {
             'demo-tag': item['tag'], 'demo-group': item['group'], 'demo-order': order,
         }.items() if not meta.get(name)}
-        updates.append((path, add_metadata(page_source, missing)))
+        updated = add_metadata(page_source, missing)
+        updates.append((path, update_return_links(updated, path, navigation)))
     items.sort(key=lambda entry: (entry[0], entry[1]['file'].casefold()))
     entries = [item for _, item in items]
     serialized = json.dumps(entries, ensure_ascii=False, indent=2)

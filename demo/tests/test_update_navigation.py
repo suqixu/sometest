@@ -69,6 +69,31 @@ select(ITEMS[0]);
         module.update_navigation(moved)
         self.assertEqual((moved / 'demo.html').read_bytes(), expected)
 
+    def test_return_link_tracks_directory_depth_and_ui_selectors(self):
+        page = self.root / 'old.html'
+        page.write_text(r'''<head><title>页面</title></head><body>
+<style>body > a[href="demo.html"] { min-height: 44px; }</style>
+<a href="demo.html" target="_top">返回 Demo 导航</a>
+<a href="https://example.com/demo.html">外部链接</a>
+<script>document.querySelectorAll("body > a[href=\"demo.html\"]");</script>
+</body>''', encoding='utf-8')
+        sub = self.root / '第一层' / '第二层'
+        sub.mkdir(parents=True)
+        page.rename(sub / '改名.html')
+        page = sub / '改名.html'
+        module.update_navigation(self.root)
+        content = page.read_text()
+        self.assertIn('href="../../demo.html"', content)
+        self.assertIn('data-demo-return', content)
+        self.assertIn('body > a[data-demo-return]', content)
+        self.assertNotIn('a[href="demo.html"]', content)
+        self.assertIn('href="https://example.com/demo.html"', content)
+        module.update_navigation(self.root)
+        self.assertEqual(page.read_text(), content)
+        page.rename(self.root / 'renamed.html')
+        module.update_navigation(self.root)
+        self.assertIn('href="demo.html"', (self.root / 'renamed.html').read_text())
+
     def test_empty_directory_is_safe(self):
         (self.root / 'old.html').unlink()
         module.update_navigation(self.root)
