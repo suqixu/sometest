@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>鹈鹕骑自行车</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #f6f0e4; font-family: system-ui, sans-serif; color: #24434a; }
+    main { width: min(1000px, 94vw); }
+    h1 { margin: 0 0 8px; font-size: clamp(25px, 4vw, 44px); font-weight: 600; letter-spacing: .06em; }
+    p { margin: 0 0 22px; color: #74858a; }
+    svg { display: block; width: 100%; height: auto; border-radius: 18px; background: #d9eced; box-shadow: 0 18px 60px #24434a15; }
+    .wheel { transform-box: fill-box; transform-origin: center; animation: spin 1.2s linear infinite; }
+    .crank { transform-box: view-box; transform-origin: 500px 395px; animation: spin 1.2s linear infinite; }
+    .bird { animation: bob .6s ease-in-out infinite alternate; }
+    .scarf { transform-origin: 540px 216px; animation: flutter .45s ease-in-out infinite alternate; }
+    .cloud { animation: drift 25s linear infinite; }
+    .cloud.two { animation-duration: 33s; animation-delay: -14s; }
+    .roadmark { animation: road 1.2s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes bob { to { transform: translateY(4px); } }
+    @keyframes flutter { to { transform: rotate(-8deg); } }
+    @keyframes drift { to { transform: translateX(-1100px); } }
+    @keyframes road { to { transform: translateX(-160px); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>海风正好，出发吧。</h1>
+    <p>一只鹈鹕的悠闲骑行。</p>
+    <svg viewBox="0 0 1000 600" role="img" aria-labelledby="title desc">
+      <title id="title">鹈鹕骑自行车的二维动画</title>
+      <desc id="desc">戴红围巾的鹈鹕骑绿色自行车，车轮和踏板不断旋转，海边的云朵缓缓飘过。</desc>
+      <defs>
+        <clipPath id="scene"><rect width="1000" height="600" rx="18"/></clipPath>
+        <g id="spokes" stroke="#89a5a1" stroke-width="2">
+          <path d="M-76 0H76M0-76V76M-54-54L54 54M-54 54L54-54M-70-29L70 29M-29-70L29 70M-70 29L70-29M-29 70L29-70"/>
+        </g>
+        <g id="wheel">
+          <circle r="83" fill="#f7f3e8" stroke="#29464a" stroke-width="10"/>
+          <circle class="wheel" r="74" fill="none" stroke="#cbd8cf" stroke-width="3"/>
+          <g class="wheel"><use href="#spokes"/></g>
+          <circle r="8" fill="#29464a"/>
+        </g>
+      </defs>
+      <g clip-path="url(#scene)">
+        <circle cx="780" cy="132" r="62" fill="#efc677"/>
+        <g class="cloud" fill="#fffdf6"><path d="M95 142q0-20 23-20 8-27 36-20 21-14 40 4 25-2 30 25z"/><path d="M1195 142q0-20 23-20 8-27 36-20 21-14 40 4 25-2 30 25z"/></g>
+        <g class="cloud two" fill="#fffdf6" opacity=".8"><path d="M580 84q4-22 30-20 12-29 42-14 24-5 36 20 19 0 24 14z"/><path d="M1680 84q4-22 30-20 12-29 42-14 24-5 36 20 19 0 24 14z"/></g>
+        <path d="M0 330Q150 280 300 320T630 314T1000 306V600H0Z" fill="#bfd8cc"/>
+        <path d="M0 365Q180 340 370 360T700 351T1000 358V600H0Z" fill="#a9d1ce"/>
+        <path d="M0 459Q230 426 470 455T1000 444V600H0Z" fill="#e9ddc3"/>
+        <path d="M0 480H1000" stroke="#bcb8a0" stroke-width="3"/>
+        <g class="roadmark" stroke="#c1b89d" stroke-width="4" stroke-linecap="round"><path d="M0 548h80m80 0h80m80 0h80m80 0h80m80 0h80m80 0h80m80 0h80m80 0h80m80 0h80m80 0h80"/></g>
+        <ellipse cx="514" cy="477" rx="265" ry="14" fill="#547478" opacity=".12"/>
+
+        <!-- Bicycle -->
+        <use href="#wheel" transform="translate(320 395)"/>
+        <use href="#wheel" transform="translate(690 395)"/>
+        <g fill="none" stroke="#397c70" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M320 395 410 284 500 395 320 395 600 284 410 284M500 395 600 284 690 395"/>
+          <path d="M410 284 400 253M600 284 586 242"/>
+        </g>
+        <path d="M375 253h52" stroke="#29464a" stroke-width="13" stroke-linecap="round"/>
+        <path d="M584 243q12-22 34-22h27q12 0 13 18" fill="none" stroke="#29464a" stroke-width="8" stroke-linecap="round"/>
+        <g class="crank" stroke="#29464a" stroke-width="7" stroke-linecap="round"><path d="M500 395v-39m0 39v39"/><path d="M482 356h36m-36 78h36"/></g>
+        <circle cx="500" cy="395" r="11" fill="#e2b969" stroke="#29464a" stroke-width="4"/>
+
+        <!-- Pelican -->
+        <g class="bird">
+          <path d="M380 278q-39-18-58-51l13 45-28-17q25 53 70 50" fill="#e4e9dd" stroke="#29464a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M367 255q26-39 90-30 23 4 31-27l9-52q10-48 45-50 42-2 51 39 9 34-14 65-13 17-42 19 12 56-13 79-26 24-71 16l-57-12q-47-7-29-47z" fill="#fffdf4" stroke="#29464a" stroke-width="4"/>
+          <path d="M383 255q28-29 71-5l51 37q-55 34-100 4-19-13-22-36z" fill="#e2e8db" stroke="#29464a" stroke-width="3"/>
+          <path d="M399 259q35 25 77 26" fill="none" stroke="#a5b9a9" stroke-width="3" stroke-linecap="round"/>
+          <path d="M578 166q49 39 99 18 33-13 49-32-24 69-94 89-43 12-60-33z" fill="#e7ac58" stroke="#29464a" stroke-width="3"/>
+          <path d="M580 158q77-6 151 2 18 4 4 14l-154 7z" fill="#f3c56d" stroke="#29464a" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="551" cy="151" r="12" fill="white"/><circle cx="554" cy="151" r="5" fill="#29464a"/><circle cx="555" cy="149" r="1.5" fill="white"/>
+          <path d="M531 108 527 93m14 14 3-18m6 20 10-14" stroke="#29464a" stroke-width="3" stroke-linecap="round"/>
+          <path class="scarf" d="M537 213q-37 8-68-24l-28 4 18 13-16 8q43 26 89 18z" fill="#cc654e" stroke="#a44e41" stroke-width="2"/>
+          <path d="M527 204q16 10 33 2l5 18q-20 12-41 1z" fill="#dc7658" stroke="#a44e41" stroke-width="2"/>
+          <path d="M466 266q39 34 79 7l76-45" fill="none" stroke="#29464a" stroke-width="17" stroke-linecap="round"/>
+          <path d="M466 266q39 34 79 7l76-45" fill="none" stroke="#fffdf4" stroke-width="11" stroke-linecap="round"/>
+          <path d="M458 304q46 18 48 91" fill="none" stroke="#e9ae5b" stroke-width="15" stroke-linecap="round"/>
+          <path d="M488 396h34" stroke="#d69449" stroke-width="12" stroke-linecap="round"/>
+        </g>
+        <g fill="none" stroke="#779a86" stroke-width="3" stroke-linecap="round"><path d="M95 475q-4-21-17-29m17 29q2-20 14-31M867 475q-5-22-20-31m20 31q5-24 17-35"/></g>
+      </g>
+    </svg>
+  </main>
+<a href="demo.html" target="_top" style="position:fixed;top:12px;left:12px;z-index:2147483647;display:inline-flex;align-items:center;gap:6px;background:rgba(20,30,45,.62);color:#fff;padding:7px 14px;border-radius:999px;font:600 13px/1.2 -apple-system,'PingFang SC','Microsoft YaHei',sans-serif;text-decoration:none;letter-spacing:1px;backdrop-filter:blur(6px);box-shadow:0 2px 10px rgba(0,0,0,.25);">← 返回 Demo 导航</a>
+</body>
+</html>
