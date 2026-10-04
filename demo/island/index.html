@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f3d" />
+    <meta name="description" content="浮屿：一座会呼吸的海岛。自由探索海洋、四季、昼夜与自然的声音。" />
+    <title>浮屿 ISOLA · 在自然里，慢下来</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d4d47'/%3E%3Cpath d='M10 40q11-12 22 0t22 0M12 49q10-9 20 0t20 0' stroke='%23e5efbf' stroke-width='3' fill='none'/%3E%3Ccircle cx='33' cy='22' r='8' fill='%23e5efbf'/%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="/assets/index-C72FdJFf.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/three-CxQ9uYFy.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-14PqPNHo.css">
+  </head>
+  <body>
+    <div id="scene" aria-label="可拖动和缩放的三维海岛"></div>
+    <div class="scene-grain"></div>
+    <div class="scene-shade"></div>
+
+    <div id="loading" class="loading-screen">
+      <div class="loading-mark"><span></span><span></span><span></span></div>
+      <p class="loading-title">浮屿 <i>ISOLA</i></p>
+      <p id="loading-message">让一座岛，慢慢苏醒</p>
+      <div class="loading-line"><span></span></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="浮屿首页">
+        <svg viewBox="0 0 42 42" fill="none" aria-hidden="true"><circle cx="21" cy="21" r="19" stroke="currentColor" stroke-width="1.1"/><path d="M10 26c4-5 7-5 11 0s7 5 11 0M12 31c3-4 6-4 9 0s6 4 9 0" stroke="currentColor" stroke-width="1.4"/><circle cx="23" cy="14" r="4.5" fill="currentColor"/></svg>
+        <span>浮屿 <small>ISOLA</small></span>
+      </a>
+      <div class="top-caption"><span class="live-dot"></span> 一座会呼吸的海岛</div>
+      <nav class="top-actions" aria-label="体验工具">
+        <button id="sound-toggle" class="icon-button" aria-label="开启自然声音" title="开启自然声音"></button>
+        <button id="capture" class="icon-button" aria-label="保存风景" title="保存风景"></button>
+        <button id="fullscreen" class="icon-button" aria-label="全屏体验" title="全屏体验"></button>
+        <span class="action-separator"></span>
+        <button id="panel-toggle" class="outline-button" aria-controls="control-panel" aria-expanded="true"><span id="settings-icon"></span>环境设置</button>
+      </nav>
+    </header>
+
+    <main class="experience">
+      <section class="intro" aria-label="海岛介绍">
+        <p class="eyebrow"><span></span> 此刻，只属于自然</p>
+        <h1>在自然里，<br/><em>慢下来。</em></h1>
+        <p class="intro-copy">听海浪轻轻靠岸，<br/>看阳光穿过云与四季。</p>
+        <button id="tour-toggle" class="tour-button"><span id="tour-icon"></span><span id="tour-label">开启环岛漫游</span><span class="tour-arrow">↗</span></button>
+      </section>
+
+      <aside id="control-panel" class="control-panel" aria-label="环境设置">
+        <div class="panel-heading"><div><p class="section-kicker">让风景，随心而变</p><h2>环境控制</h2></div><button id="panel-close" class="small-icon" aria-label="收起环境设置">×</button></div>
+
+        <section class="control-section">
+          <div class="section-heading"><h3>四季</h3><label class="toggle-label">自动轮换<input id="auto-season" type="checkbox" checked/><span class="switch"></span></label></div>
+          <div class="season-options" role="group" aria-label="选择季节">
+            <button data-season="0"><span class="season-symbol">✿</span><span>春</span></button>
+            <button data-season="1" class="selected"><span class="season-symbol">☀</span><span>夏</span></button>
+            <button data-season="2"><span class="season-symbol">❧</span><span>秋</span></button>
+            <button data-season="3"><span class="season-symbol">❄</span><span>冬</span></button>
+          </div>
+        </section>
+
+        <section class="control-section weather-section">
+          <div class="section-heading"><h3>天气</h3><label class="toggle-label">自然变化<input id="auto-weather" type="checkbox"/><span class="switch"></span></label></div>
+          <div class="weather-options" role="group" aria-label="选择天气">
+            <button data-weather="sunny" class="selected"><span data-icon="sun"></span>晴天</button>
+            <button data-weather="cloudy"><span data-icon="cloud"></span>阴天</button>
+            <button data-weather="rain"><span data-icon="rain"></span>雨天</button>
+            <button data-weather="fog"><span data-icon="fog"></span>雾气</button>
+            <button data-weather="storm"><span data-icon="storm"></span>雷暴</button>
+            <button data-weather="snow"><span data-icon="snow"></span>飘雪</button>
+          </div>
+        </section>
+
+        <section class="control-section time-section">
+          <div class="section-heading"><h3>昼夜</h3><span id="time-value" class="time-value">14:30</span></div>
+          <div class="time-track"><input id="time-range" type="range" min="0" max="23.99" step="0.01" value="14.5" aria-label="一天中的时间"/></div>
+          <div class="time-labels"><span>午夜</span><span>日出</span><span>正午</span><span>日落</span><span>午夜</span></div>
+          <div class="time-controls"><button id="time-toggle" class="text-button"></button><div class="speed-options" role="group" aria-label="时间流速"><button data-speed="1" class="selected">1×</button><button data-speed="3">3×</button><button data-speed="8">8×</button></div></div>
+        </section>
+
+        <section class="control-section sound-section">
+          <div class="section-heading"><h3>自然声场</h3><button id="audio-start" class="sound-enable">点击开启 <span>↗</span></button></div>
+          <div class="volume-row"><span>环境音</span><input id="ambient-volume" type="range" min="0" max="1" step="0.01" value="0.65" aria-label="环境音量"/><span id="ambient-value">65%</span></div>
+          <div class="volume-row"><span>轻音乐</span><input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.35" aria-label="背景音乐音量"/><span id="music-value">35%</span></div>
+        </section>
+
+        <div class="panel-footer"><span class="quality-dot"></span><label for="quality">渲染画质</label><select id="quality"><option value="high">精细</option><option value="medium">均衡</option><option value="low">流畅</option></select><span id="fps-label">实时渲染</span></div>
+      </aside>
+
+      <section class="view-switcher" aria-label="选择观看视角"><span>视角</span><button data-view="island" class="selected">全岛</button><button data-view="beach">海岸</button><button data-view="dock">码头</button><button data-view="aerial">鸟瞰</button></section>
+    </main>
+
+    <footer class="bottom-bar">
+      <div class="island-status"><span class="status-leaf">◈</span><span id="season-label">夏日</span><span class="status-separator"></span><span id="weather-label">晴朗</span><span id="temperature">29°</span><span class="status-separator"></span><span id="status-time">14:30</span></div>
+      <div class="interaction-hint"><span id="drag-icon"></span><span>拖动环绕</span><i>·</i><span>滚轮缩放</span></div>
+      <div class="coordinates">18° 34′ N <span>·</span> 109° 42′ E</div>
+    </footer>
+    <div id="toast" role="status" class="toast"></div>
+  </body>
+</html>
