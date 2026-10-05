@@ -7,8 +7,8 @@
     <meta name="description" content="浮屿：一座会呼吸的海岛。自由探索海洋、四季、昼夜与自然的声音。" />
     <title>浮屿 ISOLA · 在自然里，慢下来</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d4d47'/%3E%3Cpath d='M10 40q11-12 22 0t22 0M12 49q10-9 20 0t20 0' stroke='%23e5efbf' stroke-width='3' fill='none'/%3E%3Ccircle cx='33' cy='22' r='8' fill='%23e5efbf'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-YRaUAGgC.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Dgu1r2lT.css">
+    <script type="module" crossorigin src="./assets/index-RSoe9ffd.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-qg5NijQY.css">
   </head>
   <body>
     <div id="scene" aria-label="可拖动和缩放的三维海岛"></div>
@@ -77,14 +77,14 @@
           <div class="section-heading"><h3>昼夜</h3><span id="time-value" class="time-value">14:30</span></div>
           <div class="time-track"><input id="time-range" type="range" min="0" max="23.99" step="0.01" value="14.5" aria-label="一天中的时间"/></div>
           <div class="time-labels"><span>午夜</span><span>日出</span><span>正午</span><span>日落</span><span>午夜</span></div>
-          <div class="time-controls"><button id="time-toggle" class="text-button"></button><div class="speed-options" role="group" aria-label="时间流速"><button data-speed="0.5">0.5×</button><button data-speed="1" class="selected">1×</button><button data-speed="2">2×</button><button data-speed="3">3×</button><button data-speed="4">4×</button><button data-speed="8">8×</button></div></div>
+          <div class="time-controls"><button id="time-toggle" class="text-button"></button><div class="speed-options" role="group" aria-label="时间流速"><button data-speed="0.5" class="selected" aria-pressed="true">0.5×</button><button data-speed="1" aria-pressed="false">1×</button><button data-speed="2">2×</button><button data-speed="3">3×</button><button data-speed="4">4×</button><button data-speed="8">8×</button></div></div>
           <div class="moon-heading"><label for="moon-phase">月相</label><label class="toggle-label">自然轮换<input id="auto-moon" type="checkbox" checked aria-label="月相自然轮换"/><span class="switch"></span></label></div>
           <div class="moon-controls"><select id="moon-phase" aria-label="选择月相"></select><span id="moon-illumination">亮面 100%</span></div>
         </section>
 
         <section class="control-section sound-section">
           <div class="section-heading"><h3>自然声场</h3><button id="audio-start" class="sound-enable">点击开启 <span>↗</span></button></div>
-          <div class="volume-row"><span>环境音</span><input id="ambient-volume" type="range" min="0" max="1" step="0.01" value="0.55" aria-label="环境音量"/><span id="ambient-value">55%</span></div>
+          <div class="volume-row"><span>环境音</span><input id="ambient-volume" type="range" min="0" max="1" step="0.01" value="0.3" aria-label="环境音量"/><span id="ambient-value">30%</span></div>
           <div class="volume-row"><span>背景乐</span><input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="背景音乐音量"/><span id="music-value">80%</span></div>
           <p id="sunset-music-status" class="music-status" aria-live="polite">随景音乐 · 10首器乐主题，随风景轮换</p>
         </section>
