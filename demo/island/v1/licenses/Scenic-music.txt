@@ -1,0 +1,26 @@
+浮屿场景音乐：器乐主题节选合成编配
+
+春江花月夜 / 彩云追月 / 平沙落雁 / 孟姜女哭长城 / 山歌好比春江水 /
+我的祖国 / 梁祝 / 女儿情 / 枉凝眉
+本项目依记谱音高和时值制作主题节选，简化装饰音、移调，并独立编配伴奏。
+音色、泛音、立体声反射和余音由数学波形制作，无第三方演奏录音或音色采样。
+这些音源不是原演奏版本或完整全曲的复刻。
+
+旋律主题参考：
+春江花月夜（传统器乐主题）：https://www.hkco.org/uploads/docs/5a8b86d5034b11.pdf
+彩云追月：https://www.everyonepiano.cn/Number-2313-2.html
+平沙落雁（据琴学丛书传统主题）：https://www.qupu123.com/qiyue/guzhengguqin/p187672.html
+孟姜女哭长城（河北民歌主题，教材印刷页25）：
+https://music.hgnu.edu.cn/_upload/article/files/09/d4/faf43ffb4e08b61cf64ee0adaf16/f952a486-61db-445b-83af-ada858d65ad0.pdf
+山歌好比春江水（刘三姐主题）：https://www.everyonepiano.cn/Stave-587-1.html
+我的祖国（刘炽，选取旋律主题）：https://www.everyonepiano.cn/Number-10436-2.html
+梁祝（何占豪、陈钢，选取爱情主题）：https://www.everyonepiano.cn/Number-439-1.html
+女儿情（许镜清，选取主歌主题）：https://www.everyonepiano.cn/Number-14828-2.html
+枉凝眉（王立平，选取器乐主题）：https://www.everyonepiano.cn/Number-2094-1.html
+原作品归各自作者；本项目合成文件不含原版录音或参考钢琴编配的伴奏。
+未分发上述参考乐谱图片或PDF；没有复制其现代完整配器与伴奏。
+
+制作源码：scripts/render-scenic-music.py
+声部音高与时值：scripts/scenic-scores.json
+六首新增曲目输入：scripts/create-extra-scores.py
+成品：src/assets/audio/*-synth.ogg

@@ -1,0 +1,8 @@
+Lunar surface map: NASA's Scientific Visualization Studio, CGI Moon Kit.
+Source: https://svs.gsfc.nasa.gov/4720/
+Image: https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg
+Dataset: LROC WAC Color Mosaic, Lunar Reconnaissance Orbiter Camera.
+Visualizer: Ernie Wright (USRA). Scientist: Noah Petro (NASA/GSFC).
+Image is bundled unmodified; the application applies spherical projection,
+moon-phase illumination and a warm atmospheric tint during rendering.
+NASA media usage guidelines: https://www.nasa.gov/nasa-brand-center/images-and-media/

@@ -1,0 +1,12 @@
+浮屿日落音乐：《渔舟唱晚》电子琴合成版
+
+这是为本项目生成的独立电子琴编配，不含天气预报原录音或第三方音色采样。
+旋律参考 EveryonePiano 公布的《渔舟唱晚／天气预报背景音乐》五线谱，
+参考页面：https://www.everyonepiano.cn/Stave-159-1.html
+          https://www.everyonepiano.cn/Stave-159-2.html
+编号谱参考：https://www.everyonepiano.cn/Music-159.html
+
+主旋律依公开乐谱手工输入；速度、细小装饰音、伴奏、声部、电子琴音色和
+混响为海岛场景重新编配。不是浦琪璋原版录音的复刻。
+生成源码：scripts/render-sunset-music.py
+合成资源：src/assets/audio/yuzhou-changwan-weather.ogg
