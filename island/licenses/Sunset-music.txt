@@ -10,3 +10,4 @@
 混响为海岛场景重新编配。不是浦琪璋原版录音的复刻。
 生成源码：scripts/render-sunset-music.py
 合成资源：src/assets/audio/yuzhou-changwan-weather.ogg
+浏览器播放版本：src/assets/audio/yuzhou-changwan-weather.mp3，由 scripts/export-mp3-audio.py 转码。

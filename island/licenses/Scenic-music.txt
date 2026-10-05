@@ -24,3 +24,4 @@ https://music.hgnu.edu.cn/_upload/article/files/09/d4/faf43ffb4e08b61cf64ee0adaf
 声部音高与时值：scripts/scenic-scores.json
 六首新增曲目输入：scripts/create-extra-scores.py
 成品：src/assets/audio/*-synth.ogg
+浏览器播放版本：src/assets/audio/*-synth.mp3，由 scripts/export-mp3-audio.py 转码。
