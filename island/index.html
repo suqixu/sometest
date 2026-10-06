@@ -7,8 +7,8 @@
     <meta name="description" content="浮屿：一座会呼吸的海岛。自由探索海洋、四季、昼夜与自然的声音。" />
     <title>浮屿 ISOLA · 在自然里，慢下来</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231d4d47'/%3E%3Cpath d='M10 40q11-12 22 0t22 0M12 49q10-9 20 0t20 0' stroke='%23e5efbf' stroke-width='3' fill='none'/%3E%3Ccircle cx='33' cy='22' r='8' fill='%23e5efbf'/%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-kozdMN5S.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CSiB3Oui.css">
+    <script type="module" crossorigin src="./assets/index-B2TPl5Tz.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Ci0ZPCGB.css">
   </head>
   <body>
     <div id="scene" aria-label="可拖动和缩放的三维海岛"></div>
@@ -27,78 +27,73 @@
         <span id="opening-seal" class="brand-seal" hidden aria-hidden="true"><img id="opening-seal-image" alt="张在元篆刻印章" width="1254" height="1254" /></span>
         <span>浮屿 <small>ISOLA</small></span>
       </a>
-      <div class="top-caption" data-zen-ui><span class="live-dot"></span> 一座会呼吸的海岛</div>
       <nav class="top-actions" aria-label="体验工具">
         <button id="sound-toggle" class="icon-button" aria-label="开启自然声音" title="开启自然声音" data-zen-ui></button>
+        <button id="tour-toggle" class="icon-button" title="开启环岛漫游" aria-pressed="false" data-zen-ui><span id="tour-icon" aria-hidden="true"></span><span id="tour-label" class="visually-hidden">开启环岛漫游</span></button>
         <button id="capture" class="icon-button" aria-label="保存风景" title="保存风景" data-zen-ui></button>
         <button id="fullscreen" class="icon-button" aria-label="全屏体验" title="全屏体验" data-zen-ui></button>
         <button id="poem-toggle" class="icon-button poetry-toggle enabled" aria-label="关闭诗意字幕" aria-pressed="true" title="诗意字幕 · 张若虚《春江花月夜》" data-zen-ui><span aria-hidden="true">诗</span></button>
         <button id="zen-toggle" class="icon-button zen-toggle" aria-label="进入禅模式" aria-pressed="false" title="禅模式 · 隐藏全部界面" disabled>禅</button>
-        <span class="action-separator" data-zen-ui></span>
         <button id="panel-toggle" class="outline-button" aria-controls="control-panel" aria-expanded="true" data-zen-ui><span id="settings-icon"></span>环境设置</button>
       </nav>
     </header>
 
     <main class="experience" data-zen-ui>
-      <section class="intro" aria-label="海岛介绍">
-        <p class="eyebrow"><span></span> 此刻，只属于自然</p>
-        <h1>在自然里，<br/><em>慢下来。</em></h1>
-        <p class="intro-copy">听海浪轻轻靠岸，<br/>看阳光穿过云与四季。</p>
-        <button id="tour-toggle" class="tour-button"><span id="tour-icon"></span><span id="tour-label">开启环岛漫游</span><span class="tour-arrow">↗</span></button>
-      </section>
-
       <aside id="control-panel" class="control-panel" aria-label="环境设置">
-        <div class="panel-heading"><div><p class="section-kicker">让风景，随心而变</p><h2>环境控制</h2></div><button id="panel-close" class="small-icon" aria-label="收起环境设置">×</button></div>
+        <div class="panel-header">
+          <button id="panel-close" class="small-icon" aria-label="收起环境设置" title="收起">×</button>
+        </div>
 
         <section class="control-section">
-          <div class="section-heading"><h3>四季</h3><label class="toggle-label">自动轮换<input id="auto-season" type="checkbox" checked/><span class="switch"></span></label></div>
           <div class="season-options" role="group" aria-label="选择季节">
-            <button data-season="0"><span class="season-symbol">✿</span><span>春</span></button>
-            <button data-season="1" class="selected"><span class="season-symbol">☀</span><span>夏</span></button>
-            <button data-season="2"><span class="season-symbol">❧</span><span>秋</span></button>
-            <button data-season="3"><span class="season-symbol">❄</span><span>冬</span></button>
+            <button data-season="0" aria-label="春" title="春"><span class="season-symbol" aria-hidden="true">✿</span></button>
+            <button data-season="1" aria-label="夏" title="夏" class="selected"><span class="season-symbol" aria-hidden="true">☀</span></button>
+            <button data-season="2" aria-label="秋" title="秋"><span class="season-symbol" aria-hidden="true">❧</span></button>
+            <button data-season="3" aria-label="冬" title="冬"><span class="season-symbol" aria-hidden="true">❄</span></button>
+            <label class="auto-option" title="四季自动轮换"><input id="auto-season" type="checkbox" checked aria-label="四季自动轮换"/><span data-icon="cycle" aria-hidden="true"></span></label>
           </div>
         </section>
 
         <section class="control-section weather-section">
-          <div class="section-heading"><h3>天气</h3><label class="toggle-label">自然变化<input id="auto-weather" type="checkbox" checked/><span class="switch"></span></label></div>
           <div class="weather-options" role="group" aria-label="选择天气">
-            <button data-weather="sunny" class="selected"><span data-icon="sun"></span>晴天</button>
-            <button data-weather="cloudy"><span data-icon="cloud"></span>阴天</button>
-            <button data-weather="rain"><span data-icon="rain"></span>雨天</button>
-            <button data-weather="fog"><span data-icon="fog"></span>雾气</button>
-            <button data-weather="storm"><span data-icon="storm"></span>雷暴</button>
-            <button data-weather="snow"><span data-icon="snow"></span>飘雪</button>
+            <button data-weather="sunny" aria-label="晴天" title="晴天" class="selected"><span data-icon="sun"></span></button>
+            <button data-weather="cloudy" aria-label="阴天" title="阴天"><span data-icon="cloud"></span></button>
+            <button data-weather="rain" aria-label="雨天" title="雨天"><span data-icon="rain"></span></button>
+            <button data-weather="fog" aria-label="雾气" title="雾气"><span data-icon="fog"></span></button>
+            <button data-weather="storm" aria-label="雷暴" title="雷暴"><span data-icon="storm"></span></button>
+            <button data-weather="snow" aria-label="飘雪" title="飘雪"><span data-icon="snow"></span></button>
+            <label class="auto-option" title="天气自然变化"><input id="auto-weather" type="checkbox" checked aria-label="天气自然变化"/><span data-icon="cycle" aria-hidden="true"></span></label>
           </div>
           <div class="wind-readout"><span>海风</span><span id="wind-speed">风速 6.0 m/s</span></div>
         </section>
 
         <section class="control-section time-section">
-          <div class="section-heading"><h3>昼夜</h3><span id="time-value" class="time-value">14:30</span></div>
+          <div class="time-readout"><span id="time-value" class="time-value">14:30</span><div class="time-actions"><button id="scene-rate" type="button" aria-label="场景速度：0.5倍，点击切换" title="场景速度 · 点击切换倍率"><span data-icon="rate" aria-hidden="true"></span><span id="scene-rate-label">0.5×</span></button><button id="moon-phase" type="button" class="selected" aria-pressed="true" aria-label="月相自动轮换：满月，点击切换新月" title="点击切换月相"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="currentColor"/></svg></button><button id="time-toggle" class="auto-play selected" aria-pressed="true"><span data-icon="cycle" aria-hidden="true"></span></button></div></div>
           <div class="time-track"><input id="time-range" type="range" min="0" max="23.99" step="0.01" value="14.5" aria-label="一天中的时间"/></div>
           <div class="time-labels"><span>午夜</span><span>日出</span><span>正午</span><span>日落</span><span>午夜</span></div>
-          <div class="time-controls"><button id="time-toggle" class="text-button"></button><div class="speed-options" role="group" aria-label="时间流速"><button data-speed="0.5" class="selected" aria-pressed="true">0.5×</button><button data-speed="1" aria-pressed="false">1×</button><button data-speed="2">2×</button><button data-speed="3">3×</button><button data-speed="4">4×</button><button data-speed="8">8×</button></div></div>
-          <div class="moon-heading"><label for="moon-phase">月相</label><label class="toggle-label">自然轮换<input id="auto-moon" type="checkbox" checked aria-label="月相自然轮换"/><span class="switch"></span></label></div>
-          <div class="moon-controls"><select id="moon-phase" aria-label="选择月相"></select><span id="moon-illumination">亮面 100%</span></div>
         </section>
 
         <section class="control-section sound-section">
-          <div class="section-heading"><h3>自然声场</h3><button id="audio-start" class="sound-enable">点击开启 <span>↗</span></button></div>
           <div class="volume-row"><span>环境音</span><input id="ambient-volume" type="range" min="0" max="1" step="0.01" value="0.3" aria-label="环境音量"/><span id="ambient-value">30%</span></div>
           <div class="volume-row"><span>背景乐</span><input id="music-volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="背景音乐音量"/><span id="music-value">80%</span></div>
-          <p id="sunset-music-status" class="music-status" aria-live="polite">随景音乐 · 10首器乐主题，随风景轮换</p>
+          <div class="music-player" role="group" aria-label="音乐播放器">
+            <p id="sunset-music-status" class="music-status" aria-live="polite">随景音乐</p>
+            <div class="music-transport">
+              <button id="music-play" type="button" aria-label="播放背景音乐" title="播放背景音乐"><span data-icon="play"></span></button>
+              <button id="music-mode" type="button" class="music-cycle" title="点击切换播放方式"><span id="music-mode-icon" aria-hidden="true"></span><span id="music-mode-label" class="visually-hidden">随景播放</span></button>
+              <button id="music-rate" type="button" class="music-cycle" title="点击切换音乐速度"><span aria-hidden="true">◷</span><span id="music-rate-label">1×</span></button>
+            </div>
+          </div>
         </section>
 
-        <div class="panel-footer"><span class="quality-dot"></span><label for="quality">渲染画质</label><select id="quality"><option value="high">精细</option><option value="medium">均衡</option><option value="low">流畅</option></select><span id="fps-label">实时渲染</span></div>
+        <div class="panel-footer"><span class="quality-dot"></span><span>渲染画质</span><button id="quality" type="button" aria-label="渲染画质：精细，点击切换" title="点击切换画质">精细</button><span id="fps-label">实时渲染</span></div>
       </aside>
 
-      <section class="view-switcher" aria-label="选择观看视角"><span>视角</span><button data-view="island" class="selected">全岛</button><button data-view="beach">海岸</button><button data-view="dock">码头</button><button data-view="reef">浅海</button><button data-view="lagoon">泻湖</button><button data-view="cave">山洞</button><button data-view="south-pavilion">南峰亭</button><button data-view="east-pavilion">东峰亭</button><button data-view="aerial">鸟瞰</button><button data-view="moon">赏月</button></section>
+      <section class="view-switcher" aria-label="选择观看视角"><span>视角</span><button data-view="island" class="selected">全岛</button><button data-view="beach">海岸</button><button data-view="dock">码头</button><button data-view="reef">浅海</button><button data-view="lagoon">泻湖</button><button data-view="cave">山洞</button><button data-view="south-pavilion">南峰亭</button><button data-view="east-pavilion">东峰亭</button><button data-view="lighthouse">灯塔</button><button data-view="moon">赏月</button></section>
     </main>
 
     <footer class="bottom-bar" data-zen-ui>
       <div class="island-status"><span class="status-leaf">◈</span><span id="season-label">夏日</span><span class="status-separator"></span><span id="weather-label">晴朗</span><span id="temperature">29°</span><span class="status-separator"></span><span id="status-time">14:30</span></div>
-      <div class="interaction-hint"><span id="drag-icon"></span><span>拖动环绕</span><i>·</i><span>滚轮缩放</span></div>
-      <div class="coordinates">18° 34′ N <span>·</span> 109° 42′ E</div>
     </footer>
     <div id="toast" role="status" class="toast" data-zen-ui></div>
     <p id="poem-caption" class="visually-hidden" aria-label="当前诗句" data-zen-ui></p>
