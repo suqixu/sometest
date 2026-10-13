@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#191c19">
+  <title>水月观音 · 木雕造像</title>
+  <meta name="description" content="纳尔逊—阿特金斯艺术博物馆藏水月观音原作的公开三维扫描观览，扫描由芝加哥大学东亚艺术研究中心公开展示。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%23191c19'/%3E%3Ccircle cx='20' cy='20' r='13' stroke='%23b6a480' fill='none'/%3E%3Cpath d='M26 10a12 12 0 0 0 0 20 11 11 0 1 1 0-20' fill='%23b6a480'/%3E%3C/svg%3E">
+  <style>:root{color-scheme:dark;--bg:#191c19;--ink:#e8e1cf;--muted:#97998b;--accent:#b3a07b;--line:rgba(207,195,162,.16)}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);background-image:radial-gradient(ellipse at 66% 43%,#363b32 0,#252a24 34%,#191c19 72%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.3' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button:disabled{cursor:wait;opacity:.4}[hidden]{display:none!important}
+.header{position:fixed;top:0;left:0;right:0;height:96px;padding:0 4.2%;display:flex;align-items:center;justify-content:space-between;z-index:10}.brand{display:flex;gap:16px;align-items:center;font-size:13px;letter-spacing:3px}.brand-mark{font-family:"Songti SC","STSong",serif;font-size:22px;border:1px solid #95815d;display:grid;place-items:center;width:37px;height:42px;color:#baa67f}.brand-divider{color:#686f62;margin:0 15px}.header-note{position:absolute;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:4px;color:#8b9384}.edition{font-size:12px;letter-spacing:3px;color:#b1b7a6}.live-dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:#9aab85;margin:0 12px 2px 0;box-shadow:0 0 8px #9aab8533}
+.museum{position:relative;height:100%;width:100%}.intro{position:absolute;top:clamp(120px,19vh,215px);left:6.7%;width:250px;z-index:3;pointer-events:none}.eyebrow{margin:0 0 31px;font-size:9px;letter-spacing:2.8px;color:#a8ac97;display:flex;align-items:center;gap:25px}.eyebrow span{border-left:1px solid #646c5d;padding-left:20px;font-size:10px;letter-spacing:1px}.title-wrap{display:flex;gap:23px;align-items:flex-start}h1{font-family:"Songti SC","STSong","Noto Serif CJK SC",serif;font-weight:400;font-size:68px;letter-spacing:12px;line-height:1.3;margin:0 0 24px;text-shadow:0 3px 25px #0003}.vertical-caption{writing-mode:vertical-rl;font-family:"Songti SC",serif;letter-spacing:6px;font-size:11px;color:#a5a491;padding-top:12px}.english-title{font-family:Georgia,"Times New Roman",serif;font-size:13px;line-height:1.7;letter-spacing:4px;color:#c0baa4;margin:0}.intro-rule{display:block;width:29px;height:1px;background:#8b7f5f;margin:27px 0}.description{color:#a5ac9b;font-family:"Songti SC","STSong",serif;font-size:14px;letter-spacing:3px;line-height:2;margin:0 0 25px}.artifact-data{font-size:10px;line-height:1.9;letter-spacing:1px;margin:0;color:#aaaD9b}.artifact-data div{display:flex;gap:21px;padding:3px 0}.artifact-data dt{color:#747f6e}.artifact-data dd{margin:0}.study-note{color:#788271;font-size:9px;letter-spacing:1px;line-height:1.9;margin:26px 0 0}
+#viewport{position:absolute;left:27%;right:4%;top:80px;bottom:103px;touch-action:none;outline:none}#viewport canvas{display:block;width:100%;height:100%;outline:none;cursor:grab;touch-action:none}#viewport canvas:active{cursor:grabbing}.stage-label{position:absolute;right:4px;top:20%;font-family:"Songti SC",serif;font-size:11px;writing-mode:vertical-rl;letter-spacing:4px;color:#919a86;z-index:2;pointer-events:none}.stage-line{height:40px;width:1px;background:#8a927b55;display:inline-block;margin-bottom:18px}.side-caption{position:absolute;bottom:25%;right:4.3%;writing-mode:vertical-rl;letter-spacing:4px;font-size:9px;color:#6c7867;pointer-events:none}
+.loading,.error{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;background:radial-gradient(ellipse,#2b3027 0%,#20251ee6 70%);z-index:5;font-family:"Songti SC",serif;font-size:17px;letter-spacing:4px}.loading small{font-family:inherit;font-size:10px;letter-spacing:2px;color:#929c86}.loading-ring{width:45px;height:45px;border:1px solid #9c8d6533;border-top-color:#b8a071;border-radius:50%;animation:spin 2.5s linear infinite}.error p{font-family:sans-serif;font-size:12px;letter-spacing:1px;line-height:1.8;max-width:320px;padding:0 20px;text-align:center;color:#aaa894}.error button{background:transparent;border:1px solid var(--line);padding:10px 20px;letter-spacing:2px;font-size:11px}@keyframes spin{to{transform:rotate(360deg)}}
+.controls-area{position:absolute;bottom:65px;left:61.5%;transform:translateX(-50%);z-index:10;display:flex;align-items:center;flex-direction:column;gap:18px}.gesture-hint{display:flex;align-items:center;gap:9px;color:#7b8973;font-size:10px;letter-spacing:1.4px;margin:0}.gesture-hint svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.1}.gesture-hint span span{margin:0 10px;color:#586550}.mobile-hint{display:none}.toolbar{height:49px;padding:5px 10px;display:flex;align-items:center;gap:5px;border:1px solid #9da78a26;border-radius:5px;background:#1c231dc7;backdrop-filter:blur(12px);box-shadow:0 9px 30px #0002}.view-tabs{display:flex;gap:2px}.view-tabs button{border:0;background:transparent;color:#9ca68f;font-size:11px;letter-spacing:2px;padding:10px 18px;border-radius:3px;transition:background .2s,color .2s}.view-tabs button[aria-pressed=true]{color:#e4d5ae;background:#a290632d}.view-tabs button:hover{color:#e4d5ae;background:#a2906314}.toolbar-divider{height:17px;width:1px;background:#8b96783b;margin:0 8px}.icon-button{background:transparent;border:0;display:flex;align-items:center;gap:7px;color:#99a48b;padding:8px 9px;white-space:nowrap;font-size:10px;letter-spacing:1px;border-radius:3px}.icon-button svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}.icon-button:hover{color:#ded4b6;background:#a2906314}.icon-button[aria-pressed=true]{color:#dfc590}.footer{position:fixed;bottom:0;left:4.2%;right:4.2%;height:43px;border-top:1px solid #87917624;display:flex;align-items:center;justify-content:space-between;font-size:9px;letter-spacing:2px;color:#77846c;pointer-events:none}.footer-center{color:#6d7963;font-family:"Songti SC",serif;font-size:10px;letter-spacing:4px}.footer-number{color:#a4a78d;margin-left:8px}
+@media(min-height:1050px){.intro{top:22vh}.controls-area{bottom:80px}#viewport{bottom:120px}}
+@media(max-width:1100px){.intro{left:5%;width:210px}h1{font-size:58px;letter-spacing:9px}.vertical-caption{display:none}#viewport{left:25%;right:3%}.controls-area{left:62%}.stage-label{right:0}.header-note{display:none}}
+@media(max-height:760px) and (min-width:701px){.header{height:74px}.intro{top:115px}h1{font-size:50px;margin-bottom:16px}.eyebrow{margin-bottom:18px}.intro-rule{margin:16px 0}.description{font-size:12px;margin-bottom:14px}.study-note{margin-top:14px}.english-title{font-size:10px}.artifact-data{font-size:9px}#viewport{top:62px;bottom:96px}.controls-area{bottom:61px;gap:10px}}
+@media(max-width:700px){.header{height:73px;padding:0 6%}.brand{font-size:11px;gap:12px;letter-spacing:2px}.brand-mark{width:29px;height:34px;font-size:19px}.brand-divider{margin:0 9px}.edition{font-size:10px;letter-spacing:2px}.live-dot{margin-right:7px}.intro{left:7%;top:100px;width:86%}.eyebrow{font-size:8px;letter-spacing:2px;margin-bottom:14px;gap:18px}.eyebrow span{padding-left:17px}h1{font-size:34px;letter-spacing:7px;line-height:1;margin:0}h1 br{display:none}.title-wrap{display:block}.english-title{position:absolute;right:0;top:2px;font-size:9px;line-height:1.8;letter-spacing:2px;color:#949d86}.intro-rule,.description,.artifact-data,.study-note{display:none}#viewport{left:0;right:0;top:171px;bottom:128px}.stage-label{right:7%;top:15%;font-size:9px;letter-spacing:3px}.stage-line{height:24px}.side-caption{display:none}.controls-area{left:50%;bottom:69px;gap:16px;width:100%;padding:0 15px}.toolbar{height:46px;padding:4px 7px}.view-tabs button{font-size:11px;padding:9px 14px}.icon-button{padding:8px 7px}.icon-button span{display:none}.toolbar-divider{margin:0 5px}.gesture-hint{font-size:9px;letter-spacing:1px}.desktop-hint{display:none}.mobile-hint{display:inline}.footer{left:6%;right:6%;height:42px;font-size:8px;letter-spacing:1.2px}.footer-center{display:none}}
+@media(prefers-reduced-motion:reduce){.loading-ring{animation:none}*{scroll-behavior:auto!important}}
+/* The original scan is delivered by its publisher's public online viewer. */
+body{background:#121512;background-image:none}#viewport{background:#121512}#scan-frame{position:absolute;inset:0;border:0;width:100%;height:100%;display:block;background:#121512}.intro{pointer-events:auto}.source-link{display:inline-block;margin-top:14px;color:#aaa98e;font-size:9px;letter-spacing:.8px;line-height:1.8;border-bottom:1px solid #88866a55;padding-bottom:3px}.source-link:hover{color:#e1d0a3}.online-note{font-size:9px;letter-spacing:2px;color:#77816f;margin-top:14px}.error a{font:11px sans-serif;letter-spacing:1px;color:#c9ba99;border-bottom:1px solid #8d8063;padding-bottom:4px}.header-note{letter-spacing:3px}.intro .eyebrow{font-size:8px;letter-spacing:2px}.loading{background:#121512;gap:19px}.stage-label{right:0;pointer-events:none}.view-tabs button{padding-left:15px;padding-right:15px}.footer{z-index:3}button:disabled{opacity:.35;cursor:wait}
+@media(max-width:700px){.source-link,.online-note{display:none}#viewport{top:171px;bottom:128px}.view-tabs button{padding-left:11px;padding-right:11px}.stage-label{right:5%}.toolbar{gap:2px}.controls-area{gap:16px}.edition{letter-spacing:1px}.footer{font-size:7px;letter-spacing:1px}}
+body,#viewport,#scan-frame,.loading{background:#060910;background-image:none}body:before{display:none}
+.footer a{pointer-events:auto}.footer a:hover{color:#c5b792}
+</style>
+
+</head>
+<body>
+  <header class="header">
+    <a href="./" class="brand" aria-label="木雕造像首页"><span class="brand-mark">观</span><span>造像<span class="brand-divider">/</span>形与神</span></a>
+    <span class="header-note">木雕彩绘 · 原作三维扫描</span>
+    <span class="edition"><span class="live-dot"></span>原作扫描</span>
+  </header>
+  <main class="museum">
+    <aside class="intro">
+      <p class="eyebrow">ORIGINAL 3D CAPTURE <span>01</span></p>
+      <div class="title-wrap"><h1>水月<br>观音</h1><span class="vertical-caption">一念清净 · 万境皆闲</span></div>
+      <p class="english-title">WATER–MOON<br>GUANYIN</p>
+      <span class="intro-rule"></span>
+      <p class="description">一腿屈起，一手轻垂。<br>自在坐中，静观水月。</p>
+      <dl class="artifact-data">
+        <div><dt>时代</dt><dd>辽 / 金</dd></div>
+        <div><dt>材质</dt><dd>木雕 · 多层彩绘</dd></div>
+        <div><dt>形制</dt><dd>自在坐</dd></div>
+      </dl>
+      <p class="study-note">纳尔逊—阿特金斯艺术博物馆藏<br>藏品编号 34–10</p><a class="source-link" href="https://caeacollections.lib.uchicago.edu/view/16411/guanyin-of-the-southern-sea-3d" target="_blank" rel="noopener noreferrer">扫描来源：芝加哥大学 CAEA ↗</a><p class="online-note">联网观览 · 保留原作形貌</p>
+    </aside>
+    <section id="viewport" aria-label="水月观音三维模型，拖动旋转，滚轮缩放">
+      <iframe id="scan-frame" title="水月观音原作三维扫描" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe><div class="stage-label"><span class="stage-line"></span>原作 · 见微</div>
+      <div id="loading" class="loading" role="status"><span class="loading-ring"></span><span id="loading-text">正在连接原作扫描</span><small>高清扫描首次载入需要片刻</small></div>
+      <div id="error" class="error" role="alert" hidden><span>暂时无法呈现造像</span><p id="error-message"></p><button type="button" id="retry">重新载入</button><a href="https://sketchfab.com/models/507ee4a0e4a442fcae927b17ce90ea4e/embed" target="_blank" rel="noopener noreferrer">打开原始扫描页面 ↗</a></div>
+    </section>
+    <span class="side-caption">木纹有痕，岁月无声</span>
+    <div class="controls-area">
+      <p id="viewer-note" class="gesture-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12V6a2 2 0 0 1 4 0v5-7a2 2 0 0 1 4 0v8-4a2 2 0 0 1 4 0v7c0 4-3 7-7 7h-1c-2 0-4-1-5-3l-3-5a2 2 0 0 1 3-2l1 1z"/></svg><span class="desktop-hint">拖动旋转<span>·</span>滚轮缩放</span><span class="mobile-hint">单指旋转<span>·</span>双指缩放</span></p>
+      <nav class="toolbar" aria-label="造像观看控制">
+        <div class="view-tabs" role="group" aria-label="预设视角">
+          <button type="button" data-view="full" aria-pressed="true">全身</button>
+          <button type="button" data-view="face" aria-pressed="false">面部</button>
+          <button type="button" data-view="side" aria-pressed="false">侧面</button><button type="button" data-view="back" aria-pressed="false">背面</button>
+        </div>
+        <span class="toolbar-divider"></span>
+        <button type="button" id="rotate" class="icon-button" aria-label="自动旋转" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6.1 6.1a8 8 0 0 1 13 2.9M4.9 15a8 8 0 0 0 13 2.9"/></svg><span>环览</span></button>
+        <button type="button" id="reset" class="icon-button reset-button" aria-label="重置视角"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4v6h6M4.5 10a8 8 0 1 1 0 5"/></svg><span>复位</span></button>
+      </nav>
+    </div>
+  </main>
+  <footer class="footer"><a href="https://caeacollections.lib.uchicago.edu/view/16411/guanyin-of-the-southern-sea-3d" target="_blank" rel="noopener noreferrer">原作扫描 · UChicago CAEA ↗</a><span class="footer-center">以形写神，以静观心</span><span>ORIGINAL SCAN <span class="footer-number">/ 34–10</span></span></footer>
+  <script>!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e():"function"==typeof define&&define.amd?define([],e):"object"==typeof exports?exports.Sketchfab=e():t.Sketchfab=e()}(self,(()=>(()=>{"use strict";var t={d:(e,i)=>{for(var n in i)t.o(i,n)&&!t.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:i[n]})},o:(t,e)=>Object.prototype.hasOwnProperty.call(t,e)},e={};function i(t){return i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},i(t)}t.d(e,{default:()=>h});var n=function(t,e){t.forEach((function(t){this[t]=function(){var i,n=e._requestIdCounter++,s=Array.prototype.slice.call(arguments);if(s.length>0){var r=s[s.length-1];"function"==typeof r&&(i=s.pop())}i&&(e._pendingRequests[n]=i.bind(this)),e._target.postMessage({type:"api.request",instanceId:e.getIdentifier(),requestId:n,member:t,arguments:s},e.getDomain())}}),this),this.addEventListener=function(t,i,n){"viewerready"===t&&e.isViewerReady&&i(),e._eventListeners[t]||(e._eventListeners[t]=[]),e._eventListeners[t].push(i),n&&this.setListenerOptions&&(n.name=t,this.setListenerOptions(n))},this.removeEventListener=function(t,i){if(e._eventListeners[t]){var n=e._eventListeners[t].indexOf(i);-1!==n&&e._eventListeners[t].splice(n,1)}}},s=function(t,e,i){this._target=t,this._requestIdCounter=0,this._pendingRequests={},this._eventListeners={},this._ready=!1,this._domain=i,this._instanceId=e,this.listenServer()};s.prototype={getIdentifier:function(){return this._instanceId},getDomain:function(){return this._domain},setIdentifier:function(t){this._instanceId=t},use:function(t,e){this._version=t,this._ready=!0;var i=this._requestIdCounter++;this._pendingRequests[i]=function(t,i,s){t?e.call(this,t):e.call(this,null,new n(s,this))}.bind(this),this._target.postMessage({type:"api.initialize",requestId:i,name:t,instanceId:this._instanceId},this._domain)},listenServer:function(){if(!this._serverReceiveMessageBinded){var t=["api.initialize.result","api.request.result","api.event"];this._serverReceiveMessageBinded=function(e){if(e.origin===this._domain&&e.data&&e.data.type&&e.data.instanceId&&e.data.instanceId===this.getIdentifier()){var i=e.data.type;if(-1!==t.indexOf(i))if("api.event"===i){var n=e.data.results,s=n[0];if(this._eventListeners["*"]||this._eventListeners.all)return void["*","all"].forEach((function(t){var e=this._eventListeners[t];e&&e.forEach((function(t){t.apply(t,n)}))}),this);var r=n.slice(1),o=this._eventListeners[s];o?o.forEach((function(t){t.apply(t,r)})):"viewerready"===s&&(this.isViewerReady=!0)}else{var a=e.data.requestId,d=this._pendingRequests[a];if(!d)return;d.apply(null,e.data.results),this._pendingRequests[a]=void 0}}}.bind(this),window.addEventListener("message",this._serverReceiveMessageBinded)}}};const r=s;var o=/[&|;]+/g;function a(t){return"object"===i(t)?(e=t,n={},Object.keys(e).forEach((function(t){n[t]=Array.isArray(e[t])?e[t]:[e[t]]})),n):("?"===t[0]&&(t=t.substr(1)),t.split(o).reduce((function(t,e){if(0===e.length)return t;var i=e.indexOf("=");-1===i&&(i=e.length);var n=decodeURIComponent(e.substr(0,i).replace(/\+/g,"%20")),s=decodeURIComponent(e.substr(i+1).replace(/\+/g,"%20"));return void 0===t[n]&&(t[n]=[]),t[n].push(s),t}),{}));var e,n}window.SketchfabAPIClient=r;var d=function(t,e){var n=t,s=e;"object"===i(t)&&(s=t,n=null),this._version=n,this._target=s,window.sketchfabAPIinstances||(window.sketchfabAPIinstances=[]),window.sketchfabAPIinstances.push(this),this._apiId=window.sketchfabAPIinstances.length.toString(),this._target.id&&(this._apiId+="_"+this._target.id),this._target.allow||(this._target.allow="vr; autoplay; fullscreen"),this._client=void 0,this._options=void 0,this._domain="sketchfab.com",this._domain="same-as-current"===this._domain?window.location.hostname:this._domain,this._urlTemplate="https://YYYY/models/XXXX/embed",this._url=this._urlTemplate.replace("YYYY",this._domain),this._transmitOptions={},this._getURLOptions()};d.prototype={_urlOptionsDict:{skfb_api_version:{default:"1.12.1",type:"string"}},_optionsLoaded:function(t){this._urlOptions=t,this._version=this._getURLOption("skfb_api_version",this._version)},_getURLOption:function(t,e){var i=this._urlOptionsDict[t];if(!i)return e;null==e&&(e=i.default);var n=this._urlOptions[t];return n&&n.length?n[0]:e},_getURLOptions:function(){if(!window||!window.location.search)return this._optionsLoaded({});var t=a(window.location.search);for(var e in t)e.startsWith("skfb_")&&(this._transmitOptions[e.substr(5)]=t[e]);return this._optionsLoaded(t)},getEmbedURL:function(t,e){var i=this._url+"?api_version="+this._version+"&api_id="+this._apiId;e&&Object.keys(e).forEach((function(t){null!=e[t]&&"function"!=typeof e[t]&&(i+="&"+t.toString()+"="+e[t].toString())}));var n=this._transmitOptions;return Object.keys(this._transmitOptions).forEach((function(t){i+="&"+t.toString()+"="+n[t].toString()})),i.replace("XXXX",t)},init:function(t,e){this._options=e,this._uid=t,this._realInit()},_initializeAPIEmbed:function(t){if(t.data&&t.data.instanceId&&this._apiId===t.data.instanceId&&"api.ready"===t.data.type&&this._target.src){if(void 0!==t.data.error)return this.error(t.data.error),void window.removeEventListener("message",this._initializeAPIEmbedBinded);var e=this._target.src.split("/");e="https://"+e[2],this._client&&(console.log("reusing a Sketchfab instance for multiple client is not supported, please create a new sketchfab instance"),window.removeEventListener("message",this._client._serverReceiveMessageBinded)),this._client=new window.SketchfabAPIClient(this._target.contentWindow,this._apiId,e),this._client.use(this._version,function(t,e){if(t)throw t;this.success.call(this,e)}.bind(this)),window.removeEventListener("message",this._initializeAPIEmbedBinded)}},_realInit:function(){this._initializeAPIEmbedBinded||(this._initializeAPIEmbedBinded=this._initializeAPIEmbed.bind(this)),window.addEventListener("message",this._initializeAPIEmbedBinded),this._target.src=this.getEmbedURL(this._uid,this._options)},success:function(t){this._options.success&&"function"==typeof this._options.success&&this._options.success(t)},error:function(t){this._options.error&&"function"==typeof this._options.error&&this._options.error(t)},show:function(){var t=this._target.style.top;this._target.style.top="-1000vh",Promise.resolve().then(function(){this._target.style.top=t}.bind(this))}};const h=d;return e.default})()));
+//# sourceMappingURL=sketchfab-viewer-1.12.1.js.map</script>
+  <script>/* Camera presets for a Z-up sculpture in the publisher's public viewer. */
+(function(scope){
+  function checked(camera){
+    if(!camera||!['position','target'].every(k=>Array.isArray(camera[k])&&camera[k].length===3&&camera[k].every(Number.isFinite)))throw new TypeError('无效相机坐标');
+    const delta=camera.position.map((v,i)=>v-camera.target[i]);
+    const distance=Math.hypot(...delta);if(distance<1e-8)throw new RangeError('相机与观察点不能重合');
+    return {delta,distance};
+  }
+  function orbit(camera,angle){
+    const {delta}=checked(camera);if(!Number.isFinite(angle))throw new TypeError('无效旋转角度');
+    const c=Math.cos(angle),s=Math.sin(angle);
+    return {position:[camera.target[0]+delta[0]*c-delta[1]*s,camera.target[1]+delta[0]*s+delta[1]*c,camera.position[2]],target:[...camera.target]};
+  }
+  function makeView(full,name){
+    const {delta,distance}=checked(full);
+    if(name==='side')return orbit(full,-Math.PI/2);
+    if(name==='back')return orbit(full,Math.PI);
+    if(name==='face'){
+      const planar=Math.hypot(delta[0],delta[1]);
+      const right=planar>1e-8?[-delta[1]/planar,delta[0]/planar]:[1,0];
+      const target=[full.target[0]-right[0]*distance*.065,full.target[1]-right[1]*distance*.065,full.target[2]+distance*.29];
+      return {position:target.map((v,i)=>v+delta[i]*.295),target};
+    }
+    return {position:[...full.position],target:[...full.target]};
+  }
+  scope.GuanyinCamera={makeView,orbit};
+})(globalThis);
+</script>
+  <script>(function(){
+  'use strict';
+  const MODEL='507ee4a0e4a442fcae927b17ce90ea4e';
+  const frame=document.querySelector('#scan-frame');
+  const stage=document.querySelector('#viewport');
+  const loading=document.querySelector('#loading');
+  const error=document.querySelector('#error');
+  const status=document.querySelector('#loading-text');
+  const buttons=[...document.querySelectorAll('.toolbar button')];
+  const rotate=document.querySelector('#rotate');
+  let api=null,full=null,spinTimer=null,spinStart=0,spinCamera=null,timeout=null,ready=false;
+  buttons.forEach(b=>b.disabled=true);
+  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fail(message){
+    loading.hidden=true;error.hidden=false;
+    document.querySelector('#error-message').textContent=message;
+    buttons.forEach(b=>b.disabled=true);stopSpin();
+  }
+  function stopSpin(){
+    if(spinTimer!==null)clearInterval(spinTimer);spinTimer=null;spinCamera=null;
+    rotate.setAttribute('aria-pressed','false');rotate.setAttribute('aria-label','自动旋转');
+  }
+  function move(view,duration){
+    if(duration>.2){
+      stage.setAttribute('aria-busy','true');
+      api.setCameraLookAtEndAnimationCallback(()=>stage.setAttribute('aria-busy','false'));
+    }
+    api.setCameraLookAt(view.position,view.target,duration,err=>{
+      if(err){stage.setAttribute('aria-busy','false');document.querySelector('#viewer-note').textContent='视角切换暂不可用，可在造像上直接拖动和缩放。';}
+    });
+  }
+  function select(name){
+    if(!ready||!full)return;stopSpin();
+    move(GuanyinCamera.makeView(full,name),reducedMotion?0:.8);
+    stage.dataset.view=name;
+    document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===name)));
+  }
+  function startSpin(){
+    if(!ready)return;
+    api.getCameraLookAt((err,camera)=>{
+      if(err||!camera)return;
+      spinCamera=camera;spinStart=performance.now();
+      rotate.setAttribute('aria-pressed','true');rotate.setAttribute('aria-label','暂停旋转');
+      spinTimer=setInterval(()=>{
+        if(document.hidden||!spinCamera)return;
+        move(GuanyinCamera.orbit(spinCamera,(performance.now()-spinStart)*.00012),.14);
+      },140);
+    });
+  }
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>select(b.dataset.view)));
+  rotate.addEventListener('click',()=>spinTimer===null?startSpin():stopSpin());
+  document.querySelector('#reset').addEventListener('click',()=>select('full'));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')select('full');});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)stopSpin();});
+  window.addEventListener('pagehide',stopSpin);
+  document.querySelector('#retry').addEventListener('click',()=>location.reload());
+  if(typeof Sketchfab!=='function'){
+    fail('查看器未能载入。请连接网络后重试，或打开下方的原始扫描页面。');return;
+  }
+  timeout=setTimeout(()=>{if(!ready)fail('原作扫描载入较慢，请检查网络后重试，或直接打开原始扫描页面。');},90000);
+  const client=new Sketchfab('1.12.1',frame);
+  client.init(MODEL,{
+    autostart:1,preload:1,camera:0,ui_infos:0,ui_controls:0,ui_hint:0,
+    ui_stop:0,ui_help:0,ui_settings:0,ui_inspector:0,ui_vr:0,
+    ui_annotations:0,ui_loading:1,ui_watermark_link:1,
+    success:function(viewer){
+      api=viewer;
+      api.addEventListener('modelLoadProgress',factor=>{if(!ready)status.textContent=Number.isFinite(factor)?'正在载入原作扫描 '+Math.round(factor*100)+'%':'正在载入原作扫描';});
+      api.addEventListener('textureLoadProgress',factor=>{if(!ready)status.textContent=Number.isFinite(factor)?'正在载入原作彩绘 '+Math.round(factor*100)+'%':'正在载入原作彩绘';});
+      api.addEventListener('viewerready',()=>{
+        api.setBackground({color:[18/255,21/255,18/255]});
+        api.setTextureQuality('hd');
+        api.getCameraLookAt((err,camera)=>{
+          if(err||!camera){fail('扫描已载入，但相机连接未完成，请重试。');return;}
+          full={position:[...camera.position],target:[...camera.target]};
+          ready=true;clearTimeout(timeout);error.hidden=true;loading.hidden=true;
+          buttons.forEach(b=>b.disabled=false);stage.classList.add('viewer-ready');stage.dataset.view='full';
+          console.info('Guanyin scan ready; original camera',JSON.stringify(full));
+        });
+      });
+      api.start();
+    },
+    error:function(){clearTimeout(timeout);fail('无法连接原作扫描查看器。请检查网络，或打开原始扫描页面。');}
+  });
+})();
+</script>
+</body>
+</html>
